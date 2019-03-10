@@ -1,0 +1,12 @@
+[Unit]
+Description=hello world
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash -c 'while [[ 1 ]]; do echo "hello world"; sleep 5; done;'
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

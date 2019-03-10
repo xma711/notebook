@@ -1,0 +1,9 @@
+extends layout
+
+// in jade, the usual tags in html files are converted to function names;
+// the stuff after the function names are kinda become arguments (need to verify this statement)
+block content
+  h1= title
+  p Welcome to #{title}
+  p Created for testing!
+  a(href="/test") To test page.

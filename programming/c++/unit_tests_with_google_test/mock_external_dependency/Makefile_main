@@ -1,0 +1,5 @@
+all:
+	g++ -I../helloworld main.cpp count_num_char.cpp ../helloworld/helloworld.cpp -o main.elf
+
+clean:
+	rm main.elf

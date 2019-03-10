@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--header 2-->
+<h2>JSON Object creation in javascript</h2>
+
+<!--cannot remember what p means-->
+<!--anyway, this seems to wait for a html-formatted string to be inserted into the paragraph-->
+<!--and the script below will get the html string done -->
+<p id='demo'></p>
+
+<!--okay, javascript-->
+<script>
+// this is json!
+var text = '{"name":"John Johnson", "street":"Oslo West 16", "phone":"555 1234567"}';
+
+// parse the json string
+var obj = JSON.parse(text);
+
+document.getElementById("demo").innerHTML=
+obj.name + "<br>" + 
+obj.street + "<br>" +
+obj.phone;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+---
+- hosts: all
+  tasks:
+    - name: install node.js and npm
+      apt: name=nodejs state=present
+      apt: name=npm state=present
+
+    - name: add symbolic link to node
+      file:
+        src: "/usr/bin/nodejs"
+        dest: "/usr/bin/node"
+        state: link
+
+    - name: install forever (to run our node.js app)
+      npm: name=forever global=yes state=present
+#      command: "npm install forever -g"
+
+    - name: ensure node.js app folder exists
+      file: "path={{ node_apps_location }} state=directory"
+
+    - name: copy example node.js app to server
+      copy: "src=app dest={{ node_apps_location }}"
+
+    - name: install app dependencies defined in package.json
+      npm: path={{ node_apps_location }}/app
+
+    - name: check list of running node.js apps
+      command: forever list
+      register: forever_list
+      changed_when: false
+
+    - name: start example nodejs app
+      command: "forever start {{ node_apps_location }}/app/app.js"
+      when: "forever_list.stdout.find('{{ node_apps_location }}/app/app.js') == -1"

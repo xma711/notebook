@@ -1,0 +1,17 @@
+#version: "2"
+
+services:
+  workers:
+    image: rastasheep/ubuntu-sshd:16.04-customized  
+
+
+#  networks:
+#    - dockernet
+
+#  deploy:
+#    replicas: 1
+#    update_config:
+#      parallelism: 2
+#      delay: 10s
+#    restart_policy:
+#      condition: on-failure

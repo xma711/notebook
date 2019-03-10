@@ -1,0 +1,3 @@
+do multi boot in computers with UEFI as the booting firmware.
+
+with BIOS, the way of doing multi boot of a few os can be found in grub2/README.md 

@@ -1,0 +1,18 @@
+# this service file manages a program named mbip.elf
+# type = simple because it won't fork to another process
+# [Install] is needed to start the program
+
+[Unit]
+Description=MQTT Broker Interface Program
+
+After=mosquitto.service
+Requires=mosquitto.service
+
+[Service]
+Type=simple
+ExecStart=/root/test_uninet/mbip/mbip.elf
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

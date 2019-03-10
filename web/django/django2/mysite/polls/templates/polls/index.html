@@ -1,0 +1,15 @@
+{# why do we need to do this "load static"? #}
+{# this {% static 'xxx' %} should be similar to {% url %}, which gives the real link to the static file #}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
+{% if latest_question_list %}
+	<ul>
+	{% for question in latest_question_list %}
+		<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No polls are available.</p>
+{% endif %}

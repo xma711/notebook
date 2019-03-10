@@ -1,0 +1,6 @@
+[Unit]
+Description=test change script
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/print_hello.sh

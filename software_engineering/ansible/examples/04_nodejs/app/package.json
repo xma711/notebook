@@ -1,0 +1,9 @@
+{
+	"name": "examplenodeapp",
+	"description": "example express node.js app",
+	"author": "me",
+	"dependencies": {
+		"express": "3.x.x"
+	},
+	"engine": "node >= 1.0.0"
+}

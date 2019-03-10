@@ -1,0 +1,83 @@
+---
+- hosts: all
+
+  vars_files:
+    - vars.yml
+
+# pre_tasks will be run before the main set of tasks
+# there can be post_tasks too
+  pre_tasks:
+    - name: update apt cache if needed
+      apt: update_cache=yes cache_valid_time=3600
+
+# handlers are special kinds of tasks that can be run at the end of a group of tasks 
+# by adding the notify option to any of the tasks in the group
+  handlers:
+    - name: restart apache
+      service: name=apache2 state=restarted
+
+  tasks:
+    - name: get software for apt repository management
+      apt: name={{ item }} state=present
+      with_items:
+        - python-apt
+        - python-pycurl
+
+#  - name: add ondrej repository for later versions of PHP.
+#    apt_repository: repo='ppa:ondrej/php5' update_cache=yes
+
+    - name: install apache, mysql, php and other dependencies
+      apt: name={{ item }} state=present
+      with_items:
+        - git
+        - curl
+        - sendmail
+        - apache2
+        - php
+        - php-common
+        - php-mysql
+        - php-cli
+        - php-curl
+        - php-gd
+        - php-dev
+#        - php-mcrpt
+#        - php-apc
+        - php-pear
+        - python-mysqldb
+        - mysql-server
+
+#    - name: disable the firewall (since this is for local dev only)
+#      service: name=ufw state=stopped
+
+    - name: start apache, mysql and php
+      service: name={{ item }} state=started enabled=yes
+      with_items:
+        - apache2
+        - mysql
+
+    - name: enable apache rewrite module (required for drupal)
+      apache2_module: name=rewrite state=present
+      # call the handler
+      notify: restart apache
+
+    - name: add apache virtualhost for drupal 8 development
+      template:
+        src: "templates/drupal.dev.conf.j2"
+        dest: "/etc/apache2/sites-available/{{ domain }}.dev.conf"
+        owner: root
+        owner: root
+        mode: 0644
+      notify: restart apache
+
+    - name: symlink drupal virtualhost to sites-enabled
+      file:
+        src: "/etc/apache2/sites-available/{{ domain }}.dev.conf"
+        dest: "/etc/apache2/sites-enabled/{{ domain }}.dev.conf"
+        state: link
+      notify: restart apache
+
+    - name: remove default virtualhost file
+      file:
+        path: "/etc/apache2/sites-enabled/000-default"
+        state: absent
+      notify: restart apache

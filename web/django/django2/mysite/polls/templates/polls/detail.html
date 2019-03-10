@@ -1,0 +1,23 @@
+<h1>{{ question.question_text }}</h1>
+
+{# what is the use of the following line? where does error_message come from? #}
+{# from the view function that renders this html? #}
+{# answer: yes, it will come from the vote() function in view. #}
+{# when the POST msg has something wrong, the vote() function will redirect the page here with an error message. #}
+{% if error_message %}
+	<p><strong>{{error_message}}</strong></p>
+{% endif %}
+
+<form action={% url 'polls:vote' question.id %} method="post">
+	{# what is 'csrf_token'?? #}
+	{# answer: for security reason. there is risk of cross site request forgeries; #}
+	{# all POST forms that are targeted at internal URLs should use the csrf_token tag #}
+	{% csrf_token %}
+	{% for choice in question.choice_set.all %}
+		{# value is the displayed value, name is for the key in POST msg, id is the true value for the key in the POST msg #}
+		<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"/>
+		<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+		<br/>
+	{% endfor %}
+	<input type="submit" value='Vote' />
+</form>

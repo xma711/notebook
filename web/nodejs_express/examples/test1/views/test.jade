@@ -1,0 +1,20 @@
+extends layout
+
+// a test jade file
+block content
+  h1= title
+  p(id="div1") This is a test page
+  a(href="/") back to home 
+
+  // create empty space
+  br
+  br
+
+  form(name="test", method="post")
+    div.input
+      input(type="text", name="text_input")
+    div.actions
+      input(type="submit", value="add")
+
+  // now link to a javascrit
+  script(src="javascripts/test1/test1.js")

@@ -1,0 +1,4 @@
+-v: verbose
+-h: help; sometimes human-readable
+-i: case insensitive
+-r: recursive; sometimes reverse

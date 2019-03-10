@@ -1,0 +1,9 @@
+[Unit]
+Description=Test change script
+
+[Timer]
+OnCalendar=*-*-* *:*:00,10,20,30,40,50
+
+# the default accuracy is 1min to optimize cpu waking up!
+# the set the default accuracy to something more precise, use AccuracySec=
+AccuracySec=1ms

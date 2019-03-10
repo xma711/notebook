@@ -1,0 +1,7 @@
+# copy to ~/.bashrc
+alias hhadoop_ls='hadoop fs -ls'
+alias hhadoop_put='hadoop fs -put'
+alias hhadoop_cat='hadoop fs -cat'
+alias hhadoop_mkdir='hadoop fs -mkdir'
+alias hhadoop_rm='hadoop fs -rm'
+

@@ -1,0 +1,31 @@
+# reference: http://ess.khhq.net/wiki/YAML_Tutorial
+#
+# helloworld is the parent key of its indented properties.
+#
+# all properties of a specific key, in this case helloworld,
+# must be indented with one or more spaces.
+
+helloworld:
+  integer-property: 0
+  boolean-property: false
+  string-property: 'this is a string of text'
+
+
+# boolean flags (true/false) do not need quotes.
+hello-key: false
+
+# integer values also do not need quotes
+world-key: 10
+
+# any other key or property values that are not boolean or integer,
+# must be inside single quotes.
+hello-world-key: 'this is a string of text'
+
+# this is a list. 
+# the list marker "-" must be indented at least 1 or more spaces 
+# and the items must be indented by 1 space after the "-".
+a-list-key:
+  - value
+  - test
+  - another value
+  - 'they can also contain explicit strings'

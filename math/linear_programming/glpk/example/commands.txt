@@ -1,0 +1,5 @@
+# run the short example
+glpsol --math short.mod
+
+
+# reference: http://en.wikibooks.org/wiki/GLPK/GMPL_%28MathProg%29

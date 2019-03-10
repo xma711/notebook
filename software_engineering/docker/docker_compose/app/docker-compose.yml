@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    image: busybox
+    command: ifconfig
+
+# if not indicating any networks, by default docker will create a new network: app_default;  
+# (to see what networks docker created, use: docker network ls)
+
+#    networks:
+#      dockernet:
+#        ipv4_address: 192.168.10.150
+
+
