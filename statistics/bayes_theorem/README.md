@@ -5,17 +5,17 @@ The rule: p(y|x) = p(x|y)p(y) / p(x) = p(x|y)p(y) / INTEGRATE( p(x|y)p(y)dy )
 
 question: why do we want to express p(y|x) in terms of p(y) and p(x|y)?
 
-explanation:  
+Explanation:  
 
 let y be a result of {cat, dog}. x be the images.  
-p(y|x) means that given an image, we want to find the probability of y being cat and dog.  
+P(y|x) means that given an image, we want to find the probability of y being cat and dog.  
 (so that if p(y=cat) is higher, we can classify the image as cat; vice versa.)  
 
-in reality, we can collect data: cat pictures and dog pictures.  
-with these 2 sets of data, we can find the distribution of x for the cats pictures, and that for dog pictures, i.e. p(x | y = cat) and p(x | y=dog).  
-of course we know p(y) too, either because we can make an assumption that the distribution of y follow the ratio of number of cat and dog pictures.  
+In reality, we can collect data: cat pictures and dog pictures.  
+With these 2 sets of data, we can find the distribution of x for the cats pictures, and that for dog pictures, i.e. p(x | y = cat) and p(x | y=dog).  
+Of course we know p(y) too, either because we can make an assumption that the distribution of y follow the ratio of number of cat and dog pictures.  
 
-therefore, in reality, we usually do know p(x|y) and p(y), and then we want to calculate p(y|x).
+Therefore, in reality, we usually do know p(x|y) and p(y), and then we want to calculate p(y|x).
 
 
 Bayes' rule
@@ -33,30 +33,30 @@ P(B|A) is the probability of observing event B given that A is true.
 Bayesian interpretation
 ------------------------------
 
-probability measures a degree of belief.
+Probability measures a degree of belief.
 Bayes's theorem then links the degree of belief in a proposition before and after accounting for evidence.
 
 P(A): the prior, is the initial degree of belief in A.  
 P(A|B): the posterior, is the degree of belief having accounted for B.  
 P(B|A)/P(B): represents the support B provides for A.
 
-reference: https://en.wikipedia.org/wiki/Bayes%27_theorem
+Reference: https://en.wikipedia.org/wiki/Bayes%27_theorem
 
 
 intuition
 ----------------------
 
-ref: https://www.quora.com/What-is-an-intuitive-explanation-of-Bayes-Rule?redirected_qid=528835
+Ref: https://www.quora.com/What-is-an-intuitive-explanation-of-Bayes-Rule?redirected_qid=528835
 
 person A says, money can't buy happiness, becuase only 10% of happy people are rich.  
-wait, this is wrong. this is P(Rich | happy). 
-the correct info should P(happy | rich).
+Wait, this is wrong. this is P(Rich | happy). 
+The correct info should P(happy | rich).
 
 Bayes' theorem tells us how to calculate the other, reversed statistic using two more info:  
 the percentage of people overall who are happy (let's say 40%) and  
 the percentage of people overall who are rich (let's say 5%).
 
-then P(happy | rich) = P(happy) * P(rich | happy) / P(rich) = 0.4 * 0.1/0.05 = 0.8
+Then P(happy | rich) = P(happy) * P(rich | happy) / P(rich) = 0.4 * 0.1/0.05 = 0.8
 
 "Let's say the population of the whole world is 1000, just to keep it easy. 
 Then Fact 1 tells us there are 400 happy people, 

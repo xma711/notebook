@@ -1,14 +1,14 @@
-overall
+Overall
 -------------
 
-reference: https://www.a2hosting.com/kb/developer-corner/postgresql/connecting-to-postgresql-using-python
+Reference: https://www.a2hosting.com/kb/developer-corner/postgresql/connecting-to-postgresql-using-python
 
 
 preparation
 ----------------------
 
-running this in an virtualenv.
+Running this in an virtualenv.
 
-to create this virtualenv: mkvirtualenv --python=/usr/bin/python2 sqlenv
+To create this virtualenv: mkvirtualenv --python=/usr/bin/python2 sqlenv
 
 then install the required packages from requirements.txt

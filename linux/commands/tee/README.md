@@ -1,4 +1,4 @@
-reference: http://stackoverflow.com/questions/764463/unix-confusing-use-of-the-tee-command
+Reference: http://stackoverflow.com/questions/764463/unix-confusing-use-of-the-tee-command
 
 tee is used to split a command pipeline, allowing you to save the output of a command to a file and send it along down the pipeline. In the first example you gave::
 

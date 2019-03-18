@@ -13,27 +13,27 @@ virtualenv --python=python3.4 ./home/xma/myvenv
 where /home/xma/myvenv is the path to all the new packages.
 
 
-my understanding:  
+My understanding:  
 virtualEnv still uses the host machine (kernel + filesystem),   
 but it is able to use alternative packages like python 3.4 without affecting the host machine.  
-new packages installed in the virtual env is also applicable to that particular environment only.  
-it is not computing resource isolation but isolation of 'environment'.   
-therefore it is like a partial virtual machine.
+New packages installed in the virtual env is also applicable to that particular environment only.  
+It is not computing resource isolation but isolation of 'environment'.   
+Therefore it is like a partial virtual machine.
 
-difference to docker:  
+Difference to docker:  
  docker uses a fully isolated filesystem, totally independent to host machine.   
-inside the docker container, users cannot touch the host machine 
+Inside the docker container, users cannot touch the host machine 
 because host machine is outside its 'universe'.   
 In fact, the users inside the container are totally not in the same world of the host machine.  
 
-on the other hand, even inside the virtualEnv, users can do whatever to the host machine,  
+On the other hand, even inside the virtualEnv, users can do whatever to the host machine,  
 although the tools used can have different versions from the same tools in the host machine.  
-even inside the virtual env, the user is still the same as that in the host machine.
+Even inside the virtual env, the user is still the same as that in the host machine.
 
-in short, virtualEnv allows users to use a different set of tools to do things in the same machine (same kernel + same filesystem).
+In short, virtualEnv allows users to use a different set of tools to do things in the same machine (same kernel + same filesystem).
 
 
-export requirements from the virtualEnv
+Export requirements from the virtualEnv
 --------------------------------------------
 
 To export: pip freeze > requirements.txt

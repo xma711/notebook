@@ -1,14 +1,14 @@
-install
+Install
 ---------------------
 
-follow http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php  
+Follow http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php  
 to install the hadoop to the ubuntu system.
 
-the hadoop version can be changed to the most updated one, which can be downloaded from  
+The hadoop version can be changed to the most updated one, which can be downloaded from  
 http://mirror.nus.edu.sg/apache/hadoop/core/ 
   
 the java version also needs to be changed to the latest one in the system.  
-in my case it is "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre"
+In my case it is "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre"
 
 issue1: datanode not start  
 	solution: Edit the value of namespaceID/clusterID in /usr/local/hadoop_store/hdfs/datanode/current/VERSION to match the corresponding value of the current NameNode in ${dfs.name.dir}/current/VERSION.
@@ -28,11 +28,11 @@ to let nanenode exit from safe mode: ./hadoop dfsadmin -safemode leave
 Hadoop distributed file system (HDFS)
 --------------------------------
 
-it is a bit like linux filesystem, starting with / root direcotry too.
+It is a bit like linux filesystem, starting with / root direcotry too.
 
-switch to hduser first.. because /usr/local/hadoop has a user/group mode of hduser:hdoop.
+Switch to hduser first.. because /usr/local/hadoop has a user/group mode of hduser:hdoop.
 
-to list the files inside HDFS in a particular directory, use command:  
+To list the files inside HDFS in a particular directory, use command:  
 	hadoop fs -ls full_path_to_directory (e.g. hadoop fs -ls /)  
 	(Seems that we can also use "hdfs dfs -ls /")
 
@@ -57,12 +57,12 @@ as you can see, it is exactly the same as linux command, except there is a "hado
 compile code and run code
 ----------------------------------
 
-to compile hadoop code:  
+To compile hadoop code:  
 	javac -classpath `hadoop classpath` -d destination_dir source_dir/Filename.java  
 	(e.g. javac -classpath `hadoop classpath` -d WordCount/ ./WordCount.java)  
 note that just keep the plain text 'hadoop classpath' and it is a backward quote ``, not forward.
 
-to generate a jar file:  
+To generate a jar file:  
 	jar -cvf WordCount.jar -C destination_dir .  
 	(note that there is a dot at the end)
 
@@ -73,7 +73,7 @@ note that the path of ./WordCount.jar refers to the path in the host computer, n
 however, the /data/input and /data/output refers to the directories in hdfs.  
 This is somewhat confusing so have to be careful about this.
 
-display the job result:  
+Display the job result:  
 	hadoop fs –ls /data/output  
 	hadoop fs ‐cat /data/output/part‐r‐00000
 
@@ -85,14 +85,14 @@ launch the job: hadoop fs –rmr /data/output
 run python in hadoop
 -----------------------------
 
-reference: http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
+Reference: http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
 
 after wrtting a mapper and a reducer, run this command:  
 hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar -file ./mapper.py -mapper ./mapper.py -file ./reducer.py -reducer ./reducer.py -input /user/hduser/gutenberg/* -output /user/hduser/gutenberg-output
 
 if hadoop-streaming-2.7.1.jar is not found, just search it by "find /usr/local/hadoop/ -name "hadoop-streaming*.jar"".
 
-to get the filename of an input word, use os.environ["map_input_file"], e.g. print '%s\t%s' % (word, os.environ["map_input_file"])
+To get the filename of an input word, use os.environ["map_input_file"], e.g. print '%s\t%s' % (word, os.environ["map_input_file"])
 
 to get the content of a file from hdfs: http://stackoverflow.com/questions/28139406/reading-writing-files-from-hdfs-using-python-with-subprocess-pipe-popen-give
 
@@ -100,7 +100,7 @@ to get the content of a file from hdfs: http://stackoverflow.com/questions/28139
 run hadoop in a docker container
 -----------------------------
 
-follow docker repo: https://hub.docker.com/r/sequenceiq/hadoop-docker/  
+Follow docker repo: https://hub.docker.com/r/sequenceiq/hadoop-docker/  
 or github repo: https://github.com/sequenceiq/hadoop-docker
 
 anyway, it is to:  
@@ -110,11 +110,11 @@ anyway, it is to:
 
 
 Note that when using the sequenceiq/hadoop-docker image, the default ssh port is 2122.  
-even when i use ssh xma@my_computer_ip_addr, there won't be connection because the default port in this command is also 2122.  
-the correct way is: ssh -p 22 xma@192.168.1.132
+Even when i use ssh xma@my_computer_ip_addr, there won't be connection because the default port in this command is also 2122.  
+The correct way is: ssh -p 22 xma@192.168.1.132
 
 issue1: jps stuck... after starting the services using start-all.sh, and then type "jps", and then the terminal stops.   
-nothing can be done to kill the zombie jps process..
+Nothing can be done to kill the zombie jps process..
 
 To run the ubuntu-hadoop docker, follow: https://github.com/sequenceiq/docker-hadoop-ubuntu
 
@@ -122,12 +122,12 @@ To run the ubuntu-hadoop docker, follow: https://github.com/sequenceiq/docker-ha
 some issues encountered
 -----------------------------
 
-hard disk no space!
+Hard disk no space!
 
-solution (not may be the best): found out that there are many big folder in /app/hadoop/tmp/mapred/local/localRunner/hduser/jobcache .   
-search them out: du -h  * | grep G  
+Solution (not may be the best): found out that there are many big folder in /app/hadoop/tmp/mapred/local/localRunner/hduser/jobcache .   
+Search them out: du -h  * | grep G  
 and then delete them.
 
-anyway jobtracter http://path:8088/cluster can be used to see nodes' status.
+Anyway jobtracter http://path:8088/cluster can be used to see nodes' status.
 
-to see logs and hdfs, go to http://localhost:50070/
+To see logs and hdfs, go to http://localhost:50070/

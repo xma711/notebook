@@ -1,4 +1,4 @@
-lspci: list all PCI devices
+Lspci: list all PCI devices
 
 lshw: list hardware
 

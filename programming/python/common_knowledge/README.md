@@ -1,28 +1,28 @@
-more about sys.path
+More about sys.path
 --------------------------------------------
 
-reference: http://www.diveintopython3.net/your-first-python-program.html#importsearchpath
+Reference: http://www.diveintopython3.net/your-first-python-program.html#importsearchpath
 
 sys.path is nothing but a list.  
-we can view it or modify it with standard list methods.
+We can view it or modify it with standard list methods.
 
 
-how does python search its modules to import
+How does python search its modules to import
 -------------------------------------------
 
-reference: http://stackoverflow.com/questions/15252040/how-does-python-find-a-module-file-if-the-import-statement-only-contains-the-fil
+Reference: http://stackoverflow.com/questions/15252040/how-does-python-find-a-module-file-if-the-import-statement-only-contains-the-fil
 
 there is an internal env variable PYTHONPATH that python follows to search the modules.
 
-or i can see it by  
+Or i can see it by  
 import sys  
 print sys.path  
 
 there seems to be some hardcoding elements here. 
-because after i installed anaconda (which comes with python3.5),
+Because after i installed anaconda (which comes with python3.5),
 and the sys.path in python3.5 is totally different from the sys.path in the original python3.4.
 
-when using the system python, i can see from sys.path that the packages installed by pip (/usr/local/lib/python/dist-packages) 
+When using the system python, i can see from sys.path that the packages installed by pip (/usr/local/lib/python/dist-packages) 
 will be used before the packages installed by apt-get (/usr/lib/python/dist-packages)
 
 
@@ -65,12 +65,12 @@ One solution is that we have to have a helper function in the class and bridge t
 - Desktop GUI lib: tkinter, pyjs, pygui, and wxpython.
 
 
-list
+List
 -----------------
 
-list is like an array in c. but the elements in list can be just anything while elements in an array have to be the same type.
+List is like an array in c. but the elements in list can be just anything while elements in an array have to be the same type.
 
-a list can be declared as 
+A list can be declared as 
 
 *new_list = []* 
 
@@ -86,18 +86,18 @@ note that this is different from new_list.append(list_b). in this case, the whol
 
 to get an element from the list: *new_list[2]* e.g.
 
-to find out the length: *len(new_list)*
+To find out the length: *len(new_list)*
 
 to extract a sub-list: *new_list[2:5]* or *new_list[2:]*  e.g.. note that the output is a list itself.
 
 
 
-dictionaries
+Dictionaries
 ------------------
 
-dictionaries are key-value pairs. in a list, the index is numbers. but in dictionaries, the index is a meaning immutable object, such as numbers, strings or even tuple (but a list cannot be a key). 
+Dictionaries are key-value pairs. in a list, the index is numbers. but in dictionaries, the index is a meaning immutable object, such as numbers, strings or even tuple (but a list cannot be a key). 
 
-to declare a dictionary:
+To declare a dictionary:
 
 *person={}* # not that a list is enclosed by []
 
@@ -126,7 +126,7 @@ to see all the key-value pairs in a list: *person.items()* # the output will be 
 booleans
 -------------------
 
-a boolean is sth like this: *is_python = True*
+A boolean is sth like this: *is_python = True*
 
 everything is python can be cast to boolean: *is_python = bool("any object")*
 
@@ -139,7 +139,7 @@ most everything else is equivalent to True: *are_true = True and 1 and "Text" an
 operators
 ------------------
 
-arithmetic: power: *g = a \*\* 2* # g = a to the power of 2
+Arithmetic: power: *g = a \*\* 2* # g = a to the power of 2
 
 logical: And: *a and b*; Or: *a or b*; Negation: *not a*; compound: (a and not (b or c)) 
 
@@ -154,16 +154,16 @@ e.g. *1 is True* # output is False. but *1 and True* will have a True output
 string
 -----------------
 
-these are examples of strings:
+These are examples of strings:
 
 *str = 'this is a string'*
 
 *str2 = "this is a string"*
 
 *str3* = """string also, in multiple lines.
-hello world on 2nd line!"""
+Hello world on 2nd line!"""
 
-to add two strings together: *anmial = "Cats "+ "Dogs "* # the animal variable is "Cats Dogs "
+To add two strings together: *anmial = "Cats "+ "Dogs "* # the animal variable is "Cats Dogs "
 
 *animal += "Rabbits"* # the animal variable is updated to "Cats Dogs Rabbits"
 
@@ -183,7 +183,7 @@ name = '%(first_name)s %(last_name)s' % {'first_name': 'Nowell', 'last_name': 'S
 Control (if-else, while loop, for loop)
 -----------------
 
-if-else example:
+If-else example:
 
 *start of example:*
 
@@ -267,7 +267,7 @@ for x in range(50):
 functions
 ---------------------
 
-basic function:
+Basic function:
 
 *def my_function():*
 
@@ -285,7 +285,7 @@ def add(x, y):
 This is actually called positional arguments, which are much similar to the arguments in c programming.
 
 
-with default value (in fact this is called a keyword):
+With default value (in fact this is called a keyword):
 
 def shout (phrase = 'Yipee!'):
 
@@ -293,7 +293,7 @@ def shout (phrase = 'Yipee!'):
 
 the last function can be used as *shout ()* or *shout("hello world")* or shout(phrase="hello hell"), which give "Yipee!" and "hello world" and "hello hell" as outputs respectively.
 
-for arbitrary arguments, the function can be defined as:
+For arbitrary arguments, the function can be defined as:
 
 def some_method(*args, **kwargs):
 	
@@ -319,13 +319,13 @@ name
 
 which means that single entities (positional arguments) are stored in "args" while key=value entities (keywords) are stored in "kwargs". args is a list while kwargs is a dictionary.
 
-also note that all non-keyword arguments must be in front of all keyword arguments.
+Also note that all non-keyword arguments must be in front of all keyword arguments.
 
 
-class
+Class
 -----------------
 
-example:
+Example:
 
 class User (object):
 
@@ -355,7 +355,7 @@ to use this class:
 Notice that this is very similar to the c++ class. but the variables (e.g. name) inside do not have to explicitly declared. interestingly, the attributes name and is_staff are public by default.
 
 
-class inheritance. example:
+Class inheritance. example:
 
 class SuperUser(User):
 
@@ -379,7 +379,7 @@ Special class methods start and end with "__". e.g. __init__, __doc__, __cmp__, 
 imports
 --------------------
 
-allow code isolatioin and re-use
+Allow code isolatioin and re-use
 
 add references to variables/classes/functions etc into the current namespace
 
@@ -401,7 +401,7 @@ e.g.2:
 
 Notice the differences? a method needs to start from its parent class or grandparent class in the "import" command.
 
-other examples of import:
+Other examples of import:
 
 *from my_module import date as my_date*
 
@@ -437,7 +437,7 @@ need more time to understand exceptions. (maybe i will create a separate topic s
 
 commandline arguments
 -----------------------------------
-reference: http://www.tutorialspoint.com/python/python_command_line_arguments.htm
+Reference: http://www.tutorialspoint.com/python/python_command_line_arguments.htm
 
 ```
 #!/usr/bin/python
@@ -445,7 +445,7 @@ reference: http://www.tutorialspoint.com/python/python_command_line_arguments.ht
 import sys
 
 print 'Number of arguments:', len(sys.argv), 'arguments.'
-print 'Argument List:', str(sys.argv)
+Print 'Argument List:', str(sys.argv)
 
 # for example:
 # "./commanlineArguments.py hello world" will give an output of:
@@ -457,7 +457,7 @@ to parse the command line arguments, use
 *getopt.getopt(args, options[, long_options])*  
 where args is the argument list, options is the string of option letters and long_options are a list of strings with the names of the long options.
 
-e.g. 
+E.g. 
 
 ```#!/usr/bin/python
 

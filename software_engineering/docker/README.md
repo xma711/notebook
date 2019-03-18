@@ -1,7 +1,7 @@
-commands
+Commands
 -------------------
 
-useful tutorial: https://www.docker.com/tryit/
+Useful tutorial: https://www.docker.com/tryit/
 
 check version: *docker version*
 
@@ -31,20 +31,20 @@ to check docker info in the machine: *docker info*
 
 container is like a box where a process runs inside it. the box contains everything the process might need, so it has the filesystem, system libraries, shell ans such. one starts a container by running a process in it.
 
-difference between a container id and image id: image is read-only template. its id should not change. container is like a box that a process has been running inside. so its id may change. isn't it?
+Difference between a container id and image id: image is read-only template. its id should not change. container is like a box that a process has been running inside. so its id may change. isn't it?
 
-start an image with a process, there will be a container. to save the container as a new image, then commit container_id image_name to save it. and the cycle goes on.
+Start an image with a process, there will be a container. to save the container as a new image, then commit container_id image_name to save it. and the cycle goes on.
 
-to run a docker interactively, then it is *docker run -t -i image_name bash*
+To run a docker interactively, then it is *docker run -t -i image_name bash*
 
 btw the option "--rm" allow the container to be deleted right after the temporary use
 
 *docker ps -q* gets the container ids only. useful when killing all containers.
 
 
-useful options
+Useful options
 --------------------------
-reference: https://docs.docker.com/reference/run/
+Reference: https://docs.docker.com/reference/run/
 
 --restart={always; on-failture; no}  
 	no: Do not automatically restart the container when it exits. This is the default.   
@@ -68,7 +68,7 @@ On a multi-core system, the shares of CPU time are distributed over all CPU core
 concepts
 ------------------------
 
-ref: http://blog.flux7.com/blogs/docker/docker-tutorial-series-part-1-an-introduction
+Ref: http://blog.flux7.com/blogs/docker/docker-tutorial-series-part-1-an-introduction
 
 docker daemon: service that sits on the host machine answering requests for services
 
@@ -83,9 +83,9 @@ docker container: responsible for actual running of applications and includes th
 docker index: a centrailized registry allowing backup of docker container images with public and private access permissions.
 
 
-namespaces: first level of isolation, making sure a process running in a container cannot see or affect processes running outside the container.
+Namespaces: first level of isolation, making sure a process running in a container cannot see or affect processes running outside the container.
 
-control groups: the key component of LXC, have resource accounting and limiting as their key functionality
+Control groups: the key component of LXC, have resource accounting and limiting as their key functionality
 
 unionFS (fileSystem): serves as a building blocks of containers. it creates layers, and thereby, accounts for docker's lightweight and fast features.
 
@@ -94,45 +94,45 @@ unionFS (fileSystem): serves as a building blocks of containers. it creates laye
 2 steps to run any application
 -------------------------------
 
-step 1: build an image
+Step 1: build an image
 
 an image holds all the information needed to bootstrap a container, including what processes to run and the configuration data. 
-every image starts from a base image, and a template is created by using the instructions that are stored in the dockerfile. 
-for each instruction, a new layer is created on the image.
+Every image starts from a base image, and a template is created by using the instructions that are stored in the dockerfile. 
+For each instruction, a new layer is created on the image.
 
-once images are created, they can be pushed to the central registry, the Docker Index. 
+Once images are created, they can be pushed to the central registry, the Docker Index. 
 
 
-step 2: run the container
+Step 2: run the container
 
 when a container sis launched, a read-write layer is added to the top of the image. 
-after appropriate network and ip address allocation, the desired application can now be run inside the container.
+After appropriate network and ip address allocation, the desired application can now be run inside the container.
 
-btw, to make sure the container keeps running, the app command have to be in a infinite loop, otherwise the container will exit immediately. 
+Btw, to make sure the container keeps running, the app command have to be in a infinite loop, otherwise the container will exit immediately. 
 
 
-regarding volume
+Regarding volume
 -----------------------------
 
-reference: http://crosbymichael.com/advanced-docker-volumes.html
+Reference: http://crosbymichael.com/advanced-docker-volumes.html
 
 a volume is a directory located outside of the root filesystem of your container.  
-this allows you to import the directory in other containers.  
-you can also use volumes to mount directories from your host machine inside a container.
+This allows you to import the directory in other containers.  
+You can also use volumes to mount directories from your host machine inside a container.
 
-e.g. *docker run -v /www ubuntu echo yo* : this command creates a folder in the host machine and mount it in /www inside the container  
+E.g. *docker run -v /www ubuntu echo yo* : this command creates a folder in the host machine and mount it in /www inside the container  
 you can use "*docker inspect container_id*" to see where the folder locates in the host machine.
 
-to create new volume mounted to your host machine:  
+To create new volume mounted to your host machine:  
 *docker run -v /host/logs:/container/logs ubuntu echo momma* (question: is it container mounts the directory from the hostmachine or the host machine mount the directory from the container?)
 
 
 
 
-docker on bbb (archlinux)
+Docker on bbb (archlinux)
 ---------------------------
 
-update system first:
+Update system first:
 
 *pacman -Syy*
 
@@ -142,7 +142,7 @@ then *pacman -S docker lxc*
 
 double check the system date is upto date. otherwise docker will complain the certificate has expired.
 
-to expose the serial port, can use:
+To expose the serial port, can use:
 
 *docker run  --privileged -v /dev/ttyO2:/dev/ttyO2 image_name execute_command*
 
@@ -152,10 +152,10 @@ to run it interactively, then it is *docker run -t -i --privileged -v /dev/ttyO2
 enable systemd for docker in bbb (archlinux)
 ---------------------------------
 
-reference: http://developerblog.redhat.com/2014/05/05/running-systemd-within-docker-container/
+Reference: http://developerblog.redhat.com/2014/05/05/running-systemd-within-docker-container/
 
 need to run in a privileged container.  
-need to add teh cgroup file system to the container using "–v /sys/fs/cgroup:/sys/fs/cgroup:ro"  
+Need to add teh cgroup file system to the container using "–v /sys/fs/cgroup:/sys/fs/cgroup:ro"  
 need to remove unit file links from the /lib/systemd/system/*wants/ and  /etc/systemd/system/*wants/ directories  
 
 a dockerfile sth like the follows will enable systemd:
@@ -188,16 +188,16 @@ Another way to test is to docker run the image first, and log in to the containe
 and then add the service file and start it.
 
 (cannot do it the other way, i.e. start the image with /bin/bash and then run "/usr/sbin/init". 
-otherwise there will be an error: "Trying to run as user instance, but the system has not been booted with systemd.")
+Otherwise there will be an error: "Trying to run as user instance, but the system has not been booted with systemd.")
 
 
-control in-built leds and gpio on bbb using docker
+Control in-built leds and gpio on bbb using docker
 -----------------------------
 
-replace the docker volume /sys/devices/ocp.3/gpio-leds.8/leds by the host volume. (not /sys/class/leds, inside which the folders are symbolic links to /sys/devices/ocp.3/gpio-leds.8/leds)
+Replace the docker volume /sys/devices/ocp.3/gpio-leds.8/leds by the host volume. (not /sys/class/leds, inside which the folders are symbolic links to /sys/devices/ocp.3/gpio-leds.8/leds)
 
 e.g.   
-docker run --rm -ti -v /sys/devices/ocp.3/gpio-leds.8/leds:/sys/devices/ocp.3/gpio-leds.8/leds image_name /bin/bash (no need privileged)
+Docker run --rm -ti -v /sys/devices/ocp.3/gpio-leds.8/leds:/sys/devices/ocp.3/gpio-leds.8/leds image_name /bin/bash (no need privileged)
 
 then one can control the leds as if it is in the host machine:  
 echo none > /sys/class/leds/beaglebone\:green\:usr0/trigger  
@@ -209,12 +209,12 @@ e.g. docker run --rm -ti -v /sys/devices/virtual/gpio:/sys/devices/virtual/gpio 
 
 to make things simpler but less safe, one can mount the whole /sys directory to the docker container then the container can control all leds and gpios. of course, this is not very safe.
 
-in fact, as long as the container is run with --privileged, then the whole /sys directory can be controlled by the docker container already.. this is super unsafe because a container can misbehave and destroy the host machine. and now the container is no longer unable to affact the host system..
+In fact, as long as the container is run with --privileged, then the whole /sys directory can be controlled by the docker container already.. this is super unsafe because a container can misbehave and destroy the host machine. and now the container is no longer unable to affact the host system..
 
 
-privileged mode
+Privileged mode
 ---------------------------
-reference: https://docs.docker.com/reference/run/
+Reference: https://docs.docker.com/reference/run/
 
 "By default, Docker containers are "unprivileged" and cannot, for example, run a Docker daemon inside a Docker container. 
 This is because by default a container is not allowed to access any devices, but a "privileged" container is given access to all devices."
@@ -225,7 +225,7 @@ set some configuration in AppArmor or SELinux to allow the container nearly all 
 "If you want to limit access to a specific device or devices you can use the --device flag. It allows you to specify one or more devices that will be accessible within the container."
  
 
-ssh among containers and real machines
+Ssh among containers and real machines
 ---------------------------------
 
 1. ssh to another computer: use the same cmd: ssh user@ip
@@ -236,12 +236,12 @@ ssh to the local computer: use the local computer's ip addr: ssh root@local_ip (
 2. ssh to docker container from another computer:
 
 from host computer, it is easy. just treat it as another computer.  
-ssh username@172.17.0.2 
+Ssh username@172.17.0.2 
 	- (username is the user in the container, not host machine)  
 	- (the ip address of the container can be contained by logging into the container and do a ifconfig)
 
 from another computer, the container has to be started with proper port mapping.  
-assume the ssh port is 22 for the container, then the container should be started sth like:  
+Assume the ssh port is 22 for the container, then the container should be started sth like:  
 docker run -p 2222:22 image_name  
 then the external computer can access the container by: ssh -p 2222 username@host_ip_addr
 
@@ -250,19 +250,19 @@ then the external computer can access the container by: ssh -p 2222 username@hos
 run both containers with port mapping (e.g. docker run -p 2222:22 image_name), then  
 ssh -p 2222 username@host_ip_addr  
 from one container to another.  
-host_ip_addr is the ip address of the host where a container runs.
+Host_ip_addr is the ip address of the host where a container runs.
 
-dockerfile
+Dockerfile
 ---------------------
 
 
-when building the dockerfile, i can add "-t repo_name" to indicate which repo the newly created image belong to.
+When building the dockerfile, i can add "-t repo_name" to indicate which repo the newly created image belong to.
 
-e.g. *sudo docker build -t xma711/ubuntu:extra_tag .*
+E.g. *sudo docker build -t xma711/ubuntu:extra_tag .*
 
 and then i can do a "sudo docker push xma711/ubuntu" to push the image to my repo.
 
-sometimes need to do a "sudo docker login" first
+Sometimes need to do a "sudo docker login" first
 
 ENTRYPOINT:  
 The ENTRYPOINT of an image is similar to a COMMAND because it specifies what executable to run when the container starts, 
@@ -276,27 +276,27 @@ a default fixed command (+ arguments) for the image.
 
 
 
-docker repo in docker hub
+Docker repo in docker hub
 ----------------------------
 
-like github, i can create a repo in docker hub.
+Like github, i can create a repo in docker hub.
 
-a repo will store a history of commits. 
+A repo will store a history of commits. 
 
 
 
-private docker hub
+Private docker hub
 ----------------------
 
-reference: https://registry.hub.docker.com/_/registry/
+Reference: https://registry.hub.docker.com/_/registry/
 
 simply docker pull the official registry and run it in the local computer.
 
-pull and run the registry: *docker run -p 5000:5000 registry*
+Pull and run the registry: *docker run -p 5000:5000 registry*
 
 to commit to the local registry, i need to re-tag an image and push it.
 
-for example, i have this archlinux_x86 in my computer. Then:
+For example, i have this archlinux_x86 in my computer. Then:
 
 *sudo docker tag archlinux_x86:latest localhost:5000/archlinux_x86*
 
@@ -304,7 +304,7 @@ for example, i have this archlinux_x86 in my computer. Then:
 
 from a remote machine, the image has to be tagged as ip_local_hub:port/image_name.
 
-e.g. *sudo docker tag archlinux_x86:latest 192.168.1.132:5000/archlinux_x86*
+E.g. *sudo docker tag archlinux_x86:latest 192.168.1.132:5000/archlinux_x86*
 
 before the image can be pushed to the local docker hub, one needs to stop the docker daemon and restart it with "--insecure-registry ip:port"
 
@@ -330,9 +330,9 @@ and then add a registry using the native ip address (cannot use 'localhost' beca
 change docker daemon options
 -----------------------------
 
-in ubuntu 14.04, docker is managed by upstart.
+In ubuntu 14.04, docker is managed by upstart.
 
-the configuration file is at /etc/default/docker;   
+The configuration file is at /etc/default/docker;   
 therefore docker options can be modified by this file, and then restart docker
 
 btw upstart seems to use the /etc/init/docker.conf to start the docker daemon,
@@ -341,33 +341,33 @@ which in turn use the options specified in /etc/default/docker
 to allow a computer to push/ pull images from a private registry, 
 add "-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock --insecure-registry <REGISTRY_HOSTNAME>:5000" to /etc/default/docker.
 
-in ubuntu 15.04 onward, docker is managed by systemd.  
-one direct way is to modify the systemd service file.  
-use "systemctl status docker" to find out where the service file is,
+In ubuntu 15.04 onward, docker is managed by systemd.  
+One direct way is to modify the systemd service file.  
+Use "systemctl status docker" to find out where the service file is,
 then simply add "-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock --insecure-registry <REGISTRY_HOSTNAME>:5000" to the starting line
 
 
 docker as a vm
 --------------------------
 
-just realize docker can be used as if it is a vm, when running it in the interactive mode.
+Just realize docker can be used as if it is a vm, when running it in the interactive mode.
 
-but need to remember to commit the changes after come out, otherwise all changes will be lost. or the container id has to be remembered.
+But need to remember to commit the changes after come out, otherwise all changes will be lost. or the container id has to be remembered.
 
-docker container may be able to limit the cpu usage by any programs, which can reduce energy consumption
+Docker container may be able to limit the cpu usage by any programs, which can reduce energy consumption
 
 docker tips
 ----------------------------
-have not had time to read:  
+Have not had time to read:  
 http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/
 
 
 shipyard
 ------------------------
-reference: https://shipyard-project.com/  
+Reference: https://shipyard-project.com/  
 "Built on the Docker cluster management toolkit Citadel, Shipyard gives you the ability to manage Docker resources including containers, hosts and more."
 
-to start the shipyard dashboard manually:  
+To start the shipyard dashboard manually:  
 docker run -it -d --name shipyard-rethinkdb-data --entrypoint /bin/bash shipyard/rethinkdb -l  
 docker run -it -P -d --name shipyard-rethinkdb --volumes-from shipyard-rethinkdb-data shipyard/rethinkdb  
 docker run -it -p 8080:8080 -d --name shipyard --link shipyard-rethinkdb:rethinkdb shipyard/shipyard  
@@ -384,10 +384,10 @@ DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"
 in computers using systemd, find out where the systemd file is and then add the options to the line.
 
 
-find out which interface belongs to which container
+Find out which interface belongs to which container
 -----------------------------------------------------------
 
-reference: https://stackoverflow.com/questions/37860936/find-out-which-network-interface-belongs-to-docker-container
+Reference: https://stackoverflow.com/questions/37860936/find-out-which-network-interface-belongs-to-docker-container
 
 commands:  
 docker exec -it my-container cat /sys/class/net/eth1/iflink  
@@ -397,15 +397,15 @@ ip ad | grep 123
 regarding docker network
 ---------------------------------------
 
-reference: https://stackoverflow.com/questions/35194761/how-to-let-different-docker-containers-talk-to-each-other-without-exposing-the-p/35196493#35196493
+Reference: https://stackoverflow.com/questions/35194761/how-to-let-different-docker-containers-talk-to-each-other-without-exposing-the-p/35196493#35196493
 
 by default docker daemon adds a network adapter docker0, usually uses 172.17.0.1.  
-all containers are by default connected to this network in incremental ip address.
+All containers are by default connected to this network in incremental ip address.
 
-however, we can always create a new network adaptor and connect a new container to the new network.
+However, we can always create a new network adaptor and connect a new container to the new network.
 
 
-the official reference: https://docs.docker.com/engine/userguide/networking/
+The official reference: https://docs.docker.com/engine/userguide/networking/
 
 to list the networks docker created: docker network ls
 
@@ -413,10 +413,10 @@ docker creates 3 networks by default, one bridge (i.e. docker0), one host and on
 
 if using the "none" network, the container will lack a network interface.
 
-the host network adds a container on the host's network stack. 
-there is no isolation between the host machine and the container. 
-in short, the container has the same ip address as the host machine. 
+The host network adds a container on the host's network stack. 
+There is no isolation between the host machine and the container. 
+In short, the container has the same ip address as the host machine. 
 
-to inspect a network, use: docker network inspect network_name (e.g. docker0)
+To inspect a network, use: docker network inspect network_name (e.g. docker0)
 
 to remove a self-defined network, use: docker network rm network_name (e.g. app_default)

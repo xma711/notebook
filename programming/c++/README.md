@@ -91,41 +91,41 @@ From book: Sams Teach Yourself C++ in One Hour a Day (7th Edition)
 - Exception handling: try{codes;} catch(specific _exception){codes;}catch?(...){codes;}; the 2nd catch is to catch any type of exception.
 
 
-more specific - hour 5 calling functions
+More specific - hour 5 calling functions
 ----------------------------
 
-modern compilers do  good job on their own of making c++ code execute quickly,
+Modern compilers do  good job on their own of making c++ code execute quickly,
 so there is often little to be gained from declaring a function inline.
 
-anyway, to make a function inline, just put an "inline" keyword in front of function prototype (in both .h and .cpp files).
+Anyway, to make a function inline, just put an "inline" keyword in front of function prototype (in both .h and .cpp files).
 
 
-more specific - hour 10 stack and heap
+More specific - hour 10 stack and heap
 ------------------------------
 
-after delete a pointer (i.e. free memory), set the pointer to NULL.
-this makes a 2nd delete of the same pointer harmless.  
-however, NULL actually is equivalent to 0 in c++. it is better to use "nullptr" which will not be converted to 0.  
+After delete a pointer (i.e. free memory), set the pointer to NULL.
+This makes a 2nd delete of the same pointer harmless.  
+However, NULL actually is equivalent to 0 in c++. it is better to use "nullptr" which will not be converted to 0.  
 To use nullptr, have to compile with flag" -std=c++11".
 
-when using new, remember to use delete to free the memory.
-otherwise there could be memory leak.
+When using new, remember to use delete to free the memory.
+Otherwise there could be memory leak.
 
-btw, memory leak happens when we allocate some memory from heap,
+Btw, memory leak happens when we allocate some memory from heap,
 but later we lose the pointer to this memory while the memory allocated is still there.
-then there is no way to free it until the program ends.
+Then there is no way to free it until the program ends.
 
 
-more specific - hour 11 advanced pointers
+More specific - hour 11 advanced pointers
 ----------------------------------
 
-const int *p1; // a pointer to a constant integer. 
+Const int *p1; // a pointer to a constant integer. 
 		// the value that is pointed to cannot be changed using THIS pointer.
 
-int* const p2; // a constant pointer to an integer.
+Int* const p2; // a constant pointer to an integer.
 		// this pointer cannot be reassigned.
 
-const int* const p3; // a constant pointer to a constant integer
+Const int* const p3; // a constant pointer to a constant integer
 
 
 more specific - hour 12 references
@@ -136,31 +136,31 @@ The syntax is something like: int &rSomeRef = intOne;
 
 note that it is different from &intOne, which is the address of intOne variable.
 
-after creation of rSomeRef, then &rSomeRef and &intOne are the same result -  the address of the original intOne.
+After creation of rSomeRef, then &rSomeRef and &intOne are the same result -  the address of the original intOne.
 
-when a method is defined as void swap (int &rx, int &ry),
+When a method is defined as void swap (int &rx, int &ry),
 it means it is expecting references to be passed in.
-operations on rx and ry in the swap function have real effects on the source x and y.
-but in swap() function, they treat rx and ry as variables instead of pointers.  
+Operations on rx and ry in the swap function have real effects on the source x and y.
+But in swap() function, they treat rx and ry as variables instead of pointers.  
 (if this is too confusing, then just use pointers..)
 
 
-const behind a method
+Const behind a method
 ---------------------------
 
-reference: http://stackoverflow.com/questions/9790927/what-does-const-behind-a-function-header-mean  
+Reference: http://stackoverflow.com/questions/9790927/what-does-const-behind-a-function-header-mean  
 and http://stackoverflow.com/questions/4059932/what-is-the-meaning-of-a-const-at-end-of-a-member-function
 
 it means that *this is a const inside that member function,
 i.e. it cannot alter the object.  
-if the member function is declared const, the type of this is "const CLASSNAME*" !
+If the member function is declared const, the type of this is "const CLASSNAME*" !
 
 
-to prevent copy and assignment (i.e. =) operation
+To prevent copy and assignment (i.e. =) operation
 -----------------------------------------------
 
-just place the copy constructor and operator= method in "private".  
-example (inside the BH1750 class):  
+Just place the copy constructor and operator= method in "private".  
+Example (inside the BH1750 class):  
 ```
     private:
         BH1750(const BH1750&);
@@ -183,7 +183,7 @@ DISALLOW_COPY_AND_ASSIGN(BH1750);
 class inheritance
 -------------------
 
-reference: http://stackoverflow.com/questions/860339/difference-between-private-public-and-protected-inheritance
+Reference: http://stackoverflow.com/questions/860339/difference-between-private-public-and-protected-inheritance
 
 There are three accessors that I'm aware of: public, protected and private.
 
@@ -203,7 +203,7 @@ Only the children (and their children) are aware that Base contains protectedMem
 No one but Base is aware of privateMember.  
 By "is aware of", I mean "acknowledge the existence of, and thus be able to access".
 
-next:
+Next:
 
 The same happens with public, private and protected inheritance. Let's consider a class Base and a class Child that inherits from Base.
 
@@ -212,7 +212,7 @@ If the inheritance is protected, only Child, and its children, are aware that th
 If the inheritance is private, no one other than Child is aware of the inheritance.
 
 '''
-class A 
+Class A 
 {
 public:
     int x;
@@ -247,16 +247,16 @@ class D : private A
 regarding volatile keyword
 -----------------------------
 
-reference: http://stackoverflow.com/questions/72552/why-does-volatile-exist
+Reference: http://stackoverflow.com/questions/72552/why-does-volatile-exist
 
 volatile is needed if you are reading from a spot in memory that 
 a completely separate/device process may write to.
 
-this is to prevent the compiler optimizes the codes regarding the volatile variable away.  
-this kinda forces the compiler to make sure everytime we need to read/write the value, it will do it;
+This is to prevent the compiler optimizes the codes regarding the volatile variable away.  
+This kinda forces the compiler to make sure everytime we need to read/write the value, it will do it;
 instead of assuming the value is not changed since last read/write.
 
-another explanation is that by declaring an object to be volatile, we are telling the compiler that
+Another explanation is that by declaring an object to be volatile, we are telling the compiler that
 the object might change state even though no statements in the program appear to change it. 
 (that's why the object is 'volatile'!)
 

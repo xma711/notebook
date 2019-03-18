@@ -15,14 +15,14 @@ PCI Express
 
 PCI Express is a serial bus designed to replace PCI and AGP and is avaiable in different formats: x1, x2, x4... x32. (whatever it means..)
 
-the data transmitted over PCI-Express is sent over wires called lanes in full duplex mode.  
-each lane is capable of around 250MBps and the specification can be scaled from 1 to 32 lanes.
+The data transmitted over PCI-Express is sent over wires called lanes in full duplex mode.  
+Each lane is capable of around 250MBps and the specification can be scaled from 1 to 32 lanes.
 
 PCI Expressed x1 is short in motherboard. while x16 is much longer.
 
-reference: http://www.computerhope.com/jargon/p/pciexpre.htm
+Reference: http://www.computerhope.com/jargon/p/pciexpre.htm
 
 
 tools/commands relating to pci
 --------------------------
-lspci: lspci - list all PCI devices
+Lspci: lspci - list all PCI devices

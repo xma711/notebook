@@ -1,7 +1,7 @@
 M/M/1
 -------------------------
 
-first M: Markovian property for arrivals of customers
+First M: Markovian property for arrivals of customers
 second M: Markovian for processing time in the server
 1: there is only one server.
 
@@ -17,19 +17,19 @@ The things we are interested in are, given the average arrival rate (lambda) and
 	- what is the ratio that the server is idle? (the value of pi0, the probability that the system is in state 0)
 
 for M/M/1 processing to be valid, it must be markovian. 
-for continuous time markov chain, it must be exponential. therefore, M is equivalent to exponential too.
+For continuous time markov chain, it must be exponential. therefore, M is equivalent to exponential too.
 
 Markovian
 ----------------------
 
-memoryless!
+Memoryless!
 
-whether it is discrete or continuous, the current state only depends on the previous state.  
-it is easier to understand the discrete state scenario.  
+Whether it is discrete or continuous, the current state only depends on the previous state.  
+It is easier to understand the discrete state scenario.  
 
-for the continuous case, it means that if i pick a time (tp) in the past with state i, the future state at t depends only on state i at tp and the duration (t-tp), not any time before tp.
-one example is the the number of buses that have arrived. 
-if i know that since 10am there are 20 buses, what is the number of buses one hour later? 
+For the continuous case, it means that if i pick a time (tp) in the past with state i, the future state at t depends only on state i at tp and the duration (t-tp), not any time before tp.
+One example is the the number of buses that have arrived. 
+If i know that since 10am there are 20 buses, what is the number of buses one hour later? 
 The expected number of buses arrive in one hour can be calculated from the poisson distribution, which doesn't need any information before 10am..  
 
 The inter-arrival intervals actually (have to) follow an exponential distribution.  
@@ -41,37 +41,37 @@ Limiting distribution (pi) of the system state exists when
 	- the expected time to return to a state is finite.
 
 
-solve for M/M/1
+Solve for M/M/1
 -------------------------
 
 Draw each state in a bubble. put the arrival rate (lambda) at the arrow pointing from a bubble to a buble at its right.  
-put the process rate (mu) at the arrow pointing from a bubble to one at its left.
+Put the process rate (mu) at the arrow pointing from a bubble to one at its left.
 
 At equilibrium (in the long term), the probability that each state can happen has a fixed value. represented by pi0, pi1, pi2 ...
 Equation 1: sum of pi0, pi1, pi2... = 1.
 
 Then, for each bubble, at equilibrium, the rate into the bubble = the rate go out of the bubble.  
-e.g. for bubble with state 0, pi0 * lambda = pi1 * mu;  
+E.g. for bubble with state 0, pi0 * lambda = pi1 * mu;  
 for bubble with state 1, pi0 * lambda + pi3 *mu = pi1 * mu + pi1 * lambda , which can be simplified to pi1 * lambda = pi2 * mu,  
 and so on.
 
-ultimately we have n equations (n = num of states) and then we can solve all pi. 
+Ultimately we have n equations (n = num of states) and then we can solve all pi. 
 
-note that pi0 is the ratio of time that the server is idle.
+Note that pi0 is the ratio of time that the server is idle.
 
 After getting all pi, the average number of customers in the system (both queue and server) can be obtained by sum of all (pi_i * state_i), by probability theory.
 
-with the average size of customers in the system (L) and average arrival rate, by little's law (L=lambda * W) we can have the average time (sojourn time) in the system:  
+With the average size of customers in the system (L) and average arrival rate, by little's law (L=lambda * W) we can have the average time (sojourn time) in the system:  
 W = L/lambda.
 
-to calcuate the average size of the queue (Q), the result = sum of all (pi_i * (state_i - 1)) for M/M/1. this is because if there are n customers, 1 must be in the server.  
-with Q, we can have to average delay D = Q/lambda by little's law.
+To calcuate the average size of the queue (Q), the result = sum of all (pi_i * (state_i - 1)) for M/M/1. this is because if there are n customers, 1 must be in the server.  
+With Q, we can have to average delay D = Q/lambda by little's law.
 
 The average number of customers in the server = L - Q.  
 The average time in the server = W - D = 1/mu (interesting result. need to double check).
 
 For a system that always has customers, the average time in the server = 1/mu without doubts. 
-what about the case that there can be 0 customers. the average time for all customers in the server is still 1/mu? seems this is the case. 
+What about the case that there can be 0 customers. the average time for all customers in the server is still 1/mu? seems this is the case. 
 
 
 M/G/1
@@ -80,17 +80,17 @@ G means the distribution of the processing time/rate in server is general. it ca
 
 M/G/1 is a superset of M/M/1.
 
-firstly, without proof, we have PASTA (Possion arrivals see time averages).
+Firstly, without proof, we have PASTA (Possion arrivals see time averages).
 	- it means if arrivals are poisson, then the proportion of time a queueing system spends in a given state pi_i is equal to the proportion pi_i' of the arrivals who observe the system in that state.
 	- in math, the equation is lim(t->inf) 1/t * INTEGRATE (0 to t) {f(X(s)) ds} = lim(n->inf) 1/n * SUM (0 to n) {f(X(tj-))}, where f is any real bounded function.
 
-to use PASTA, we need to sub in X(s) and f() with meaningful things. 
-e.g. X(s) = V(s), the workload in the system. f(y) = 1 {if y<=x}.
-then, lim(t->inf) 1/t * INTEGRATE(0 to t) {1{if V(s) <= x} ds} = lim(n->inf) 1/n * SUM(j=0 to n) {1 {if V(tj-) <= x}} and
+To use PASTA, we need to sub in X(s) and f() with meaningful things. 
+E.g. X(s) = V(s), the workload in the system. f(y) = 1 {if y<=x}.
+Then, lim(t->inf) 1/t * INTEGRATE(0 to t) {1{if V(s) <= x} ds} = lim(n->inf) 1/n * SUM(j=0 to n) {1 {if V(tj-) <= x}} and
 1 {if V(tj-) <= x} = P{D(tj-) <= x}. 
 This shows V and D have the same distribution.
 
-anyway, ultimately we have E[V] = E[D] for M/G/1. 
+Anyway, ultimately we have E[V] = E[D] for M/G/1. 
 
 For G/G/1 and FIFO, we have Brumelle's Formula, E[V] = lambda E[SD] + lambda/2 * E[s^2] = lambda E[S] E[D] + lambda/2 E[S^2] = p E[D] + p E[Rs] where p = lambda * E[S], E[Rs] = E[S^2]/(2E[S]) using RCL. 
 It means the average workload = average delay in the queue + average delay in the server. 
@@ -109,12 +109,12 @@ How about LIFO? E[V] = E[Vq + Vs] = E[Vq] + E[Vs] where
 	- Does E[V] = E[D]? should be the same. back to the PASTA equation.
 
 
-some intuition
+Some intuition
 ---------------------
 
-when there are multiple queues, each queue's arrival rate is relatively smaller. 
-this means the average idle intervals in each queue is longer, causing some servers to be idle.
+When there are multiple queues, each queue's arrival rate is relatively smaller. 
+This means the average idle intervals in each queue is longer, causing some servers to be idle.
 
-when the queues are combined, the arrvial rate is the combination of all arrival rates. 
-obviously the idle intervals in this single queue is much smaller.  
-all the servers then are able to serve the customers in the queue with less idle times.
+When the queues are combined, the arrvial rate is the combination of all arrival rates. 
+Obviously the idle intervals in this single queue is much smaller.  
+All the servers then are able to serve the customers in the queue with less idle times.

@@ -1,7 +1,7 @@
 MQTT
 ------------------------------
 
-reference: https://en.wikipedia.org/wiki/MQTT
+Reference: https://en.wikipedia.org/wiki/MQTT
 
 MQTT is a pub-sub-based messaging protocol.
 
@@ -17,7 +17,7 @@ Both pub and sub use topics to send or receive messages or files.
 MQTT-SN
 -------------
 
-reference: http://www.steves-internet-guide.com/mqtt-sn/
+Reference: http://www.steves-internet-guide.com/mqtt-sn/
 
 MQTT-SN uses UDP instead of TCP ofr its transport.
 

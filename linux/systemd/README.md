@@ -1,4 +1,4 @@
-systemd is the software to auto start programs in some linux system, like archlinux.
+Systemd is the software to auto start programs in some linux system, like archlinux.
 
 
 - commands:
@@ -12,7 +12,7 @@ systemctl status simple_example.service		# check the status
 time units
 ---------------
 
-time units: https://www.freedesktop.org/software/systemd/man/systemd.time.html#
+Time units: https://www.freedesktop.org/software/systemd/man/systemd.time.html#
 
 usec, us
 
@@ -52,7 +52,7 @@ journalctl --file=file_name -u unit_name
 examples
 --------------------
 
-a standalone service file in service/
+A standalone service file in service/
 
 a target file with its component service file in target/
 
@@ -62,10 +62,10 @@ a timer file with its service file in timer/
 timer
 --------------------------
 
-see http://www.freedesktop.org/software/systemd/man/systemd.time.html for more details
+See http://www.freedesktop.org/software/systemd/man/systemd.time.html for more details
 
 Note that the timer is not precise by default. it can happen within 1min!  
-to set it more precise, use AccuracySec =  
+To set it more precise, use AccuracySec =  
 
 see: https://www.freedesktop.org/software/systemd/man/systemd.timer.html
 

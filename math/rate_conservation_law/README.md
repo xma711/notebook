@@ -1,7 +1,7 @@
 Theory
 --------------------
 
-for Right Continuous Functions..
+For Right Continuous Functions..
 
 X' = lambda * J, where
 	- X' is the time average gradient of the function
@@ -10,25 +10,25 @@ X' = lambda * J, where
 
 Proof
 --------------------
-for a Cadlag function x(t), t>=0 : deterministic and right-continuous with left limits x(t-).
+For a Cadlag function x(t), t>=0 : deterministic and right-continuous with left limits x(t-).
 
 Integrate(from 0 to t) x'(s) ds = x(t) - x(0) + Sum(from n=1 to n=N(t)) Jn, where -Jn = x(tn+) - x(tn-).
 
-divided both sides by n and set n->inf, then left-hand side = X' and right hand side can be derived to lambda * J.
+Divided both sides by n and set n->inf, then left-hand side = X' and right hand side can be derived to lambda * J.
 
-note that x'(s) the gradient of the function at all places except the jumps. 
-left hand side = the area under the x'(s) without the jumps instances.
+Note that x'(s) the gradient of the function at all places except the jumps. 
+Left hand side = the area under the x'(s) without the jumps instances.
 
 Intuition
 ---------------------
 
-somethings instantly jumps to x1 at t1 then continuously decreases to some number (0 for e.g.), then x2 at t2, then x3 at t3... 
-then the average gradient = -1 * the sum of jumps / the total duration = (-1 * sum of jumps/ num of jumps) * (num of jumps / total duration) = J * lambda
+Somethings instantly jumps to x1 at t1 then continuously decreases to some number (0 for e.g.), then x2 at t2, then x3 at t3... 
+Then the average gradient = -1 * the sum of jumps / the total duration = (-1 * sum of jumps/ num of jumps) * (num of jumps / total duration) = J * lambda
 
 what is the probability that the waiting time R is larger than a, given the distribution of the inter-arrival time?
 -------------------------------------------------------------
 
-given F(T) (or f(T) or all P(T = an interval)) where T represents any Ti because they all have the same distribution, what is P{R>a}?
+Given F(T) (or f(T) or all P(T = an interval)) where T represents any Ti because they all have the same distribution, what is P{R>a}?
 
 1. given y = R(t), the remainig time for a bus to come as seen at t, y = R(t)'s graph will look like: R(t=ti) = Ti (ti are the times the bus arrives), betwen Ti and T_{i+1} it is a line with gradient -1, untill R(t=t_{i+1} - epsilon ) = 0 (epsilon is an extremely small number). of course, R(t=t_{i+1}) = T_{i+1}
 
@@ -50,17 +50,17 @@ given F(T) (or f(T) or all P(T = an interval)) where T represents any Ti because
 
 5. an example for T's distribution is expoential distribution (meaning Ti can be from 0 to inf, but the probability drops based on expoential function). in this case, we can show that P{R(t) > a} = P (T > a). to prove this, just expand the E[(T-a)+] with the integration INTEGRATE(0 to inf) {((x-a)+ * f(x)) dx} and then sub in f(x) and solve for a close form.  
 
-some notes
+Some notes
 ---------------------
 
-y = R(t) is one graph on the y-x plane. 
-y = R(t) - a is another different graph on the y-x plane.
+Y = R(t) is one graph on the y-x plane. 
+Y = R(t) - a is another different graph on the y-x plane.
 
-given y =  R(t), if we shift this graph down by a units, then we will have a new graph y = R(t) - a (or y2 = R(t) - a). 
+Given y =  R(t), if we shift this graph down by a units, then we will have a new graph y = R(t) - a (or y2 = R(t) - a). 
 
-it is not that R(t) becomes R(t) -a. they are two different lines, totally. just that their relationship is that if i take the R(t) line, and shift it down by a units (in the process, it is not R(t) any more), i will get the line for R(t) -a.
+It is not that R(t) becomes R(t) -a. they are two different lines, totally. just that their relationship is that if i take the R(t) line, and shift it down by a units (in the process, it is not R(t) any more), i will get the line for R(t) -a.
 
-when y2 > 0, it means R(t) - a > 0 ==> R(t) > a ==> y > a (the y values in graph 1 > a).
+When y2 > 0, it means R(t) - a > 0 ==> R(t) > a ==> y > a (the y values in graph 1 > a).
 
 Pls don't confuse y and y2, or R(t) and R(t) - a.
 

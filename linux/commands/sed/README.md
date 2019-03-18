@@ -1,9 +1,9 @@
-sed
+Sed
 ------------------
 
-sed (stream editor) is a Unix utility that parses and transforms text, using a simple, compact programming language. sed was developed from 1973 to 1974 by Lee E. McMahon of Bell Labs, and is available today for most operating systems.
+Sed (stream editor) is a Unix utility that parses and transforms text, using a simple, compact programming language. sed was developed from 1973 to 1974 by Lee E. McMahon of Bell Labs, and is available today for most operating systems.
 
-reference: en.wikipedia.org/wiki/Sed
+Reference: en.wikipedia.org/wiki/Sed
 
 - usage
 
@@ -33,7 +33,7 @@ sed -i.bak "s/^\(generic.node-id \).*/\1${node_id}/" file
 
 rename
 -------------------
-rename is similar, but it is used for renaming files:
+Rename is similar, but it is used for renaming files:
 
 rename 's/ACDC/AC-DC/' files  
 where 'AC-DC' will replace any 'ACDC' in the file names

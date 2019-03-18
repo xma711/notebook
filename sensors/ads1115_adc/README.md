@@ -1,26 +1,26 @@
-ads1115 (16 bit) / ads1015 (12 bit)
+Ads1115 (16 bit) / ads1015 (12 bit)
 ---------------------------
 
-this module has 4 channels. a0 -> channel 0, a1 -> channel 1 and so on.
+This module has 4 channels. a0 -> channel 0, a1 -> channel 1 and so on.
 
-just connect the analog output to a0/a1/a2/a3 and then treat the whole thing as one single sensor.
+Just connect the analog output to a0/a1/a2/a3 and then treat the whole thing as one single sensor.
 
-however, ads1115 can only samples 860 samples/second. for analog sensor like noise sensor, this sampling rate is too low for high frequency sound. 
+However, ads1115 can only samples 860 samples/second. for analog sensor like noise sensor, this sampling rate is too low for high frequency sound. 
 
-the module has configurable 4 i2c addresses.
-when addr pin is connected to ground, it is 0x48 (72), 
+The module has configurable 4 i2c addresses.
+When addr pin is connected to ground, it is 0x48 (72), 
 vdd --> 0x49, 
 SDA --> 0x4A, 
 SCL --> 0x4B.
 
 
 Note: NEVER connect a input more than the maximum voltage allowed in to the ads1115!!! Otherwise all readings will be affected!!
-e.g. when PGA=1, the maximum allowed voltage is 4.096!
+E.g. when PGA=1, the maximum allowed voltage is 4.096!
 
-how to calculate the output voltage
+How to calculate the output voltage
 -----------------------
 
-ref: https://forums.adafruit.com/viewtopic.php?f=19&t=37355
+Ref: https://forums.adafruit.com/viewtopic.php?f=19&t=37355
 
 excerpt:
 ```
@@ -53,7 +53,7 @@ Questions:
 from data sheet
 ----------------------
 
-write to config register:
+Write to config register:
 
 First byte: 0b10010000 (first 7-bit I 2 C address
 followed by a low read/write bit)

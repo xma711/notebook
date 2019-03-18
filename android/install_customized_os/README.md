@@ -1,9 +1,9 @@
-steps
+Steps
 ---------------
 
-using Nexus S as an example.
+Using Nexus S as an example.
 
-reference: http://wiki.cyanogenmod.org/w/Install_CM_for_crespo
+Reference: http://wiki.cyanogenmod.org/w/Install_CM_for_crespo
 
 1. unlock bootloader:   
 	- adb reboot bootloader  

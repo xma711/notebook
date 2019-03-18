@@ -1,7 +1,7 @@
-explain arduino bootloader
+Explain arduino bootloader
 ----------------------------
 
-reference: https://www.arduino.cc/en/hacking/programmer
+Reference: https://www.arduino.cc/en/hacking/programmer
 
 "If you have an external programmer (e.g. an AVR-ISP, STK500, or parallel programmer), 
 you can burn sketches to the Arduino board without using the bootloader. 
@@ -18,7 +18,7 @@ Sketch->Upload Using a Programmer
 This means this programmer is a hardware device that allows a computer to burn skedule to the arduino using the full flash.  
 Also, the programmer is needed when we try to upload a bootloader to the arduino.
 
-as explained by reference https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all,
+As explained by reference https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all,
 "The bootloader is basically a .hex file that runs when you turn on the board. 
 It is very similar to the BIOS that runs on your PC. 
 It does two things. 
@@ -34,9 +34,9 @@ the Arduino continuously loops through the program and does so as long as the bo
 
 
 
-install bootloader to an arduino
+Install bootloader to an arduino
 ------------------------
 
-reference: https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all
+Reference: https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all
 
 the programmer actually uses SPI interface to upload the file to the flash at a particular location.

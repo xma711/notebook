@@ -1,7 +1,7 @@
-iptables
+Iptables
 --------------------
 
-general reference: https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules  
+General reference: https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules  
 most frequently used iptables rules: http://www.thegeekstuff.com/2011/06/iptables-rules-examples  
 
 list current rules in iptables: iptables -L
@@ -23,7 +23,7 @@ to restore rules: sudo iptables-restore < /tmp/iptables.txt
 in fact, to modify the orderings of the rules, just save them to a file,
 and then modify the file directly, 
 and then restore the rules from the file.  
-reference: http://unix.stackexchange.com/questions/146349/move-iptables-rule-w-o-removing-and-adding
+Reference: http://unix.stackexchange.com/questions/146349/move-iptables-rule-w-o-removing-and-adding
 
 to enable ssh only:  
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT  

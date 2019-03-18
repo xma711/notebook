@@ -1,19 +1,19 @@
 Basics
 ------------
 
-reference: http://tutorial.djangogirls.org/en/html/README.html
+Reference: http://tutorial.djangogirls.org/en/html/README.html
 
 a template is a file that we can re-use to present different information in a consistent format.  
 
-a django template's format is described in a language called HTML. 
+A django template's format is described in a language called HTML. 
 
-html is a code that is interpreted by a web browser to display a webpage for the user.
+Html is a code that is interpreted by a web browser to display a webpage for the user.
 
-html stands for HyperText Markup Language.  
+Html stands for HyperText Markup Language.  
 HyperText means it is a type of text that supports hyperlinks between pages.  
 Markup means we have taken a document and marked it up with code to tell a browser how to interpret the page.  
 
-html code is built with tags, each one starting with \< and ending with \>. these tags represent markup elements.
+Html code is built with tags, each one starting with \< and ending with \>. these tags represent markup elements.
 
 
 All HTML documents must start with a type declaration: <!DOCTYPE html>.
@@ -22,18 +22,18 @@ The HTML document itself begins with <html> and ends with </html>.
 
 The visible part of the HTML document is between <body> and </body>.
 
-usually, one thing in html starts with <tagname> and ends with </tagname>.  
-the first <tagname> can have some extra attributes, e.g. <a href="google.com">this is a link to google</a>.
+Usually, one thing in html starts with <tagname> and ends with </tagname>.  
+The first <tagname> can have some extra attributes, e.g. <a href="google.com">this is a link to google</a>.
 
-there seems to some exceptions though, like image:  
+There seems to some exceptions though, like image:  
 <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">  
 , which has only <img attributes> and no </img>
 
 <br> the line break is another example. however, it seems that adding a </br> is no problem too.
 
-example 1
+Example 1
 --------------
-reference: http://tutorial.djangogirls.org/en/html/README.html
+Reference: http://tutorial.djangogirls.org/en/html/README.html
 
 ```
 <html>
@@ -62,11 +62,11 @@ As you can see, the whole content of the website goes between the beginning tag 
 ```
 head is an element that contains information about the document that is not displayed on the screen.
 
-body is an element that contains everything else that is displayed as part of the web page.
+Body is an element that contains everything else that is displayed as part of the web page.
 
 Notice how the browser has understood that "Ola's blog" is the title of your page? It has interpreted <title>Ola's blog</title> and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).
 
-each opening tag is matched by a closing tag, with a /,   
+Each opening tag is matched by a closing tag, with a /,   
 and that elements are nested (i.e. you can't close a particular tag until all the ones that were inside it have been closed too).
 
 It's like putting things into boxes.   

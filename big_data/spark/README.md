@@ -1,7 +1,7 @@
-general
+General
 --------------------
 
-quick setup for tutorial: use docker image from https://hub.docker.com/r/mesosphere/spark/  
+Quick setup for tutorial: use docker image from https://hub.docker.com/r/mesosphere/spark/  
 then simply docker run -ti mesosphere/spark /bin/bash  
 in the container, cd /opt/spark/dist  
 
@@ -11,7 +11,7 @@ then follow this tutorial to learn spark: https://spark.apache.org/docs/latest/q
 spark related
 -------------------------
 
-activate spark shell using scala: ./bin/spark-shell (in spark/dist directory)
+Activate spark shell using scala: ./bin/spark-shell (in spark/dist directory)
 
 Scala APIs for 'dataset': https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.Dataset
 
@@ -23,7 +23,7 @@ python APIs: https://spark.apache.org/docs/latest/api/python/index.html#pyspark.
 master and slave
 ------------------------
 
-to start a master: (in dir /opt/spark/dist/sbin) ./start-master.sh
+To start a master: (in dir /opt/spark/dist/sbin) ./start-master.sh
 
 to access the master: (assumed port 8080 of the container is mapped to the same port in host ) http://localhost:8080/
 
@@ -38,7 +38,7 @@ to stop master: ./stop-master.sh
 control client and cluter mode
 ------------------------------------
 
-when using spark-submit to run an application, we can choose the deploy mode:
+When using spark-submit to run an application, we can choose the deploy mode:
 ```
   --deploy-mode DEPLOY_MODE   Whether to launch the driver program locally ("client") or
                               on one of the worker machines inside the cluster ("cluster")
@@ -47,29 +47,29 @@ when using spark-submit to run an application, we can choose the deploy mode:
 
 for client mode, it means it simply runs the program 'directly' and locally.
 
-for cluster mode, it should goes thru the cluster manager (which itself has multpile choices) and ultimately runs on worker(s).
+For cluster mode, it should goes thru the cluster manager (which itself has multpile choices) and ultimately runs on worker(s).
 
 
-use YARN (Hadoop)
+Use YARN (Hadoop)
 -------------------------
 
-reference: https://linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
+Reference: https://linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
 
 set up the hadoop cluster as normal.
-then somehow link the hadoop cluster with the spark (follow the tutorial)
+Then somehow link the hadoop cluster with the spark (follow the tutorial)
 
 btw even in this case, there are client and cluster modes.
 
-scala
+Scala
 ----------------------
 
-to quick scala: enter ':q'
+To quick scala: enter ':q'
 
 
 some thinking
 ------------------------
 
-without setting up anything, is the path that spark sees in the host machine?
+Without setting up anything, is the path that spark sees in the host machine?
 	- seems so.
 
 

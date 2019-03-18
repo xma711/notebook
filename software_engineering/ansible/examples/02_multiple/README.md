@@ -1,24 +1,24 @@
-objective and setup
+Objective and setup
 ---------------------
 
-objective: try ad hoc commands.
+Objective: try ad hoc commands.
 
-setup: use the script to create 3 containers
+Setup: use the script to create 3 containers
 
 
 command lines
 -----------------
 
-ansible multi -i hosts -a "hostname"
+Ansible multi -i hosts -a "hostname"
 
 -a means module arguments; seems that it allows shell commands..
 (then why it is called module arguments?)
 
-there is another option "-f", which means the number of parallel forks.
-e.g. -f 1 means only 1 process. 
-by default it is some number > 1.
+There is another option "-f", which means the number of parallel forks.
+E.g. -f 1 means only 1 process. 
+By default it is some number > 1.
 
-others:  
+Others:  
 ansible multi -i hosts -a "df -h"  
 ansible multi -i hosts -a "free -m"  
 ansible multi -i hosts -a "date"
@@ -39,9 +39,9 @@ ansible multi -i hosts -a "service ntpd start" -u root
 
 example: django and mysql
 ----------------------------------
-web app:  
+Web app:  
 #ansible app -i hosts -m apt -a "name=mysql-server state=present" -u root  # maybe this line is not needed..
-ansible app -i hosts -m apt -a "name=python-setuptools state=present" -u root  
+Ansible app -i hosts -m apt -a "name=python-setuptools state=present" -u root  
 ansible app -i hosts -m apt -a "name=libmysqlclient-dev state=present" -u root # for solving the "mysql_config: not found" problem when installing mysql-python 
 ansible app -i hosts -m apt -a "name=gcc state=present" -u root # this line and next are needed for easy_install mysql-python  
 ansible app -i hosts -m apt -a "name=python-dev state=present" -u root  
@@ -54,7 +54,7 @@ ansible db -i hosts -m apt -a "name=mariadb-server state=present" -u root
 #ansible db -i hosts -m service -a "name=mariadb state=started enabled=yes" -u root  
 ansible db -i hosts -m service -a "name=mysql state=started enabled=yes" -u root  
 (there is some iptable stuff at this point, to only accept web servers to contact the database. skip for now.)  
-ansible db -i hosts -m apt -a "name=python-dev state=present" -u root
+Ansible db -i hosts -m apt -a "name=python-dev state=present" -u root
 ansible db -i hosts -m apt -a "name=gcc state=present" -u root
 ansible db -i hosts -m apt -a "name=libmysqlclient-dev state=present" -u root
 ansible db -i hosts -m apt -a "name=python-setuptools state=present" -u root  
@@ -68,7 +68,7 @@ ansible db -i hosts -m mysql_user -a "name=django host=% password=somepassword p
 thinking
 -------------------------
 
-in fact, an alternative way to create a dockerfile for the ubuntu image is 
+In fact, an alternative way to create a dockerfile for the ubuntu image is 
 to create a playbook for the ubuntu image; 
 so that i can set the container to the right state.  
-however, this method is time-consuming in the sense that each container has to go through this setup process.
+However, this method is time-consuming in the sense that each container has to go through this setup process.

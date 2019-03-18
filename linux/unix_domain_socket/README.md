@@ -1,11 +1,11 @@
-unix domain sockets
+Unix domain sockets
 ----------------------
 
-reference: http://pymotw.com/2/socket/uds.html (using python)
+Reference: http://pymotw.com/2/socket/uds.html (using python)
 
 similar to TCP/IP socket, but using a path on the filesystem as the address rather than servername and port.
 
-the node created in the filesystem to represent the socket persists after the socket is closed, and needs to be removed each time the server starts up.
+The node created in the filesystem to represent the socket persists after the socket is closed, and needs to be removed each time the server starts up.
 
 ```
 import socket
@@ -25,7 +25,7 @@ sock.listen(1)
 concepts
 ------------------
 
-reference: http://man7.org/linux/man-pages/man7/unix.7.html (using c)
+Reference: http://man7.org/linux/man-pages/man7/unix.7.html (using c)
 
 ```
        #include <sys/socket.h>
@@ -37,9 +37,9 @@ reference: http://man7.org/linux/man-pages/man7/unix.7.html (using c)
 (where the socket is not opened yet. need to specify the address and open the connection.)
 
 
-the AF_UNIX socket family is used to communicate between processes on the same machine efficiently.
+The AF_UNIX socket family is used to communicate between processes on the same machine efficiently.
 
-the valid socket types in the unix domain are:  
+The valid socket types in the unix domain are:  
 SOCK\_STREAM (stream oriented),  
 SOCK\_DGRAM (datagram-oriented, preserve message boundaries, no reordering datagrams), and  
 SOCK_SEQPACKET (connection-oriented socket, preserver message boundaries, delivers messages in order)

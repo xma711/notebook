@@ -1,7 +1,7 @@
-install archlinux from gentoo
+Install archlinux from gentoo
 --------------------------------
 
-install archlinux from gentoo (an existing linux) following the guide in:
+Install archlinux from gentoo (an existing linux) following the guide in:
 https://wiki.archlinux.org/index.php/Install_from_Existing_Linux
 
 the steps are roughly:
@@ -28,12 +28,12 @@ the steps are roughly:
 pacman
 -----------
 
-to see pacman manual: man pacman
+To see pacman manual: man pacman
 
 pacman has operations and options. operations are just like options with capitals, like -S means sync, -R means remove etc. 
-options are used to affect operations, so the same option can mean different things with different operations.
+Options are used to affect operations, so the same option can mean different things with different operations.
 
-to refresh the package list: *pacman -Syy* (-S: synchronize; -Sy: refresh)
+To refresh the package list: *pacman -Syy* (-S: synchronize; -Sy: refresh)
 
 to update the whole system: *pacman -Syu* (-Su: sysupgrade)
 
@@ -66,33 +66,33 @@ pacman -Su                             # perform upgrade
 network issue
 ------------------
 
-eth0 disappears after upgrade. using ifconfig eth0 up shows "libphy: PHY 4a101000.mdio:01 not found".
+Eth0 disappears after upgrade. using ifconfig eth0 up shows "libphy: PHY 4a101000.mdio:01 not found".
 
-one temporary solution: systemctrl restart dhcpcd (it will still show the problem, but then eth0 will appear.)
+One temporary solution: systemctrl restart dhcpcd (it will still show the problem, but then eth0 will appear.)
 
 
 Downgrade a package
 ----------------------------
 
-objective: download the linux-headers-am33x-legacy-3.8.13-31-armv7h.pkg.tar.xz when the current repo holds only the latest packages
+Objective: download the linux-headers-am33x-legacy-3.8.13-31-armv7h.pkg.tar.xz when the current repo holds only the latest packages
 
 if i do a pacman -Ss header | grep 3.8 , i cannot find the linux-headers-am33x-legacy header package i want.
 
-the easiest way is to get a arch arm rollack machine and download the package. one candidate is http://rollback.adminempire.com/alarm-rollback-machine/ but it appears to be down.
+The easiest way is to get a arch arm rollack machine and download the package. one candidate is http://rollback.adminempire.com/alarm-rollback-machine/ but it appears to be down.
 
-https://wiki.archlinux.org/index.php/Arch_Linux_Archive tells me that there is this agetpkg program (that can be installed by pacman) and it can be used to look for old package, but i cannot find any.  
-the mirror link suggested looks like for x86 and i686 only (Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch) (in fact, the ARM mentiioned stands for archlinux rollback machine, not for arm7)
+Https://wiki.archlinux.org/index.php/Arch_Linux_Archive tells me that there is this agetpkg program (that can be installed by pacman) and it can be used to look for old package, but i cannot find any.  
+The mirror link suggested looks like for x86 and i686 only (Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch) (in fact, the ARM mentiioned stands for archlinux rollback machine, not for arm7)
 
 one more way is to use the downgrade script, downloadable from https://aur.archlinux.org/packages/downgrade/ . it seems to use http://repo-arm.archlinuxcn.org/ by default, but is arm doesn't mean arm7 but Arch Rollback Machine... damn!
 
 Another way is to rebuild the pakage based on https://wiki.archlinux.org/index.php/Downgrading_packages. but i need to find the right source to build.
 
-one active rollback machine for arm can be found at http://tardis.tiny-vps.com/aarm/repos/ but it started from 2015 Dec only.
+One active rollback machine for arm can be found at http://tardis.tiny-vps.com/aarm/repos/ but it started from 2015 Dec only.
 
  
-change console font size
+Change console font size
 ---------------------------
-reference: https://wiki.archlinux.org/index.php/Fonts  (section: Console fonts)
+Reference: https://wiki.archlinux.org/index.php/Fonts  (section: Console fonts)
 
 previewing: from terminal, setfont lat2-16 -m 8859-2 (It means that second part of ISO/IEC 8859 characters are used with size 16)  
 (all the availabe fonts can be found at /usr/share/kbd/consolefonts/)   
@@ -105,15 +105,15 @@ FONT=lat2-16
 FONT_MAP=8859-2 (don't add this line, coz the tab, ctrl etc wont work..)
 
 
-change console rotation
+Change console rotation
 ------------------------------
 
-echo 1 > /sys/class/graphics/fbcon/rotate for a rotation of 90% (or echo 2/3 for 180 and 270)
+Echo 1 > /sys/class/graphics/fbcon/rotate for a rotation of 90% (or echo 2/3 for 180 and 270)
 
 
 wake up screen at console
 -------------------------
-possible solution: echo 0 > /sys/class/graphics/fb0/blank  
+Possible solution: echo 0 > /sys/class/graphics/fb0/blank  
 reference: https://groups.google.com/forum/#!topic/beagleboard/MdOBsXNXzEI
 
 other ways: http://superuser.com/questions/152347/change-linux-console-screen-blanking-behavior  

@@ -1,14 +1,14 @@
-how to use two interfaces
+How to use two interfaces
 --------------------------------
 
-reference: http://unix.stackexchange.com/questions/16057/use-ssh-with-a-specific-network-interface
+Reference: http://unix.stackexchange.com/questions/16057/use-ssh-with-a-specific-network-interface
 
 "It's not the ssh client that decides through which interface TCP packets should go, it's the kernel. 
 In short, SSH asks the kernel to open a connection to a certain IP address, and the kernel decides which interface is to be used by consulting the routing tables."
 
 "You can display the kernel routing tables with the commands route -n and/or ip route show."
 
-example:
+Example:
 
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface

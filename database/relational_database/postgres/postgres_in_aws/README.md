@@ -1,13 +1,13 @@
-create a postgres instance in aws
+Create a postgres instance in aws
 ---------------------------------------
 
-just go to aws RDS page and then choose postgres.  
-link: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstance:id=postgres-aws-test
+Just go to aws RDS page and then choose postgres.  
+Link: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstance:id=postgres-aws-test
 
 after a few minutes, the endpoint (domain name) and port will appear.
 
-the security group will be automatically created based on my current ip address.  
-e.g. i access aws from nus, my public ip address is 137.132.190.150, and then the security group will be:  
+The security group will be automatically created based on my current ip address.  
+E.g. i access aws from nus, my public ip address is 137.132.190.150, and then the security group will be:  
 ```
 Security group		Type		Rule
 rds-launch-wizard	CIDR/IP		137.132.190.150/32
@@ -16,7 +16,7 @@ rds-launch-wizard	CIDR/IP		137.132.190.150/32
 connect to the instance from local ubuntu
 ----------------------------------------------
 
-reference: https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/
+Reference: https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/
 
 use tool sql workbench (not mysql-workbence):  
 http://www.sql-workbench.net/getting-started.html
@@ -31,5 +31,5 @@ url is jdbc:postgresql://postgres-aws-test.cvbfx5rmnyq6.us-east-1.rds.amazonaws.
 issues
 ----------------
 
-fail to connect with an error msg:  
+Fail to connect with an error msg:  
 "onnection to postgres-aws-test.cvbfx5rmnyq6.us-east-1.rds.amazonaws.com:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections."

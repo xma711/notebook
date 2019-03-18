@@ -1,11 +1,11 @@
-laravel
+Laravel
 -------------
 
-a web framework for php.
+A web framework for php.
 
-relatively new but quite popular.
+Relatively new but quite popular.
 
 
-install
+Install
 -----------------------
-ref: http://tecadmin.net/install-laravel-framework-on-ubuntu/
+Ref: http://tecadmin.net/install-laravel-framework-on-ubuntu/

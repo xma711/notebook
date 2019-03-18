@@ -1,7 +1,7 @@
 Wheel
 --------------
 
-reference: https://en.wikipedia.org/wiki/Wheel_(computing)
+Reference: https://en.wikipedia.org/wiki/Wheel_(computing)
 
 It "refers to a user account with a wheel bit,
 a system setting that provides additional system privileges that empower a user to execute restricted commands

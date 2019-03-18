@@ -1,13 +1,13 @@
-shell script
+Shell script
 -------------------------
 
-refer to the example for how to write a function, how to check if a file or directory is there, etc
+Refer to the example for how to write a function, how to check if a file or directory is there, etc
 
 
 arithmetic in shell script
 -----------------------------
 
-a=`expr "$a" + "$num"` or a=`expr $a + $num`
+A=`expr "$a" + "$num"` or a=`expr $a + $num`
 
 where  
 a is the variable, 
@@ -22,10 +22,10 @@ The operations available:
 	- for strings: find regular expression, find a set of characters in a string; in some versions: find substring, length of string
 	- for either: comparison (equal, not equal, less than, etc.)
 
-backticks `` notation is older than $() so backticks are more portable in unix machine.  
-but $() is easier to read.
+Backticks `` notation is older than $() so backticks are more portable in unix machine.  
+But $() is easier to read.
 
-reference: https://en.wikipedia.org/wiki/Expr
+Reference: https://en.wikipedia.org/wiki/Expr
 
 other ways of doing arithmetic (less portable):
 	- a=$(($a+$num))

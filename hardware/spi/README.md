@@ -1,4 +1,4 @@
-spi
+Spi
 --------------
 The Serial Peripheral Interface (SPI) bus is a synchronous serial communication interface specification used for short distance communication, primarily in embedded systems.
 
@@ -19,10 +19,10 @@ Meaning:
     - SS or CS: Slave Select (active low, output from master).
 
 
-spi on beaglebone
+Spi on beaglebone
 ----------------------
 
-reference: http://www.mathworks.com/help/supportpkg/beagleboneio/ug/use-the-beaglebone-black-spi-interface-to-connect-to-a-device.html
+Reference: http://www.mathworks.com/help/supportpkg/beagleboneio/ug/use-the-beaglebone-black-spi-interface-to-connect-to-a-device.html
 
     P9_22 (SPI0_SCLK => SCLK) outputs a serial clock signal to synchronize communications.
 
@@ -48,7 +48,7 @@ however, it can be configured to be the other way: http://elinux.org/BeagleBone_
 
 enable spi
 ---------------------
-reference: http://hipstercircuits.com/enable-spi-with-device-tree-on-beaglebone-black-copy-paste/ (there is a python module to use spi)  
+Reference: http://hipstercircuits.com/enable-spi-with-device-tree-on-beaglebone-black-copy-paste/ (there is a python module to use spi)  
 reference: http://elinux.org/BeagleBone_Black_Enable_SPIDEV
 
 enable spi1 at pin p9_28,29,30,31:  
@@ -58,7 +58,7 @@ echo BB-SPIDEV1 > /sys/devices/bone_capemgr.*/slots
 how to use spi
 -------------------
 
-in python2, there is spi; in python3, there is spidev. (pip install spi or spidev)
+In python2, there is spi; in python3, there is spidev. (pip install spi or spidev)
 
 reference: https://learn.adafruit.com/setting-up-io-python-library-on-beaglebone-black/spi
 
@@ -81,8 +81,8 @@ and some explanation on these codes: http://raspberrypi-aa.github.io/session3/sp
 exmaple on github
 ----------------------
 
-https://github.com/roice/gdm3d-uav
+Https://github.com/roice/gdm3d-uav
 
 seems that this one can be used to run the ads1256 in bbb.
 
-there are other github repos that use ads1256. just search it in codes.
+There are other github repos that use ads1256. just search it in codes.

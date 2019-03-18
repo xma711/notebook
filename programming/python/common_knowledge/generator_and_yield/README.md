@@ -1,4 +1,4 @@
-about
+About
 --------------
 
-an example on generator and yield.
+An example on generator and yield.

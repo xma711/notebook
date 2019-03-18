@@ -1,27 +1,27 @@
-bluetooth protocol stack
+Bluetooth protocol stack
 ------------------------------------
 
-reference: https://stackoverflow.com/questions/1046669/bluetooth-protocol
+Reference: https://stackoverflow.com/questions/1046669/bluetooth-protocol
 
 the bluetooth protocol stack includes its own transport protocols: L2CAP and RFCOMM,
 where RFCOMM links use the L2CAP layer.
 
-it is possible to use IP tunneling over Bluetooth encapsulating UDP packets over RFCOMM links.
+It is possible to use IP tunneling over Bluetooth encapsulating UDP packets over RFCOMM links.
 
 
-bluez
+Bluez
 ------------------
 
-bluez is the bluetooth stack for linux kernel OS. 
+Bluez is the bluetooth stack for linux kernel OS. 
 
-for archlinux:  
+For archlinux:  
 pacman -S bluez  
 pacman -S bluez-utils
 
 use bluez thru hciconfig and hcitool
 ---------------------------
 
-check bluetooth hci id:
+Check bluetooth hci id:
 	- hciconfig (should see hci0)
 
 turn associated bluetooth up/down:
@@ -29,7 +29,7 @@ turn associated bluetooth up/down:
 
 hcitool comes from the bluez-utils package.
 
-discover nearby bluetooth devices:
+Discover nearby bluetooth devices:
 	- hcitool scan
 which give results sth like
 ```
@@ -41,7 +41,7 @@ The software always uses the MAC address to reference a given device.
 
 (l2ping sends a L2CAP echo request to the Bluetooth MAC address bd_addr given in dotted hex notation.)
 
-ping a device:
+Ping a device:
 	- l2ping C4:62:EA:A9:26:E6 (it works. sometimes failed though)
 
 reference: http://www.stlinux.com/kernel/bluetooth/how-to-run-BlueZ
@@ -49,7 +49,7 @@ reference: http://www.stlinux.com/kernel/bluetooth/how-to-run-BlueZ
 
 use bluetooth via python
 ---------------------------
-install header files:
+Install header files:
 sudo apt-get install libbluetooth-dev
 
 install package:
@@ -62,9 +62,9 @@ reference: http://stackoverflow.com/questions/7485750/sending-messages-or-datas-
 issues and solutions
 ---------------
 
-if phone cannot transfer files to ubuntu, need to enable it at "personal file sharing" interface.
+If phone cannot transfer files to ubuntu, need to enable it at "personal file sharing" interface.
 
-reference: http://askubuntu.com/questions/131570/how-do-you-make-ubuntu-accept-files-sent-over-bluetooth
+Reference: http://askubuntu.com/questions/131570/how-do-you-make-ubuntu-accept-files-sent-over-bluetooth
 
 
 

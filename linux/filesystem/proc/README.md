@@ -1,12 +1,12 @@
 /proc/
 -----------------
 
-reference: http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html
+Reference: http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html
 
 the directory /proc/ stores the virtual files that 'store' the information of the system and processes.
 
-e.g. each folder named by a number is a process.  
-cd into the process_id, we can see all the info related to this process.  
+E.g. each folder named by a number is a process.  
+Cd into the process_id, we can see all the info related to this process.  
 	- exe: the symbolic link to the binary  
 	- cmdline: the command line that starts this process  
 	- stack: the stack ..  

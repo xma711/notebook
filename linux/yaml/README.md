@@ -1,8 +1,8 @@
-notes
+Notes
 ------------------
 
-tabs are not allowed, use spaces only.
+Tabs are not allowed, use spaces only.
 
-must indent the properties and lists with 1 or more spaces.
+Must indent the properties and lists with 1 or more spaces.
 
 

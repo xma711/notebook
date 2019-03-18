@@ -1,7 +1,7 @@
 Desktop or laptop
 -------------
 
-install debian from another linux system: https://www.debian.org/releases/stable/amd64/apds03.html.en
+Install debian from another linux system: https://www.debian.org/releases/stable/amd64/apds03.html.en
 
 
 if ethernet not working, can try
@@ -50,43 +50,43 @@ Desktop - gnome desktop : install it based on: https://wiki.debian.org/Gnome
 install debian for bbb
 -------------------------------
 
-http://elinux.org/BeagleBoardDebian
+Http://elinux.org/BeagleBoardDebian
 
 i downloaded https://rcn-ee.com/rootfs/2015-12-11/microsd/bone-debian-8.2-console-armhf-2015-12-11-2gb.img.xz 
 (kernel: Linux arm 4.1.13-ti-r36 #1 SMP PREEMPT Fri Dec 11 00:44:56 UTC 2015 armv7l GNU/Linux),  
 and installed it to a sd card using dd (sudo dd if=./bone-debian-8.2-console-armhf-2015-12-11-2gb.img of=/dev/sdX). 
 
-the MT7601U wifi dongle works automatically, but lcd is all white and no display. in addition, the uart1 is not working due to conflict with lcd (apparently).
+The MT7601U wifi dongle works automatically, but lcd is all white and no display. in addition, the uart1 is not working due to conflict with lcd (apparently).
 
-as a result, this debian image is not useful for me.
+As a result, this debian image is not useful for me.
 
 
-install debian-7.5 instead
+Install debian-7.5 instead
 -------------------------------
 
-the kernel is probably v3.8
+The kernel is probably v3.8
 
 
 kernel v4.1x
 ----------------
 
-btw, kernel v4.1x is another version (besides v3.8x) that supports device tree.   
-the way of using device tree is similar. reference: http://voidnoise.co.uk/blog/?p=734  
+Btw, kernel v4.1x is another version (besides v3.8x) that supports device tree.   
+The way of using device tree is similar. reference: http://voidnoise.co.uk/blog/?p=734  
 to see the loaded capes: cat /sys/devices/platform/bone_capemgr/slots  
 to load a cape: sudo sh -c "echo 'BB-UART4' > /sys/devices/platform/bone_capemgr/slots"
 
 Beaglebone black
 ------------------------------
 
-issues encountered:
+Issues encountered:
 
 1. problem with "insserv: Starting led_aging.sh depends on rmnologin and therefore on system facility `$all' which can not be true!"
-when running apt-get upgrade  
+When running apt-get upgrade  
 solution:  http://unix.stackexchange.com/questions/198805/update-rc-d-doesnt-accept-the-header-of-a-script-file  
 in fact, it is just to change the #!/bin/sh to #!/bin/sh -e
 
 2. locale problem.  
-solution: http://superuser.com/questions/885170/locales-broken-on-beaglebone-black-running-debian
+Solution: http://superuser.com/questions/885170/locales-broken-on-beaglebone-black-running-debian
 
 3.  GPG error
 solution: refer to http://elinux.org/Beagleboard:BeagleBoneBlack_Debian and search for GPG error

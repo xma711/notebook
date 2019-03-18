@@ -1,16 +1,16 @@
-objective
+Objective
 ------------------
 
-this folder is more about programming languages.
+This folder is more about programming languages.
 
-for software engineering skills are are indepedent of programming languages,
+For software engineering skills are are indepedent of programming languages,
 go to ../software_engineering/
 
 
 important things people should know about programming
 ------------------------
 
-ref: https://www.quora.com/What-are-the-three-most-important-things-non-programmers-should-know-about-programming
+Ref: https://www.quora.com/What-are-the-three-most-important-things-non-programmers-should-know-about-programming
 
 excerpts:
 ```
@@ -46,23 +46,23 @@ good to read some about best coding practices: https://en.wikipedia.org/wiki/Bes
 debug
 -------------
 
-internal debug -- use lots of asserts to debug most functions.  
-it is like an internal unit test, but less time-consuming.
+Internal debug -- use lots of asserts to debug most functions.  
+It is like an internal unit test, but less time-consuming.
 
 
-logs
+Logs
 --------------------
 
-how to do a good log for debugging?
+How to do a good log for debugging?
 
 
-over the network integration test
+Over the network integration test
 ----------------------------
 
-don't know how to get this done.
+Don't know how to get this done.
 
 
-documentation
+Documentation
 -------------------------
 
-sometimes too lazy to do documentation..
+Sometimes too lazy to do documentation..

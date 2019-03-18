@@ -1,4 +1,4 @@
-how to use R studio in docker: https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image
+How to use R studio in docker: https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image
 
 summary:
 

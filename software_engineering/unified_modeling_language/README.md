@@ -16,7 +16,7 @@ A UML tool can also generate codes based on the diagrams..
 UML tools
 -----------------
 
-in ubuntu, one is Umbrello.  
-simply 'sudo apt-get install umbrello' to install it.
+In ubuntu, one is Umbrello.  
+Simply 'sudo apt-get install umbrello' to install it.
 
-tutorial for umbrello: https://docs.kde.org/stable4/en/kdesdk/umbrello/umbrello.pdf
+Tutorial for umbrello: https://docs.kde.org/stable4/en/kdesdk/umbrello/umbrello.pdf

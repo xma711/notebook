@@ -1,23 +1,23 @@
-tutorial
+Tutorial
 --------------------------
 
-reference: https://www.tensorflow.org/tutorials/recurrent
+Reference: https://www.tensorflow.org/tutorials/recurrent
 
 the model: 
 	consists of an LSTM cell that processes one word at a time 
 	and compute the probabilities of the possible values for the next word in the sentence.
 
-will process data in mini-batches of size_batch_size.
+Will process data in mini-batches of size_batch_size.
 
-every word in a batch should correspond to a time t. (!!)  
-tensorflow will automatically sum the gradients of each batch for you. (???)
+Every word in a batch should correspond to a time t. (!!)  
+Tensorflow will automatically sum the gradients of each batch for you. (???)
 
 (it seems that the concept of batch here is not the same as that in stochastic gradient descent??)
 
 
-example.
+Example.
 
-sentence1 = "the quick brown fox is quick"  
+Sentence1 = "the quick brown fox is quick"  
 sentence2 = "the red fox jumped high"
 
 ```
@@ -32,8 +32,8 @@ words_in_dataset[3] = [is, jumped]
 words_in_dataset[4] = [quick, high]  
 
 num_batches = 4 (???)  
-batch_size = 2 (???)  
-time_steps = 5
+Batch_size = 2 (???)  
+Time_steps = 5
 ```
 
 question: why each batch does not consists of sequential words????
@@ -65,15 +65,15 @@ for current_batch_of_words in words_in_dataset:
 ```
 
 by design, the output of a recurrent neural network (RNN) depends on arbitrarily distant inputs.  
-unfortunately, this makes backpropagation computation difficult.  
-in order to make the learning process tractable, 
+Unfortunately, this makes backpropagation computation difficult.  
+In order to make the learning process tractable, 
 it is common to create an "unrolled" version of the network,
 which contains a fixed number (num_steps) of LSTM inputs and outputs.  
-the model is then trained on this finite approximation of the RNN.  
-this can be implemented by feeding inputs of length num_steps at a time
+The model is then trained on this finite approximation of the RNN.  
+This can be implemented by feeding inputs of length num_steps at a time
 and perform a backward pass after each such input block.
 
-simplified block of code for creating a graph which performs truncated backpropagation:  
+Simplified block of code for creating a graph which performs truncated backpropagation:  
 ```
 words = tf.placeholder(tf.int32, [batch_size, num_steps])
 
@@ -89,14 +89,14 @@ for i in range(num_steps):
 	# the rest of the code.
 	# ...
 
-final_state = state
+Final_state = state
 
 ```
 
 to implement an iteration over the whole dataset:  
 ```
 # a numpy array holding the state of LSTM after each batch of words.
-numpy_state = initial_state.eval()
+Numpy_state = initial_state.eval()
 total_loss = 0.0
 for current_batch_of_words in words_in_dataset:
 	numpy_state, current_loss = session.run([final_state, loss],
@@ -108,7 +108,7 @@ for current_batch_of_words in words_in_dataset:
 #### inputs
 
 the word IDs will be embedded into a dense representation before feeding to the LSTM. 
-this allows the model to efficiently represent the knowledge about particular words.  
+This allows the model to efficiently represent the knowledge about particular words.  
 ```
 # embedding_matrix is a tensor of shape [vocabulary_size, embedding_size]
 word_embeddings = tf.nn.embedding_lookup(embedding_matrix, word_ids)
@@ -125,7 +125,7 @@ loss = -1/N SUM( ln(p_target_i) )
 
 the output of the first layer will become the input of the second and so on.
 
-we have a class called MultiRNNCell that makes the implementation seamless.
+We have a class called MultiRNNCell that makes the implementation seamless.
 
 ```
 def lstm_cell():
@@ -144,5 +144,5 @@ for i in range(num_steps):
 	# the rest of the codes
 	# ...
 
-final_state = state
+Final_state = state
 ```

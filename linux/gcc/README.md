@@ -1,4 +1,4 @@
-options
+Options
 --------------
 
 -l (small L): to add shared libraries. e.g.  LDFLAGS=-lmosquitto

@@ -16,11 +16,11 @@ It is used in two scenarios:
 
 There are various methods for different learning algorithm.
 
-e.g. for least square, there is an online learning method called recursive least squares.
+E.g. for least square, there is an online learning method called recursive least squares.
 
-stochastic gradikent descent seems a natural online learning method,
+Stochastic gradikent descent seems a natural online learning method,
 because it can be performed multiple stochastic gradient passes over the data.  
-intuitively, the process can be continued at different times, while the latest model is always more updated than the last.  
+Intuitively, the process can be continued at different times, while the latest model is always more updated than the last.  
 (Should the new data points be used directly as a mini batch or merged with the main training data set first before doing random sampling again?)
 
 There is also this online convex optimization.

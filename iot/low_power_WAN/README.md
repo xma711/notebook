@@ -1,7 +1,7 @@
 Low-power wide-area network (LPWAN)
 -------------------------------
 
-reference: https://en.wikipedia.org/wiki/LPWAN
+Reference: https://en.wikipedia.org/wiki/LPWAN
 
 it is also called Low-Power Network (LPN).
 
@@ -9,7 +9,7 @@ LPWAN is a type of wireless telecommunication network designed to allow
 long range communications at a low bit rate among things, 
 such as sensors operated on a battery.
 
-examples:  
+Examples:  
 	- LoRaWAN (the physical layer is LoRa),   
 	- Sigfox,   
 	- Random phase multiple access (RPMA),  

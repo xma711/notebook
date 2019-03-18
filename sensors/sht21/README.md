@@ -1,6 +1,6 @@
-sht21
+Sht21
 ---------------
 
-temperature and humidity sensor.
+Temperature and humidity sensor.
 
-python implementation: https://github.com/jaques/sht21_python/blob/master/sht21.py
+Python implementation: https://github.com/jaques/sht21_python/blob/master/sht21.py

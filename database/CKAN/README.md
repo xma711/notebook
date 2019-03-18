@@ -1,7 +1,7 @@
 CKAN
 --------------
 
-reference: https://en.wikipedia.org/wiki/CKAN
+Reference: https://en.wikipedia.org/wiki/CKAN
 
 CKAN stands for the Comprehensive Knowledge Archive Network.
 

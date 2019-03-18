@@ -1,12 +1,12 @@
-groupby
+Groupby
 -------------
 
-reference: https://pandas.pydata.org/pandas-docs/stable/groupby.html
+Reference: https://pandas.pydata.org/pandas-docs/stable/groupby.html
 
 using "groupby" usually involves one or more of the these steps: 
 splitting, applying a function and combining the results.
 
-e.g.  
+E.g.  
 ```
 >>> b = np.array( [ [1,2,3], [4,5,6], [1, 3, 3], [4,2,2] ] )
 >>> bp = pd.DataFrame(b)
@@ -21,6 +21,6 @@ b1
 ```
 
 the above examples shows based on column 'b1', the rows when b1==1 are grouped together and mean is computed.
-and similar for the rows when b1 == 4.
+And similar for the rows when b1 == 4.
 
-groupby.py provides a better example.
+Groupby.py provides a better example.

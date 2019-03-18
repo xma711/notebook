@@ -1,33 +1,33 @@
-run a program
+Run a program
 --------------------
-nodejs program_name
+Nodejs program_name
 
 or just run nodejs in a terminal, and it will be an interactive shell like python
 
 tutorial
 ---------------
-http://www.tutorialspoint.com/nodejs/nodejs_first_application.htm
+Http://www.tutorialspoint.com/nodejs/nodejs_first_application.htm
 
 
 patterns
 -----------------------
 
-because node.js is async programming, one obvious pattern of a program is that every task is async.
-then i can just anyhow arrange these tasks and let them run. 
-the mindset is very different from writting procedural programming.
+Because node.js is async programming, one obvious pattern of a program is that every task is async.
+Then i can just anyhow arrange these tasks and let them run. 
+The mindset is very different from writting procedural programming.
 
-another pattern is that if certain task can be executed after some other tasks, 
+Another pattern is that if certain task can be executed after some other tasks, 
 then i can use async module to arrange them in certain order.
-but this order exists within the async function only and other tasks outside are still running asynchronously with this async function.
+But this order exists within the async function only and other tasks outside are still running asynchronously with this async function.
 
-if every task is strictly sequential, then async.series() can handle this;
+If every task is strictly sequential, then async.series() can handle this;
 but i don't know whether node.js is the best choice of programming language in this case.
 
 
-install new package
+Install new package
 -----------------------
 
-npm install module_name (the module will be installed in the current directory)
+Npm install module_name (the module will be installed in the current directory)
 
 to list all the locally installed module: npm ls
 
@@ -37,9 +37,9 @@ to list globally installed module: npm ls -g
 
 too see the details of a package, i can use node_modules/module_name/package.json.
 
-to uninstall a module: npm uninstall module_name.
+To uninstall a module: npm uninstall module_name.
 
-to update a module: npm update module_name
+To update a module: npm update module_name
 
 to search a module: npm search module_name
 
@@ -47,35 +47,35 @@ to search a module: npm search module_name
 create a module
 --------------------
 
-one can create a module and publish to a public repo so everyone can download it
+One can create a module and publish to a public repo so everyone can download it
 
 refer to my_own_codes/: greeting_export.js and greeting_import.js
 
 events 
 --------------------
 
-this is very fundamental. 
-many complicated modules are built on top of events and they are events!
+This is very fundamental. 
+Many complicated modules are built on top of events and they are events!
 
-similar to qualnet events. but each event name can be binded to multiple listeners (functions)
+Similar to qualnet events. but each event name can be binded to multiple listeners (functions)
 
 when an EventEmitter instance faces any error, it emits an error event.
-when new listener (just a function) is added, newListener event is fired and
+When new listener (just a function) is added, newListener event is fired and
 when a listener is removed, removeListener event is fired.
 
-refer to all the APIs at http://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm
+Refer to all the APIs at http://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm
 
 see examples: my_own_codes/2events.js, my_own_codes/listen_to_event.js
 
 
 functions
 ----------------
-see examples: in my_own_codes/: async_functions_while_loop.js  callback_function.js  function.js  seq_functions_while_loop.js  simplefunction.js
+See examples: in my_own_codes/: async_functions_while_loop.js  callback_function.js  function.js  seq_functions_while_loop.js  simplefunction.js
 
 anyway, function can be c-like; 
 or i can set a variable equals to this function header, and then the variable behaves like the function.
 
-no references are passed into a function; 
+No references are passed into a function; 
 unless the argument's content is already a reference (like var x = {value:1}, then x is already a reference)
 
 other notes:

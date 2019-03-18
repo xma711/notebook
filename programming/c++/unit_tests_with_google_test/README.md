@@ -1,18 +1,18 @@
 Examples
 -----------------------
 
-refer to helloworld for the simplest example.
+Refer to helloworld for the simplest example.
 
-for an example that use a mock, refer to the mock_external_dependency example.
+For an example that use a mock, refer to the mock_external_dependency example.
 
-to use the examples, simply clone https://github.com/google/googletest.git to this folder.  
-then go to the respective example folder and do a make.
+To use the examples, simply clone https://github.com/google/googletest.git to this folder.  
+Then go to the respective example folder and do a make.
 
 
 References of google mock (part of google test)
 ------------------------
 
-basic tutorial: https://github.com/google/googletest/blob/master/googlemock/docs/ForDummies.md
+Basic tutorial: https://github.com/google/googletest/blob/master/googlemock/docs/ForDummies.md
 
 for installation: https://github.com/google/googlemock/tree/master/googlemock
 

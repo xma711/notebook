@@ -1,17 +1,17 @@
-diary
+Diary
 ________
 
 after install gentoo following the guide in https://wiki.gentoo.org/wiki/Handbook:AMD64, i installed ubuntu by the installation disk. the ubuntu installation rewrote the /dev/sda1 the bootloader i think and then gentoo disappear. 
 
 
-i use gentoo livecd and chroot to the installed gentoo, and restore its grub. but ubuntu is gone.
+I use gentoo livecd and chroot to the installed gentoo, and restore its grub. but ubuntu is gone.
 
 
-the solution is to add an entry for ubuntu in the /etc/grub.d/40_custom in gentoo and update the grub.cfg by 
+The solution is to add an entry for ubuntu in the /etc/grub.d/40_custom in gentoo and update the grub.cfg by 
 
 "grub2-mkconfig -o /boot/grub/grub.cfg". 
 
-the entry in 40_custom is something like:
+The entry in 40_custom is something like:
 
 menuentry "ubuntu" {
     set root='hd0,10'
@@ -33,9 +33,9 @@ menuentry "archlinux" {
 }
 
 note that i need to create the symbolic link of vmlinuz and initrd.img to the files in /boot in the sda6 partition.
-also note that in "linux /vmlinuz root=/dev/sda6 rw quiet splash" it is rw not ro. if using ro, archlinux will complain the root is read only.
+Also note that in "linux /vmlinuz root=/dev/sda6 rw quiet splash" it is rw not ro. if using ro, archlinux will complain the root is read only.
 
-reference: https://wiki.archlinux.org/index.php/fstab
+Reference: https://wiki.archlinux.org/index.php/fstab
 
 ----------------------------------
 
@@ -58,7 +58,7 @@ Recap what i did to dual boot gentoo, arch, and ubuntu.
 5. whichever way, i can log in to gentoo again, and then install archlinux to sda6 following https://wiki.archlinux.org/index.php/Install_from_Existing_Linux. then i can add archlinux to either gentoo's grub or ubuntu's grub, depending on which will be used as default.
 
 
-in summary, i have to install the kernel (/boot) and filesystem in a new partition and then i just add the new os to one of the grub in the default system. however, only one grub in one os will be used.
+In summary, i have to install the kernel (/boot) and filesystem in a new partition and then i just add the new os to one of the grub in the default system. however, only one grub in one os will be used.
 
 Reference:
 http://ubuntuforums.org/showthread.php?t=1739833 

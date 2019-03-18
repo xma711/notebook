@@ -1,15 +1,15 @@
-sftp
+Sftp
 ------------------------------
 
-sftp comes with the ssh server.
+Sftp comes with the ssh server.
 
-nothing needs to do to enable it.
+Nothing needs to do to enable it.
 
-from a client:  
+From a client:  
 sftp user@ip_address  
 then the client can browse the "user" home directory in the server.
 
-to get a file, cd to the right directory and  
+To get a file, cd to the right directory and  
 get filename  
 (this gets the file from remote server to the local computer in the directory where the sftp session is started)
 
@@ -23,7 +23,7 @@ reference: https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-s
 ftp
 -------------------------------
 
-the steps to use ftp:
+The steps to use ftp:
 	- ftp server_ip
 	- enter username
 	- enter password

@@ -1,4 +1,4 @@
-to shift multiple lines:  
+To shift multiple lines:  
 	- press 'v' and then highlight multiple lines  
 	- press '>' to indent (tab) the lines
 	- or 'u' to undo if shifted too far

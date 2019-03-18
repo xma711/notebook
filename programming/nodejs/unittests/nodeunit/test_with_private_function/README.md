@@ -1,4 +1,4 @@
-seems that there is no way to do that...
+Seems that there is no way to do that...
 
-try to do this but failed.  
-refer to the failed/ folder.
+Try to do this but failed.  
+Refer to the failed/ folder.

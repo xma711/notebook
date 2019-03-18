@@ -1,12 +1,12 @@
-gnuplot
+Gnuplot
 ------------------
 
-to plot time data, see the plot_time_data.gnuplot.
+To plot time data, see the plot_time_data.gnuplot.
 
-otherwise, see the simple_plot.gnuplot as an example.
+Otherwise, see the simple_plot.gnuplot as an example.
 
 
 Alternative
 ----------------
 
-or i can use python matplotlib for plotting.
+Or i can use python matplotlib for plotting.

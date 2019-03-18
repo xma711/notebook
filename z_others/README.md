@@ -1,3 +1,3 @@
-other fields of knowledge.
+Other fields of knowledge.
 
-if contents are enough for a field, it will be moved to home folder.
+If contents are enough for a field, it will be moved to home folder.

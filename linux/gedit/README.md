@@ -1,6 +1,6 @@
-surprisingly, gedit has something i don't know but useful.
+Surprisingly, gedit has something i don't know but useful.
 
-get the terminal work: http://mylinuxbook.com/embedded-terminal-a-gedit-plugin/
+Get the terminal work: http://mylinuxbook.com/embedded-terminal-a-gedit-plugin/
 
 sudo apt-get install gedit-plugins
 

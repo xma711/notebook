@@ -95,7 +95,7 @@ OR *git clone git@github.com:.....git* (if you added your ssh key of your comput
 After you clone the repository, you have a local copy of the remote repository. You can do anything to your local repo. As long as you don't push it to the remote repo, any local changes won't affect the remote repo.
 
 
-branch
+Branch
 -----------------------
 
 When you are working on a repo, it is good to create your own branch and work on it first. 
@@ -145,7 +145,7 @@ the "-m" allows you to add a logging message so that you know what this commit i
 Note that we normally don't commit any binary files or images or videos to a git server. These files are usually big and do not often subject to changes. Adding them to the a git server repo will slow down the "git pull" (obtaining the latest changes) by everyone else and make the repo untidy. Therefore, please check your changes carefully before you do a "git commit".
 
 One tip: if you edit an existing file that has been committed before, you can skip the "git add" by using "git commit -am", where "a" means 'all'.  
-e.g. *git commit -am "edit hello world file"*
+E.g. *git commit -am "edit hello world file"*
 
 Note that each commit is a snapshot of the repo at a particular time. you can check the past commits by:  
 *git log*

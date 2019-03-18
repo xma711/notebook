@@ -1,7 +1,7 @@
 Random experiment
 -----------------------------
 
-reference: cs5229 advanced computer networks module
+Reference: cs5229 advanced computer networks module
 
 consider a random experiment whose outcome cannot be determined in advance.
 
@@ -15,11 +15,11 @@ probability function P(E): the probability that event E happens
 Random Variable
 ----------------------------
 
-a random variable X is a mapping *function* X:S -> R that assigns a real value to each outcome s (belongs to S).
+A random variable X is a mapping *function* X:S -> R that assigns a real value to each outcome s (belongs to S).
 
-there is nothing random in a random variable, because it is a deterministic function. what is random is the events.
+There is nothing random in a random variable, because it is a deterministic function. what is random is the events.
 
-let A be a set in R (real numbers), P{X = A} = P( the events that result in outcome A, or X_Inverse(A) )
+Let A be a set in R (real numbers), P{X = A} = P( the events that result in outcome A, or X_Inverse(A) )
 
 
 Distribution
@@ -38,48 +38,48 @@ In a continuous random variable, P(X = x) = d(F(x)) = d(F(x))/dx * dx = f(x) * d
 Kurtosis
 ------------------------
 
-reference: https://en.wikipedia.org/wiki/Kurtosis
+Reference: https://en.wikipedia.org/wiki/Kurtosis
 
 kurtosis is a measure of the "tailedness" of the probability distribution of a real-valued random variable.
-it is a descriptor of the shape of a probability distribution.
+It is a descriptor of the shape of a probability distribution.
 
-the standard measure of kurtosis (there could be other ways of calculation) is based on a scaled version of the 4th moment of the data or population.
-the number is related to the tails of the distribution, not its peak;
+The standard measure of kurtosis (there could be other ways of calculation) is based on a scaled version of the 4th moment of the data or population.
+The number is related to the tails of the distribution, not its peak;
 higher kurtosis is the result of infrequent extreme deviations (outliers), as opposed to frequent modestly sized deviations.
 
-the kurtosis of any univariate normal distribution is 3.
-it is common to compare the kurtosis of a distribution to this value.
+The kurtosis of any univariate normal distribution is 3.
+It is common to compare the kurtosis of a distribution to this value.
 
-distributions with kurtosis less than 3 are said to be platykurtic.
-it means the distribution produces fewer and less extreme outliers than does the normal distribution.
+Distributions with kurtosis less than 3 are said to be platykurtic.
+It means the distribution produces fewer and less extreme outliers than does the normal distribution.
 
-distributions with kurtosis greater than 3 are said to be leptokurtic.
-such a distribution produces more outliers than the normal distribution.
+Distributions with kurtosis greater than 3 are said to be leptokurtic.
+Such a distribution produces more outliers than the normal distribution.
 
-it is common practice to use an adjusted version of pearson's kurtosis, the excess kurtosis, which is the kurtosis minus 3.
+It is common practice to use an adjusted version of pearson's kurtosis, the excess kurtosis, which is the kurtosis minus 3.
 
 
-skewness
+Skewness
 ----------------
 
-reference: https://en.wikipedia.org/wiki/Skewness
+Reference: https://en.wikipedia.org/wiki/Skewness
 
 skewness is a meansure of the asymmetry of the probability distribution of a real
 -valued random variable about its mean.
-the skewness value can be positive or negative or undefined.
+The skewness value can be positive or negative or undefined.
 
-skew does not refer to the direction the curve appears to be leaning;
+Skew does not refer to the direction the curve appears to be leaning;
 in fact, the opposite is true.
 
-for unimodal distribtuion, negative skew indicates that the tail on the left side of the probability density function is longer or fatter than the right side - it does not distinguish these 2 kinds of shape.  
-positive skew indicates that the tail on the right side is longer or fatter than the left side.
+For unimodal distribtuion, negative skew indicates that the tail on the left side of the probability density function is longer or fatter than the right side - it does not distinguish these 2 kinds of shape.  
+Positive skew indicates that the tail on the right side is longer or fatter than the left side.
 
-btw in the reference there are graphs to show the skewness - easier to be understood.
+Btw in the reference there are graphs to show the skewness - easier to be understood.
 
 Moments
 -----------------
 
-the expectation or mean or the 1st moment of a random variable X:  
+The expectation or mean or the 1st moment of a random variable X:  
 	E[X] = Integrate(+inf to -inf) xf(x) dx or E[X] = Sum(+inf to -inf) xP(X=x)
 
 the 2nd moment of a r.v. X:  
@@ -98,7 +98,7 @@ Bayes' Rule: P(Ei|Ej) = P(Ej|Ei) * P(Ei) / P(Ej)
 The same rules will hold for random variable. change () to {} using the format in this readme.
 
 
-independence
+Independence
 --------------------------
 P(Ei Intersect Ej) = P(Ei) * P(Ej) or P(Ei|Ej) = P(Ei)
 
@@ -106,13 +106,13 @@ P(Ei Intersect Ej) = P(Ei) * P(Ej) or P(Ei|Ej) = P(Ei)
 pearson correlation
 -------------------------
 
-pearso correlation is a measure of the linear correlation between 2 variables x and y.
-it has a value between +1 and -1, 
+Pearso correlation is a measure of the linear correlation between 2 variables x and y.
+It has a value between +1 and -1, 
 where 1 is total positive linear correlation,
 0 is no linear correlation
 and -1 is total negative linear correlation.
 
-it can be used to check if 2 features are highly linearly correlated (either positively or negatively).
-if yes, using only one of the features is enough.
+It can be used to check if 2 features are highly linearly correlated (either positively or negatively).
+If yes, using only one of the features is enough.
 
-p(x,y), the pearson correlation of vector x and vector y = cov(x, y) / (sd(x) * sd(y))
+P(x,y), the pearson correlation of vector x and vector y = cov(x, y) / (sd(x) * sd(y))

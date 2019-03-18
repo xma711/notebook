@@ -1,7 +1,7 @@
-python to elf
+Python to elf
 -------------------
 
-reference: https://mborgerson.com/creating-an-executable-from-a-python-script
+Reference: https://mborgerson.com/creating-an-executable-from-a-python-script
 
 
 installation: sudo pip install pyinstaller

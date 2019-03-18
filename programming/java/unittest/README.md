@@ -1,19 +1,19 @@
-unit testing in Java
+Unit testing in Java
 -----------------------------
-can use JUnit.
+Can use JUnit.
 
-check the content between tip 48 and 49 in book "the pragmatic programmer".
+Check the content between tip 48 and 49 in book "the pragmatic programmer".
 
 
-install junit package
+Install junit package
 -----------------------------------------
-follow this link: http://www.tutorialspoint.com/junit/junit_environment_setup.htm
+Follow this link: http://www.tutorialspoint.com/junit/junit_environment_setup.htm
 
 please pay attention to the junit*.jar filename, because using the wrong name in the CLASSPATH 
 will cause javac not able to find the junit package. 
 (cannot just copy and paste from the link.)
 
-anyway, the steps to install junit are:
+Anyway, the steps to install junit are:
 ```
 Step 1 - verify Java installation in your machine. Now open console and execute the following java command. ...
 Step 2: Set JAVA environment. export JAVA_HOME=

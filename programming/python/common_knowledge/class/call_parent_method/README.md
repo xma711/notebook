@@ -1,4 +1,4 @@
-about
+About
 ---------------
 
-this example shows how to call parent's methods
+This example shows how to call parent's methods

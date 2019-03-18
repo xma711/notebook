@@ -1,14 +1,14 @@
-why java is platform-independent (supposed)
+Why java is platform-independent (supposed)
 --------------------------------
-platform consists of the computer hardware (mainly the cpu) and OS.  
+Platform consists of the computer hardware (mainly the cpu) and OS.  
 Platform = hardware + OS
 
 this is exactly what the saying "all computer problems can be solved by one more level of abstraction" shows.
 
-platform-dependent languages like c ultimately is converted to the exact machine codes for a particular OS.  
+Platform-dependent languages like c ultimately is converted to the exact machine codes for a particular OS.  
 (question: with the same cpu but different os, the machine codes need to be diffrent right?  
-the answer must be yes.  
-the reason is probably not because the same cpu needs different machine codes, it is because  
+The answer must be yes.  
+The reason is probably not because the same cpu needs different machine codes, it is because  
 any program needs to interact with the OS. thus the same action requires different system function calls in different os;  
 and thus the final machine codes will be different.)
 
@@ -21,36 +21,36 @@ JVM will be different for different OS, but provides the same interface for java
 inheritance
 --------------------
 
-one class in java can inherit at most from one another class (unlike C++); 
+One class in java can inherit at most from one another class (unlike C++); 
 the keyword is 'extends'.
 
-when a class is an inheritance of another, in the constructor it should also call the constructor of its parent class: 
+When a class is an inheritance of another, in the constructor it should also call the constructor of its parent class: 
 super(arguments);  
 here 'super' is like 'this'. 
 'this' refers to the class itself, while 'super' refers to its parent.
 
-when the child class needs to use parent's class, it can use: super.methodName(args);  
+When the child class needs to use parent's class, it can use: super.methodName(args);  
 (question: can i ignore the 'super.'?)
 
 
-interface
+Interface
 --------------------------
 
-reference: http://stackoverflow.com/questions/10839131/implements-vs-extends-when-to-use-whats-the-difference
+Reference: http://stackoverflow.com/questions/10839131/implements-vs-extends-when-to-use-whats-the-difference
 
 in java, an interface is something like an class but has not 'implementation' of its declared methods (and other stuff like constant fields, annotations..).  
-only the class that 'implements' the interface can implement the methods.  
-this is like the abstract class in C++.
+Only the class that 'implements' the interface can implement the methods.  
+This is like the abstract class in C++.
 
-a class can implement multiple interfaces, while cannot inherit from multiple parent classes.
+A class can implement multiple interfaces, while cannot inherit from multiple parent classes.
 
 
-gui
+Gui
 ----------------
 
-java uses the swing package for gui.
+Java uses the swing package for gui.
 
-the way of creating a gui is that:  
+The way of creating a gui is that:  
 1. create a container like Jframe  
 2. declare a layout for Jframe (this is the master layout); layout itself is a class that defines how the components added will be arranged.  
 3. create a subcontainer like JPanel (this is because we want to divide the Jframe to different regions that hold different things in their own layouts) 
@@ -72,23 +72,23 @@ if need to respond to user inputs to some components:
 	if the gui class itself handles the actions, then just pass itself ('this') to the method.
 
 
-java in Android
+Java in Android
 ----------------
 
-there must be a java virtual machine there too, which adds one extra level in the os.
+There must be a java virtual machine there too, which adds one extra level in the os.
 
 
 Some notes
 -------------------
 
-java filename has to be the same as the class name.
+Java filename has to be the same as the class name.
 
 Every public class that you write must be in a separate .java file where the first part of the file name is identical to the class name.
 
 A JAR file is a single file that contains many .class files
 
 To run a jar file, before generating it, i need a Manifest.mf file to indicate what will be the main class in the jar file.  
-manifest.mf looks sth like this:
+Manifest.mf looks sth like this:
 ```
 Manifest-version: 1.0
 Main-Class: HelloWorld

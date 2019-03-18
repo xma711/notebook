@@ -79,7 +79,7 @@ which creates a table named simple with one column "name" with string type.
 	
 	'a_b%' matches strings beginning with 'a', followed by any single character, followed by 'b', followed by zero or more characters.
 
-e.g. SELECT name, price FROM products WHERE name LIKE 'PENCIL%';
+E.g. SELECT name, price FROM products WHERE name LIKE 'PENCIL%';
 
 - order the results:
 	

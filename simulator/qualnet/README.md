@@ -1,5 +1,5 @@
-qualnet is event-driven network simulator.
+Qualnet is event-driven network simulator.
 
-developers have to divide a continuous real-world network scenario to finite discrete events and implement these events.
+Developers have to divide a continuous real-world network scenario to finite discrete events and implement these events.
 
-the example for the "hello world" application can be found in the dropbox (me->simulator->qulnet)
+The example for the "hello world" application can be found in the dropbox (me->simulator->qulnet)

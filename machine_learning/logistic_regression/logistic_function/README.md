@@ -1,7 +1,7 @@
 Logit Function
 --------------------------
 
-reference: http://www.theanalysisfactor.com/what-is-logit-function/
+Reference: http://www.theanalysisfactor.com/what-is-logit-function/
 
 "A link function is simply a function of the mean of the response variable Y 
 that we use as the response 
@@ -16,12 +16,12 @@ where P is defined as the probability that Y=1, and h(x) is a linear combination
 (   btw, after exp both sides and rearrange, we can get the familiar P = 1/( 1+ exp( -h(x) ) )   )
 
 why doing it this way?  
-if we plot Y with x directly and try to obtain the best fitted line, the line obtained will not be able to represent the relationship between X and Y well. 
+If we plot Y with x directly and try to obtain the best fitted line, the line obtained will not be able to represent the relationship between X and Y well. 
 (see reference.)  
-but if plot the probability that Y=1 when X=x (some binning should be needed) agains X, 
+But if plot the probability that Y=1 when X=x (some binning should be needed) agains X, 
 the graph looks 'better' (less gaps; more continuous..).  
-based on the shape of the graph (S shape), there could be quite some functions that can describe the relationship.  
-logistic function happens to be one of them and its results are relatively easy to interpret.
+Based on the shape of the graph (S shape), there could be quite some functions that can describe the relationship.  
+Logistic function happens to be one of them and its results are relatively easy to interpret.
 
 
 Logistic regression
@@ -35,15 +35,15 @@ logistic regression is a regression model where the dependent variable is catego
 Train the model
 ---------------------
 
-reference: http://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/
+Reference: http://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/
 
 If Y = 1 or 0, then it is easier because we can use Yi as the observed probability to compare with the estimated probability from the model (from 0 to 1).  
 
 If Y is something like 1 and -1, i guess we have to represent -1 by 0, meaning it is not 1.
-then we can use the same way to estimate the unknown parameters inside the model.
+Then we can use the same way to estimate the unknown parameters inside the model.
 
 What exactly is the cost function?  
-reference: https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html  
+Reference: https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html  
 cost = -log( predicted probability from xi) if the true yi = 1 and
 cost = log (1 - predicted probability from xi) if the true yi = 0
 

@@ -1,4 +1,4 @@
-people in the book
+People in the book
 ------------------------
 
 Bill: the protagonist, the VP of IT operations (ops)
@@ -41,10 +41,10 @@ four categories of work
 
 many things/methodologies we try to do is to prevent unplanned works;
 need to coordinate chanages better so that they won't fail.
-orderly handling of outages and incidents..
+Orderly handling of outages and incidents..
 
 
-other points
+Other points
 ------------------
 
 1. identify the constraints.
@@ -57,31 +57,31 @@ other points
 3. subordinate the constriant .. (??)
 
 
-if we don't pay the technical debt, it will come back to bite us, with compound interests.
-this leads to unplanned works!
+If we don't pay the technical debt, it will come back to bite us, with compound interests.
+This leads to unplanned works!
 
-if anyone knows that a project will fail, he/she needs to say no!
-and it needs to be backed up with data. (tip of an iceberg only)
+If anyone knows that a project will fail, he/she needs to say no!
+And it needs to be backed up with data. (tip of an iceberg only)
 
 also need to understand the capacity a company/team has, before deciding to take a new project or not.
 
-nothing is more to mastery than practice and drills.
-practicing five minutes a day is better than practicing once a week for 3 hours.
+Nothing is more to mastery than practice and drills.
+Practicing five minutes a day is better than practicing once a week for 3 hours.
 
-if there are too many things around, identify those that increase the capacity of the constraint (like gets some works away from an expert),
+If there are too many things around, identify those that increase the capacity of the constraint (like gets some works away from an expert),
 and those that do not need the constraints, and finally the rest (the least priority).
-the first set of works should be done because it contributes positively to the team.
-the 2nd group of work can be done anyway.
-the 3rd group of work requires constraints and contributes negatively, which should be put aside if possible.
+The first set of works should be done because it contributes positively to the team.
+The 2nd group of work can be done anyway.
+The 3rd group of work requires constraints and contributes negatively, which should be put aside if possible.
 
-the wait time for a resource = %busy / %idle;  
+The wait time for a resource = %busy / %idle;  
 e.g. 0.9/0/1 = 9 (hours or any other unit of time).  
-this is just queuing theory..
+This is just queuing theory..
 
 
 3 ways
 -------------------
 
-the ultimate goal is to maximize flow (throughput).
+The ultimate goal is to maximize flow (throughput).
 
 2nd way is to make wait times (for a resource) visible so you know when your work spends days sitting in someone's queue.

@@ -1,7 +1,7 @@
-how to do it
+How to do it
 ------------------------
 
-reference: https://askubuntu.com/questions/405960/can-cat-show-files-using-code-markup-in-colors
+Reference: https://askubuntu.com/questions/405960/can-cat-show-files-using-code-markup-in-colors
 
 sudo apt-get install python-pygments
 

@@ -1,7 +1,7 @@
-difference between xml and html
+Difference between xml and html
 -------------------------------
 
-xml and html were designed with different goals:  
+Xml and html were designed with different goals:  
 	- xml was designed to carry data - with focus on what data is  
 	- html was designed to display data - with focus on how data looks  
 	- xml tags are not predefined like html tags are
@@ -12,7 +12,7 @@ in many html applications, xml is ued to store or transport data,
 while html is used to format and display the same data.
 
 
-xml example
+Xml example
 --------------------
 ```
 <note>
@@ -26,16 +26,16 @@ xml example
 
 some advantages
 ------------------
-xml stores data in plain text format.
-this provides a software and hardware-independent way of storing, transporting and sharing data.
+Xml stores data in plain text format.
+This provides a software and hardware-independent way of storing, transporting and sharing data.
 
-with xml, data can be available to all kinds of "reading machines" like people, computers, news feeds, etc.
+With xml, data can be available to all kinds of "reading machines" like people, computers, news feeds, etc.
 
-xml separates data from presentation.  
-xml does not carry info about how to be displayed.
+Xml separates data from presentation.  
+Xml does not carry info about how to be displayed.
 
 
-xml tree structure
+Xml tree structure
 -------------------------------
 
 <root>
@@ -48,13 +48,13 @@ xml tree structure
 xml vs json
 -----------------------
 
-reference: http://stackoverflow.com/questions/4862310/json-and-xml-comparison
+Reference: http://stackoverflow.com/questions/4862310/json-and-xml-comparison
 
 json pros:  
 	- simple syntax, which results in less markup overheads compared to xml.  
 	- easy to use with javascript as the markup has the same basic data types as javascript.  
 	- json schema for description and datatype and structure validation.
-json cons:  
+Json cons:  
 	- simple syntax, only a handful of different data types are supported
 
 xml pros:  
@@ -68,8 +68,8 @@ xml cons:
 "If you are mostly going to use JavaScript then you should go with JSON."
 
 
-other notes
+Other notes
 ----------------------
 
-in python, the library dicttoxml can be used to convert dictionary to xml.  
-check: https://pypi.python.org/pypi/dicttoxml
+In python, the library dicttoxml can be used to convert dictionary to xml.  
+Check: https://pypi.python.org/pypi/dicttoxml

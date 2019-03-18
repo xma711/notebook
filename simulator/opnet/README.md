@@ -1,19 +1,19 @@
-opnet is also event-driven.
+Opnet is also event-driven.
 
-protocol
+Protocol
 ------------------
-each protocol can be implemented using a state machine.
+Each protocol can be implemented using a state machine.
 
-each protocol starts with an init state, then goes into the idle state. 
-then it waits for something to happen.
-when a particular event happens, it goes to the respective state and after completing the works comes back to the idle state.
+Each protocol starts with an init state, then goes into the idle state. 
+Then it waits for something to happen.
+When a particular event happens, it goes to the respective state and after completing the works comes back to the idle state.
 
 
-node
+Node
 ---------------------
-a node can be created by the node editor, which links all the modules together.
+A node can be created by the node editor, which links all the modules together.
 
 
-scenario/project
+Scenario/project
 ------------------------
-each scenario (or so-called project) are made of by nodes. user places nodes in the project editor and set the nodes' parameters and the system-wide parameters.
+Each scenario (or so-called project) are made of by nodes. user places nodes in the project editor and set the nodes' parameters and the system-wide parameters.

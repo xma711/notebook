@@ -12,7 +12,7 @@ Example: counting process
 A stochastic process {N(t),t>=0} is a couting process if N(t) represents the number of "events" that have occurred up to time t.  
 (each N(t) is a random variable, that can have many different outcomes.)
 
-for s < t, N(t) - N(s) equals the number of events occurred in the interval (s,t].
+For s < t, N(t) - N(s) equals the number of events occurred in the interval (s,t].
 
 Example: poisson process
 ----------------------------

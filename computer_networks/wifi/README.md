@@ -1,15 +1,15 @@
-find ssid from command line
+Find ssid from command line
 ------------------------------
 
-reference: https://askubuntu.com/questions/117065/how-do-i-find-out-the-name-of-the-ssid-im-connected-to-from-the-command-line
+Reference: https://askubuntu.com/questions/117065/how-do-i-find-out-the-name-of-the-ssid-im-connected-to-from-the-command-line
 
 in short: use 'iwgetid' to get the ssid. 
 
 
-solve ubuntu wifi problem
+Solve ubuntu wifi problem
 ----------------------
 
-just disable the power saving for wifi:
+Just disable the power saving for wifi:
 
 /sbin/iwconfig wlan0 power off
 
@@ -17,7 +17,7 @@ just disable the power saving for wifi:
 configure wifi using command line.
 ------------------------------
 
-in archlinux or debian or gentoo, using reference https://wiki.archlinux.org/index.php/Wireless_network_configuration
+In archlinux or debian or gentoo, using reference https://wiki.archlinux.org/index.php/Wireless_network_configuration
 
 command:
 
@@ -25,7 +25,7 @@ command:
 
 If this does not work, you may need to adjust the options. If connected successfully, continue in a new terminal (or quit wpa_supplicant with Ctrl+c and add the -B switch to the above command to run it in the background). WPA supplicant contains more information on options and on how to create a permanent configuration file for the wireless access point. 
 
-in my case, i used 
+In my case, i used 
 
     wpa_supplicant -B -D nl80211,wext -i wlp6s0 -c <(wpa_passphrase "SSID" "the_key")
 
@@ -40,16 +40,16 @@ in gentoo, get and ip address using:
 Note that NetworkManager is easier to manage wifi or ethernet.
 
 
-using wifi dongle Model Number: UWN200. inside: MediaTek MT7601 (Ralink 7601) Controller
+Using wifi dongle Model Number: UWN200. inside: MediaTek MT7601 (Ralink 7601) Controller
 -------------------------------
 
-http://www.logicsupply.com/uwn200/
+Http://www.logicsupply.com/uwn200/
 
 the guide to install the driver for linux can be found here: https://docs.google.com/document/d/1-CIGQYdk8ZhU3D3UCNn70jc7C9HdXvEZAsiNW71fGIE/edit
 
 for archlinux, use command "*pacman -S dkms-mt7601*". so far this command works on kernel 3.18.1-1-ARCH. 
-what i did actually is: install dkms-mt7601 first. reboot. not working. uninstall mt7601 and reinstall. copy the NetworkManager wifi conf file to the node. enable network manager. and then it works.
-so the point is that i need to use networkManager rather than the original whatever manager in the node.
+What i did actually is: install dkms-mt7601 first. reboot. not working. uninstall mt7601 and reinstall. copy the NetworkManager wifi conf file to the node. enable network manager. and then it works.
+So the point is that i need to use networkManager rather than the original whatever manager in the node.
 
 One possible solucion to make it work in kernel 3.8, is to upgrade the kernel from 3.8.13-31-ARCH to 3.8.13.39-ARCH. commands:
 
@@ -98,7 +98,7 @@ one issue: the node can ping internal ip addresses but cannot ping external ip a
 
 install mt7601u when there is no linux header to be found in archlinux repo
 ------------------------------------------------------
-main reference: https://headcrash.industries/reference/archlinux-kernel-compilation-on-beaglebone-black/
+Main reference: https://headcrash.industries/reference/archlinux-kernel-compilation-on-beaglebone-black/
 
 (in archlinux 3.8.13.31, create a normal user. add him to sudo group. create sudo group. enable sudo group to be able to run as root. type 'visudo' to edit sudoers file. uncomment this line "#%sudoers    ALL=(ALL) AL" so that it becomes "%sudoers    ALL=(ALL) AL")
 
@@ -116,18 +116,18 @@ cd PKGBUILDs/core/linux-am33x-legacy
 makepkg -Acs
 
 this command will download the linux source codes first. at some point, it will stop and ask for sth.  
-at this point, download compiler-gcc5.h from linux repo (commit number: a6c5170d1edea97c538c81e377e56c7b5c5b7e63) in the path linux_repo/include/linux/compiler-gcc5.h.
+At this point, download compiler-gcc5.h from linux repo (commit number: a6c5170d1edea97c538c81e377e56c7b5c5b7e63) in the path linux_repo/include/linux/compiler-gcc5.h.
 
-copy compiler-gcc5.h to PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/linux/
+Copy compiler-gcc5.h to PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/linux/
 
 (i cloned the whole linux repo before. the original one is https://github.com/torvalds/linux/tree/master/include/linux . one can just go to this link, and then checkout the right commit number and then download the raw file of compiler-gcc5.h)  
 (reference: http://stackoverflow.com/questions/29925513/compile-a-linux-2-6-kernel-module-with-newer-compiler)
 
 back to the terminal of command "makepkg -Acs" and press y or sth to continue compiling. (this step is necessary. otherwise the autoconf.h wont be generated.)
 
-bbb will try to compile the kernel and the header for somethime, until it will fail for some reasons. but it is okay.  
-check if directory PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/generated is created.   
-inside there should be these files: asm-offsets.h  autoconf.h  bounds.h  compile.h	mach-types.h  uapi  utsrelease.h (without autoconf.h, later compiling the mt7601u kernel module will lead to some complaints) (reference: http://serverfault.com/questions/568395/what-is-creating-the-generated-autoconf-h)  
+Bbb will try to compile the kernel and the header for somethime, until it will fail for some reasons. but it is okay.  
+Check if directory PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/generated is created.   
+Inside there should be these files: asm-offsets.h  autoconf.h  bounds.h  compile.h	mach-types.h  uapi  utsrelease.h (without autoconf.h, later compiling the mt7601u kernel module will lead to some complaints) (reference: http://serverfault.com/questions/568395/what-is-creating-the-generated-autoconf-h)  
 
 then create a link at /usr/src/, as if i am installing the linux header: ln -s /home/xma/PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8 /usr/src/linux-3.8.13-31-ARCH
 
@@ -135,9 +135,9 @@ then create a link at /lib/modules/3.8.13-31-ARCH. ln -s /usr/src/linux-3.8.13-3
 
 the last two steps are exactly what is carried out when pacman install the linux header. of course, the link to linux-3.8 is not merely header, it has all the source codes. but more is okay, less will have problems.
 
-now go to mt7601/src folder, and then type make and follow other steps to get the kernel module installed.
+Now go to mt7601/src folder, and then type make and follow other steps to get the kernel module installed.
 
-when i do a "modprobe mt7601Usta" it may complain that the exec format not right, in this case, i just have to  
+When i do a "modprobe mt7601Usta" it may complain that the exec format not right, in this case, i just have to  
 modprobe --force mt7601Usta   
 to make it work.  
 (reference: https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=73005)
@@ -159,31 +159,31 @@ WantedBy=multi-user.target
 MT7601U not working on archlinux kernel 3.8.13.31 (solved)
 ------------------------------------
 
-using pacman -Syu doesn't upgrade the kernel to 3.8.13.39 (this is the tarball i prepared before).   
-if i use 3.8.13.39, UART1 won't work when LCD is enabled.
+Using pacman -Syu doesn't upgrade the kernel to 3.8.13.39 (this is the tarball i prepared before).   
+If i use 3.8.13.39, UART1 won't work when LCD is enabled.
 
-the best way is to remain in 3.8.13.31 and install the driver for the wifi dongle.  
-however, i cannot download the linux header linux-headers-am33x-legacy for this kernel for compiling the mt7601 kernel module, as archlinux is on a rolling release and the arm version doesn't keep the old packages.  
+The best way is to remain in 3.8.13.31 and install the driver for the wifi dongle.  
+However, i cannot download the linux header linux-headers-am33x-legacy for this kernel for compiling the mt7601 kernel module, as archlinux is on a rolling release and the arm version doesn't keep the old packages.  
 
-there used to be a rollback machine (in readme in archlinux) but it is down down.
+There used to be a rollback machine (in readme in archlinux) but it is down down.
 
-so far the best way is to get this linux-headers-am33x-legacy-3.8.13-31-armv7h.pkg.tar.xz package online and install it manually, and then try to compile mt7601.  
-despite i posted a question in the forum http://archlinuxarm.org/forum/viewtopic.php?f=60&t=9647 , but no one answers.
+So far the best way is to get this linux-headers-am33x-legacy-3.8.13-31-armv7h.pkg.tar.xz package online and install it manually, and then try to compile mt7601.  
+Despite i posted a question in the forum http://archlinuxarm.org/forum/viewtopic.php?f=60&t=9647 , but no one answers.
 
-maybe archlinux is not suitable for this purpose. it has no snapshot and i can't go back to the past..
+Maybe archlinux is not suitable for this purpose. it has no snapshot and i can't go back to the past..
 
-another hope is that i can install debian with the same kernel. then i compile the driver in debian and then i can copy it to archlinux for use.
+Another hope is that i can install debian with the same kernel. then i compile the driver in debian and then i can copy it to archlinux for use.
 
-another method (unlikely to work) is to use the driver compiled for kernel 3.8.13.39 and try to make it work in 3.8.13.31.
+Another method (unlikely to work) is to use the driver compiled for kernel 3.8.13.39 and try to make it work in 3.8.13.31.
 
-one more hope is to download the header from sources and install them into archlinux image.
+One more hope is to download the header from sources and install them into archlinux image.
 
-i think the current workaround is: when there is LCD, then use kernel 3.8.13-31 and use another type of wifi dongle; when LCD is not there, then use the kernel 3.8.13-39 that i repared before.
+I think the current workaround is: when there is LCD, then use kernel 3.8.13-31 and use another type of wifi dongle; when LCD is not there, then use the kernel 3.8.13-39 that i repared before.
 
 
-router
+Router
 -----------------------
 
-router can be configured as a normal ethernet router, or a repeater.
+Router can be configured as a normal ethernet router, or a repeater.
 
-a repeater forwards all requests to the main router.
+A repeater forwards all requests to the main router.

@@ -1,7 +1,7 @@
 AzCopy
 -------------------------
 
-reference:  
+Reference:  
 	- For Linux: https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-linux?toc=%2fazure%2fstorage%2ffiles%2ftoc.json  
 	- For Windows: https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy
 

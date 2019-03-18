@@ -1,22 +1,22 @@
-css
+Css
 ----------------------
 
-html file (without javascript) is a dull file. 
-all the headers, paragraphs, lists, tables will look quite ugly in the browser.
+Html file (without javascript) is a dull file. 
+All the headers, paragraphs, lists, tables will look quite ugly in the browser.
 
-to make them look better, css can be used.
+To make them look better, css can be used.
 
-to change the looking of element(s), simply use the tag name from the html file, and use {} to add something inside.  
-e.g. an html file has <p> .. </p> stuff, 
+To change the looking of element(s), simply use the tag name from the html file, and use {} to add something inside.  
+E.g. an html file has <p> .. </p> stuff, 
 the css file can set looking to all the stuff in this tag by:  
 p {  
   settings...  
 }  
 this is called "id selector".
 
-another way is class selector.  
-e.g. the html file has <p class="classname">whatever whatever.</p>.  
-the css file can access any elements with such a class by:  
+Another way is class selector.  
+E.g. the html file has <p class="classname">whatever whatever.</p>.  
+The css file can access any elements with such a class by:  
 .classname {  
   settings...  
 }  

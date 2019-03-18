@@ -1,10 +1,10 @@
-android
+Android
 --------------------
 
-general things about Android!!!
+General things about Android!!!
 
 
-android studio
+Android studio
 ----------------------
 
-the official IDE: https://developer.android.com/studio/install.html
+The official IDE: https://developer.android.com/studio/install.html

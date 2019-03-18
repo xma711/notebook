@@ -71,14 +71,14 @@ The recommended workflow for people working on his/her own branch
 set up necessary tools
 ------------------------
 
-if you use ubuntu, then add git by  
+If you use ubuntu, then add git by  
 *sudo apt-get install git*
 
 if you use windows, then download git shell from https://windows.github.com/ and install it
 
 this tutorial will purely make use of command line, which gives users more controls.
 
-note that all commands in this tutorial are done in a Git Shell or a Linux terminal. Some basic linux commands you may need to know include:
+Note that all commands in this tutorial are done in a Git Shell or a Linux terminal. Some basic linux commands you may need to know include:
 
 go to a directory   
 *cd [path_to_a_folder/directory]*  
@@ -95,7 +95,7 @@ for more linux commands, you can refer to: http://www.thegeekstuff.com/2010/11/5
 note that all the git commands are in *italic*.
 
 
-clone a remote repository
+Clone a remote repository
 --------------------------
 
 You can find the url of the remote repo from github.com. Then clone it by:  
@@ -107,30 +107,30 @@ OR *git clone git@github.com:xma711/tryGithub.git* (if you added your ssh key of
 
 After you clone the repository, you have a local copy of the remote repository. You can do anything to your local repo. As long as you don't push it to the remote repo, any local changes won't affect the remote repo.
 
-understand some basics
+Understand some basics
 ------------------------
 
-check url of the remote repository:   
+Check url of the remote repository:   
 *git remote -v*
 
 Note that 'origin' is a label for this remote url.  
 
-check all branches in your local repo:  
+Check all branches in your local repo:  
 *git branch*
 
 you will see things like "master" and whatever branches you have created.
 
-branches are like parallel worlds in a repo. you can only go to one branch at a time. 
+Branches are like parallel worlds in a repo. you can only go to one branch at a time. 
 
-branch names like "master" are labels of the local branches you have. some branches can exist in your local repo but not in remote repo.
+Branch names like "master" are labels of the local branches you have. some branches can exist in your local repo but not in remote repo.
 
 
-branch
+Branch
 -----------------------
 
-when you are working on a repo, it is good to create your own branch and work on it first. only until you are sure your works are okay, then you merge the branch to the "master" branch.
+When you are working on a repo, it is good to create your own branch and work on it first. only until you are sure your works are okay, then you merge the branch to the "master" branch.
 
-create a branch:  
+Create a branch:  
 *git branch [branch_name]*  
 e.g. *git branch xma_branch*
 
@@ -140,7 +140,7 @@ e.g. *git checkout xma_branch*
 
 The 'git checkout' command allows you to go to a 'parallel world' you choose.
 
-to merge branch B to Branch A, go to branch A first, and do a 'git merge branch_B':  
+To merge branch B to Branch A, go to branch A first, and do a 'git merge branch_B':  
 *git checkout branch_A*  
 *git merge branch_B*  
 e.g. *git checkout master & git merge xma_branch*  
@@ -154,9 +154,9 @@ to delete a remote branch (use with care!):
 commit
 ---------------------
 
-after you edit files, add files or do other changes, you will save these changes to a particular branch. the tools you will use are "git add" and "git commit".
+After you edit files, add files or do other changes, you will save these changes to a particular branch. the tools you will use are "git add" and "git commit".
 
-for example, if you create a new file named "hello_world.txt" with some texts inside or edit the file if "hello_world.txt" has been commited to the repo before, then you can add it to the current branch by:  
+For example, if you create a new file named "hello_world.txt" with some texts inside or edit the file if "hello_world.txt" has been commited to the repo before, then you can add it to the current branch by:  
 *git add hello_world.txt*
 
 to check the current status of the repo, use:  
@@ -169,10 +169,10 @@ if you are okay with the changes and want to save it, then use:
 *git commit -m "add hello world file"*  
 the "-m" allows you to add a logging message so that you know what you have done in the future.
 
-note that we normally don't commit any binary files or images or videos to github. these files are usually big and do not often subject to changes. adding them to the github repo will slow down the "git pull" (obtaining the latest changes) by everyone else and make the repo untidy. Therefore, please check your changes carefully before you do a "git commit".
+Note that we normally don't commit any binary files or images or videos to github. these files are usually big and do not often subject to changes. adding them to the github repo will slow down the "git pull" (obtaining the latest changes) by everyone else and make the repo untidy. Therefore, please check your changes carefully before you do a "git commit".
 
-one tip. if you edit an existing file that has been committed before, you can skip the "git add" by using "git commit -am", where "a" means 'all'.  
-e.g. *git commit -am "edit hello world file"*
+One tip. if you edit an existing file that has been committed before, you can skip the "git add" by using "git commit -am", where "a" means 'all'.  
+E.g. *git commit -am "edit hello world file"*
 
 note that each commit is a snapshot of the repo at a particular time. you can check the past commits by:  
 *git log*
@@ -185,7 +185,7 @@ to come back to the master branch, you can do a:
 
 push to remote
 ------------------
-when you are happy with the commits you have done, you can push the right branch to a branch of the remote repo (e.g. "master" branch). The command is:  
+When you are happy with the commits you have done, you can push the right branch to a branch of the remote repo (e.g. "master" branch). The command is:  
 *git push origin [branch_name]*
 
 e.g. if your changes are committed in the local master branch, you can push it by:  
@@ -193,35 +193,35 @@ e.g. if your changes are committed in the local master branch, you can push it b
 
 usually, you will have to do a "git pull" before a git push. "git pull" allows you to obtain the latest changes in the remote repo. "git pull" can lead to conflicts sometimes, when two people edit on the same thing from the same commit. how to resolve conflicts will be talked about later.
 
-if you have a local branch and you want the remote repo to keep a copy of it, then you can do a:  
+If you have a local branch and you want the remote repo to keep a copy of it, then you can do a:  
 *git push origin [the_new_branch]*  
 e.g. *git push origin xma_branch*
 
 but usually extra branches should be temporary and you should remove them when they have been merged to the master branch.
  
-my personal habit is to create a new branch for a new feature i want to create. most of the time i will keep the branch to my local repo only. when i finished the feature, i will merger the branch to the master branch and delete the temporary branch. and i will repeat the cycle again for a new feature.
+My personal habit is to create a new branch for a new feature i want to create. most of the time i will keep the branch to my local repo only. when i finished the feature, i will merger the branch to the master branch and delete the temporary branch. and i will repeat the cycle again for a new feature.
 
-after you do a git push, you can check the latest changes in github.com too.
+After you do a git push, you can check the latest changes in github.com too.
 
-resolve conflicts
+Resolve conflicts
 --------------------
 
-conflicts can happen when you do a "git pull" or "git merge". when the changes coming from pull or merge affects something you have already edited in the destination branch, git will prompt you that there is a conflict. 
+Conflicts can happen when you do a "git pull" or "git merge". when the changes coming from pull or merge affects something you have already edited in the destination branch, git will prompt you that there is a conflict. 
 
-to resolve the conflicts, open the file affected and decide what to keep and what to remove. After you are happy with it, then you can do a new commit with the new changes.
+To resolve the conflicts, open the file affected and decide what to keep and what to remove. After you are happy with it, then you can do a new commit with the new changes.
 
 README.md
 ------------------
-it is always good to add a README.md in as many folders as possible.
+It is always good to add a README.md in as many folders as possible.
 
-people can view the details about this repo or this folder directly in github.
+People can view the details about this repo or this folder directly in github.
 
-for example, what you are reading is the README for this repo.
+For example, what you are reading is the README for this repo.
 
-git cheat sheets
+Git cheat sheets
 --------------------
 
-for more git commands, you can refer to  
+For more git commands, you can refer to  
 https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf  
 or http://www.git-tower.com/blog/git-cheat-sheet/
 
@@ -229,4 +229,4 @@ or http://www.git-tower.com/blog/git-cheat-sheet/
 some other points
 -----------------------
 
-to monitor github on your phone, you can install the github app from the apps market.
+To monitor github on your phone, you can install the github app from the apps market.

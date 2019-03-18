@@ -1,25 +1,25 @@
-construction
+Construction
 ------------------
 
-buiding software is like constructing a building..
+Buiding software is like constructing a building..
 
-construction needs requirements writing, design, buiding/implementation, checking etc.
+Construction needs requirements writing, design, buiding/implementation, checking etc.
 
 
-correct defects earlier
+Correct defects earlier
 -----------------------
 
 "Dozens of companies have found
 that simply focusing on correcting defects earlier rather than later in a project can cut
 development costs and schedules by factors of two or more (McConnell 2004)."
 
-my thinking: the whole software construction process is a resource-optimization (cost-optimization) problem.
+My thinking: the whole software construction process is a resource-optimization (cost-optimization) problem.
 
 
-development model: sequential vs iterative
+Development model: sequential vs iterative
 --------------------------
 
-sequential when:   
+Sequential when:   
 	- The requirements are fairly stable.  
 	- The design is straightforward and fairly well understood.  
 	- The development team is familiar with the applications area.36  
@@ -27,7 +27,7 @@ sequential when:
 	- The project contains little risk.
 	- Long-term predictability is important.
 
-iterative when:  
+Iterative when:  
 	- The requirements are not well understood or you expect them to be unstable for other reasons.  
 	- The design is complex, challenging, or both.  
 	- The development team is unfamiliar with the applications area.  

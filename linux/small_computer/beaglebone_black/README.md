@@ -1,4 +1,4 @@
-some important things to consider
+Some important things to consider
 -------------------------------------
 
 1. how to upgrade the kernel to 4.1, coz it also supports device tree.
@@ -6,16 +6,16 @@ some important things to consider
 2. need to read the bbb manual to understand it better.
 
 
-device tree
+Device tree
 -----------------
-reference: https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/exporting-and-unexporting-an-overlay
+Reference: https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/exporting-and-unexporting-an-overlay
 reference: http://www.raspberry-pi-geek.com/Archive/2014/03/Capemgr-keeps-track-of-the-BeagleBone-Black-s-expansion-boards-known-as-capes
 
 from kernel 3.8, bbb use device tree to setup its pins maps, if my understand is correct.. 
-there is also this device tree overlay. it is like adding things to the existing device tree.
-for example, those interface like ttyO2 I2C-1 enabled in uEnv.txt are overlays.
+There is also this device tree overlay. it is like adding things to the existing device tree.
+For example, those interface like ttyO2 I2C-1 enabled in uEnv.txt are overlays.
 
-for kernel beyond 3.8, it seems that the device tree is not there.. (Device tree is back in kernel 4.1)
+For kernel beyond 3.8, it seems that the device tree is not there.. (Device tree is back in kernel 4.1)
 
 Capemgr exposes its userspace interface through the /sys/devices/bone_capemgr.* directory via the sysfs filesystem. 
 The slots file within this directory is used to interact with Capemgr. 
@@ -71,8 +71,8 @@ The five states are, from left to right in the slot status field,
 	- "l" (cape is still being loaded), 
 	- and "L" (cape loading has completed).
 
-the available binary overlay files can be found in /lib/firmware. 
-name of overlay device tree: [PART_NUM]-[VER].dtbo, where [PART_NUM] is the part number and [VER] is the hardware version associated with the overlay.
+The available binary overlay files can be found in /lib/firmware. 
+Name of overlay device tree: [PART_NUM]-[VER].dtbo, where [PART_NUM] is the part number and [VER] is the hardware version associated with the overlay.
 
 To load an overlay manually from userspace, the overlay must be a compiled .dtbo file that is located in the firmware directory of the root filesystem. 
 The part number associated with the overlay (not the full file name of the .dtbo file) is echo'd into the slots file to load the overlay. 
@@ -82,9 +82,9 @@ user@beaglebone:~# sudo echo MY_OVERLAY > /sys/devices/bone_capemgr.*/slots
 btw, to export the device with a specific version number, use sth like: "BB-BONE-LCD4-01:00A1".
 
 
-capes
+Capes
 -------------------------
-reference: http://www.raspberry-pi-geek.com/Archive/2014/03/Capemgr-keeps-track-of-the-BeagleBone-Black-s-expansion-boards-known-as-capes (very useful)
+Reference: http://www.raspberry-pi-geek.com/Archive/2014/03/Capemgr-keeps-track-of-the-BeagleBone-Black-s-expansion-boards-known-as-capes (very useful)
 
 A true cape uses the I2C2 bus (pins P9.19 and P9.20) to identify itself to the Capebus at boot time.
 
@@ -107,27 +107,27 @@ and some are muxed by the device tree.
 check what pins are used by capes
 ----------------------------------
 
-reference: http://www.valvers.com/embedded-linux/beaglebone-black/step04-gpio/
+Reference: http://www.valvers.com/embedded-linux/beaglebone-black/step04-gpio/
 another useful reference talking about gpios and the device tree: http://kilobaser.com/blog/2014-07-15-beaglebone-black-gpios
 
 to see the what pins are used by capes/device trees, use   
 cat /sys/kernel/debug/pinctrl/44e10800.pinmux/pingroups  
 (reference: cat /sys/kernel/debug/pinctrl/44e10800.pinmux/pingroups)  
 however, the pins are not directly mapped to the p8 and p9 pins.  
-to find out the exact pins, use the documents from https://github.com/derekmolloy/boneDeviceTree/tree/master/docs to map the pin number to the exact p9 or p8 pins in bbb.
+To find out the exact pins, use the documents from https://github.com/derekmolloy/boneDeviceTree/tree/master/docs to map the pin number to the exact p9 or p8 pins in bbb.
 
 
-this path has useful stuff relating to pins: /sys/kernel/debug/pinctrl/44e10800.pinmux
+This path has useful stuff relating to pins: /sys/kernel/debug/pinctrl/44e10800.pinmux
 
 another reference: http://elinux.org/EBC_Exercise_11a_Device_Trees
 
 however, apparently, not all pins will be shown here. for example, after exporting the analog pins device tree overlay, the pins are not shown here.
 
-also, when using LCD, exporting the analog pins device tree doesn't complain, but the pins cannot be used. there could be some confliction between the hidden LCD pins and analog pins.
+Also, when using LCD, exporting the analog pins device tree doesn't complain, but the pins cannot be used. there could be some confliction between the hidden LCD pins and analog pins.
 
 HDMI
 ------------------------
-reference: http://www.raspberry-pi-geek.com/Archive/2014/03/Capemgr-keeps-track-of-the-BeagleBone-Black-s-expansion-boards-known-as-capes/%28offset%29/2
+Reference: http://www.raspberry-pi-geek.com/Archive/2014/03/Capemgr-keeps-track-of-the-BeagleBone-Black-s-expansion-boards-known-as-capes/%28offset%29/2
 
 btw, The device tree specifies two nodes for the HDMI cape: 
 	- one node for a "full HDMI cape" that provides both audio and video data (BB-BONELT-HDMI) 
@@ -140,14 +140,14 @@ If Capemgr successfully loads the full HDMI overlay, then its attempt to load th
 ADC on beaglebone black
 -----------------------------------
 
-reference: http://www.linux.com/learn/tutorials/787511-how-to-get-analog-input-on-the-beaglebone-black  
+Reference: http://www.linux.com/learn/tutorials/787511-how-to-get-analog-input-on-the-beaglebone-black  
 reference: http://beaglebone.cameon.net/home/reading-the-analog-inputs-adc
 
 There are 6 ADCs on beaglebone black: AIN0 to AIN6. VDD_ADC is 1.8v, the reference voltage. 
 Thus the maximum voltage that can be sampled is 1.8V.
 The chip is 12bit, so that get numbers in the range 0-4095.
 
-enable:  
+Enable:  
 	echo cape-bone-iio > /sys/devices/bone_capemgr.*/slots
 
 check:  
@@ -162,12 +162,12 @@ to get the reading from AIN0 e.g.: cat /sys/devices/ocp.3/helper/AIN0
 
 the disadvantage is that 9 pins will be used at one go.
 
-to use the dafruit-BBIO package for python to get readings, pip install Adafruit_BBIO.
-reference: https://learn.adafruit.com/setting-up-io-python-library-on-beaglebone-black/adc  
+To use the dafruit-BBIO package for python to get readings, pip install Adafruit_BBIO.
+Reference: https://learn.adafruit.com/setting-up-io-python-library-on-beaglebone-black/adc  
 use this lib directly, i can get 833Hz on one channel only. 
-there should be some ways to speed up the sampling frequency, because the internal ADC is at least 1MHz.
+There should be some ways to speed up the sampling frequency, because the internal ADC is at least 1MHz.
 
-when the LCD screen is used, activating the device tree is okay. but once i try to run AC.setup(), there is this error:
+When the LCD screen is used, activating the device tree is okay. but once i try to run AC.setup(), there is this error:
 ```
 RuntimeError: Unable to setup ADC system. Possible causes are: 
   - A cape with a conflicting pin mapping is loaded 
@@ -177,7 +177,7 @@ RuntimeError: Unable to setup ADC system. Possible causes are:
 control bbb built-in leds
 -----------------
 
-http://robotic-controls.com/book/export/html/69
+Http://robotic-controls.com/book/export/html/69
 
 in summary, go to /sys/class/leds/beaglebone\:green\:usrX/  [X=0/1/2/3]
 
@@ -187,7 +187,7 @@ and cat none/heartbeat/timer > trigger
 enable /dev/ttyACM0 using microUSB
 ------------------------------------
 
-reference: https://kwantam.github.io/BBKNotes1.html (enable g_serial for ttyACM0)
+Reference: https://kwantam.github.io/BBKNotes1.html (enable g_serial for ttyACM0)
 http://hipstercircuits.com/serial-over-usb-on-beaglebone/ (need getty to make the console work)
 http://unix.stackexchange.com/questions/71064/automate-modprobe-command-at-boot-time-on-fedora (load kernel module automatically)
 https://github.com/crondog/arch-flo (enable serial-getty\@ttyGS0.service)
@@ -205,13 +205,13 @@ connect a microUSB cable from a computer to bbb.
 GPIOs
 -----------------
 
-http://kilobaser.com/blog/2014-07-15-beaglebone-black-gpios
+Http://kilobaser.com/blog/2014-07-15-beaglebone-black-gpios
 
 there are 65 possible digital I/Os, mostly on the p8 side.
 
-control the pin at /sys/class/gpio/ folder.
+Control the pin at /sys/class/gpio/ folder.
 
-enable a gpio (e.g. gpio60): echo 60 > /sys/class/gpio/export  (where 60 is the gpio number, not pin number)
+Enable a gpio (e.g. gpio60): echo 60 > /sys/class/gpio/export  (where 60 is the gpio number, not pin number)
 
 set direction as output: echo out > /sys/class/gpio/gpio60/direction
 
@@ -219,7 +219,7 @@ set value as 1/0: echo 1/0 > /sys/class/gpio/gpio60/value
 
 direction	Decides whether this is an input or output pin. Writing in or out to this file, changes the behaviour of the value-file accordingly.
 
-value	if direction is in, reading this file tells you if the external signal connected to the pin is 1 (3.3V) or 0 (0V)
+Value	if direction is in, reading this file tells you if the external signal connected to the pin is 1 (3.3V) or 0 (0V)
 if direction is out, writing to this file sets the voltage we output on the pin to either 3.3V (1) or 0V (0)
 
 active_low	If 1, the meaning of 1 and 0 in the value-file is reversed: 0 (3.3V) and 1 (0.V)
@@ -231,7 +231,7 @@ One table can be found here: http://beagleboard.org/support/bone101
 Recompile u-boot and kernel
 ---------------------------------
 
-reference: https://jkridner.wordpress.com/2014/06/04/yet-another-set-of-notes-on-building-beaglebone-kernel/
+Reference: https://jkridner.wordpress.com/2014/06/04/yet-another-set-of-notes-on-building-beaglebone-kernel/
 
 extract from the reference: 
 
@@ -271,15 +271,15 @@ pastebinit .config
 
 another way of compiling uboot and kernal
 ------------------------------------------
-reference: https://eewiki.net/display/linuxonarm/BeagleBone+Black
+Reference: https://eewiki.net/display/linuxonarm/BeagleBone+Black
 
 follow "Bootloader: U-Boot" section to "Linux Kernel" section to build u-boot.img and the zImage kernel and device tree (dtb).
 
-i copy the zImage and device tree to the /dev/mmcblk0p2 root/boot folder in the bbb emmc. make symbolic links to all files so that appear on /boot folder first layer. (symbolic links needed for zImage, arm*.dtb files)
+I copy the zImage and device tree to the /dev/mmcblk0p2 root/boot folder in the bbb emmc. make symbolic links to all files so that appear on /boot folder first layer. (symbolic links needed for zImage, arm*.dtb files)
 
 and copy u-boot.img and MLO to /dev/mmcblk0p1. 
 
-the uEnv.txt looks like:
+The uEnv.txt looks like:
 "
 mmcroot=/dev/mmcblk0p2 rw
  
@@ -288,28 +288,28 @@ optargs=coherent_pool=1M capemgr.enable_partno=BB-UART1,BB-I2C1
 
 the first line is necessary to make the filesystem read and write. or it will be read only.
 
-after reboot and it works.
+After reboot and it works.
 
-one problem is that the xbee dongle is not detected and appear in the /dev/ttyUSB* list.
+One problem is that the xbee dongle is not detected and appear in the /dev/ttyUSB* list.
 
-the problem is solved by copy the firmware and modules folders to the respective positioins /usr/lib/firmware and /usr/lib/modules
+The problem is solved by copy the firmware and modules folders to the respective positioins /usr/lib/firmware and /usr/lib/modules
 
 
 
 power
 -------------------
 
-with this model of cpu:  
+With this model of cpu:  
 Model name:            ARMv7 Processor rev 2 (v7l)  
 CPU max MHz:           1000.0000  
 CPU min MHz:           300.0000  
 
 and running with archlinux, the power consumption is about 200mA x 5V = 1W from the experiment i did.
 
-to reduce power consumption, the cpu frequency can be lowered from the default 1000MHz to 300MHz.   
-for 300MHz, the power consumption is about 135mA x 5V = 0.657W which is 32.5% reduction in power consumption.
+To reduce power consumption, the cpu frequency can be lowered from the default 1000MHz to 300MHz.   
+For 300MHz, the power consumption is about 135mA x 5V = 0.657W which is 32.5% reduction in power consumption.
 
-a script can be written to achieve this (the whole point is to echo powersave to scaling_governor in the cpufreq path):
+A script can be written to achieve this (the whole point is to echo powersave to scaling_governor in the cpufreq path):
 
 ```
 #!/bin/sh
@@ -325,7 +325,7 @@ echo powersave > ${SYS_CPUFREQ_ROOT}/scaling_governor
 ```
 
 a useful tool is called cpufrequtils, which can used for checking cpu info and set cpu parameters.  
-see reference: http://zeldor.biz/2012/11/beaglebone-optimize-power-consumption/
+See reference: http://zeldor.biz/2012/11/beaglebone-optimize-power-consumption/
 
 
 some points from reading BBB SRM Rev C.1

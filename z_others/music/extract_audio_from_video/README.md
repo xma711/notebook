@@ -1,7 +1,7 @@
-steps
+Steps
 ---------------------------
 
-open vlc player,
+Open vlc player,
 click media -> convert/save,
 add the video file,
 click convert,

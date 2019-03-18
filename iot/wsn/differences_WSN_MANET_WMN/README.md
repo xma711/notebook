@@ -1,10 +1,10 @@
-deconflict of concepts
+Deconflict of concepts
 ------------------------------
 
-the follows are found online, not from the module.
+The follows are found online, not from the module.
 
-the concepts of WSN, MANET and wireless mesh networks can be confusing.  
-to make things clear, the concepts are summarized as below:  
+The concepts of WSN, MANET and wireless mesh networks can be confusing.  
+To make things clear, the concepts are summarized as below:  
 
 	- WSN: fixed wireless sensor network. must have sensors. 
 		boards can be both powerful (like BBB, raspberry pi) or not powerful (like arduino). 
@@ -25,16 +25,16 @@ to make things clear, the concepts are summarized as below:
 
 see below for more detailed comparisons.
 
-differences among WSN, MANET and wireless sensor networks
+Differences among WSN, MANET and wireless sensor networks
 ----------------------------------------------------------
 
-interestingly, the differences are not on the literal meaning of the names.  
-otherwise wireless mesh networks must be the superset of WSN and MANET because all them use mesh routing. 
-and MANET must be a superset of WSN because MANET can deal with both mobile and fixed nodes.
+Interestingly, the differences are not on the literal meaning of the names.  
+Otherwise wireless mesh networks must be the superset of WSN and MANET because all them use mesh routing. 
+And MANET must be a superset of WSN because MANET can deal with both mobile and fixed nodes.
 
-i think the differences lie on the real-world applications of the networks and the names are not detailed enough.
+I think the differences lie on the real-world applications of the networks and the names are not detailed enough.
 
-i think to make things less confusing, wireless sensor network should be called: wireless mesh sensor (power-constrained) fixed network;  
+I think to make things less confusing, wireless sensor network should be called: wireless mesh sensor (power-constrained) fixed network;  
 MANET should be called: mobile ad hoc wireless mesh network;  
 wireless mesh network: wireless mesh more-powerful not-power-constrained network; (can be mobile or not mobile or hybrid)
 
@@ -42,7 +42,7 @@ wireless mesh network: wireless mesh more-powerful not-power-constrained network
 What is Wireless sensor network (WSN)
 ------------------------------------
 
-reference: http://www.scribd.com/doc/50634760/MANET-vs-WSN#scribd
+Reference: http://www.scribd.com/doc/50634760/MANET-vs-WSN#scribd
 
 A wsn consists of spatially distributed autonomous to monitor physical or environmental conditions, 
 such as temperature, sound, vibration, pressure, motion or pollutants 
@@ -64,7 +64,7 @@ what is MANET:
 	- self-configuring network of mobile routers connected by wireless links (forms arbitrary topology & rapid unpredictable topological changes)  
 	- each device in a MANET is free to move independently in any direction; each must forward traffic unrelated to its own use, and therefore each is a router itself.
 
-application of MANET:  
+Application of MANET:  
 	- battlefield communication  
 	- sensor networks!! (this means sensor network is a subset of MANET, although sensor networks are usually not mobile)  
 	- personal area networks (PAN) using laptops, smartphones, smartwears etc  
@@ -73,29 +73,29 @@ application of MANET:
 differences between WSN and "mobile ad-hoc network MANET
 -------------------------------------------------------------------------------------------
 
-based on https://www.quora.com/What-is-the-difference-between-wireless-sensor-networks-and-ad-hoc ,
+Based on https://www.quora.com/What-is-the-difference-between-wireless-sensor-networks-and-ad-hoc ,
 WSN's topology is more stable (nodes are fixed), so routes are fixed most of the time. 
-of course, nodes in wsn are to sense something..
+Of course, nodes in wsn are to sense something..
 (the decision of what routes to send can be determined by gateway only based on the link. though i don't agree..)
 
-on the other hand, ad-hoc usually means mobile or changing topology. 
-the network must repeatedly reconfigure its routes. 
+On the other hand, ad-hoc usually means mobile or changing topology. 
+The network must repeatedly reconfigure its routes. 
 MANET doesn't have a fixed central controller and so they have to reconfigure their routes collectively.  
-examples of MANETS are networks formed by devices installed within cars (VANET) to monitor accidents, traffic and so on, 
+Examples of MANETS are networks formed by devices installed within cars (VANET) to monitor accidents, traffic and so on, 
 or a network consisting of drones.
 
-based on my own experience, a network that made of commercial airplanes can be considered as a MANET too.
+Based on my own experience, a network that made of commercial airplanes can be considered as a MANET too.
 
 In some sense, MANET is a super set of WSN. 
 MANET can handle both mobile and fixed nodes.
-the nodes in MANET can have sensors or don't have sensors.
-the nodes in MANET can have or not have energy constrain. 
+The nodes in MANET can have sensors or don't have sensors.
+The nodes in MANET can have or not have energy constrain. 
 Therefore, WSN can be considered as a subset of MANET (but the impression of MANET focuses on the changing-topology characteristics). 
 
-of course, there can be a mobile wireless sensor network, which is equivelent to MANET whose purpose is to collect sensor data on mobile nodes.
+Of course, there can be a mobile wireless sensor network, which is equivelent to MANET whose purpose is to collect sensor data on mobile nodes.
 
 
-based on http://www.scribd.com/doc/50634760/MANET-vs-WSN#scribd , 
+Based on http://www.scribd.com/doc/50634760/MANET-vs-WSN#scribd , 
 the similarities between MANET and WSN are:  
 	- both are distributed wireless networks that has no significant network infrastructure in place  
 	- both need multihop routing (each node is a router)  
@@ -115,19 +115,19 @@ the differences are:
 What is wireless mesh network
 --------------------------------------------------
 
-reference: http://computer.howstuffworks.com/how-wireless-mesh-networks-work.htm
+Reference: http://computer.howstuffworks.com/how-wireless-mesh-networks-work.htm
 
 it is more like an extension of the wired ethenet.  
-ethernet nodes are wiredly connected to the router and the nodes are not meshly connected (the typical topology is star, with router in the centre).
+Ethernet nodes are wiredly connected to the router and the nodes are not meshly connected (the typical topology is star, with router in the centre).
 
-wireless mesh network is like ethernet, but nodes are communicating wirelessly, and able communicate with each other (mesh routing).
+Wireless mesh network is like ethernet, but nodes are communicating wirelessly, and able communicate with each other (mesh routing).
 
-therefore, wireless mesh network is very close to humans.
-it is more about spreading the internet via many wireless nodes to a bigger area. 
-the nodes are in the "powerful" category.
+Therefore, wireless mesh network is very close to humans.
+It is more about spreading the internet via many wireless nodes to a bigger area. 
+The nodes are in the "powerful" category.
 
-in a wireless mesh network, only one node needs to be physically wired to a network connection. 
-the one wired node then shares its internet connection wirelessly with all other nodes in its vinicity. 
-the more nodes, the further the connection spreads, creating a wirelss "cloud of connectivity" that can serve a small office or a city of millions.
+In a wireless mesh network, only one node needs to be physically wired to a network connection. 
+The one wired node then shares its internet connection wirelessly with all other nodes in its vinicity. 
+The more nodes, the further the connection spreads, creating a wirelss "cloud of connectivity" that can serve a small office or a city of millions.
 
-the applicaton domain of wirelss mesh network is really different from WSN or MANET. 
+The applicaton domain of wirelss mesh network is really different from WSN or MANET. 
