@@ -34,13 +34,13 @@ class TestHELLOWORLDclass (unittest.TestCase):
 
 		# we need to keep this original method,
 		# because at the end we need to change the method back to this original one
-		originalGetData = HELLOWORLD.getData ### can use the internal method directly???
+		originalGetData = HELLOWORLD.getData ### can use the internal method directly
 
 		# testing the method GetDataLength()
 		try:
 			# replace the method by the mockGetData.. 
 			# this doesn't seem to be global; in the next test the helloworld method is still the original one
-			# so the methods inside a class are public??
+			# so the methods inside a class are public from the perspective of c++
 			HELLOWORLD.getData = mockGetData
 			
 			helloworld_obj = HELLOWORLD()

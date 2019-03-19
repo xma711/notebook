@@ -25,7 +25,7 @@ Usually you do not have to pick, because popular hypothesis class has its popula
 	how exactly the EMR algorithm is carried out base on the hypothesis class and the loss function chosen.  
 	e.g. linear regression: there is a closed-form solution;  
 		svm: stochastic gradient descent;  
-		logistic regression:  stochastic gradient descent??
+		logistic regression:  Maximum likelihood estimation
 
 8. use the hypothesis obtained from ERM to get the risk/error from the test set.  
 	if the risk is too large, analyze if it is due to 
@@ -102,7 +102,6 @@ And what happen if this assumption is invalid?
 
 I think, if the assumption is invalid, we need to change the xi (or yi) to make the assumption valid,
 at least for the generative methods.  
-(how???)
 
 
 Actually, what we really care about is p(y|xi),

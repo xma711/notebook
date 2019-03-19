@@ -1,7 +1,6 @@
 #!/home/xma/anaconda2/bin/python
 
 import numpy as np
-import seaborn # ???
 import matplotlib.pyplot as plt
 import tensorflow as tf
 

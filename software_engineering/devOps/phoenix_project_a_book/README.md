@@ -7,7 +7,7 @@ Sarah: the marketing manager
 
 Steve: the CEO of company
 
-Erik: the knowledagable technology guy who told Bill the similarity between a plant and software development; a board memeber
+Erik: the knowledgeable technology guy who told Bill the similarity between a plant and software development; a board member
 
 Maggie: business team in charge of promotion and pricing roadmaps
 
@@ -40,7 +40,7 @@ four categories of work
 - unplanned works (aka. firefighting) or "anti-work"
 
 many things/methodologies we try to do is to prevent unplanned works;
-need to coordinate chanages better so that they won't fail.
+need to coordinate changes better so that they won't fail.
 Orderly handling of outages and incidents..
 
 
@@ -50,11 +50,11 @@ Other points
 1. identify the constraints.
 	any improvements not done at the constraints / bottlenecks are just an illusion.
 
-2. make sure the constrait is not allowed to waste any time.
+2. make sure the constraint is not allowed to waste any time.
 	it should never wait on any other resource for anything and 
 	it should always work on the highest priority commitment.
 
-3. subordinate the constriant .. (??)
+3. subordinate the constraint.. (subdue the constraint?)
 
 
 If we don't pay the technical debt, it will come back to bite us, with compound interests.

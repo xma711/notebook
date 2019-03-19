@@ -50,7 +50,7 @@ WSNs --> high heterogeneity --> different proprietary and non-proprietary soluti
 delaying a large-scale deployment of wsn technologies to obtain a virtual wide sensor network able to integrate all existing sensor networks.
 
 "the current trend is to use the internet protocol to achieve native connectivity between WSNs and the internet".
-(not sure if this is true; but personally i think this ease many problems.)
+(Personally i think this eases many problems.)
 
 "following trend of web mashups (??)", end users can create applications mixing 
 real-world devices such as home appliances with virtual services on the web.

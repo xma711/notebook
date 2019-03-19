@@ -140,7 +140,7 @@ We face a tradeoff, the bias-complexity tradeoff.
 In many cases, the empirical research focuses on designing good hypothesis classes for a certain domain.
 
 Note that by now we are always talking about one single set of training data (there is no test data).  
-Will the existence of the test data change the bias-complexity tradeoff?? (the answer is no. read the next section.)
+Will the existence of the test data change the bias-complexity tradeoff? (the answer is no. read the next section.)
 
 
 Is it possible to reduce approximation error while maintaining estimation error?
@@ -161,16 +161,15 @@ Even if we run EMR on 2 different hypothesis classes, such as SVM and logistic r
 
 To ensure the EMR h from {H1, H2} is better than h1 or h2 in terms of population error, we do need more data to do the training.
 
-On the other hand, if we look at the test error and pick the h from {h1, h2} such that h has as smaller test error, 
-is h better than either h1 or h2??
+On the other hand, if we look at the test error and pick the h from {h1, h2} such that h has a smaller test error, 
+is h better than either h1 or h2?
 
-The answer seems yes. (but it is wrong when we do this on many Hi!!! read on.)
+The answer seems yes but it is wrong when we do this on many Hi!!
 
 This time, the h chosen is not necessarily the same as the EMR h from the full H.
 
 Does this mean that the existence of test data makes the bias-complexity tradeoff invalid?  
 In another words, with the test data, can we reduce the bias (approximation error) and also reduce the estimation error?  
-In another another words, does the bias-complexity trade-off only apply when we use the training error along to decide the best h?
 
 One example is that: we run ERM on different hypothesis classes with the sample,
 and then pick the h that leads to the smallest test error.  
@@ -179,15 +178,13 @@ Does this violate the bias-complexity trade-off?
 Another thing is that if we know the sample size is not enough for the full H, can we chop H up and then run EMR on each Hi, 
 and at the end we choose the hi that results in a smallest test error?  
 This method should be nicknamed "Test risk minimization"..  
-(this seems more complicated than i thought because if there are many Hi, then the test data is essentially the "2nd-level" training data,
-and there is a possibility to overfit the test data..)
 
-The h that results in a smallest test error is no longer the best for the population, because this h could be overfitting the test data!!!!!  
-This means that the Test Risk Minimization algo has a limit itself!!!  
-When the number of hypothesis classes increases to a certain limit, the population error actually increases, because the overall estimation error increases!!!!
+The h that results in a smallest test error is no longer the best for the population, because this h could be overfitting the test data!!  
+This means that the Test Risk Minimization algo has a limit itself.  
+When the number of hypothesis classes increases to a certain limit, the population error actually increases, because the overall estimation error increases.
 
-Therefore, it seems that with a test dataset, the bias-complexity tradeoff is still there!!!  
-Because while we are pushing the approximation error to 0, the estimation error starts to increases when the number of hypothesis classes reaches certain number!!!
+Therefore, it seems that with a test dataset, the bias-complexity tradeoff is still there!  
+Because while we are pushing the approximation error to 0, the estimation error starts to increases when the number of hypothesis classes reaches certain number.
 
 To reduce the estimation error further, there is no way but to increase the sample size.
 
@@ -228,7 +225,7 @@ Again, when the hypothesis class becomes richer, the approximation error will dr
 Boosting
 -------------------------
 
-Is there a way to tune the approximation error (bias??) and estimation error smoothly?
+Is there a way to tune the approximation error and estimation error smoothly?
 
 Answer: yes.  
 Example: adaboost.

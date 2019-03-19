@@ -10,12 +10,11 @@ my own summary
 Professional programmers (let's say 'professional') take responsibilities.
 
 Professional learns its domain of problems.
-(myself: i should learn more on IoT and WSN..)
 
 Professional says no when it is really impossible.
 Talk to the manager and come out with a realistic schedule or alternative solution.  
 Never say "ok i will try" after being pressurised.
-"try" is a bad word. (why?? need to read the section again)
+"try" is a bad word. (need to read the section again)
 
 professional commits to a thing when he is really sure that he can deliver.  
 

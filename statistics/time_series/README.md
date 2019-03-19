@@ -19,7 +19,7 @@ it means that we can have a list of points = {yi - w xi},
 where w is still an unknown but stays the same across all points.
 
 One unknown requires one equation to have a single answer, but we have multiple equations,
-how to get the best w??
+how to get the best w?
 
 I think MLE can solve this (thinking about this later).
 
@@ -74,56 +74,3 @@ Time series and machine learning
 
 Reference: https://www.datascience.com/blog/time-series-forecasting-machine-learning-differences
 
-
-think again (wrong - ignore this section)
----------------------------------
-
-If yi = 2xi + e, e~N(0,1)  
-then p(yi | xi) = N(2xi, 1)
-
-what this means is that given a xi, yi has a fixed distribution.
-But for different xi, yi has a different distribution (in this example, mean is different but variance is the same)
-
-
-but what about p(yi,xi) and p(yi)?
-
-P(yi) = SUM_xi( p(yi|xi) * p(xi) ) = SUM_xi( N(2xi, 1) * p(xi) )
-
-
-
-
-
-initial thinking (likely wrong - ignore this section)
----------------------
-
-For a statistics probability distribution, i can plot the points of the variable x in any order.  
-Ultimately i can get the probability distribution.
-
-For a linear regression, usually we can randomize the order of x and y pairs (as long as each xi and yi pair is together).  
-The Least-square method will result in the same estimations of the parameters.
-
-The reason that i can randomize the order of the pairs of (xi, yi) is that the joint probability of (xi, yi) is the same regardless of i.  
-This reason is equivalent to say that (xi,yi) is stationary (i think).  
-(or is it that p(yi|xi) is the same, not about p(xi, yi)??? )
-
-If this assumption is not true, we cannot randomize the order of the pairs of (xi, yi).  
-
-
-Let's take a look at a time series xt.
-
-
-If we do a linear regression of xt and xt+1 (autoregression),
-we already assume (xt, xt+1) is stationary,
-i.e. the joint probability distribution of (xt, xt+1) is the same regardless of t.  
-In some sense, although the probability distribution of xt looks dynamic,
-the probability distribution of (xt, xt+1) is static (if the stationary assumption holds.)
-
-Ultimately, what we need to do is to get (xi, yi) such that the joint probability of (xi, yi) is the same regardless of i.
-
-If such assumpiton doesn't hold, we need to obtain new pair of (xi, yi) from the raw data 
-to make this assumption valid.
-
-E.g. yi = 2xi + e, where e follows normal distribution of (0,1),
-it means that for each xi, yi follows a normal distribution of (2xi, 1).
-
-P(xi, yi) = p (yi | xi) * p(xi) = N(2xi, 1) * p(xi)

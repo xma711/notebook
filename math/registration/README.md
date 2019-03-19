@@ -93,7 +93,7 @@ We need extra information.
 The qi here are not estimated; they are exact.  
 The 2nd error function: El = SUM{ || Ai pi - qi ||^2 }
 
-q3: is this pi same as the pi in Ed?? should be another set right?  
+q3: is this pi same as the pi in Ed? should be another set right?  
 	- same set, just that some of them have corresponding landmarks.
 
 A 3rd error function is Es = SUM{|| (Ai - Aj) G||^2 @F }, 
@@ -120,7 +120,7 @@ Inside El it is a nx3 matrix.
 To represent Es in a more compact way is more complicated.  
 We need to have an incidence matrix M, in which each column is mesh vertex and each row is a mesh edge that connects two vertices, 
 such that M[r, i] = 1, M[r, j] = -1 if r connects vertices i and j, i>j.  
-Q4: what does this mean exactly??   
+Q4: what does this mean exactly?   
 	- each column is an vertex index; each row corresponds to an edge. e.g. if edge with id 1 connects node 2 and node 3, then first row will have a 1 in column 3 and -1 in column 2, and 0 for other columns. 
 
 Anyway we will have Es = || (M Kx G) A ||^2 @F, where kx means Kronecker product.  

@@ -104,7 +104,7 @@ Question: any difference in the results between this method and the method descr
     -> it seems that the method in lecture notes allows any dimension in a data point, because the model for each dimension is calcuated separately.
 
 Another question: after doing all these, we got 2 big sets of equations, one between x and u, the other between y and u,
-how to combine them together to have just x and y ??  
+how to combine them together to have just x and y ?  
     -> one solution i can think of is that we have a y = mu(u) function and a x = phi(u) function, then we convert phi(u) to u(x), then sub u(x) to y =mu(u) to make it become y(x).
 
 Btw i think another way to solve the problem using similar way in the lecture notes is 

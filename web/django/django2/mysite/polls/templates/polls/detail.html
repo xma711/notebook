@@ -9,7 +9,7 @@
 {% endif %}
 
 <form action={% url 'polls:vote' question.id %} method="post">
-	{# what is 'csrf_token'?? #}
+	{# what is 'csrf_token'? #}
 	{# answer: for security reason. there is risk of cross site request forgeries; #}
 	{# all POST forms that are targeted at internal URLs should use the csrf_token tag #}
 	{% csrf_token %}

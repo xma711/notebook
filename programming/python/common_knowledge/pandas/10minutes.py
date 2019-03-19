@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Series??
 # Series seems a type that it will automatically have a default integer index
 s = pd.Series( [ 1, 3, 5, np.nan, 6, 8 ] )
 print "type(s) = {}".format(type(s))
@@ -15,7 +14,7 @@ print "s[0:2] = \n{}\n".format(s[0:2])
 # dataframe seems more commonly used
 
 # this dates has a type of "pandas.core.indexes.datetimes.DatetimeIndex".
-# is this dataframe?? No.. it is just index in time.. (as the type implies)
+# is this dataframe? No.. it is just index in time. (as the type implies)
 dates = pd.date_range('20170101', periods=6)
 print "type(dates) = {}".format(type(dates))
 print "dates = \n{}\n".format(dates)

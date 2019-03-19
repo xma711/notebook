@@ -65,7 +65,7 @@ we need to add this method to all classes.
 In data structure, we only need to add this method to the 
 interface class.
 
-So????
+So?
 Think about if you want data to be changed often 
 or methods to be changed often.
 If data to be changed often, use object,

@@ -1,4 +1,4 @@
-Understand Bayes's Rule again
+Understand Bayes' Rule again
 ------------------------------------
 
 The rule: p(y|x) = p(x|y)p(y) / p(x) = p(x|y)p(y) / INTEGRATE( p(x|y)p(y)dy )
@@ -34,7 +34,7 @@ Bayesian interpretation
 ------------------------------
 
 Probability measures a degree of belief.
-Bayes's theorem then links the degree of belief in a proposition before and after accounting for evidence.
+Bayes' theorem then links the degree of belief in a proposition before and after accounting for evidence.
 
 P(A): the prior, is the initial degree of belief in A.  
 P(A|B): the posterior, is the degree of belief having accounted for B.  
@@ -66,12 +66,12 @@ According to Fact 2, there are 50 rich people altogether,
 so the fraction of them who are happy is 40/50, or 80%." 
 
 
-Bayes's rule
+Bayes' rule
 ------------------
 
-(what is the difference between Bayes's theorem and Bayes's rule??)
+(What is the difference between Bayes' theorem and Bayes' rule? No difference.)
 
-Bayes's rule simply states that  
+Bayes' rule simply states that  
 posterior (after) odds equals prior (before) odds times Bayes factor.
 
 Byes's rule relates that odds of event A1 to the odds of event A2 before (prior to)

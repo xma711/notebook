@@ -228,7 +228,7 @@ that don't share protocols for speaking with one another.
 Frameworks:  
 	- some focus on data logging: Jasper Tech and Xively  
 	- software-development environment to create the software to work with the hardware used in the IoT: IBM's cognitive IoT, XMPP's initiative in Chatty Things  
-	- REST (isn't this network architecture???)
+	- REST
 
 Enabling technologies: RFID, NFC, LiFi, Optical tag, bluetooth LE, ZigBee, Z-Wave, Thread, LTE-Advanced, WiFi-Direct, HaLow, HomePlug, MoCA, Ethernet
 

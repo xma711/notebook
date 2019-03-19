@@ -13,7 +13,7 @@ which combines analytics, security, a blockchain technology for authentication i
 
 Ref: http://www.forbes.com/sites/janakirammsv/2016/11/19/6-enterprise-iot-platforms-to-consider-for-your-digital-transformation-strategy/#1904b5ea4ead  
 6 IoT platforms:  
-	- Amazon: AWS IoT service, having device management to visualization; also the existing services like aws lambda, EMR (??), DynamoDB, Kinesis, etc.   
+	- Amazon: AWS IoT service, having device management to visualization; also the existing services like aws lambda, EMR (Elastic MapReduce), DynamoDB, Kinesis, etc.   
 	- IBM: IBM Watson platform.. tightly integrated with Bluemix; quite aggressive..  
 	- Cisco: (btw Cisco seems to participate in every iot alliance..) Fog computing initiative.. acquisition of Jasper to deliver a IoT platform ideal for tracking SIM-based devices.  
 	- GE: GE's Predix platform targets industrial IoT deployments. strength of predix is in its high-fidelity device simulation of expensive equipments such as wind turbines and airplane engines.  

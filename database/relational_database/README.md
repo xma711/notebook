@@ -53,13 +53,13 @@ the the value of each attribute contains only a single value from that domain.
 One example is here: https://en.wikipedia.org/wiki/First_normal_form  
 (not easy to understand what is the boundary for second normal form and third normal form.)
 
-A table is 2NF if it is in 1NF and every non-primary attriabute is dependent on the whole of every candidate key. (meaning??)
+A table is 2NF if it is in 1NF and every non-primary attriabute is dependent on the whole of every candidate key.
 
 A table is 3NF if and only if the table is 2NF (thus 1NF too) and 
-every non-primary attribute of table is an attribute that doesn not belong to any candidate key of R.. (???)
+every non-primary attribute of table is an attribute that doesn not belong to any candidate key of R..
 
 From stackoverflow: http://stackoverflow.com/questions/723998/what-are-1nf-2nf-and-3nf-in-database-design,  
 1NF: each cell in a table must contain only one piece of information, and there can be no duplicate rows.
 2NF and 3NF are all about being dependent on the primary key.. 
-The primary key can be made up of multiple columns. (getting more confusing...)  
+The primary key can be made up of multiple columns.  
 The data depends on the key (1NF), the whole key (2NF) and nothing but the key (3NF)..

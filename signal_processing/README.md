@@ -140,7 +140,7 @@ to another sequence of complex numbers Xk (coefficients for each complex sinduso
 
 Xk = SUM_from_0_to_Nminus1(xn * e^(-2pi * i/N * k * n))
 
-the frequency for each Xk is k cycles per N samples (???).
+the frequency for each Xk is k cycles per N samples.
 
 Anyway in practice the maximum detectable frequency is half of the sampling frequency.
 And the number of samples determine the resolution from 0 to the maximum detectable frequencies.

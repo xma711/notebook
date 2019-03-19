@@ -24,5 +24,5 @@ Run this test by:
 python3 -m unittest double_unittest (don't put .py at the end)
 
 question: should i also add checking before return?
-Making sure the returned value won't be less than 2 and more than 20???
+Making sure the returned value won't be less than 2 and more than 20?
 Maybe yes..

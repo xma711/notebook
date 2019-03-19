@@ -65,7 +65,7 @@ updates = [(state, state + inc)]; # define an update list;
 accumulator = theano.function([inc], state, updates = updates);
 # interestingly, in this case, the function argument to theano.function is state. previously it is a precise function variable;
 # then we have to further supply a update list to handle the state;
-# question: what if there are 2 shared variables? input shared variables in a list??
+# question: what if there are 2 shared variables? input shared variables in a list?
 print state.get_value();
 accumulator(1);
 print state.get_value();

@@ -53,7 +53,7 @@ client.on_disconnect = on_disconnect
 # to provide very quick start.
 client.connect_async(server, port=1883, keepalive=60)
 
-# question: how to know if the server doesn't have a broker???
+# question: how to know if the server doesn't have a broker?
 # one way to solve is to see if the on_connect is ever called
 
 # This is part of the threaded client interface. Call this once to

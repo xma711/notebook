@@ -55,7 +55,6 @@ class QuestionIndexViewTests(TestCase):
 		# client variable exists in every TestCase
 		response = self.client.get(reverse('polls:index'))
 		self.assertEqual(response.status_code, 200)
-		# what if the existing database has something inside??
 		self.assertContains(response, "No polls are available.")
 		# following is a powerful feature - it can extract the latest_question_list for the response!
 		self.assertQuerysetEqual(response.context['latest_question_list'], [])
