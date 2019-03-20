@@ -2,8 +2,8 @@ BOARD = linux64
 
 
 # GTEST_DIR is where the source codes for gtest is
-GTEST_DIR = /home/xma/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googletest
-GMOCK_DIR = /home/xma/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googlemock
+GTEST_DIR = ${HOME}/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googletest
+GMOCK_DIR = ${HOME}/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googlemock
 
 # Where to find user code.
 SRC_DIR = .

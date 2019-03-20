@@ -34,7 +34,7 @@ setrealdata:
 	ln -s test_ori.csv ./test.csv
 
 run:
-	/home/xma/anaconda2/bin/python2.7 predictor.py
+	~/anaconda2/bin/python2.7 predictor.py
 
 sort:
 	sort -k 1,1 -n results.csv > results_sort.csv

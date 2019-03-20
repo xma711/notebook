@@ -43,7 +43,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 which is obviously setting the environment variable (inside this runtime only)
 
 there is a default settings.py file.  
-E.g. in my case, it can be found at /home/xma/.virtualenvs/django2/lib/python3.5/site-packages/django/conf/global_settings.py
+E.g. in my case, it can be found at ~/.virtualenvs/django2/lib/python3.5/site-packages/django/conf/global_settings.py
 
 django loads global_settings.py first, and then loads settings from the specified settings file, overriding the global settings as necessary.
 

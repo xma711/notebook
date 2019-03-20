@@ -1,4 +1,4 @@
-#!/home/xma/anaconda2/bin/python
+# run this with ~/anaconda2/bin/python
 
 from distributed import Client
 

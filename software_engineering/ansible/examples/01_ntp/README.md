@@ -5,7 +5,7 @@ Use the create_remove_ubuntu_test_containers.sh to create the containers.
 
 Or use the followings.
 
-Create ubuntu container: docker run -d --net dockernet --ip 192.168.10.101  -v /home/xma/docker/ubuntu_test/.ssh:/root/.ssh --name ubuntu_test_1 --restart always rastasheep/ubuntu-sshd:16.04-customized
+Create ubuntu container: docker run -d --net dockernet --ip 192.168.10.101  -v ${HOME}/docker/ubuntu_test/.ssh:/root/.ssh --name ubuntu_test_1 --restart always rastasheep/ubuntu-sshd:16.04-customized
 
 this rastasheep/ubuntu-sshd:16.04-customized is created using the dockerfile in devops/example_2017/ubuntu_sshd_dockerfile/
 

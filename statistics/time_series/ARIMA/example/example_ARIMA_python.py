@@ -1,5 +1,4 @@
-#!/home/xma/anaconda2/bin/python
-
+# run this this ~/anaconda2/bin/python
 # reference: https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/
 # Data can be downloaded from: https://datamarket.com/data/set/22r0/sales-of-shampoo-over-a-three-year-period#!ds=22r0&display=line
 

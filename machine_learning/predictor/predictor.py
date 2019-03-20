@@ -1,7 +1,4 @@
-# this is the updated version on 02 Oct 2017
-
-# run this using: python3 filename  (python3 can be installed by anaconda)
-# to use a particular classifier, use: python3 filename vc/svm/rf/mlp
+# run this script with python2 or python3 from anaconda
 
 from sklearn import svm 
 from sklearn.neural_network import MLPClassifier
@@ -12,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB 
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
+from sklearn.ensemble import GradientBoostingClassifier
 
 import numpy as np
 import time
@@ -21,17 +19,7 @@ import os
 import json
 
 ## global variables
-# user can choose classifier: vc (voting), svm, rf (random forest), mlp (neural network)
-classifier_chosen = 'vc';
-
-# other choices are: poly, linear, sigmoid and precomputed
-kernel_svm = 'rbf'; 
-
-# parameter for rbf
-gamma_svm = 0.0252
-
-# penalty for svm
-penalty_svm = 10
+classifier_chosen = None;
 
 write_file = False
 
@@ -43,10 +31,60 @@ classifiers_supported_dict = {
 	"lr": "logistic regression", 
 	"nbg": "nb_gaussian", 
 	"nbm": "nb_multinominal", 
-	"nbb": "nb_bernoulli"
+	"nbb": "nb_bernoulli",
+	"gb": "gradient_boosting",
 }
 
 classifiers_supported = classifiers_supported_dict.keys()
+
+arguments_dict = {}
+for c in classifiers_supported:
+	arguments_dict[c] = {}
+
+# default arguments
+arguments_dict['rf'] = {
+	'n_estimators': 128,
+	'min_samples_split': 2,
+	'min_samples_leaf': 1,
+	'max_depth': None,
+	'random_state': 1
+}
+
+arguments_dict['svm'] = {
+	'gamma': 0.0252, # parameter for rbf
+	'C': 10, # penalty for svm
+	'cache_size': 500,
+	'probability': True,
+	'kernel': 'rbf', # other choices are: poly, linear, sigmoid and precomputed
+}
+
+arguments_dict['mlp'] = {
+	'solver': 'adam', # {'lbfgs', 'sgd', 'adam'}
+	'alpha': 1e-2,
+	'random_state': 1,
+	'max_iter': 2000,
+	'hidden_layer_sizes': (200,100),
+	'activation': 'logistic', # actvation: logistic, tanh, relu(default), identity
+}
+
+arguments_dict['lr'] = {
+	'penalty': 'l2',
+	'dual': False,
+	'tol': 0.0001,
+	'C': 1.0,
+	'fit_intercept': True,
+	'intercept_scaling': 1,
+	'class_weight': None,
+	'random_state': None,
+	'solver': 'liblinear',
+	'max_iter': 100,
+	'multi_class': 'ovr',
+	'verbose': 0,
+	'warm_start': False,
+	'n_jobs': 1,
+}
+
+arg_inputs = []
 
 # utility function
 def print_with_time(msg):
@@ -57,9 +95,7 @@ def print_help():
 	print ("\t-h : print help")
 	print ("\t-w : output results to file")
 	print ("\t-c < classifier > : supported: " + json.dumps(classifiers_supported_dict, indent=12))
-	print ("\t-k < svm kernel > : supported: rbf, poly, linear, sigmoid and precomputed")
-	print ("\t-g < svm gamma for rbf >")
-	print ("\t-C < svm penalty value >")
+	print ("\t-a < general argument in the format of argumentName=value (auto interpreted) or argumentName=value=type; can be applied multiple times > : e.g. gamma=0.0252 or gamma=0.0252=float. The arguments apply to the chosen classifier")
 
 ############ use option to set parameters #################
 
@@ -67,7 +103,7 @@ def print_help():
 argv=sys.argv[1:] # ignore the program name
 
 try:
-	opts, args = getopt.getopt(argv, "hwc:k:g:C:n:", [])
+	opts, args = getopt.getopt(argv, "hwc:a:", [])
 
 except getopt.GetoptError:
 	print ("Error: the format or the input of options is wrong")
@@ -90,14 +126,10 @@ for opt, arg in opts:
 			print ("no such classifier: " + classifier_chosen)
 			print_help()
 			exit(1)
-	elif opt in ("-k"):
-		kernel_svm = arg
-	elif opt in ("-g"):
-		gamma_svm = float(arg)
-	elif opt in ("-C"):
-		penalty_svm = float(arg)
 	elif opt in ("-w"):
 		write_file = True
+	elif opt in ("-a"):
+		arg_inputs.append(arg)
 	else:
 		print ("No such option allowed. Please check the correct uages:")
 		print_help()
@@ -105,7 +137,30 @@ for opt, arg in opts:
 
 ###########################################################
 
-print ("classifier_chosen is : " + classifier_chosen)
+if classifier_chosen is None:
+	print ("please choose a classifier.")
+	print_help()
+	exit(1)
+
+if arg_inputs:
+	for arg in arg_inputs:
+		arg_info = arg.split('=')
+		arg_name = arg_info[0]
+		val = arg_info[1]
+		if len(arg_info) >= 3:
+			val_type = arg_info[2]
+		else:
+			val_type = 'auto'
+		if val_type == 'auto' or val_type == 'float' or val_type == 'int' or val_type == 'bool' or val_type == 'none':
+			val = eval(val)
+		else:
+			print ("Value type {} is not supported.".format(val_type))
+			exit(1)
+		
+		arguments_dict[classifier_chosen][arg_name] = val
+
+print ("classifier_chosen is : {} - {}".format(classifier_chosen, classifiers_supported_dict[classifier_chosen]) )
+print ("classifier arguments are: {}".format(arguments_dict[classifier_chosen]))
 print ("write to file: " + str(write_file))
 print ("")
 
@@ -139,53 +194,42 @@ print ("test data .shape: " + str(test.shape) )
 
 test = np.array(test, dtype=float)
 
-# create a svm classifier
-sclf = svm.SVC(gamma=gamma_svm, C=penalty_svm, cache_size=500, probability=True, kernel=kernel_svm)  # a good combination of gamma and C can be determined by GridSearchCV
 
-## example of GridSearchCV for svm; it can be very slow if there are too many choices; better do this offline
-## parameters = {'gamma':[0.252,  0.256], 'C':[10, 13]}
-## svr = svm.SVC(cache_size=500)
-## gs = GridSearchCV(svr, parameters) # auto get the best combinations
-
-mlp = MLPClassifier(solver='adam', alpha=1e-2, random_state=1, max_iter=2000, hidden_layer_sizes=(200,100), activation='logistic') 
-#{'lbfgs', 'sgd', 'adam'} alpha=1e-5; actvation: logistic, tanh, relu(default), identity
-
-### random forest
-forest = RandomForestClassifier( n_estimators=128, min_samples_split=2, min_samples_leaf=1, max_depth=None, random_state=1 ) 
+# for svm, a good combination of gamma and C can be determined by GridSearchCV
+# example of GridSearchCV for svm; it can be very slow if there are too many choices; better do this offline
+# parameters = {'gamma':[0.252,  0.256], 'C':[10, 13]}
+# gs = GridSearchCV(svr, parameters) # auto get the best combinations
 
 # the combined classifier
 # the higher the accuracy of a classifier, the higher the weight it is assigned
-vc = VotingClassifier(estimators=[('rf', forest), ('mlp', mlp), ('sv', sclf)], voting='soft', n_jobs=2, weights=[1, 3, 5])
-
-### logistic regression
-logistic_regression = LogisticRegression(penalty='l2', dual=False, 
-tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver='liblinear', max_iter=100, multi_class='ovr', verbose=0, warm_start=False, n_jobs=1)
-
-# variants of naive bayes
-nb_gaussian = GaussianNB()
-nb_multinominal = MultinomialNB()
-nb_bernoulli = BernoulliNB()
-
-# choose the classifier
 if (classifier_chosen == 'vc'):
-	classifier = vc
+	classifier = VotingClassifier(estimators=[
+			('rf', RandomForestClassifier( **arguments_dict['rf'] )),
+			('mlp', MLPClassifier( **arguments_dict['mlp'] )),
+			('sv', svm.SVC( **arguments_dict['svm'] ))], 
+		voting='soft', n_jobs=2, weights=[1, 3, 5])
+# svm
 elif (classifier_chosen == 'svm'):
-	classifier = sclf
-	print ("kernel function = " + str(kernel_svm))
-	print ("gamma = " + str(gamma_svm))
-	print ("penalty = " + str(penalty_svm))
+	classifier = svm.SVC( **arguments_dict[classifier_chosen] )
+# MLPClassifier
 elif (classifier_chosen == 'mlp'):
-	classifier = mlp
+	classifier = MLPClassifier( **arguments_dict[classifier_chosen] )
+### random forest
 elif (classifier_chosen == 'rf'):
-	classifier = forest
+	classifier = RandomForestClassifier( **arguments_dict[classifier_chosen] ) 
+### logistic regression
 elif (classifier_chosen == 'lr'):
-	classifier = logistic_regression
+	classifier = LogisticRegression( **arguments_dict[classifier_chosen] )
+# variants of naive bayes
 elif (classifier_chosen == 'nbg'):
-	classifier = nb_gaussian
+	classifier = GaussianNB( **arguments_dict[classifier_chosen] )
 elif (classifier_chosen == 'nbm'):
-	classifier = nb_multinominal
+	classifier = MultinomialNB( **arguments_dict[classifier_chosen] )
 elif (classifier_chosen == 'nbb'):
-	classifier = nb_bernoulli
+	classifier = BernoulliNB( **arguments_dict[classifier_chosen] )
+# gradient boosting classifier
+elif (classifier_chosen == 'gb'):
+	classifier = GradientBoostingClassifier( **arguments_dict[classifier_chosen] )
 
 print ("classifer = " + str(classifier))
 

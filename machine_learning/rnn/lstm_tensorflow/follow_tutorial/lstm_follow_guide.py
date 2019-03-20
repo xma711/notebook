@@ -1,4 +1,4 @@
-#!/home/xma/anaconda2/bin/python
+# run this with ~/anaconda2/bin/python
 
 # follow: https://towardsdatascience.com/lstm-by-example-using-tensorflow-feb0c1968537
 

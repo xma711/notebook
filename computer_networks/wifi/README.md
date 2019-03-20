@@ -40,14 +40,14 @@ in gentoo, get and ip address using:
 Note that NetworkManager is easier to manage wifi or ethernet.
 
 
-Using wifi dongle Model Number: UWN200. inside: MediaTek MT7601 (Ralink 7601) Controller
+Using wifi dongle Model Number: UWN200. Inside: MediaTek MT7601 (Ralink 7601) Controller
 -------------------------------
 
-Http://www.logicsupply.com/uwn200/
+Reference: http://www.logicsupply.com/uwn200/
 
-the guide to install the driver for linux can be found here: https://docs.google.com/document/d/1-CIGQYdk8ZhU3D3UCNn70jc7C9HdXvEZAsiNW71fGIE/edit
+The guide to install the driver for linux can be found here: https://docs.google.com/document/d/1-CIGQYdk8ZhU3D3UCNn70jc7C9HdXvEZAsiNW71fGIE/edit
 
-for archlinux, use command "*pacman -S dkms-mt7601*". so far this command works on kernel 3.18.1-1-ARCH. 
+For archlinux, use command "*pacman -S dkms-mt7601*". so far this command works on kernel 3.18.1-1-ARCH. 
 What i did actually is: install dkms-mt7601 first. reboot. not working. uninstall mt7601 and reinstall. copy the NetworkManager wifi conf file to the node. enable network manager. and then it works.
 So the point is that i need to use networkManager rather than the original whatever manager in the node.
 
@@ -62,7 +62,7 @@ One possible solucion to make it work in kernel 3.8, is to upgrade the kernel fr
 
 *reboot*
 
-#*pacman -S dkms-mt7601* (install the driver using pacman but this won't work..)
+*pacman -S dkms-mt7601* (install the driver using pacman but this won't work..)
 
 The problem with "pacman -S dkms-mt7601" is that the compilation of the kernel module fails. Error msg:
 
@@ -129,7 +129,7 @@ Bbb will try to compile the kernel and the header for somethime, until it will f
 Check if directory PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/generated is created.   
 Inside there should be these files: asm-offsets.h  autoconf.h  bounds.h  compile.h	mach-types.h  uapi  utsrelease.h (without autoconf.h, later compiling the mt7601u kernel module will lead to some complaints) (reference: http://serverfault.com/questions/568395/what-is-creating-the-generated-autoconf-h)  
 
-then create a link at /usr/src/, as if i am installing the linux header: ln -s /home/xma/PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8 /usr/src/linux-3.8.13-31-ARCH
+then create a link at /usr/src/, as if i am installing the linux header: ln -s ~/PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8 /usr/src/linux-3.8.13-31-ARCH
 
 then create a link at /lib/modules/3.8.13-31-ARCH. ln -s /usr/src/linux-3.8.13-31-ARCH /lib/modules/3.8.13-31-ARCH/build  
 
@@ -155,31 +155,6 @@ Restart=none
 [Install]
 WantedBy=multi-user.target
 ```
-
-MT7601U not working on archlinux kernel 3.8.13.31 (solved)
-------------------------------------
-
-Using pacman -Syu doesn't upgrade the kernel to 3.8.13.39 (this is the tarball i prepared before).   
-If i use 3.8.13.39, UART1 won't work when LCD is enabled.
-
-The best way is to remain in 3.8.13.31 and install the driver for the wifi dongle.  
-However, i cannot download the linux header linux-headers-am33x-legacy for this kernel for compiling the mt7601 kernel module, as archlinux is on a rolling release and the arm version doesn't keep the old packages.  
-
-There used to be a rollback machine (in readme in archlinux) but it is down down.
-
-So far the best way is to get this linux-headers-am33x-legacy-3.8.13-31-armv7h.pkg.tar.xz package online and install it manually, and then try to compile mt7601.  
-Despite i posted a question in the forum http://archlinuxarm.org/forum/viewtopic.php?f=60&t=9647 , but no one answers.
-
-Maybe archlinux is not suitable for this purpose. it has no snapshot and i can't go back to the past..
-
-Another hope is that i can install debian with the same kernel. then i compile the driver in debian and then i can copy it to archlinux for use.
-
-Another method (unlikely to work) is to use the driver compiled for kernel 3.8.13.39 and try to make it work in 3.8.13.31.
-
-One more hope is to download the header from sources and install them into archlinux image.
-
-I think the current workaround is: when there is LCD, then use kernel 3.8.13-31 and use another type of wifi dongle; when LCD is not there, then use the kernel 3.8.13-39 that i repared before.
-
 
 Router
 -----------------------

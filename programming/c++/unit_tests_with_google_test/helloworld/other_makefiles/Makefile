@@ -4,7 +4,7 @@ BOARD = linux64
 
 # GTEST_DIR is where the source codes for gtest is
 # must use full path here!
-GTEST_DIR = /home/xma/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googletest
+GTEST_DIR = ${HOME}/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googletest
 
 # the google_test folder is simply clone from github
 # see https://github.com/google/googletest

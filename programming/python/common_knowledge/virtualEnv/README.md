@@ -9,8 +9,8 @@
 4. to return the env, use *workon envName*. to exit, use deactivate (20150520)  
 
 to create a virtual env with packages stored at somewhere else, use sth like:    
-virtualenv --python=python3.4 ./home/xma/myvenv  
-where /home/xma/myvenv is the path to all the new packages.
+virtualenv --python=python3.4 PATH_TO_THE_FOLDER  
+where PATH_TO_THE_FOLDER is the path to all the new packages.
 
 
 My understanding:  

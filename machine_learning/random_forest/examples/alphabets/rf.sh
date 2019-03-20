@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3anaconda ./predictor.py -c rf
+~/anaconda2/bin/python ./predictor.py -c rf

@@ -55,7 +55,7 @@ for id in $( seq $num )
 do
 	echo $id
 	docker run -d --net dockernet --ip 192.168.10.10${id}  \
-		-v /home/xma/docker/ubuntu_test/.ssh:/root/.ssh \
+		-v ${HOME}/docker/ubuntu_test/.ssh:/root/.ssh \
 		--name ${container_name}_${id} --restart always \
 		rastasheep/ubuntu-sshd:16.04-customized
 	if [[ $? -ne 0 ]]; then

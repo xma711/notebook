@@ -1,4 +1,4 @@
-#!/home/xma/anaconda2/bin/python
+# run this with ~/anaconda2/bin/python
 
 import numpy as np
 import matplotlib.pyplot as plt

@@ -1,4 +1,4 @@
-#!/home/xma/anaconda2/bin/python
+# run this with ~/anaconda2/bin/python
 
 import dask.dataframe as dd
 

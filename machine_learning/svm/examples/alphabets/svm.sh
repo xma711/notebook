@@ -1,2 +1,2 @@
 #!/bin/bash
-python3anaconda ./predictor.py -c svm
+~/anaconda2/bin/python ./predictor.py -c svm

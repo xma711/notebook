@@ -3,7 +3,7 @@ Adb
 
 Android debugger.
 
-In my computer the binary is located at /home/xma/Android/Sdk/platform-tools
+In my computer the binary is located at ~/Android/Sdk/platform-tools
 
 to make a phone recognizable by adb, the developer option in the phone has to be enabled (tap build number 7 times). 
 Then in the developer option, the "usb debug" has be enabled.  

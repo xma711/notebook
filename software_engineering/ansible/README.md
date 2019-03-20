@@ -22,7 +22,7 @@ Ansible can be used from command line.
 Another way is to install it using docker: docker pull ansible/ansible:ubuntu1604  
 reference: https://hub.docker.com/r/ansible/ansible/
 
-run container: docker run -d -v /home/xma/docker/ansible/etc/ansible:/etc/ansible -v /home/xma/docker/ansible/.ssh:/root/.ssh --name ansible --restart always ansible/ansible:ubuntu1604  
+run container: docker run -d -v ${HOME}/docker/ansible/etc/ansible:/etc/ansible -v ${HOME}/docker/ansible/.ssh:/root/.ssh --name ansible --restart always ansible/ansible:ubuntu1604  
 
 then inside the container, have to install ansible: apt-get install ansible 
 (not sure why they don't simply install it for us)

@@ -1,4 +1,4 @@
-#!/home/xma/anaconda3/bin/python3
+# run this script with ~/anaconda3/bin/python
 
 import pandas as pd
 import numpy as np

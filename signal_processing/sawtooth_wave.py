@@ -1,4 +1,4 @@
-#!/home/xma/anaconda2/bin/python
+# run this with ~/anaconda2/bin/python
 
 # this example is to show that an and bn are computed from the -pi to pi (period of 2pi),
 # but the resultant fourier series can be applied to the whole -inf < x < inf.

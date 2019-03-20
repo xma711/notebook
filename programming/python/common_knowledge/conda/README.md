@@ -16,7 +16,7 @@ to activate a conda env: source activate test
 (the env name with a bracket will appear)
 
 example to activate a conda env not in the default path (e.g. in anaconda's folder):
-	source activate /home/xma/anaconda3/envs/py3updatePandas
+	source activate ${HOME}/anaconda3/envs/py3updatePandas
 
 note that by default, when i use 'conda', i am already inside the default env, which is the base 'anaconda' folder!!!!
 Therefore conda is always in an environment.

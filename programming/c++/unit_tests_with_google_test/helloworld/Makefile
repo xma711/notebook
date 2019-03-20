@@ -15,7 +15,7 @@
 # Points to the root of Google Test, relative to where this file is.
 # Remember to tweak this if you move this file.
 #GTEST_DIR = ..
-GTEST_DIR=/home/xma/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googletest
+GTEST_DIR=${HOME}/github/knowledge/programming/c++/unit_tests_with_google_test/googletest/googletest
 
 # Where to find user code.
 #USER_DIR = ../samples
