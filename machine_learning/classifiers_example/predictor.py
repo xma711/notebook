@@ -10,6 +10,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.ensemble import GradientBoostingClassifier
+from xgboost import XGBClassifier
 
 import numpy as np
 import time
@@ -32,7 +33,8 @@ classifiers_supported_dict = {
 	"nbg": "nb_gaussian", 
 	"nbm": "nb_multinominal", 
 	"nbb": "nb_bernoulli",
-	"gb": "gradient_boosting",
+	"gb": "gradient_boosting_classifier",
+	"xgb": "XGBClassifier",
 }
 
 classifiers_supported = classifiers_supported_dict.keys()
@@ -83,6 +85,12 @@ arguments_dict['lr'] = {
 	'warm_start': False,
 	'n_jobs': 1,
 }
+
+arguments_dict['xgb'] = {
+	'objective':"binary:logistic",
+	'random_state': 42,
+}
+
 
 arg_inputs = []
 
@@ -230,6 +238,9 @@ elif (classifier_chosen == 'nbb'):
 # gradient boosting classifier
 elif (classifier_chosen == 'gb'):
 	classifier = GradientBoostingClassifier( **arguments_dict[classifier_chosen] )
+# xgboost
+elif (classifier_chosen == 'xgb'):
+	classifier = XGBClassifier( **arguments_dict[classifier_chosen] )
 
 print ("classifer = " + str(classifier))
 
