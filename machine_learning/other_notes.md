@@ -8,7 +8,7 @@ The meaning of shatter is that for, m points, no matter how each point falls int
 we can always find a function from the hypothesis class to represent this mapping.
 
 With m points, there are 2^m possible functions. 
-(the m points are in the X domain, labels in the Y codomain, 
+(the m points are in the X domain, labels in the Y co-domain, 
 and a function is something that maps each point in X to a label in Y. 
 As each point can be mapped to 1 or -1, there are 2^m possible functions.)
 
@@ -29,7 +29,7 @@ But the possible number of functions that can be extracted from H to represent s
 The formula (em/d)^d is called the Sauer's lemma. the result can be seen as an "effective size" of the hypothesis class, despite it may be an infinite class (halfspace is infinite).
 
 
-Foundamental theory of statistical learning
+Fundamental theory of statistical learning
 --------------------------------------------
 
 When a hypothesis class H has a finite VC dimension, then it is PAC learnable. else, it is not PAC learnable. 
@@ -40,7 +40,7 @@ This also mean that uniform convergence and PAC learnable is also equivalent.
 
 The equation of m (sample size required) to achieve a maximum error between the population loss LD(h) and the best possible population loss (epsilon) with a probability of at least (1-delta) can be found in BBSD chapter 6. the equation of m is in terms of epsilon, delta, and the VC dim of the hypothesis class.
 
-Note that statistical learning does not consider computational complexity. It only handles sample complexity, i.e. it handles the quesiton of how many data points are needed to find (regardless computationally efficiently or inefficiently) a good hypothesis from a hypothesis class H.
+Note that statistical learning does not consider computational complexity. It only handles sample complexity, i.e. it handles the question of how many data points are needed to find (regardless computationally efficiently or inefficiently) a good hypothesis from a hypothesis class H.
 
 
 PAC learnable

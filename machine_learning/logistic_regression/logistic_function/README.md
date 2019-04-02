@@ -18,7 +18,7 @@ where P is defined as the probability that Y=1, and h(x) is a linear combination
 why doing it this way?  
 If we plot Y with x directly and try to obtain the best fitted line, the line obtained will not be able to represent the relationship between X and Y well. 
 (see reference.)  
-But if plot the probability that Y=1 when X=x (some binning should be needed) agains X, 
+But if plot the probability that Y=1 when X=x (some binning should be needed) against X, 
 the graph looks 'better' (less gaps; more continuous..).  
 Based on the shape of the graph (S shape), there could be quite some functions that can describe the relationship.  
 Logistic function happens to be one of them and its results are relatively easy to interpret.

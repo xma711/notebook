@@ -3,7 +3,7 @@ Objective
 
 This folder is more about programming languages.
 
-For software engineering skills are are indepedent of programming languages,
+For software engineering skills are are independent of programming languages,
 go to ../software_engineering/
 
 
@@ -33,7 +33,7 @@ so they should just ask for the features they want and then listen to the answer
 some lessons:  
 	- don't write crappy codes.. need to test codes thoroughly to save time and pain later.  
 	- need self-learning all the time  
-	- the only measure of programming is the ability to make programs (not 'I've learnt programming but havn't made a program')  
+	- the only measure of programming is the ability to make programs (not 'I've learnt programming but haven't made a program')  
 	- maintainability is a key quality attribute of a program  
 	- have enough passion to learn, struggle and ask for help, until one day you find yourself learning more, struggling less and helping others more.  
 	- good programmers solve the problem in their mind, before they do it on the screen  

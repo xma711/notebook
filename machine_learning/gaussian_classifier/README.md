@@ -1,4 +1,4 @@
-Guassian classifer
+Gaussian classifier
 ----------------------------
 
 Special application: event detection, e.g. vehicle type detection
@@ -7,7 +7,7 @@ for a given event, we can collect a time series of sensor data (assume one singl
 These serve as the training data.
 
 Assume the size of the single modality of sensor data x (a vector) = n (size of x = n),
-we can compute the mean values (a vector) and the covariacne matrix (sigma) for x (mu = E(x)). 
+we can compute the mean values (a vector) and the covariance matrix (sigma) for x (mu = E(x)). 
 
 For every possible different event, we have to get a mean vector and covariance matrix.
 
@@ -30,7 +30,7 @@ and then conclude that with x we detects this event that leads to a maximum like
 
 Summary in a formula: C(x) = arg max_j=1,..,M P(x | wj)  
 where M is the total number of event types, 
-wj is the event, represented by the mu and signma in the gaussian model.
+wj is the event, represented by the mu and sigma in the Gaussian model.
 
 Refer to EE5132 chapter 10 for more details.
 

@@ -8,7 +8,7 @@ Ultimately it is this problem: h(y) = argmax_over_y P(Y=y | X=x)
 The direct way is to find out the distribution of p(x, y) which allows us to solve the problem directly 
 (i.e. p(y|x) = p(x,y) / p(x) = p(x,y) / INTEGRATE(p(x,y)dy) )  
 or   
-the distribution of p(x | y) and p(y) which allows us to solve the problem using bayes' rule  
+the distribution of p(x | y) and p(y) which allows us to solve the problem using Bayes' rule  
 (i.e. p(y|x) = p(y)*p(x|y) / p(x) = p(y)*p(x|y) / INTEGRATE(p(x,y)dy) = p(y)*p(x|y) / INTEGRATE(p(x|y)p(y)dy)  )
 
 

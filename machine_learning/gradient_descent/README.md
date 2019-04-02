@@ -1,7 +1,7 @@
 Understand gradient descent
 --------------------------------
 
-Firstly, please understand taylor series.
+Firstly, please understand Taylor series.
 
 Given a function f(), we want to find the minimum value in this function.
 
@@ -33,7 +33,7 @@ When there are multiple variables, the expression for deltaX becomes:
 deltaX = - Hessian(x)^-1 * delta_f(x) where both Hessian(x) and delta_f(x) are matrix. 
 
 Therefore x(k+1) = xk - Hessian(xk)^-1 * delta_f(xk).  
-This is actually netwon's method, and it is a superset of many methods, including gradient descent.
+This is actually Newton's method, and it is a superset of many methods, including gradient descent.
 
 So what is gradient descent?  
 Because Hessian is very hard to compute, so in gradient descent, we simply set it to an identity matrix I (equivalent to non-exist).

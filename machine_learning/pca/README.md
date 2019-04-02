@@ -58,7 +58,7 @@ the principle components of xi!!!!
 To obtain q, we need to maximize V subject to ||q|| = 1.
 (when q is a unit vector, the vector product between xi and q is the real distance of xi on q.)  
 
-After using lagrange method, we will have Cq = lambda q (which is called ab eigenvector equation), 
+After using Lagrange method, we will have Cq = lambda q (which is called ab eigenvector equation), 
 where lambda is the eigenvalue of C (not of data set).  
 It is a bit confusing that xi disappears.
 But it doesn't matter. just remember eigenvectors of C are the principle components of dataset xi.
@@ -165,7 +165,7 @@ In such case, the rank of A is 1. (if not set this extra constraint, the algo wi
 
 The problem is difficult to solve because rank(A) and ||E||0 (l0 norm, or the number of non-zero elements in E) are not continuous functions and thus not convex.
 
-One way to change the problem is that we use the nuclear norm of A (sum of sigular values after performing SVD on A) to represent the rank of A, 
+One way to change the problem is that we use the nuclear norm of A (sum of singular values after performing SVD on A) to represent the rank of A, 
 and the l1-norm (sum of absolute values in E) to represent the l0-norm of E.  
 So it is like  
 min_A_E ||A||* + lambda ||E||1, s.t. A+E=D.
@@ -176,7 +176,7 @@ Ultimately, we solve it using Augmented Lagrange multipliers (ALM).
 If the problem can be expressed in a particular equation to be minimized (we call it L(x)), then it can be solved by ALM,
 with well-defined steps in an iterative manner (refer to slide 21 of Robust PCA).
 
-Luckily, we are able to express the robust PCA method in this way, using both lagrange muliplier and a penalty term.  
+Luckily, we are able to express the robust PCA method in this way, using both Lagrange multiplier and a penalty term.  
 In each iteration, we need to find A and E once.  
 Gladly, how to find A and E are general mathematical problems that have been solved.
 

@@ -15,7 +15,7 @@ Given any combination as a training set, if a function class is able to be train
 we say this function class shatters the this set of data.
 
 However, more often than not, a function class is unable to shatter the whole set of X.  
-Then we will ask, maximumly how many points can this function class shatter?
+Then we will ask, maximally how many points can this function class shatter?
 
 E.g. given the X set above, a linear classifier ( i.e. sign(wt x + b) ) (which is a function class) is unable to shatter the 4 points.  
 Why? because if (0,0) and (1,1) are in the same group, there is no any single line that can separate (0,0) and (1,1) from the other 2 points.  
@@ -80,7 +80,7 @@ But clearly, the tree will be overfitting (high general risk).
 
 Once we limit the size of the tree, the empirical risk increases, but the general risk will drop.
 
-When we don't limit the decision tree, the approximation error is the optimal bayesion error (0 if each x will correspond to a particular y) because it can explain everything.
+When we don't limit the decision tree, the approximation error is the optimal Bayesian error (0 if each x will correspond to a particular y) because it can explain everything.
 
 When we reduce the size of decision tree, we increase the approximation error but reduce the estimation error.  
 As long as the magnitude of the increase of the appr error is smaller than the magnitude of the reduction in the estimation error, it is worth to do.

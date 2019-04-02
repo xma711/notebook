@@ -3,13 +3,13 @@ LDA
 
 LDA stands for linear discriminant analysis.
 
-Like naive bayes, LDA is a generative model.
+Like naive Bayes, LDA is a generative model.
 
 Problem LDA tries to solve:  
 binary classification with y={-1, +1} based on feature vector x = (x1, ..., xd)
 
 the biggest assumption is that
-P(X | Y) is gaussian with the same covariance matrix E but different means mu_(-1) and mu_(+1)
+P(X | Y) is Gaussian with the same covariance matrix E but different means mu_(-1) and mu_(+1)
 
 so P(X=x|Y=y) = 1/( (2pi)^(d/2) |E|^(1/2) ) * e^( -1/2 (x-mu_(y))^T E^(-1) (x-mu_(y)) )  
 i.e. P(X=x|Y=y) = normal_distribution( mean = mu_(y), variance = E )

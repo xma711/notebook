@@ -9,7 +9,7 @@ First method is called winsorizing (or M-estimator).
 This is to defines an error function that suppresses the effect of outliers.  
 E.g. error function of each point = r^2/(a^2 + r^2), where r is the difference between the estimated result from the model given an input and the real result.  
 Even if r goes to infinity, the error function outputs 1!  
-This means that as long as outlier are not more than half, they can be supressed quite well.
+This means that as long as outlier are not more than half, they can be suppressed quite well.
 
 Specially for least squares (linear fitting), we can introduce a weight matrix W to make each r^2 multiplied by a wi.  
 The effect is that E(a) = SUM{ wi * ri(a)^2 }, instead of the usual E(a) = SUM{ ri(a)^2 } .  

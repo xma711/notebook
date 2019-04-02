@@ -8,7 +8,7 @@ I think i have to think of any tensor as a function.
 Even tf.constant(1.0) is a function, not a constant by its type.  
 Only after we run/eval the function, we can get the returned value.
 
-The process is to create a tensor, then create a session, then evalute this tensor in the session.
+The process is to create a tensor, then create a session, then evaluate this tensor in the session.
 
 Example:  
 ```
@@ -25,7 +25,7 @@ with tf.Session() as sess:
 tensorflow graph
 ----------------------------
 
-Tensorflow programs are usually structured into a construction phase that assembes a graph,
+Tensorflow programs are usually structured into a construction phase that assembles a graph,
 and an execution phase that uses a session to execute ops in the graph.
 
 By default there is already a global default graph.
@@ -41,7 +41,7 @@ When you train a model you use variables to hold and update parameters.
 Example of tensor variables:  
 ```
 # W1 is not a variable itself. it is a function that manages an internal variable that has a dimension of (2,2)
-W1 = tf.ones((2,2)) # tensor constants. No need to explictly initialize the initial values
+W1 = tf.ones((2,2)) # tensor constants. No need to explicitly initialize the initial values
 W2 = tf.Variable(tf.zeros((2,2)), name='weights') # a variable with initial values; but the init values are not really created yet
 with tf.Session() as sess:
 	print (sess.run(W1)) # evaluate W1
@@ -124,7 +124,7 @@ variable scope
 
 Tf.variable_scope() provides simple namespacing to avoid clashes.  
 I.e. variable scope adds prefixes to variable names within scope.  
-Tf.get_variable() creates/accesses variables from within a variabe scope.  
+Tf.get_variable() creates/accesses variables from within a variable scope.  
 Example:  
 ```
 with tf.variable_scope("foo"):

@@ -1,4 +1,4 @@
-Pratical guide of solving problem
+Practical guide of solving problem
 ------------------------------
 
 1. get data X and Y
@@ -16,13 +16,13 @@ Pratical guide of solving problem
 Usually you do not have to pick, because popular hypothesis class has its popular choice of loss function.  
 	e.g. linear regression: square loss function;  
 		svm: hinge loss function;  
-		logitstic regression: log loss function.
+		logistic regression: log loss function.
 
 6. split the data to training set and test set
 
 7. use empirical risk minimization (ERM) algorithm to pick the best hypothesis 
 	from the chosen hypothesis class to fit the training data, as best as you can.  
-	how exactly the EMR algorithm is carried out base on the hypothesis class and the loss function chosen.  
+	how exactly the ERM algorithm is carried out base on the hypothesis class and the loss function chosen.  
 	e.g. linear regression: there is a closed-form solution;  
 		svm: stochastic gradient descent;  
 		logistic regression:  Maximum likelihood estimation
@@ -96,7 +96,7 @@ Because given p(x,y), for any xi, we can get the most likely y from p(xi, y).
 This seems to imply that the joint distribution for each (xi,yi) is the same.  
 Is this assumption a necessary requirement for the typical machine learning algo?  
 Or is it only necessary for the generative machine learning methods?    
-(again, generative method estimates p(x,y) in order to ultimately obtain p(y|x) thru bayes' theorem.)  
+(again, generative method estimates p(x,y) in order to ultimately obtain p(y|x) thru Bayes' theorem.)  
 And what happen if this assumption is invalid?
 
 

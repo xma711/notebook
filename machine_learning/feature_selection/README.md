@@ -14,7 +14,7 @@ The most straightforward approach is to set the score of a feature according to 
 2. greedy selection approaches.  
 There is this forward greedy selection. 
 We start with an empty set of features, and then gradually add one feature at a time to the set of selected features.  
-Given the current set of selected features I, we go over each feature in the remaing features,
+Given the current set of selected features I, we go over each feature in the remaining features,
 and apply the learning algo on the set of features I U feature_i.  
 Then we choose the feature that yields the predictor with the smallest risk.  
 Another greedy selection approach is backward elimination, 
@@ -37,7 +37,7 @@ My own thinking
 As we need to make sure each data point is iid,
 it seems that we should try our best to capture all the inter-dependencies in one single data point.
 
-E.g. in time series, the raw data of yesterday and the day before yesterday could affect today's behaviour,
+E.g. in time series, the raw data of yesterday and the day before yesterday could affect today's behavior,
 then we could include these 2 in one single data point.
 
 Will this make different data points in the data set iid?  

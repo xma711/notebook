@@ -16,7 +16,7 @@ and each point belongs to 1 of the 2 classes.
 Svm allows us to find a 1d line that separates these points (1d line is a hyperplane in the 2d space).
 
 However, you may ask, if the points by nature cannot be separated cleanly, then how can svm solve this?
-E.g. one class of points stays in the centre, occupying a circular area, while other points are scattering around them. 
+E.g. one class of points stays in the center, occupying a circular area, while other points are scattering around them. 
 In this case it is impossible to find a line on the 2d plane to separate them cleanly.  
 In fact in this case they are not linear by nature.
 

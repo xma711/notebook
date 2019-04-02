@@ -9,7 +9,7 @@ An example following https://www.tensorflow.org/tutorials/layers
 Filters in CNN
 ---------------------------
 
-For an input datapoint (e.g. an image), a filter will map it to the 2nd layer.
+For an input data point (e.g. an image), a filter will map it to the 2nd layer.
 
 Just imagine that a filter is like a torch that move from one region of the image to another region of the image (moving windows);
 for each region, there will be an output matrix.
@@ -23,7 +23,7 @@ With paddling, the 2nd layer for this filter will still be 100x200.
 If the image has 3 colors, the filter can be set to be high dimensional accordingly to cover all the elements in the region.
 Ultimately the polling layer will bring down the dimension of the output from each filtering action.
 
-No matter what, the number of unknows in the filter is fixed when the filter is chosen, which is not affected by the size of the image.
+No matter what, the number of unknowns in the filter is fixed when the filter is chosen, which is not affected by the size of the image.
 This is one big advantage of cnn, because the number of unknowns is much less than that for a vanilla fully connected neural network.
 
 Usually there will be multiple filters in parallel.

@@ -1,7 +1,7 @@
 Naive Bayes
 --------------------
 
-Please read the README.md in direcotry machine_learning/generative_model/
+Please read the README.md in directory machine_learning/generative_model/
 
 Naive Bayes assumes that each element in x (a vector) is independent.  
 Then we can express p(x | y) = PRODUCTS( p(xi | y) ) where xi is an element in x (not each data point in this case).

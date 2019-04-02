@@ -11,17 +11,17 @@ E.g. what is the sample complexity of the "empirical risk minimization" algorith
 Note that "algorithm" in this case can be as general as "empirical risk minimization".  
 (other examples of "algos" include structural risk minimization (SRM) and regularized loss minimization (RLM) )
 we don't really have to care about how exactly this ERM is performed, 
-and we only have to know that ERM will be performed and the hypothesis with the minmium risk will be selected.
+and we only have to know that ERM will be performed and the hypothesis with the minimum risk will be selected.
 
 The whole point of sample complexity is not to calculate a sample size in order to
 get a hypothesis that results in a very small risk (error) for population.  
 The correct thinking should be, given a hypothesis class, 
-what is the sample size with which we can find a hypothesis whose pupulation risk is not too larger than the population risk of the best possible hypothesis from this hypothesis class.
+what is the sample size with which we can find a hypothesis whose population risk is not too larger than the population risk of the best possible hypothesis from this hypothesis class.
 
 This implies that when sample complexity is low, it does not mean we can find a good solution when sample size is large. 
 It only means that we are able to find a solution that is not too bad compared to the best solution in this hypothesis class.  
 If the best solution in the hypothesis class is already very bad, 
-then no matter how easily achivable the sample complexity is, we can't get a globally good solution.
+then no matter how easily achievable the sample complexity is, we can't get a globally good solution.
 
 Also, what exactly is the meaning of risk?  
 (reference: textbook chapter 2)  
@@ -37,7 +37,7 @@ No free lunch theorem (NFL)
 ---------------------------
 
 NFL means that if we allow any distribution for X and Y, then given an algorithm (e.g. ERM),
-we can always find a distributiion of X and Y such that the learning algorithm will fail to learn the globally optimal function, 
+we can always find a distribution of X and Y such that the learning algorithm will fail to learn the globally optimal function, 
 no matter how large the sample is.
 
 E.g. given a hypothesis class that contains all possible functions (functions from SVM, random forest, neural network and more),
@@ -56,7 +56,7 @@ pick a very general class --> this leads to a high requirement on the sample siz
 (both ways have some issues.)
  
 Overall, if we want to have a finite sample complexity, we can do either:  
-	- limit the hypothesis class without limiting the distribtuion of X and Y (discrimative methods???) OR
+	- limit the hypothesis class without limiting the distribution of X and Y (discrimative methods???) OR
 	- limit the space of distribution for X and Y. (e.g. via a parametric approach)
 
 
@@ -69,12 +69,12 @@ sample complexity of an algo is the sample needed for the algo
 to find a good solution for the population 
 compared to the best possible solution for the population.
 
-Given an algo, if we allow any distribtuions for X and Y,
+Given an algo, if we allow any distributions for X and Y,
 is there a finite sample size such that the algo will be able to learn a good solution for population compared to the best possible solution for population?
 
 The answer is No, due to the no-free-lunch theorem (NFL).
 
-NFL says taht for an algo, given any sample size, we can always find a distribtuion of X and Y
+NFL says that for an algo, given any sample size, we can always find a distribution of X and Y
 such that the algo fails to learn a good solution for the population.
 
 Then what can we do?  
@@ -108,12 +108,12 @@ Refer to section "test dataset" for answer.
 Uniform convergence
 -------------------------
 
-Intuitively given a hypothesis class, if this condition holdes:  
+Intuitively given a hypothesis class, if this condition holds:  
 	"when sample size > a certain number  
 	each h from the hypothesis class results in a sample risk that is close to the population risk",  
 then we can this hypothesis class has the uniform convergence property.
 
-It follows that if H has unifrom convergence property,
+It follows that if H has uniform convergence property,
 the ERM algo is a agnostic PAC learner for H.
 I.e. ERM is able to find a good h for population compared to the best possible h for population.
 
@@ -128,7 +128,7 @@ We can decompose LD(hs) to LD(hs) = appr_error + est_error,
 where appr_error = min{over H} LD(h) 
 and est_error = LD(hs) - appr_error
 
-the approximation error is the minimum risk achivable by a predictor in the hypothesis class, 
+the approximation error is the minimum risk achievable by a predictor in the hypothesis class, 
 which does not depend on the sample size.  
 Enlarging the hypothesis class can decrease the appr_error.
 
@@ -157,16 +157,16 @@ Because this h may be overfitting the training data (large estimation error).
 If the sample size is not enough for the full H, the h chosen in this case is very likely overfitting the training data.
 
 Therefore, looking at training error alone, this does not violate the bias-complexity tradeoff.  
-Even if we run EMR on 2 different hypothesis classes, such as SVM and logistic regression, the best ERM h is not necessarily the better one compared to the best ERM h from either SVM or logistic regression.
+Even if we run ERM on 2 different hypothesis classes, such as SVM and logistic regression, the best ERM h is not necessarily the better one compared to the best ERM h from either SVM or logistic regression.
 
-To ensure the EMR h from {H1, H2} is better than h1 or h2 in terms of population error, we do need more data to do the training.
+To ensure the ERM h from {H1, H2} is better than h1 or h2 in terms of population error, we do need more data to do the training.
 
 On the other hand, if we look at the test error and pick the h from {h1, h2} such that h has a smaller test error, 
 is h better than either h1 or h2?
 
 The answer seems yes but it is wrong when we do this on many Hi!!
 
-This time, the h chosen is not necessarily the same as the EMR h from the full H.
+This time, the h chosen is not necessarily the same as the ERM h from the full H.
 
 Does this mean that the existence of test data makes the bias-complexity tradeoff invalid?  
 In another words, with the test data, can we reduce the bias (approximation error) and also reduce the estimation error?  
@@ -175,7 +175,7 @@ One example is that: we run ERM on different hypothesis classes with the sample,
 and then pick the h that leads to the smallest test error.  
 Does this violate the bias-complexity trade-off?
 
-Another thing is that if we know the sample size is not enough for the full H, can we chop H up and then run EMR on each Hi, 
+Another thing is that if we know the sample size is not enough for the full H, can we chop H up and then run ERM on each Hi, 
 and at the end we choose the hi that results in a smallest test error?  
 This method should be nicknamed "Test risk minimization"..  
 
@@ -216,7 +216,7 @@ or completely change a hypothesis class.
 If it is due to a large estimation error, 
 then we can increase the sample size if possible.  
 We can also consider reduce the hypothesis class complexity.  
-(any other ways? check testbook chapter 11)
+(any other ways? check textbook chapter 11)
 
 again, estimation error is the difference between the sample error and the true best possible error.  
 Again, when the hypothesis class becomes richer, the approximation error will drop while the estimation error increases (given the same sample size).
@@ -249,7 +249,7 @@ When T is large, appr_error is smaller while est_error is larger.
 Using model selection method to find a good T
 
 
-compuational complexity
+computational complexity
 --------------------------------
 
 Reference: chapter 8
@@ -286,9 +286,9 @@ Question: by what algorithm? ERM?
 Answer: the 2 families of learning problems are learnable by ERM to a certain extend only; not true for all.
 
 Then by what algorithm?  
-Regularized loss minimizaation is able to learn all convex-lipschitz-bounded and convex-smooth-bounded learning problems.
+Regularized loss minimization is able to learn all convex-lipschitz-bounded and convex-smooth-bounded learning problems.
 
-Intuitively, the complexity of the hypothesis is measured by the value of the regularizaton function, and the algorithm balances between low empirical risk and simpler or less complex hypothesis.
+Intuitively, the complexity of the hypothesis is measured by the value of the regularization function, and the algorithm balances between low empirical risk and simpler or less complex hypothesis.
 
 One of the most simple regularization function is lambda * ||w||^2, where ||w|| is l2 norm. this type is called Tikhonov regularization.
 

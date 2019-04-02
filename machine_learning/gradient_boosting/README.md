@@ -13,7 +13,7 @@ If h is perfect, it implies Fm+1(x) = y, or Fm(x)+h(x) = y,
 or h(x) = y - Fm(x).  
 What it means is that if h is perfect, we can classify each x correctly to the corresponding y using Fm+1.
 
-At stage m+1, Fm(x) is known, and y is known, so y-Fm(x) is also known (y-Fm(x) is the residul).  
+At stage m+1, Fm(x) is known, and y is known, so y-Fm(x) is also known (y-Fm(x) is the residue).  
 Then in order to find h, we can fit h(x) = y-Fm(x), which is just another usual fitting problem.
 
 This process can go on until we reach a small enough error or a stationary error.

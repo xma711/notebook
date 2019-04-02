@@ -3,14 +3,14 @@ ROC curve
 
 ROC curve is the plot of true positive rate vs false positive rate (the key word here is 'rate').
 
-True positive rate means the corrected classified positive cases divided by all postive cases in the training data.
+True positive rate means the corrected classified positive cases divided by all positive cases in the training data.
 
 Let's say N is the test data size.  
 And let's assume it is a binary classifier (trained using training data).
 
 After applying the classifier on the test data, we will have the following numbers:  
 - True positives (TP): the number of positives classified correctly (ground truth is positive)  
-- False positives (FP): the number of cases classified as postives but in fact they are negative  
+- False positives (FP): the number of cases classified as positives but in fact they are negative  
 - True negatives (TN): the number of negatives classified correctly (ground truth is negative).  
 - False negatives (FN): the number of cases classified as negatives but in fact they are positive.
 
@@ -18,7 +18,7 @@ Note that TP + FP + TN + FN = N.
 
 True positive rate is therefore = TP / (TP + FN) = TP / ALL_Positives
 
-we can affect the classifer results by changing the threshold (by default it is 50%).
+we can affect the classifier results by changing the threshold (by default it is 50%).
 Assume that when threshold increases, it is harder for classifier to classify a case as positive.
 
 Then when we increase this threshold, we expect the true positive rate to decrease (correct?).
@@ -31,15 +31,15 @@ If we set the threshold to 0%, TP = ALL_positives.
 Then why don't we set the threshold to 0%? i.e. no matter what, classify all cases to positive.
 
 If we do this, the false positive number will be very high.  
-Therefore, we also have to look at this false postive rate.  
+Therefore, we also have to look at this false positive rate.  
 False positive rate = FP / (FP + TN) = FP / ALL_negatives
 
 when threshold is 0%, the false positive rate will be 100%, which is usually bad.  
-When threshold is 100%, false positive rate is 0%, because there is no postive classified.  
+When threshold is 100%, false positive rate is 0%, because there is no positive classified.  
 
 In short, when threshold is 0%, true positive rate is 100% (good) and false positive rate is 100% (bad).
 When threshold is 100%, true positive rate is 0% (bad) and false positive rate is 0% (good).  
-Clearly, there is a tradeoff between true postive rate and false positive rate.
+Clearly, there is a tradeoff between true positive rate and false positive rate.
 
 Therefore, when varying threshold, we need to look at both true positive rate and false positive rate.
 

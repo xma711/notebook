@@ -18,7 +18,7 @@ There are various methods for different learning algorithm.
 
 E.g. for least square, there is an online learning method called recursive least squares.
 
-Stochastic gradikent descent seems a natural online learning method,
+Stochastic gradient descent seems a natural online learning method,
 because it can be performed multiple stochastic gradient passes over the data.  
 Intuitively, the process can be continued at different times, while the latest model is always more updated than the last.  
 (Should the new data points be used directly as a mini batch or merged with the main training data set first before doing random sampling again?)
