@@ -1,7 +1,7 @@
 Construction
 ------------------
 
-Buiding software is like constructing a building..
+Building software is like constructing a building..
 
 Construction needs requirements writing, design, buiding/implementation, checking etc.
 

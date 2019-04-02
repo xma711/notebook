@@ -29,11 +29,11 @@ between end-devices and a central network server in the backend.
 It is designed primarily for uplink-only applications with many endpoints..
 Or applications that need only a few downlink messages.
 
-LoRaWAN is a server-side implementation of a multiple access protocl 
+LoRaWAN is a server-side implementation of a multiple access protocol 
 designed to minimize collisions with a large number of endpoints. 
 It requires a server application to run the MAC functions over a network connection.
 
-The LoRaWAN network server manges the data rate and RF output for each end-device individually
+The LoRaWAN network server manages the data rate and RF output for each end-device individually
 by means of an adaptive data rate (ADR) scheme that is typically updated once every 24 hrs.
 
 Question: if LoRaWAN is a server-side implementation, the what is the MAC protocol implementation for gateway and end devices?

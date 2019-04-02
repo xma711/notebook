@@ -3,7 +3,7 @@ Linux security modules (LSM)
 
 Reference: https://en.wikipedia.org/wiki/Linux_Security_Modules
 
-LSM is a framework that allows the linux kernel to support a variety of computer security models.  
+LSM is a framework that allows the Linux kernel to support a variety of computer security models.  
 LSM inserts hooks (upcalls to the module) at every point in the kernel where
 a user-level system call is about to result in access to an important internal kernel object
 such as inodes and task control blocks.

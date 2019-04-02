@@ -35,14 +35,14 @@ There are many advantages of using git and a git server:
 Set up necessary tools
 ------------------------
 
-If you use ubuntu, then add git by  
+If you use Ubuntu, then add git by  
 *sudo apt-get install git*
 
 If you use windows, then download git shell from https://windows.github.com/ and install it
 
 This tutorial will purely make use of command line, which gives users more controls.
 
-Note that all commands in this tutorial are done in a Git Shell or a Linux terminal. Some basic linux commands you may need to know include:
+Note that all commands in this tutorial are done in a Git Shell or a Linux terminal. Some basic Linux commands you may need to know include:
 
 Go to a directory   
 *cd [path_to_a_folder/directory]*  
@@ -53,7 +53,7 @@ List the files and folders in a folder/directory:
 Make a directory/folder:  
 mkdir [directory_name]
 
-For more linux commands, you can refer to: http://www.thegeekstuff.com/2010/11/50-linux-commands
+For more Linux commands, you can refer to: http://www.thegeekstuff.com/2010/11/50-linux-commands
 
 Note that all the git commands are in *italic*.
 
@@ -90,7 +90,7 @@ You can find the url of the remote repo from the git server. Then clone it by:
 
 e.g. to clone a repo, you use:  
 *git clone https://github.com/.....git*   
-OR *git clone git@github.com:.....git* (if you added your ssh key of your computer to github)
+OR *git clone git@github.com:.....git* (if you added your ssh key of your computer to GitHub)
 
 After you clone the repository, you have a local copy of the remote repository. You can do anything to your local repo. As long as you don't push it to the remote repo, any local changes won't affect the remote repo.
 
@@ -129,7 +129,7 @@ commit
 
 After you edit files, add files or do other changes, you will save these changes to a local branch. The tools you will use are "git add" and "git commit".
 
-For example, if you create a new file named "hello_world.txt" with some texts inside or edit the file if "hello_world.txt" has been commited to the repo before, then you can add it to the current branch by:  
+For example, if you create a new file named "hello_world.txt" with some texts inside or edit the file if "hello_world.txt" has been committed to the repo before, then you can add it to the current branch by:  
 *git add hello_world.txt*
 
 To check the current status of the repo, use:  

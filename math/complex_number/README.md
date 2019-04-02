@@ -16,7 +16,7 @@ multiply a real number
 When a complex number multiplies a real number, the effect on the real part and img part are independent. 
 E.g. (x +iy)*2 = 2x+i2y, or (cos(x) + isin(x))*2 = 2cos(x) + i2sin(x)
 
-this means we can convert a sin(x) or cos(x) to a complex number, and do all the multiplication with the complext number, and then extract the real part or the img part for the results.
+this means we can convert a sin(x) or cos(x) to a complex number, and do all the multiplication with the complex number, and then extract the real part or the img part for the results.
 
 E.g.to calculate sin(2x).  
 Sin(2x) = img(e^(i2x)), where  
@@ -52,7 +52,7 @@ phasor notation
 
 Phasor notation is the process of constructing a single complex number that has the amplitude and the phase angle of the given sinusoidal waveform.
 
-It transfroms the sinusoidal function A(t) = Am sin(wt +- phi) from time domain into the frequency domain.
+It transforms the sinusoidal function A(t) = Am sin(wt +- phi) from time domain into the frequency domain.
 
 V(t) = Vm sin(wt + phi) = Vm * img (cos(wt+phi) + j sin(wt+phi)) = Vm * img{ e^((wt+phi)j) } = Vm * img{ e^(wt j) * e^(phi j) } =  
 sqrt(2) * img{ ( Vm/sqrt(2) * e^(phi j) ) * e^(wt j) } = sqrt(2) * img{ Vrms * e^(wt j) }  

@@ -8,7 +8,7 @@ IoTivity is radio-independent.
 It has a few high level layers (using OSI model as a reference).  
 It can be seen that it has its own network layer, security stuff, its own managing layer/service above network layer.
 
-Connectivity abstraction: this layer provides a common platform for all "bearers" like bluetooth EDR, IPV4/V6 stack, XMPP..  
+Connectivity abstraction: this layer provides a common platform for all "bearers" like Bluetooth EDR, IPV4/V6 stack, XMPP..  
 
 Security: security is provided at 2 layers: transport and application.  
 	- transport: encryption of packets. relies on Datagram transport layer security (DTLS) to provide encryption.  

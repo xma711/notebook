@@ -155,7 +155,7 @@ One method seems to stand out, which is simply called "Robust PCA".
 
 The problem statement is that  
 given a data matrix D, find A and E that solve the problem  
-min_A_E rank(A) + lamda ||E||0, s.t. A + E = D.
+min_A_E rank(A) + lambda ||E||0, s.t. A + E = D.
 
 This means that A has to be low-rank while E has to be sparse.
 

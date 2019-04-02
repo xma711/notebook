@@ -35,7 +35,7 @@ to stop master: ./stop-master.sh
 
 
 
-control client and cluter mode
+control client and cluster mode
 ------------------------------------
 
 When using spark-submit to run an application, we can choose the deploy mode:
@@ -47,7 +47,7 @@ When using spark-submit to run an application, we can choose the deploy mode:
 
 for client mode, it means it simply runs the program 'directly' and locally.
 
-For cluster mode, it should goes thru the cluster manager (which itself has multpile choices) and ultimately runs on worker(s).
+For cluster mode, it should goes thru the cluster manager (which itself has multiple choices) and ultimately runs on worker(s).
 
 
 Use YARN (Hadoop)
@@ -55,8 +55,8 @@ Use YARN (Hadoop)
 
 Reference: https://linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/
 
-set up the hadoop cluster as normal.
-Then somehow link the hadoop cluster with the spark (follow the tutorial)
+set up the Hadoop cluster as normal.
+Then somehow link the Hadoop cluster with the spark (follow the tutorial)
 
 btw even in this case, there are client and cluster modes.
 

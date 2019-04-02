@@ -12,7 +12,7 @@ Lastly, the phone has to be restarted.
 A cheatsheet of adb can be found here: https://github.com/maldroid/adb_cheatsheet/blob/master/cheatsheet.pdf
 
 a particularly useful command is "adb shell", which logs into the device.  
-And then suddenly it becomes a familiar linux machine!
+And then suddenly it becomes a familiar Linux machine!
 
 Another command is "adb logcat", which can see the logs from the whole system of the android device.  
 

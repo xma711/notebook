@@ -46,7 +46,7 @@ Useful options
 --------------------------
 Reference: https://docs.docker.com/reference/run/
 
---restart={always; on-failture; no}  
+--restart={always; on-failure; no}  
 	no: Do not automatically restart the container when it exits. This is the default.   
 	on-failure[:max-retries]: Restart only if the container exits with a non-zero exit status. Optionally, limit the number of restart retries the Docker daemon attempts.   
 	always: Always restart the container regardless of the exit status. When you specify always, the Docker daemon will try to restart the container indefinitely.   
@@ -80,7 +80,7 @@ dockerfile: a file housing instructions that help automate image creation
 
 docker container: responsible for actual running of applications and includes the operating system, user added files and meta-files
 
-docker index: a centrailized registry allowing backup of docker container images with public and private access permissions.
+docker index: a centralized registry allowing backup of docker container images with public and private access permissions.
 
 
 Namespaces: first level of isolation, making sure a process running in a container cannot see or affect processes running outside the container.
@@ -155,7 +155,7 @@ enable systemd for docker in bbb (archlinux)
 Reference: http://developerblog.redhat.com/2014/05/05/running-systemd-within-docker-container/
 
 need to run in a privileged container.  
-Need to add teh cgroup file system to the container using "–v /sys/fs/cgroup:/sys/fs/cgroup:ro"  
+Need to add the cgroup file system to the container using "–v /sys/fs/cgroup:/sys/fs/cgroup:ro"  
 need to remove unit file links from the /lib/systemd/system/*wants/ and  /etc/systemd/system/*wants/ directories  
 
 a dockerfile sth like the follows will enable systemd:
@@ -209,7 +209,7 @@ e.g. docker run --rm -ti -v /sys/devices/virtual/gpio:/sys/devices/virtual/gpio 
 
 to make things simpler but less safe, one can mount the whole /sys directory to the docker container then the container can control all leds and gpios. of course, this is not very safe.
 
-In fact, as long as the container is run with --privileged, then the whole /sys directory can be controlled by the docker container already.. this is super unsafe because a container can misbehave and destroy the host machine. and now the container is no longer unable to affact the host system..
+In fact, as long as the container is run with --privileged, then the whole /sys directory can be controlled by the docker container already.. this is super unsafe because a container can misbehave and destroy the host machine. and now the container is no longer unable to affect the host system..
 
 
 Privileged mode
@@ -279,7 +279,7 @@ a default fixed command (+ arguments) for the image.
 Docker repo in docker hub
 ----------------------------
 
-Like github, i can create a repo in docker hub.
+Like GitHub, i can create a repo in docker hub.
 
 A repo will store a history of commits. 
 
@@ -323,7 +323,7 @@ to list all tags under an image in a private docker hub: *curl http://192.168.1.
 
 Btw this is a tutorial recommended by yc: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
 
-To use a gui to manage to repository, follow: https://github.com/atc-/docker-registry-ui  
+To use a GUI to manage to repository, follow: https://github.com/atc-/docker-registry-ui  
 in short, just run docker run -d -p 8080:8080 atcol/docker-registry-ui  
 and then add a registry using the native ip address (cannot use 'localhost' because the ip address is used inside the container)
 
@@ -378,7 +378,7 @@ to add an engine (engine means a host machine that runs docker daemon), click ad
 
 However, this host machine has to run the docker daemon as "docker -H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -d" (or -H tcp://0.0.0.0:2375)
 
-in ubuntu 14.04, the docker options can be modifified at file /etc/default/docke:   
+in ubuntu 14.04, the docker options can be modified at file /etc/default/docke:   
 DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"
 
 in computers using systemd, find out where the systemd file is and then add the options to the line.
@@ -402,7 +402,7 @@ Reference: https://stackoverflow.com/questions/35194761/how-to-let-different-doc
 by default docker daemon adds a network adapter docker0, usually uses 172.17.0.1.  
 All containers are by default connected to this network in incremental ip address.
 
-However, we can always create a new network adaptor and connect a new container to the new network.
+However, we can always create a new network adopter and connect a new container to the new network.
 
 
 The official reference: https://docs.docker.com/engine/userguide/networking/

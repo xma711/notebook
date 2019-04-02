@@ -16,7 +16,7 @@ In another words, there should be a distribution for this sum or average.
 Interestingly, this distribution for sum or average is kinda independent from the single observation's distribution,
 and it turns out to be following a normal distribution!
 
-The paramers for this normal distribution (let's say the mean; but similar for sum) are:  
+The parameters for this normal distribution (let's say the mean; but similar for sum) are:  
 	mean is the average of the N throws.  
 	variance is the single observation's variance divided by N.
 
@@ -25,7 +25,7 @@ In practice, how to observe this distribution experimentally?
 To do it, let's define N as 100. then we do 100 throws and note down the average.
 Then repeat the whole process to note down another average.
 And so on.  
-Intuively, any of the average should close to 3.5 as we use 100 throws in this case, but there is still a spread.
+Intuitively, any of the average should close to 3.5 as we use 100 throws in this case, but there is still a spread.
 If we take this average as the variable we are interested at and plots all the averages on a graph, 
-we will observe a normal distribtuion if the number of averages is large enough.
+we will observe a normal distribution if the number of averages is large enough.
 

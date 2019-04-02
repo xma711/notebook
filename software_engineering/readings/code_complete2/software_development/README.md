@@ -4,13 +4,13 @@ reference: code complete 2
 
 activities
 ------------------
-Distinct activies that go into software development:
+Distinct activities that go into software development:
 	- problem definition
 	- requirements development
 	- construction planning
 	- software architecture, or high-level design
 	- detailed design
-	- codeing and debugging
+	- coding and debugging
 	- unit testing
 	- integration testing
 	- integration
@@ -44,7 +44,7 @@ Such flaws must be worked out earlier than in testing - before construction begi
 Industry data from 1970s to the present day indicates that projects will run best
 if appropriate preparation activities are done before construction begins in earnest.
 
-Why isn't sam coding anything? (WISCA phenomenon)
+Why isn't Sam coding anything? (WISCA phenomenon)
 
 programmers are at the end of the software food chain.
 The architect consumes the requirements; 
@@ -119,7 +119,7 @@ treat requirements work as its own project.
 Estimate the time for the rest of the project AFTER you've finished the requirements.
 
 Checklist for upstream prerequisites:
-	- have you identified the kind of software project your're working on and tailored your approach appropriately?
+	- have you identified the kind of software project you're working on and tailored your approach appropriately?
 	- are the requirements sufficiently well defined and stable enough to begin construction?
 	- is the architecture sufficiently well defined to begin construction?
 	- have other risks unique to your particular project been addressed, such that construction is not exposed to more risk than necessary?
@@ -130,8 +130,8 @@ Key points:
 Attention to the quality at the beginning has a greater influence on product quality than attention at the end.
 	- part of a programmer's job is to educate bosses and coworkers about the software-development process, 
 including the importance of adequate preparation before programming begins.
-	- the kind of project your're working on significantly affects construction prerequisites. 
-Many projects should be highly iteractive and some should be more sequential.
+	- the kind of project you're working on significantly affects construction prerequisites. 
+Many projects should be highly interactive and some should be more sequential.
 	- if a good problem definition hasn't been specified, you might be solving the wrong problem during construction.
 	- if good requirements work hasn't been done, you might have missed important details of the problem.
 Requirements changes cost 20 to 100 times as much in the stages following construction as they do earlier, 
@@ -150,13 +150,13 @@ languages such as c++, java, visual basic have been credited with improving prod
 and comprehensibility by factors of 5 to 15 over low-level languages such as assembly and c.
 
 Before construction begins, spell out the programming conventions you'll use. 
-Coding-convention details are at such a levle of precision that they're nearly impossible to retrofit into software after it's written.
+Coding-convention details are at such a level of precision that they're nearly impossible to retrofit into software after it's written.
 
 If you are in the late part of the technology wave, you can plan to spend most of your day steadily writing new functionality.
-If you are in the early part of the wave, you can assume that you'll spend a sizeable portion of your time trying to 
+If you are in the early part of the wave, you can assume that you'll spend a sizable portion of your time trying to 
 figure out your programming language's undocumented features, debugging errors, revising codes etc.
 
-Understanding the distinction between programming in a language and progrmming into one is critical to understanding this book. 
+Understanding the distinction between programming in a language and programming into one is critical to understanding this book. 
 Programmers who program into a language first decide what thought they want to express, 
 and then they determine how to express those thoughts using the tools provided by their specific language.
 
@@ -165,7 +165,7 @@ while others use solo development and formal inspections.
 
 Key points:
 	- every programming language has strengths and weakness. 
-Be aware of the specific strenghs and weaknesses of the language you're using.
+Be aware of the specific strengths and weaknesses of the language you're using.
 	- establish programming conventions before you begin programming. 
 It is nearly impossible to change code to match them later.
 	- most construction practices exist than you can use on any single project. 

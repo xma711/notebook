@@ -30,12 +30,12 @@ what is the probability that the waiting time R is larger than a, given the dist
 
 Given F(T) (or f(T) or all P(T = an interval)) where T represents any Ti because they all have the same distribution, what is P{R>a}?
 
-1. given y = R(t), the remainig time for a bus to come as seen at t, y = R(t)'s graph will look like: R(t=ti) = Ti (ti are the times the bus arrives), betwen Ti and T_{i+1} it is a line with gradient -1, untill R(t=t_{i+1} - epsilon ) = 0 (epsilon is an extremely small number). of course, R(t=t_{i+1}) = T_{i+1}
+1. given y = R(t), the remaining time for a bus to come as seen at t, y = R(t)'s graph will look like: R(t=ti) = Ti (ti are the times the bus arrives), between Ti and T_{i+1} it is a line with gradient -1, until R(t=t_{i+1} - epsilon ) = 0 (epsilon is an extremely small number). of course, R(t=t_{i+1}) = T_{i+1}
 
 2. using RCL, we will have average gradient of R(t) = lambda * (-1) * E(T), i.e. -1 = -lambda*E(T). Or, lambda = 1/E(T). Note that this conclusion applies to any distribution, because we didn't assume any distribution for T.
 
 3. Does this solve the question? No. We have to shift the R(t) graph a bit.  
-	- let's shift y = R(t) graph down by a units, and take the posiitive parts, we will have a new graph y = (R(t) - a)+. 
+	- let's shift y = R(t) graph down by a units, and take the positive parts, we will have a new graph y = (R(t) - a)+. 
 	- using RCL again, the average gradient of y = (R(t) - a)+  = lambda * (-1) * E[(T - a)+]. 
 	- (T-a)+ means that only the portion above t-axis (i.e. x-axis) needs to be counted, and all the y(t = ti) = R(t = ti) -a = Ti - a, which is shorter than the y(t = ti) given y = R(t). 
 	- The gradient between R(ti) -a to the point it touches t-axis is still -1, but there is now 0 between this point to the t_{i+1}. This means the average gradient is no longer -1, but something between -1 and 0.
@@ -48,7 +48,7 @@ Given F(T) (or f(T) or all P(T = an interval)) where T represents any Ti because
 	- using RCL we will be able to link this average gradient to the average jumps, or -E[(T-a)+], which is something we know. 
 	- in short, we can transform the problem of the remaining waiting time to a problem that has something to do with the distribution of the inter-arrival intervals.
 
-5. an example for T's distribution is expoential distribution (meaning Ti can be from 0 to inf, but the probability drops based on expoential function). in this case, we can show that P{R(t) > a} = P (T > a). to prove this, just expand the E[(T-a)+] with the integration INTEGRATE(0 to inf) {((x-a)+ * f(x)) dx} and then sub in f(x) and solve for a close form.  
+5. an example for T's distribution is exponential distribution (meaning Ti can be from 0 to inf, but the probability drops based on exponential function). in this case, we can show that P{R(t) > a} = P (T > a). to prove this, just expand the E[(T-a)+] with the integration INTEGRATE(0 to inf) {((x-a)+ * f(x)) dx} and then sub in f(x) and solve for a close form.  
 
 Some notes
 ---------------------

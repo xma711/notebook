@@ -1,32 +1,32 @@
-Difference between fft and psd
+Difference between FFT and psd
 -------------------------------------
 
 Reference1: https://www.quora.com/What-is-the-difference-between-power-spectrum-and-power-spectral-density  
 reference2: https://blog.mide.com/vibration-analysis-fft-psd-and-spectrogram
 
-the direct results from fft is analogous to the discrete probability distribution,
+the direct results from FFT is analogous to the discrete probability distribution,
 while psd is analogous to the continuous probability distribution.
 
-Given the results from fft, one way to derive the psd is to chop frequency to fixed small interval,
+Given the results from FFT, one way to derive the psd is to chop frequency to fixed small interval,
 and compute the power density for each interval by summing up the power in this interval and divide it by the length of the interval.  
 When the length of the interval goes to infinitely small, then the psd resultant will be closer to the true psd.  
-In short, psd is like the differentiation function from the fft (i like need to square the coeffients first) w.r.t. frequency.
+In short, psd is like the differentiation function from the FFT (i like need to square the coefficients first) w.r.t. frequency.
 
 
-From taylor series to fourier transform
+From Taylor series to Fourier transform
 -----------------------------------------
 
 Reference: https://math.stackexchange.com/questions/7301/connection-between-fourier-transform-and-taylor-series
 
-taylor series is to decompose a function f(x) to a summation of ak * x^k.  
-If we extend x to complex number, then taylor series naturally is to decompose a function f(z) to a summation of ak * z^k.
+Taylor series is to decompose a function f(x) to a summation of ak * x^k.  
+If we extend x to complex number, then Taylor series naturally is to decompose a function f(z) to a summation of ak * z^k.
 
 Z can be expressed as e^(i * theta) (assumed magnitude as 1 for simplicity),
 then f(z) is f( e^(i*theta)) which can be seen as a function of theta f(theta). 
 
 Also z^k = ( e^(i*theta) )^k = e^(i*k*theta)  (essentially it is a change of angle on the x-y plane)
 
-therefore, f(theta) = summation of ak * e^(i*k*theta), which is the fourier transform.
+therefore, f(theta) = summation of ak * e^(i*k*theta), which is the Fourier transform.
 
 
 Fourier series
@@ -34,7 +34,7 @@ Fourier series
 
 Reference: https://en.wikipedia.org/wiki/Fourier_series
 
-a fourier series is a way to represent a function as the sum of simple sine waves.
+a Fourier series is a way to represent a function as the sum of simple sine waves.
 It decomposes any periodic function into the sum of a set of simple oscillation functions,
 namely sines and cosines (or equivalently, complex exponentials)
 
@@ -59,12 +59,12 @@ When f(x) is a periodic function with the overall period of P,
 then f(x) can be expressed as A0/2 + SUM_of ( An * sin (2pi * n/P * x   + phi_n ) )
 
 intuitively this means that f(x) is a sum of a dc component, 
-a sin function with a period of T (i.e. frequence of 1/T) and phase chage of phi_1,
+a sin function with a period of T (i.e. frequency of 1/T) and phase change of phi_1,
 a sin function with a period of T/2 (i.e. frequency of 2/T) and phase change of phi_2,
 and so on.
 
-Like taylor series, these An and phi_n are something we need to find out.
-It is like i write the shape of the function componenets first, and then find out the exact parameters for these sub functions.
+Like Taylor series, these An and phi_n are something we need to find out.
+It is like i write the shape of the function components first, and then find out the exact parameters for these sub functions.
 
 Ultimately, after some manipulation, f(x) can be expressed as 
 SUM_from_minusN_to_N( cn * e^(i 2pi n/P * x) )  
@@ -84,12 +84,12 @@ Then we can compute an as 0 and bn as 2*(-1)^(n+1)/(pi*n).
 Then s(x) = 2/pi * SUM_from_0_to_inf(bn)*sin(nx) for x-pi not_belong_to 2pi*Z 
 
 
-fourier transform
+Fourier transform
 -------------------------------
 
 A very good tutorial: https://blog.mide.com/fourier-transform-basics
 
-fourier transform decomposes a function of time into frequencies that make it up.
+Fourier transform decomposes a function of time into frequencies that make it up.
 
 F(x) = INTEGRATE_from_-inf_to_inf( f(t) * e^(-2pi*i*t*x) * dt )
 
@@ -98,15 +98,15 @@ note that f(x) not_directly_equal_to f(t).
 F(x) is a function of frequency, i.e. x is frequency.
 
 
-Difference between fourier transform and fourier series
+Difference between Fourier transform and Fourier series
 --------------------------------------------------------------
 
-Fourier transform is an extension of the fourier series (!!!)
+Fourier transform is an extension of the Fourier series (!!!)
 When the period of the represented function is lengthened and allowed to approach infinity.
 
 Another reference: https://www.quora.com/What-are-the-differences-between-the-Fourier-series-and-the-Fourier-transform
 
-fourier series decomposes a periodic signal into a sum of an infinite number of harmonics (sine and cosine functions)
+Fourier series decomposes a periodic signal into a sum of an infinite number of harmonics (sine and cosine functions)
 of different frequencies and amplitudes.
 These frequencies are discrete (not all frequencies are present).
 The more components are considered (starting from the first), the sum is closer to the original signal.
@@ -118,7 +118,7 @@ The sum in this case is an integral and can be estimated for simple functions
 and for complex function can be estimated thru numerical integration.
 
 
-My own understanding about fourier series to fourier transform
+My own understanding about Fourier series to Fourier transform
 --------------------------------------------------------------------
 
 Fourier series says that for a period signal with a period of T,
@@ -132,11 +132,11 @@ Fourier transform is to find out the 'spread' of the power along all frequencies
 which is a result of pushing the period to infinitely long. 
 
 
-Discrete fourier transform
+Discrete Fourier transform
 ------------------------------------
 
-The discrete fourier transform transforms a sequence of N complex numbers xn (real numbers are also complex number, and one example is the time series data sampled at a fixed sampling frequency)
-to another sequence of complex numbers Xk (coefficients for each complex sindusoial components).
+The discrete Fourier transform transforms a sequence of N complex numbers xn (real numbers are also complex number, and one example is the time series data sampled at a fixed sampling frequency)
+to another sequence of complex numbers Xk (coefficients for each complex sinusoidal components).
 
 Xk = SUM_from_0_to_Nminus1(xn * e^(-2pi * i/N * k * n))
 
@@ -163,7 +163,7 @@ One important thing is that from the formula we know that we can get results for
 but actually the higher frequencies components above fs/2 obtained are ghost components if the lower frequencies are really the true thing in the signal..  
 Conversely, if the higher frequencies components are really the true thing in the signal, the DFT will give ghost components at lower frequencies, which do not exist in the original signal at all.  
 The higher frequency components obtained are not useful anyway so we will discard them in DTF.  
-All these mean that due to this limitation, to get the correct picture of the signal, we need to use a sampling rate at least twice as large as the largest freqency component in the original signal.  
+All these mean that due to this limitation, to get the correct picture of the signal, we need to use a sampling rate at least twice as large as the largest frequency component in the original signal.  
 If this requirement is not met, the we cannot really tell the low frequency component are the real low frequency component or the ghost component of the high frequency component.
 
 E.g. when x(t) = sin(2pi 1000t) + sin(2pi 4000t + pi/4), using 10 samples at 100us (fs=10k Hz),
@@ -182,7 +182,7 @@ E.g. if the period is 0.1 second, the the frequency is 10 Hz.
 There is another concept called angular frequency.  
 It means the the 'amount' of angle changed (in rad) in one second.
 
-We know that one cycle ressponds to an angle of 2pi rad,
+We know that one cycle responds to an angle of 2pi rad,
 so the angular frequency w is 2pi * frequency.  
 Using the same example, the angular frequency is 20pi rad/s.
 
@@ -201,11 +201,11 @@ energy and power
 -------------------
 
 Let's say x(t) is a current signal.
-The instaneous power of the device with R ohm and a current of x(t) is x(t)^2 * R (i.e. I^2 * R).  
-The R is the scalling factor, so we can leave it out for simplicity.
+The instantaneous power of the device with R ohm and a current of x(t) is x(t)^2 * R (i.e. I^2 * R).  
+The R is the scaling factor, so we can leave it out for simplicity.
 
 If x(t) = 3 cos(100pi * t),
-the instaneous power p(t) = |x(t)|^2 = 9/2 + 9/2cos(200pi * t) 
+the instantaneous power p(t) = |x(t)|^2 = 9/2 + 9/2cos(200pi * t) 
 
 the average power of signal x(t) from t1 to t2 is INTEGRATE_from_t2_to_t2( p(t) ) / (t2 - t1),
 where the numerator is the total energy of the signal from t2 to t1 (of course, the longer the period, the larger the energy).
@@ -215,12 +215,12 @@ Complex signal
 -------------------------
 
 What is a complex signal in the first place?  
-We can treat it as a signal with partialy real, and partially imaginary.  
+We can treat it as a signal with partially real, and partially imaginary.  
 Certainly one single complex signal does not exist in the real world, 
 but the addition of multiple complex signal can be used to represent one real signal,
-as the imaginary parts can be clearly cancelled out in some ways.
+as the imaginary parts can be clearly canceled out in some ways.
 
-But why do we want to represent a real signal by the addtion of multiple complex signal?  
+But why do we want to represent a real signal by the addition of multiple complex signal?  
 Because complex signal is much easier to be handled mathematically.
 (e.g. complex number can be differentiated easily, and the output is of a similar form.)
 

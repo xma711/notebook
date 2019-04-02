@@ -7,7 +7,7 @@ the 3 most popular services are Amazon Elastic Compute Cloud (EC2), Amazon Elast
 
 Ref (EC2): https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud  
 EC2 allows users to rent virtual computers on which to run their own computer applications.  
-A user can boot an Amazone Machine Image (AMI) to configure a virtual machine, which is called an "instance", containing any software desired.
+A user can boot an Amazon Machine Image (AMI) to configure a virtual machine, which is called an "instance", containing any software desired.
 The fee is charged by the hours for active servers.
 
 EBS provides raw block-level storage that can be attached to EC2 instances (virtual machines).
@@ -16,7 +16,7 @@ In a typical use case, this includes formatting the device with a filesystem (e.
 EBS also supports a number a advanced features, like snapshotting and cloning.
 
 Ref(S3): https://en.wikipedia.org/wiki/Amazon_S3  
-S3 provides highly scalable object storage and is suited to both small and large repositories of objects.  
+S3 provides highly salable object storage and is suited to both small and large repositories of objects.  
 S3 provides storages through web services interfaces (REST, SOAP and BitTorrent).
 
 Differences between S3 and EBS   

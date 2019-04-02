@@ -8,7 +8,7 @@ to download popular libraries: https://www.arduino.cc/en/Reference/Libraries
 Arduino is an open source microcontroller platform.  
 It is a microcontroller, which internally has a CPU, memory and I/O ports all on the same chip.
 
-Arduino developers selected the Atmel Atmega AVR family of microcontroller chips to power the arduino.  
+Arduino developers selected the Atmel Atmega AVR family of microcontroller chips to power the Arduino.  
 Such a microcontroller has several features built in:  
 	- flash memory for storing program codes (only);  
 	- SRAM for storing program data (it is RAM);  
@@ -26,9 +26,9 @@ It has 96KB SRAM, 512KB Flash. no EEPROM.
 
 Other notable Arduino: 
 Leonardo (similar to uno), Mega (more powerful), Micro (small size), Esplora (game controller), 
-Yun (2 processors, one for linux), LilyPad (small round, can put on clothes).
+Yun (2 processors, one for Linux), LilyPad (small round, can put on clothes).
 
-Arduino shields: ethernet shield, LCD shield, Motor shield, prototype shield.
+Arduino shields: Ethernet shield, LCD shield, Motor shield, prototype shield.
 
 
 Arduino IDE
@@ -38,7 +38,7 @@ The usual upload assumes an arduino board has bootloader installed already.
 This is the default and recommended way.
 
 To upload a bootloader to a fresh arduino, we need to use the programmer option in the IDE. 
-To use this option, we also need a hardware programmer to connect the arduino (spi) to the computer. 
+To use this option, we also need a hardware programmer to connect the arduino (SPI) to the computer. 
 This physical programmer can be created using another arduino uno.. or can be purchased off the shelf.
 
 
@@ -171,7 +171,7 @@ To change this, there are 2 ways: internal and external.
 
 Internally, we can change the reference voltage to +1.1 v: analogReference(INTERNAL); 
 // in uno, INTERNAL is a constant that will make the reference to be 1.1V  
-// in Anduino Mega, it has 2 choices: INTERNAL1V1 (1.1 V) and INTERNAL2V56 (2.56 V)
+// in Arduino Mega, it has 2 choices: INTERNAL1V1 (1.1 V) and INTERNAL2V56 (2.56 V)
 
 to change the reference voltage externally, we can apply a reference voltage to AREF pin,
 and in the codes we need to set: analogReference(EXTERNAL); // and that's it!
@@ -276,7 +276,7 @@ Arduino comes with a spi library.
 Notable functions:  
 begin(): init the spi interface pins  
 end(): done  
-setBitOrder(mode): set how arduino sends data out the spi inteface  
+setBitOrder(mode): set how arduino sends data out the spi interface  
 setClockDivider(divider): set the timing clock speed on the sck interface  
 setDataMode(mode): sets the spi data mode on the interface  
 transfer(val): sends 1 byte of data out the SPI bus, and retrieves 1 byte of data from the bus.
@@ -407,10 +407,10 @@ readButton: retrieve the status of all the buttons on the LCD shield.
 Ethernet shield
 ------------------------
 
-There are ethernet shield and wifi shield.  
+There are Ethernet shield and WiFi shield.  
 Both have their own libraries.
 
-The ethernet shield allows an arduino to connect to an ethernet network.  
+The Ethernet shield allows an arduino to connect to an Ethernet network.  
 It can act as a client or as a server.  
 Normally it runs TCP, but there is a library for it to use UDP.
 
@@ -467,7 +467,7 @@ SD card reader
 
 There is a library for SD card reader.
 
-The ethernet shield has a SD card reader inside.  
+The Ethernet shield has a SD card reader inside.  
 There is a standalone SD card shield: Micro-SD breakout board, Adafruit Data logging shield, the wave shield..
 
 Example:  

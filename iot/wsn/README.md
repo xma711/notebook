@@ -6,7 +6,7 @@ Mainly about wireless sensor networks, but may or may not be battery-powered.
 However, this folder will also have some stuff relating to mobile ad hoc network (MANET),
 which is slightly different from WSN.
 
-A sensor node in wsn is usually thought to be very resource-limited, 
+A sensor node in WSN is usually thought to be very resource-limited, 
 however, in my experience, the nodes are not necessarily such nodes.  
 Rather, they may be quite powerful, like beaglebone black.
 
@@ -37,7 +37,7 @@ IoT: WSN + Internet + App + Cloud computing + etc ... (maybe also intelligence)
 WSN is like the eyes and ears of the Internet of Things. 
 It is a bridge connecting the real world to the digital world.  
 IoT is like a brain. 
-It can both store the real workd data and also be used to monitor the real world parameters,
+It can both store the real world data and also be used to monitor the real world parameters,
 make meaningful interpretation and even make decisions based on the sensed data..
 
 
@@ -47,7 +47,7 @@ From WSN to IoT
 Ref: paper "Evolution of Wireless Sensor Networks towards the Internet of Things: a Survey" by L. Mainetti, 2011.
 
 WSNs --> high heterogeneity --> different proprietary and non-proprietary solutions, 
-delaying a large-scale deployment of wsn technologies to obtain a virtual wide sensor network able to integrate all existing sensor networks.
+delaying a large-scale deployment of WSN technologies to obtain a virtual wide sensor network able to integrate all existing sensor networks.
 
 "the current trend is to use the internet protocol to achieve native connectivity between WSNs and the internet".
 (Personally i think this eases many problems.)
@@ -58,7 +58,7 @@ real-world devices such as home appliances with virtual services on the web.
 Non-ip solutions: Zigbee, Z-Wave, Insteon, Waveenis (the latter 2 may already die..)..  
 
 Zigbee: phy layer + mac layer + network layer + application layer. phy and mac are defined by 802.15.4, rest by zigbee specification.   
-Support tree and mesh topologies;
+Support tree and mesh topology;
 development of applications relies on application profiles, such as the zigbee home automation public application profile and the smart energy profile.  
 A new zigbee specification RF4CE offers a simplified version for star topology only.
 
@@ -71,9 +71,9 @@ Ip-based solutions: 6LoWPAN defines the format for adaptation between IPv6 and I
 6lowpan --> scale across large network infrastructure with mobility.  
 6lowpan architecture is made up of low-power wireless area networks, 
 which are connected to other ip networks thru edge routers.  
-Edge routers play an important role of handling 6lowpan compression and neighbordiscovery and 
-also the transparent mapping of the full ipv6 and the lopan ipv6 format.
+Edge routers play an important role of handling 6lowpan compression and neighbor discovery and 
+also the transparent mapping of the full IPv6 and the lowpan IPv6 format.
 
 Another high level protocol is CoAP, a bit like the light weight http.  
-(however, i think it is too high level and has nothing to do with making the wsns more connected..)
+(however, i think it is too high level and has nothing to do with making the WSNs more connected..)
 

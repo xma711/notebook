@@ -1,9 +1,9 @@
-Little's Law: L = lamda * W, where
+Little's Law: L = lambda * W, where
 	- L is the long term average of items/ppl/pkts in the system
-	- lamda is the long term average rate of arrival to the system
+	- lambda is the long term average rate of arrival to the system
 	- W is the long term average processing time of one item in the system
 
-from wikipedia: The long-term average number of customers in a stable system L is equal to  
+from Wikipedia: The long-term average number of customers in a stable system L is equal to  
 the long-term average effective arrival rate, lambda,  
 multiplied by the (Palm-)average time a customer spends in the system, W.
 

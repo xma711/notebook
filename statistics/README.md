@@ -7,7 +7,7 @@ consider a random experiment whose outcome cannot be determined in advance.
 
 Sample space S: the set of all outcomes
 
-Event E: a subset of the sample sapce (An event E occurs if the outcome s belongs to E)
+Event E: a subset of the sample space (An event E occurs if the outcome s belongs to E)
 
 probability function P(E): the probability that event E happens
 
@@ -56,7 +56,7 @@ It means the distribution produces fewer and less extreme outliers than does the
 Distributions with kurtosis greater than 3 are said to be leptokurtic.
 Such a distribution produces more outliers than the normal distribution.
 
-It is common practice to use an adjusted version of pearson's kurtosis, the excess kurtosis, which is the kurtosis minus 3.
+It is common practice to use an adjusted version of Pearson's kurtosis, the excess kurtosis, which is the kurtosis minus 3.
 
 
 Skewness
@@ -64,14 +64,14 @@ Skewness
 
 Reference: https://en.wikipedia.org/wiki/Skewness
 
-skewness is a meansure of the asymmetry of the probability distribution of a real
+skewness is a measure of the asymmetry of the probability distribution of a real
 -valued random variable about its mean.
 The skewness value can be positive or negative or undefined.
 
 Skew does not refer to the direction the curve appears to be leaning;
 in fact, the opposite is true.
 
-For unimodal distribtuion, negative skew indicates that the tail on the left side of the probability density function is longer or fatter than the right side - it does not distinguish these 2 kinds of shape.  
+For unimodal distribution, negative skew indicates that the tail on the left side of the probability density function is longer or fatter than the right side - it does not distinguish these 2 kinds of shape.  
 Positive skew indicates that the tail on the right side is longer or fatter than the left side.
 
 Btw in the reference there are graphs to show the skewness - easier to be understood.
@@ -103,10 +103,10 @@ Independence
 P(Ei Intersect Ej) = P(Ei) * P(Ej) or P(Ei|Ej) = P(Ei)
 
 
-pearson correlation
+Pearson correlation
 -------------------------
 
-Pearso correlation is a measure of the linear correlation between 2 variables x and y.
+Pear so correlation is a measure of the linear correlation between 2 variables x and y.
 It has a value between +1 and -1, 
 where 1 is total positive linear correlation,
 0 is no linear correlation
@@ -115,4 +115,4 @@ and -1 is total negative linear correlation.
 It can be used to check if 2 features are highly linearly correlated (either positively or negatively).
 If yes, using only one of the features is enough.
 
-P(x,y), the pearson correlation of vector x and vector y = cov(x, y) / (sd(x) * sd(y))
+P(x,y), the Pearson correlation of vector x and vector y = cov(x, y) / (sd(x) * sd(y))

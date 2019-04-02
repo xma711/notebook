@@ -16,7 +16,7 @@ postgreSQL or postgres is a relational database management system that provides 
 It has the advantage of being standards-compliant 
 and having many advanced features like reliable transactions and concurrency without read locks. (meaning?)
 
-To install postgres and a contrib package that adds some additional utilitites:  
+To install postgres and a contrib package that adds some additional utilities:  
 sudo apt-get install postgresql postgresql-contrib
 
 
@@ -37,7 +37,7 @@ By default, postgres uses a concept called "roles" to handle authentication and 
 These are similar to the regular unix-style accounts and 
 postgres does not distinguish between users and groups and instead prefers the more flexible term "role".
 
-Upon installatiion postgres is set up to use ident authentication,
+Upon installation postgres is set up to use ident authentication,
 which means that it associates posgres roles with a matching unix/linux system account.  
 If a role exists within postgres, a unix/linux username with the same name will be able to sign in as that role. (to understand this line more, read section "create a new role".)
 
@@ -51,7 +51,7 @@ associated with the default Postgres role (i.e the "postgres" role).
 We can switch to the "postgres" account by typing:  
 sudo -i -u postgres # this is just to switch to a user in the linux terminal; at this step there is nothing to do with postgres database yet
 
-now acccess a postgres prompt by typing:  
+now access a postgres prompt by typing:  
 psql  
 
 to exit the prompt:  
@@ -102,7 +102,7 @@ Postgres=# \conninfo
 You are connected to database "postgres" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
 ```
 
-grant datease to a role
+grant database to a role
 ------------------------------------
 
 Sudo -i -u postgres # linux terminal goes to this user
@@ -149,14 +149,14 @@ Equipment id is of Serial type, which is an auto-incrementing integer.
 Being primary key means that the values must be unique and not null.  
 
 For equip_id and install_date, we have not given a field length.
-This is because the set lenght is implied by the type in this case.
+This is because the set length is implied by the type in this case.
 
 There is a constraint for the "location" column that requires the value to be one of 8 possible values.
 
 To see the new table created:  
 postgres=# \d  
 
-exmaple:  
+example:  
 ```
 postgres=# \d
                    List of relations
@@ -182,11 +182,11 @@ Example of insert:
 INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2014-04-28');
 
 
-postgreSql for django
+postgreSQL for django
 -------------------
 
 Https://help.ubuntu.com/community/PostgreSQL
-to use postgreSql commands, login as user postgres: sudo su postgres
+to use postgreSQL commands, login as user postgres: sudo su postgres
 
 
 login to postgres shell: psql

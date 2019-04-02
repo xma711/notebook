@@ -38,7 +38,7 @@ Let p' = 5 (in ARMA) and d=2.
 
 Thus, ARIMA(p, d, q) can be thought as a particular case of an ARMA(p+d, q).
 
-ARIMA(p,d,q) expresses this polynomial factorisation property with p = p' - d, where p' is the parameter in ARMA (i.e. ARMA(p', q)).
+ARIMA(p,d,q) expresses this polynomial factorization property with p = p' - d, where p' is the parameter in ARMA (i.e. ARMA(p', q)).
 
 Thus, the equation for ARIMA(p,d,q) can be written as:  
 phi(L)(1-L)**d xt = theta(L) et

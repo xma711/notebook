@@ -28,7 +28,7 @@ Note that implicitly this formula already assumes the sum of all page ranks = 1.
 
 In fact, using this way, the pagerank is equivalent to a probability that this page will be chosen in the long run.
 
-This is exactly the same as the markov chain in the module advanced computer networks.  
+This is exactly the same as the Markov chain in the module advanced computer networks.  
 In the module, each state is the number of people in a queue (0, 1, 2, .. ), 
 in this case, each state is a webpage.  
 The same problem is to find the probability of a state in the long run, given the state transition conditions.
@@ -36,7 +36,7 @@ The same problem is to find the probability of a state in the long run, given th
 There are some conditions only under which the steady state of the probabilities will converge (check computer network module).  
 Using the teleport mechanism allows the network to satisfy these conditions.
 
-Ultimately, we can solve it at one go, without having to do multiple itertions, if the network size is not too big.
+Ultimately, we can solve it at one go, without having to do multiple iterations, if the network size is not too big.
 Pagerank_this_round = beta * sum of incoming pageranks + (1-beta) * 1/N , and pagerank_this_round = pagerank_last_round (refer to lecture notes)
 
 for an example, check gradiance/g3/pagerank.py

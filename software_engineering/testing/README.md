@@ -10,7 +10,7 @@ Integration testing: separate modules will be tested together to expose faults
 in the interfaces and in the interactions between integrated components.
 Testing is usually black box.
 
-Sytem testing: compare the system specifications against the actual system.
+System testing: compare the system specifications against the actual system.
 E.g. The customer (who has ordered and paid for the system) and the user (who uses the system) 
 can be different groups of people or organizations 
 with their own specific interests and requirements of the system.

@@ -15,9 +15,9 @@ Weave-enabled devices can seamlessly talk to each other.
 
 Weave is a protocol for device discovery, provisioning, authentication and interaction,
 which is shipped as a client library, mobile SDK and a cloud-based web service.  
-Brillo will have weave already embbed in it.  
+Brillo will have weave already embedded in it.  
 Other devices can achieve the functionality through the client libraries.  
-(this actually means that manufacturers do not necessarily have to use brillo, if brillo's requirement on hardware is too high.)
+(this actually means that manufacturers do not necessarily have to use Brillo, if Brillo's requirement on hardware is too high.)
 
 There is also this Libuweave: a tiny weave implementation:
 a communication stack intended to be portable to MCU based devices.

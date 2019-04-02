@@ -7,5 +7,5 @@ IaaS: infrastructure as a service. example: aws
 
 PaaS: platform as a service. example: Heroku, which works on top of aws
 
-SaaS: software as a service. example: google docs, microsoft online office.
+SaaS: software as a service. example: google docs, Microsoft online office.
 

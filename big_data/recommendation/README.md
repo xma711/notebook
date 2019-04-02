@@ -31,7 +31,7 @@ Mean value = sum of scores / number of available scores.
 In this way, each row is normalized. 
 No-score items become neutral items.
 
-And then we calcuate the cosine similarity between user 1 and all other users.  
+And then we calculate the cosine similarity between user 1 and all other users.  
 Pick the top m users.  
 Then estimate the score for item k for user 1 by   
 sum ( user i's score for item k * cosine_similarity ) / sum (cosine_similarity)

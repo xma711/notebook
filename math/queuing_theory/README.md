@@ -7,7 +7,7 @@ second M: Markovian for processing time in the server
 
 There are others like M/G/1, M/M/2, M/M/n.
 
-M/M/n is like a calling centres with n workers to pick up phones.
+M/M/n is like a calling centers with n workers to pick up phones.
 
 
 The things we are interested in are, given the average arrival rate (lambda) and average processing rate (mu):
@@ -16,8 +16,8 @@ The things we are interested in are, given the average arrival rate (lambda) and
 	- what is the probability that the queue == certain number in the long run?
 	- what is the ratio that the server is idle? (the value of pi0, the probability that the system is in state 0)
 
-for M/M/1 processing to be valid, it must be markovian. 
-For continuous time markov chain, it must be exponential. therefore, M is equivalent to exponential too.
+for M/M/1 processing to be valid, it must be Markovian. 
+For continuous time Markov chain, it must be exponential. therefore, M is equivalent to exponential too.
 
 Markovian
 ----------------------
@@ -30,7 +30,7 @@ It is easier to understand the discrete state scenario.
 For the continuous case, it means that if i pick a time (tp) in the past with state i, the future state at t depends only on state i at tp and the duration (t-tp), not any time before tp.
 One example is the the number of buses that have arrived. 
 If i know that since 10am there are 20 buses, what is the number of buses one hour later? 
-The expected number of buses arrive in one hour can be calculated from the poisson distribution, which doesn't need any information before 10am..  
+The expected number of buses arrive in one hour can be calculated from the Poisson distribution, which doesn't need any information before 10am..  
 
 The inter-arrival intervals actually (have to) follow an exponential distribution.  
 As far as i know, exponential distribution is the only one with the memoryless property.
@@ -44,7 +44,7 @@ Limiting distribution (pi) of the system state exists when
 Solve for M/M/1
 -------------------------
 
-Draw each state in a bubble. put the arrival rate (lambda) at the arrow pointing from a bubble to a buble at its right.  
+Draw each state in a bubble. put the arrival rate (lambda) at the arrow pointing from a bubble to a bubble at its right.  
 Put the process rate (mu) at the arrow pointing from a bubble to one at its left.
 
 At equilibrium (in the long term), the probability that each state can happen has a fixed value. represented by pi0, pi1, pi2 ...
@@ -64,7 +64,7 @@ After getting all pi, the average number of customers in the system (both queue 
 With the average size of customers in the system (L) and average arrival rate, by little's law (L=lambda * W) we can have the average time (sojourn time) in the system:  
 W = L/lambda.
 
-To calcuate the average size of the queue (Q), the result = sum of all (pi_i * (state_i - 1)) for M/M/1. this is because if there are n customers, 1 must be in the server.  
+To calculate the average size of the queue (Q), the result = sum of all (pi_i * (state_i - 1)) for M/M/1. this is because if there are n customers, 1 must be in the server.  
 With Q, we can have to average delay D = Q/lambda by little's law.
 
 The average number of customers in the server = L - Q.  
@@ -80,8 +80,8 @@ G means the distribution of the processing time/rate in server is general. it ca
 
 M/G/1 is a superset of M/M/1.
 
-Firstly, without proof, we have PASTA (Possion arrivals see time averages).
-	- it means if arrivals are poisson, then the proportion of time a queueing system spends in a given state pi_i is equal to the proportion pi_i' of the arrivals who observe the system in that state.
+Firstly, without proof, we have PASTA (Poisson arrivals see time averages).
+	- it means if arrivals are Poisson, then the proportion of time a queuing system spends in a given state pi_i is equal to the proportion pi_i' of the arrivals who observe the system in that state.
 	- in math, the equation is lim(t->inf) 1/t * INTEGRATE (0 to t) {f(X(s)) ds} = lim(n->inf) 1/n * SUM (0 to n) {f(X(tj-))}, where f is any real bounded function.
 
 To use PASTA, we need to sub in X(s) and f() with meaningful things. 
@@ -115,6 +115,6 @@ Some intuition
 When there are multiple queues, each queue's arrival rate is relatively smaller. 
 This means the average idle intervals in each queue is longer, causing some servers to be idle.
 
-When the queues are combined, the arrvial rate is the combination of all arrival rates. 
+When the queues are combined, the arrival rate is the combination of all arrival rates. 
 Obviously the idle intervals in this single queue is much smaller.  
 All the servers then are able to serve the customers in the queue with less idle times.

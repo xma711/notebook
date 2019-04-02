@@ -3,15 +3,15 @@ Git
 
 A source-code versioning software, similar to subversion.
 
-Unlike svn, git is a distributed versioning software, meaning everyone can have different commits at their local repo.
+Unlike SVN, git is a distributed versioning software, meaning everyone can have different commits at their local repo.
 
-With git, one is commiting changes to the local repo.
+With git, one is committing changes to the local repo.
 
-But if the local repo has linked to a remote repo such as github, then one can push the changes to the remote repo.
+But if the local repo has linked to a remote repo such as GitHub, then one can push the changes to the remote repo.
 
-What is doing i believe is alway merging. 
+What is doing i believe is always merging. 
 
-When one pull a brancn from a remote repo to a local branch, there is a merge.
+When one pull a branch from a remote repo to a local branch, there is a merge.
 
 When one push a local branch to a remote branch, there is a merge. 
 

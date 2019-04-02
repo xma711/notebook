@@ -1,8 +1,8 @@
-Broken windown theory
+Broken window theory
 ---------------------------
 
 One broken window, left unrepaired for a substantial length of time, 
-will accerelerate a building's damage.
+will accelerate a building's damage.
 
 If you find yourself working on a project with quite a few broken windows,
 it is all too easy to slip into the mindset of
@@ -85,7 +85,7 @@ One way to organize teams into groups with well-defined responsibilities and min
 separate infrastructure from application.
 Each major infrastructure component (database, communication interface, middleware layer etc) gets its own subteam.
 Each obvious division of application functionality is similarly divided.  
-A meansure of the orthogonality of a project team: 
+A measure of the orthogonality of a project team: 
 see how many people need to be involved in discussing each change that is requested.
 The larger the number, the less orthogonal the group.
 
@@ -122,7 +122,7 @@ With truly orthogonal documentation, you should be able to change
 the appearance dramatically without changing the content.
 (one obvious example is Latex. However, it takes longer time to write in latex than in word.)
 
-Orghogonality is closely related to the DRY principle.
+Orthogonality is closely related to the DRY principle.
 If you use the principle of orthogonality, combined closely with the DRY principle,
 you will find that the system you develop are more flexible,
 more understandable, and easier to debug, test and maintain.
@@ -152,7 +152,7 @@ because you once made it across in practice.
 However, we need to make sure the assertions used has no side effects.  
 We shouldn't do something like "Test.ASSERT(iter.nextElements() != null); object obj = iter.nextElement();"
 because it has the side effects of moving the iterator past the element being fetched.  
-This problem is kind of "Heisenbug" - debugging that changes the behavior fo the system being debugged.
+This problem is kind of "Heisenberg" - debugging that changes the behavior of the system being debugged.
 
 
 Exception
@@ -163,7 +163,7 @@ If your code tries to open a file for reading and that file doesn't exist, shoul
 It depends.
 
 If the file should have been there, then an exception is needed.
-Something unexpected happened - a file you wer expecting to exist seems to have disappeared.
+Something unexpected happened - a file you were expecting to exist seems to have disappeared.
 On the other hand, if you have no idea whether the file should exist or not,
 then it doesn't seem exceptional if you can't find it,
 and an error return is appropriate.

@@ -19,7 +19,7 @@ Randomly generate k points, and use them as centroid.
 
 Assign points that are nearest to the centroid as a cluster.
 
-Recomputer centroids again based on the new clusters.
+Recompute centroids again based on the new clusters.
 
 Re-assign points to the new centroids.
 

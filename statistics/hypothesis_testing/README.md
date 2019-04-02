@@ -13,7 +13,7 @@ so how to proceed from here?
 Firstly, we will be able to compute the sample mean x_bar_observed and sample variance S^2 (sample variance can be a surrogate for population variance)
 
 if number of xi is large enough (> 30 e.g.), we can assume the sample mean x_bar itself follows a normal distribution.
-What this means is that if we are able to get many samples with each sample having 30 observatioin,
+What this means is that if we are able to get many samples with each sample having 30 observation,
 the mean of the sample will follow a normal distribution.  
 Why? central limit theorem!!!
 
@@ -53,17 +53,17 @@ the p value = Pr( x_bar > x_bar_observed) = Area of normal distribution N(10, S^
 
 when using p value, we also need a 'threshold'.
 E.g. if we set our threshold to be 0.025,
-then if p < 0.025, we have to reject the null hypothesis because the observed value is too 'far' away from the hypothesised mean.
+then if p < 0.025, we have to reject the null hypothesis because the observed value is too 'far' away from the hypothesized mean.
 
 As long as i understand the concept of p value, the whole process is exactly equivalent to the method when using z value.
 
-In conclusiong, a large p value favor the null hypothesis while a small p value may lead to rejection of the null hypothesis.
+In conclusion, a large p value favor the null hypothesis while a small p value may lead to rejection of the null hypothesis.
 
 P value is good for reporting, because the number has a meaning - probability.
 
 For easier visualizing this in the head, just imagine a normal distribution, and an observed value with a vertical line,
-and then the p value is the area of the distribution from the neareast tail to the observed value.  
-When the p value is large, it must mean the observed value is closer to the hypothesised mean (good thing if we want to not reject the null hypothesis).
+and then the p value is the area of the distribution from the nearest tail to the observed value.  
+When the p value is large, it must mean the observed value is closer to the hypothesized mean (good thing if we want to not reject the null hypothesis).
 
 
 What if n is not large enough
@@ -77,9 +77,9 @@ We can use similar way to decide if we want to reject or not reject the null hyp
 More general case
 -----------------------------------
 
-I think as long as we have a null and an alernative hypothesis and has a way to reject or not reject the null hypothesis (assume the null hypothesis is correct in the first place),
+I think as long as we have a null and an alternative hypothesis and has a way to reject or not reject the null hypothesis (assume the null hypothesis is correct in the first place),
 it will be considered a hypothesis test.
 
 One example is the test of goodness of fit.
-There is also a null hypothesis saying that the distribution of a variable follows a hypothesised distribution.
+There is also a null hypothesis saying that the distribution of a variable follows a hypothesized distribution.
 Then use the chi-square test to test it.

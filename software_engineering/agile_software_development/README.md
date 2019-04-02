@@ -34,10 +34,10 @@ characteristics
 Agile methods break tasks into small increments with minimal planning,
 and do not directly involve long-term planning.
 
-Iteractions are short time frames that typically last from one to four weeks.
+Interactions are short time frames that typically last from one to four weeks.
 Each iteration involves a team working thru a full software development cycle
 including planning, requirements analysis, design, coding and unit testing,
-and acceptance testing when a working product is demostrated to stakeholders.
+and acceptance testing when a working product is demonstrated to stakeholders.
 
 The goal is to have an available release (with minimal bugs) at the end of each iteration.
 
@@ -53,4 +53,4 @@ Specific tools and technique such as continuous integration (CI),
 automation of xUnit tests, pair programming, 
 test-driven development, design patterns,
 domain-driven design, code refactoring and other techniques
-are often used to improve quality and enhanc project agility.
+are often used to improve quality and enhance project agility.

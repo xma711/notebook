@@ -6,7 +6,7 @@ It is standardized by the 3rd generation partnership project (3GPP), which also 
 
 Nb-iot focuses on indoor coverage, low cost, long battery life.  
 It can either be deployed "in-band" in spectrum allocated to LTE - using resource blocks within a normal LTE carrier, 
-or in the unsused resource blocks within a LTE carrier's guard-band.
+or in the unused resource blocks within a LTE carrier's guard-band.
 
 The peak downlink is 250 kbps and peak uplink is 250 kbps (multi-tone) or 20 kbps (single-tone).
 

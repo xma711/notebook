@@ -16,9 +16,9 @@ Ref: http://www.forbes.com/sites/janakirammsv/2016/11/19/6-enterprise-iot-platfo
 	- Amazon: AWS IoT service, having device management to visualization; also the existing services like aws lambda, EMR (Elastic MapReduce), DynamoDB, Kinesis, etc.   
 	- IBM: IBM Watson platform.. tightly integrated with Bluemix; quite aggressive..  
 	- Cisco: (btw Cisco seems to participate in every iot alliance..) Fog computing initiative.. acquisition of Jasper to deliver a IoT platform ideal for tracking SIM-based devices.  
-	- GE: GE's Predix platform targets industrial IoT deployments. strength of predix is in its high-fidelity device simulation of expensive equipments such as wind turbines and airplane engines.  
+	- GE: GE's Predix platform targets industrial IoT deployments. strength of predix is in its high-fidelity device simulation of expensive equipment such as wind turbines and airplane engines.  
 	- Microsoft: windows 10 IoT Edition is an OS for resource-constrained devices. they have Azure IoT platform.  
-	- PTC: it acquired ThingWorx. it offeres solutions like asset management, alert management, product relationship management, workflow management.
+	- PTC: it acquired ThingWorx. it offers solutions like asset management, alert management, product relationship management, workflow management.
 
 
 Ref: http://hackaday.com/2016/11/21/a-rebel-alliance-for-internet-of-things-standards/  

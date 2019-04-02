@@ -1,10 +1,10 @@
 Install
 ---------------------
 
-Follow http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php  
-to install the hadoop to the ubuntu system.
+Follow http://www.bogotobogo.com/hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php  
+to install the Hadoop to the ubuntu system.
 
-The hadoop version can be changed to the most updated one, which can be downloaded from  
+The Hadoop version can be changed to the most updated one, which can be downloaded from  
 http://mirror.nus.edu.sg/apache/hadoop/core/ 
   
 the java version also needs to be changed to the latest one in the system.  
@@ -17,7 +17,7 @@ issue1: datanode not start
 
 ## (obsolete) multi-node cluster: http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-multi-node-cluster/
 
-for hadoop 2.7.0, set up multi-node cluser by: http://chaalpritam.blogspot.sg/2015/05/hadoop-270-multi-node-cluster-setup-on.html  
+for hadoop 2.7.0, set up multi-node cluster by: http://chaalpritam.blogspot.sg/2015/05/hadoop-270-multi-node-cluster-setup-on.html  
 	- the master and slaves have exactly the same settings!  
 	- but they refer to each other by their hostnames, which can be set in /etc/hosts in EACH machine    
 	- if datanode is not running in master, start it by ./hadoop-daemon.sh stop datanode
@@ -28,16 +28,16 @@ to let nanenode exit from safe mode: ./hadoop dfsadmin -safemode leave
 Hadoop distributed file system (HDFS)
 --------------------------------
 
-It is a bit like linux filesystem, starting with / root direcotry too.
+It is a bit like Linux filesystem, starting with / root directory too.
 
-Switch to hduser first.. because /usr/local/hadoop has a user/group mode of hduser:hdoop.
+Switch to hduser first.. because /usr/local/hadoop has a user/group mode of hduser:hadoop.
 
 To list the files inside HDFS in a particular directory, use command:  
 	hadoop fs -ls full_path_to_directory (e.g. hadoop fs -ls /)  
 	(Seems that we can also use "hdfs dfs -ls /")
 
 to create/remove folder:  
-	hadoop fs -mkdir/-rmr /direcotry/FOLDER_NAME
+	hadoop fs -mkdir/-rmr /directory/FOLDER_NAME
 
 data transferred to/from host computer from/to the hdfs:
 	hadoop fs -put/-get src dest
@@ -51,7 +51,7 @@ display a file's content:
 remove a file:  
 	hadoop fs -rm full_path_to_the_file
 
-as you can see, it is exactly the same as linux command, except there is a "hadoop fs -" in front.\
+as you can see, it is exactly the same as Linux command, except there is a "hadoop fs -" in front.\
 
 
 compile code and run code
@@ -82,12 +82,12 @@ delete the output folder every time before you
 launch the job: hadoop fs –rmr /data/output
 
 
-run python in hadoop
+run python in Hadoop
 -----------------------------
 
 Reference: http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
 
-after wrtting a mapper and a reducer, run this command:  
+after writing a mapper and a reducer, run this command:  
 hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar -file ./mapper.py -mapper ./mapper.py -file ./reducer.py -reducer ./reducer.py -input /user/hduser/gutenberg/* -output /user/hduser/gutenberg-output
 
 if hadoop-streaming-2.7.1.jar is not found, just search it by "find /usr/local/hadoop/ -name "hadoop-streaming*.jar"".
@@ -97,11 +97,11 @@ To get the filename of an input word, use os.environ["map_input_file"], e.g. pri
 to get the content of a file from hdfs: http://stackoverflow.com/questions/28139406/reading-writing-files-from-hdfs-using-python-with-subprocess-pipe-popen-give
 
 
-run hadoop in a docker container
+run Hadoop in a docker container
 -----------------------------
 
 Follow docker repo: https://hub.docker.com/r/sequenceiq/hadoop-docker/  
-or github repo: https://github.com/sequenceiq/hadoop-docker
+or GitHub repo: https://github.com/sequenceiq/hadoop-docker
 
 anyway, it is to:  
 	a. docker pull sequenceiq/hadoop-docker:2.7.1  

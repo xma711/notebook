@@ -22,7 +22,7 @@ E.g. <activity android:name=".MainActivity"> ... </activity>
 Activity
 ----------------------
 
-An activity is like a standone program.  
+An activity is like a standalone program.  
 It has a screen representation (coded by the layout file) and its own logic and own life cycle.
 
 When we enter an app, one screen we see is one activity.
@@ -44,9 +44,9 @@ An background activity is called a service.
 The most common type of service is IntentService.  
 We also need to register the intentService in the manifest file.  
 The communication between the activity and the background interntservice is a publish-subscribe model.  
-The intentservice publish an intent when it is done, and whichever activity that subcribes to the topic will get the intent and thus the data with it.
+The intentservice publish an intent when it is done, and whichever activity that subscribes to the topic will get the intent and thus the data with it.
 
-Each activity has its life cyble.
+Each activity has its life cycle.
 The most important ones are onCreate(), onResume(), onPause() etc.  
 We should provide details procedures for these functions.
 
@@ -57,12 +57,12 @@ Intent
 Intent is a request to start an activity.  
 This can be done within an app, or from an app's activity to another app's activity.
 
-E.g. when i start a game, the default activity wil be activated (usually the "welcome" page).  
+E.g. when i start a game, the default activity will be activated (usually the "welcome" page).  
 Then when i click something on the menu, it will jump to another view on the screen; 
 this is done by the default activity creating an intent to start the corresponding activity based on my input.
 
 In fact, this is called explicit intent, in which an activity specifies precisely which activity to start in the intent.  
-Another type of intent is the implicit intent, in which an activity only has to specify the general action and let the android os to list out the possible apps that can handle that intent.  
+Another type of intent is the implicit intent, in which an activity only has to specify the general action and let the android OS to list out the possible apps that can handle that intent.  
 One example is to open a url.  
 The activity can create an intent to open a url (sth like Intent i = new Intent(Intent.ACTION_VIEW, url));  
 and then start the activity : startActivity(i).

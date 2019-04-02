@@ -13,7 +13,7 @@ Now (yi-2xi) is 'stationary', because the distribution of (yi-2xi) is the same r
 
 However, if we only know that yi = w xi + e, where w is an unknown, how do we get w?
 
-As we alreay assumes that (yi-w xi) follows the normal distribution (or whatever distribution of e),
+As we already assumes that (yi-w xi) follows the normal distribution (or whatever distribution of e),
 and we already know all the yi and xi, 
 it means that we can have a list of points = {yi - w xi},
 where w is still an unknown but stays the same across all points.
@@ -31,7 +31,7 @@ After that, use some methods like MLE or LSM to estimate the unknowns.
 
 For time series, there is only one variable xt.  
 If xt follows a fixed distribution regardless of t, then xt is just x.
-There will be no such thing as predictiong xt+1 given xt
+There will be no such thing as predicting xt+1 given xt
 (or the more correct way to say is that predicting xt+1 is independent of xt)
 because each xt is independent and simply follow the same distribution.
 

@@ -9,9 +9,9 @@ One implementation of ssl is openssl.
 
 .key file: this is a PEM formatted file containing just the private-key of a specific certificate
 and is merely a conventional name and not a standardized one.  
-In apache installs, this frequently resides in /etc/ssl/private
+In Apache installs, this frequently resides in /etc/ssl/private
 
-.pem file: this is a container format that may include just the public certificate (e.g. in apache installs, this is in /etc/ssl/certs)
+.pem file: this is a container format that may include just the public certificate (e.g. in Apache installs, this is in /etc/ssl/certs)
 or may include an entire certificate chain including public key, private key and root certificates.
 (more details are in the reference)
 

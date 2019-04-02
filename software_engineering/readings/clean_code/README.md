@@ -54,12 +54,12 @@ It has only data variables but NO methods at all.
 With data structure and another class that provides interface 
 to use the data structure, 
 it is easy to update the methods in the interface class
-without changing the codes for the data strucuture.  
+without changing the codes for the data structure.  
 In fact, this is sequential.
 
 With object, adding a new method may require changes to
 many classes, because all classes need to have this new method.
-E.g. each class is a shape (circule, square, rectangle),
+E.g. each class is a shape (circle, square, rectangle),
 and we want a new method call get_perimeter(), and then
 we need to add this method to all classes.  
 In data structure, we only need to add this method to the 
@@ -105,7 +105,7 @@ Unit tests should be written immediately before production codes;
 or the production codes may become to difficult to be unit-tested.  
 
 Unit tests codes have to be very clean;
-otherwsie at some point it is hard to update unit tests when production codes are updated.  
+otherwise at some point it is hard to update unit tests when production codes are updated.  
 
 Unit tests are very important, 
 because it allows production codes to be changed later,

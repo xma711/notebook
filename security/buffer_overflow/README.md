@@ -20,7 +20,7 @@ It holds the address of the instruction that the CPU just loaded and is presentl
 
 Note that stack is in the (virtual) memory.
 Registers are in the CPU. 
-We can read the values at registers to understand what memeory addresses are used in the stack.
+We can read the values at registers to understand what memory addresses are used in the stack.
 
 It also has an example to explain how the stack looks like when a function is called 
 and when buffer overflow happens. 
@@ -71,7 +71,7 @@ we can then see the main's codes in assembly language:  disassemble main
 (at this point, we can actually see the the assembly for sample_function too. 
 This means all the instructions are placed inside the memory already)
 
-in the current stack, the smaple_function instruction is loaded at 0x4005fd in my case.  
+in the current stack, the sample_function instruction is loaded at 0x4005fd in my case.  
 The next instruction is at 0x400602. 
 The address for the next instruction is important, because this is the location of the memory 
 the sample_function should return to after it is done.  
@@ -148,7 +148,7 @@ Override the value at the returned address at the sample_function's stack frame
 Follow homework 1
 
 
-furthur understanding of stack
+further understanding of stack
 -----------------------------------
 
 Question: there are assembly codes (instructions) in the memory, and there is stack in the memory,
@@ -220,7 +220,7 @@ If a function is written in assembly codes directly, we don't have to write this
 This means that any instruction sequence (until ret) always assume the current value stored in the ebp register
 is the bottom of the current stack frame.  
 A 'ret' instruction will base on the ebp to deduce where ret_address is. 
-After the 'ret' instruction is executed, ebp should be automatcially shifted down (value increases).
+After the 'ret' instruction is executed, ebp should be automatically shifted down (value increases).
 
 Therefore, i think if the hijacked return address returns to a instruction that changes the value in the ebp register,
 then next return address may be messed up.

@@ -5,7 +5,7 @@ Each bitcoin address is a public key.
 Public in the sense that it is open to everyone to view.  
 Correspondingly, there is a private key, exactly like the ssh key pair.
 
-Things that are encrypted by the public key can be unencrypted by the private key,
+Things that are encrypted by the public key can be decrypted by the private key,
 and vice versa.
 
 However, given one of the keys, there is no way to get the other key back.
@@ -37,9 +37,9 @@ and deduce the amount this address has.
 Sounds efficient but it is always correct.
 
 Wait, if the verification is so easy, then whose node's verification is accepted?  
-One important thing here is that to make sure the node realy puts efforts into verification,
+One important thing here is that to make sure the node really puts efforts into verification,
 the protocol artificially introduces some hard works for them to do.  
-If a malicious node wants to approve a malicous transmit request, he can do but he still has to finish this artificial works.  
+If a malicious node wants to approve a malicious transmit request, he can do but he still has to finish this artificial works.  
 This is a concept of proof of work.
 
 One example is that if we require each email sender to compute a hash value for the email he wants to send,
@@ -49,19 +49,19 @@ In BTC's case, the works required is to find a number (nouce) such that the hash
 This work cannot be solved by any short cut except brute force.
 Whoever that is able to come out with a such a number will be the node that POTENTIALLY to the ONLY verifier that all other nodes recognize for this round.
 
-In a simple scenario, if a node comes out with this number much faster than others, it will immediateely broadcast this verification to all other nodes.  
+In a simple scenario, if a node comes out with this number much faster than others, it will immediately broadcast this verification to all other nodes.  
 The finding of the number is every difficult, but the verification is very easy.
-Other nodes will verify if this node really achives this. if yes, they accept the answer and give up this own trial.
+Other nodes will verify if this node really achieves this. if yes, they accept the answer and give up this own trial.
 At this point, all nodes update their local copy of the full history of BTC.
 
 What do you mean by "update the history of BTC"?
-Actullay the history is maintained by a blockchain.
+Actually the history is maintained by a blockchain.
 In a blockchain, one block consists of its own information, plus a hash value of the previous block, plus a hash value of all the content. 
 
 Once a verification is accepted by a node, it add this block to the blockchain.
 
 One simplification in the above example is that the node only verifies the transaction from A to B.
-But in reality, serveral unverified transactions are grouped together and verified by a node.
+But in reality, several unverified transactions are grouped together and verified by a node.
 Therefore one block in blockchain is for verification of several transactions (in BTC).  
 Of course it doesn't prevent another design to approve one transaction at a time, but it will be extremely inefficient.
 
@@ -82,7 +82,7 @@ Firstly, he is free to reject but most others will accept anyway.
 There is no way for the malicious node to make 51% other nodes to reject the correct block.
 
 Besides, if the malicious node really want to accept a false transaction, he has to come out with a number faster than the whole network.
-This is to compete with the whole nework's resources, which he unlikely will win.
+This is to compete with the whole network's resources, which he unlikely will win.
 
 But let's say he really manages to come out with a number faster than others, so what?
 He cannot modify the content of the request file.
@@ -109,7 +109,7 @@ The network maintains one history only.
 
 Btw can one node change part of the history and convince all other nodes to accept the modified history?  
 Both are difficult.
-To change a few blocks, you need to create the number for each block to fulfil the hash requirement, which is time-consuming.
+To change a few blocks, you need to create the number for each block to fulfill the hash requirement, which is time-consuming.
 Though ultimately you may achieve it (after many years of computation maybe), then what?
 You need to hack into 51% of nodes that change their blockchains.. quite impossible.
 
@@ -117,7 +117,7 @@ In fact, the double-spending problem seems the most difficult one to solve but B
 
 One more thing is that if more and more nodes joining the mining process, doesn't it mean that the verification process gets faster and faster?
 
-The answer is no. because the protocol adjust the difficulty level of the hasing requirements based on the number of miners.
+The answer is no. because the protocol adjust the difficulty level of the hashing requirements based on the number of miners.
 If more miners, the difficulty level increases.
 Ultimately it maintains a same average rate of creation of a new block (one new block every 10 min).
 

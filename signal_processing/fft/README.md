@@ -1,9 +1,9 @@
-Fft
+FFT
 -------------
 
-Fft is fast fourier transform, which is to convert a time series data to frequency-domain data.
+FFT is fast Fourier transform, which is to convert a time series data to frequency-domain data.
 
-Python has a fft function, in both numpy and scipy.
+Python has a FFT function, in both numpy and scipy.
 
 Assume we use numpy's fft.
 
@@ -42,4 +42,4 @@ This window function ultimately is to actively distort the original time series,
 so as to amplify some parts while depressing some other others.
 After applying the fft on the distorted time series, the results will be more accurate.
 
-One popular choice is the hanning function.
+One popular choice is the Hanning function.

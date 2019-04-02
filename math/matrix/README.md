@@ -31,7 +31,7 @@ As long as the determinant not equal to 0, then we know that there is a solution
 Ok great. what else?
 
 Look at the matrix equation again M * x = y. 
-Can we cancel the M away from the left-hand side by cancelling the stuff from the right-hand side, 
+Can we cancel the M away from the left-hand side by canceling the stuff from the right-hand side, 
 all at one go, just like what we usually do in the one single equation?   
 
 It turns out that we can.

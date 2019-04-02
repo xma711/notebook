@@ -1,4 +1,4 @@
-Explain arduino bootloader
+Explain Arduino bootloader
 ----------------------------
 
 Reference: https://www.arduino.cc/en/hacking/programmer
@@ -15,7 +15,7 @@ Tools->Programmer->Your Programmer
 Sketch->Upload Using a Programmer
 "
 
-This means this programmer is a hardware device that allows a computer to burn skedule to the arduino using the full flash.  
+This means this programmer is a hardware device that allows a computer to burn sketch to the arduino using the full flash.  
 Also, the programmer is needed when we try to upload a bootloader to the arduino.
 
 As explained by reference https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all,

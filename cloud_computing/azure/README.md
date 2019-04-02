@@ -3,7 +3,7 @@ Use storage account
 
 In Dashboard, follow the steps to create a storage account.
 
-Apparently i can create multiple storage account. just imagine each is one dropbox account.
+Apparently i can create multiple storage account. just imagine each is one Dropbox account.
 
 Inside one storage account, there are different 'services': blobs, files, tables, queues..
 
@@ -12,18 +12,18 @@ Assume we want to create a storage to store files, then click 'Files'.
 Follow the steps to create a storage for files. minimally 1 GB.
 
 After creating one named 'files1', we want to access the whole directory in a local computer, just like Dropbox.
-Luckily azure does support linux machine's access.
+Luckily azure does support Linux machine's access.
 
-To mount the folder in the local linux computer, click the '...' beside the folder 'files1' in browser,
+To mount the folder in the local Linux computer, click the '...' beside the folder 'files1' in browser,
 then click 'connect'.
-In the 'connecting from linux', there is a full command line to mount the file in the local computer.  
+In the 'connecting from Linux', there is a full command line to mount the file in the local computer.  
 Before that, note that i have to install this cifs-utils first, using: sudo apt-get install cifs-utils (ref: https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-linux)
 
 also need to create the mount point first: sudo mkdir /mnt/azure_files1
 
 in my case, the command is: sudo mount -t cifs //xma1.file.core.windows.net/files1 /mnt/azure_files1 -o vers=3.0,username=xma1,password=longlonglongpasswordgivenbyazure,dir_mode=0777,file_mode=0777,sec=ntlmssp
 
-after this, i can access the folder as if it is a dropbox folder.  
+after this, i can access the folder as if it is a Dropbox folder.  
 E.g. if i 'touch hello.txt' in the folder, the file will be auto-synced to the remote folder.
 
 
@@ -32,7 +32,7 @@ Access azure storage account using 'Microsoft Azure Storage Explorer'
 
 Firstly, need to install .net packages. 
 Instructions can be found here: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
-(assume ubuntu 18.04)
+(assume Ubuntu 18.04)
 
 in short, register product repository for once per machine:
 
@@ -52,7 +52,7 @@ sudo apt-get install dotnet-sdk-2.2
 
 then download the Azure storage explorer here: https://azure.microsoft.com/en-us/features/storage-explorer/
 
-extract the linux tar file.  
+extract the Linux tar file.  
 In the extracted folder, run ./StorageExplorer
 
 To add an storage account using SAS in the storage explorer, click view -> account management -> add an account,
@@ -81,7 +81,7 @@ Pricing
 
 Reference: https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/
 
-for Redundancy, LRS seems the cheapeast.
+for Redundancy, LRS seems the cheapest.
 
 Standard storage is cheaper than the premium storage.
 
@@ -90,7 +90,7 @@ the standard data storage price is $0.06 (USD) per GB per month, and $0.015 per 
 
 For 'Block Blob' storage (general purpose v2), with the same setting, the price is about $0.02 per GB per month,
 $0.05 per 10,000 write and list operations, and $0.004 per 10,000 read operations.  
-Also, 'HOT' type is actually cheaper than 'COOL' type on the data taransfer cost. but COOl should be cheaper for the storage pricing than HOT type.  
+Also, 'HOT' type is actually cheaper than 'COOL' type on the data transfer cost. but COOl should be cheaper for the storage pricing than HOT type.  
 (reference for block blob pricing: https://azure.microsoft.com/en-us/pricing/details/storage/blobs/ )
 
 also, pricing for 'Blob Storage' and 'General Purpose v2' are identical for Block Blob storage, 

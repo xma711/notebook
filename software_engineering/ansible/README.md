@@ -14,7 +14,7 @@ However, in ansible, it is just one line!
 Installation
 -----------------------
 
-To install it directly to ubuntu, follow http://docs.ansible.com/ansible/intro_installation.html
+To install it directly to Ubuntu, follow http://docs.ansible.com/ansible/intro_installation.html
 
 nothing has to be started.
 Ansible can be used from command line.
@@ -51,7 +51,7 @@ ad hoc usage
 Reference: http://docs.ansible.com/ansible/intro_adhoc.html  
 
 example: ansible test_clients_docker -a "echo hello" -u root  
-(btw if ansible_user is defined in hosts file, then no need ot use "-u root")  
+(btw if ansible_user is defined in hosts file, then no need to use "-u root")  
 (if "MODULE FAILURE" is encountered, check solutions to issues)
 
 example: ansible test_clients_docker -m copy -a "src=/tmp/hello_from_ansible dest=/tmp/"
@@ -60,7 +60,7 @@ example: ansible test_clients_docker -m git -a "repo=https://github.com/xma711/p
 
 when no module is specified, the default module is "command".  
 Question: what is difference between command and shell?  
-Answer: at least, when we neen to pipe output from a command to another like grep, we need shell.
+Answer: at least, when we need to pipe output from a command to another like grep, we need shell.
 
 State=present/absent --> this present or absent is the state desired. 
 Present means we want something to be installed in not present, absent means we want something to be removed if present.
@@ -77,7 +77,7 @@ Issues encountered
 When i add 172.17.0.4, a docker ubuntu client, to the hosts file, 
 and then i do a 'ansible test_clients_docker -a "echo hello"',
 it failed.  
-The error msg is "MOUDLE FAILURE".  
+The error msg is "MODULE FAILURE".  
 
 The reason is the the client needs to have python2. 
 The ubuntu docker container i used happens to not have python2.  

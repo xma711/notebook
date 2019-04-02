@@ -11,4 +11,4 @@ Externally, users use tcl or otcl to create network scenario.
 
 Internal
 ---------------
-Each module is inherited from a very baisc c++ class, which provides an interface for it to bind to otcl and provides a pointer for it to link to the next module.
+Each module is inherited from a very basic c++ class, which provides an interface for it to bind to otcl and provides a pointer for it to link to the next module.

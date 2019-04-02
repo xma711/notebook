@@ -56,7 +56,7 @@ Example: normal distribution
 
 Model: the probability density function of normal distribution is  
 f(xj) = (2 PI var^2)^(-1/2) exp(-1/2 (xj - mean)^2 / var^2 )  
-and the parameters are mean and var (squre root of variance).
+and the parameters are mean and var (square root of variance).
 
 Now we have collected data x1 to xn. how to estimate mean and var?
 

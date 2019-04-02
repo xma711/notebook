@@ -1,7 +1,7 @@
 Install the latest version
 ---------------------------------
 
-Install from github directly: https://github.com/docker/compose/releases/
+Install from GitHub directly: https://github.com/docker/compose/releases/
 
 then choose the latest tag, e.g. 1.15.0.
 

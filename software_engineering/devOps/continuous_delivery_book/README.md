@@ -7,8 +7,8 @@ triggers the creation of a new instance of the deployment pipeline.
 A deployment pipeline is an automated implementation of your application's build, deploy, test and release process.
 
 The aims:  
-	1. it makes every part of the process of building, deploying, testing and releasing software visible to everyboday involved, aiding collaboration.  
-	2. it improves feedback so that problems are identified, and so resoved, as early in the process as possible.  
+	1. it makes every part of the process of building, deploying, testing and releasing software visible to everybody involved, aiding collaboration.  
+	2. it improves feedback so that problems are identified, and so resolved, as early in the process as possible.  
 	3. it enables teams to deploy and release any version of their software to any environment at will through a fully automated process. 
 
 
@@ -34,12 +34,12 @@ Every commit should trigger the the automated testing of the whole repository.
 Unit testing is definitely one of the automated tests.  
 What else?  
 The other 2 tests we need are component tests and acceptance tests.  
-Component tests test the behaviour of several components of your application. (how to decide which group of components to be tested together is another question).  
+Component tests test the behavior of several components of your application. (how to decide which group of components to be tested together is another question).  
 Acceptance tests test that the application meets the acceptance criteria decided by the business, 
 including both the functionality provided by the application and its characteristics such as capacity, availability, security and so on.  
 Acceptance tests are best written in such a way that they run against the whole application in a production-like environment.
 
-CI tools: jenkins (previously known as Hudson), and CruiseControl.
+CI tools: Jenkins (previously known as Hudson), and CruiseControl.
 
 There are some tools to check coding style/practices: Simian (identify duplication), JDepend for Java, CheckStyle that test for bad coding practices, and FindBugs.
 
@@ -75,7 +75,7 @@ What does this even mean?
 
 I should have some goals in life.  
 Whatever i do, i should contribute to these goals.  
-I should see the feedbacks of an action as early as possbile; and if an action leads to no contribution, then i should stop it.  
+I should see the feedbacks of an action as early as possible; and if an action leads to no contribution, then i should stop it.  
 
 How can i build a pipeline from actions to goals?  
 Is it a mental pipeline or a physical pipeline?  

@@ -18,7 +18,7 @@ TEXT data type is a large character string data type -> like a large VARCHAR fil
 DECIMAL(p,s) is a numeric type. p is the total length allocated. s is the number of digits to the right of the decimal point. 
 E.g. for DECIMAL(4,2), the max value allowed is 99.99.
 
-DECIMAL has a better acccuracy than float. mysql uses 4 bytes for float and 8 bytes for double.
+DECIMAL has a better accuracy than float. mysql uses 4 bytes for float and 8 bytes for double.
 (https://stackoverflow.com/questions/2160810/mysql-whats-the-difference-between-float-and-double)
 
 Date and Time Types: DATE, TIME, DATATIME, TIMESTAMP

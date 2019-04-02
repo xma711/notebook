@@ -50,13 +50,13 @@ A regular graph with vertices of degree k is called a k-regular graph.
 Complete graph: a graph in which each pair of vertices is joined by an edge.
 A complete graph contains all possible edges.
 
-Finit graph: a graph in which the vertex set and the edge set are finite sets.
+Finite graph: a graph in which the vertex set and the edge set are finite sets.
 Otherwise it is called an infinite graph.
 
 Connected graph: an undirected graph in which every unordered pair of vertices in the graph is connected.  
 When we say a pair of vertices {x,y} is 'connected', it means there is a path leads from x to y.  
 If the requirement for 'connected graph' is not fulfilled, the graph is called disconnected graph.  
-A stronlgy connected graph is a directed graph in which every ordered pair of vertices in the graph is strongly connected (a path between x and y formed by directed edges exists).
+A strongly connected graph is a directed graph in which every ordered pair of vertices in the graph is strongly connected (a path between x and y formed by directed edges exists).
 
 Bipartite graph: a graph in which the vertex set can be partitioned into 2 sets, W and X,
 so that no 2 vertices in W share a common edge and 

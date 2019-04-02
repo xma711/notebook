@@ -1,22 +1,22 @@
 # tryGithub
-For teaching how to use git and github
+For teaching how to use git and GitHub
 
 
-Advantages of using git and github
+Advantages of using git and GitHub
 -----------------------------------
 
 Git is a version-control software for source codes and text files  
-and github is a web-based Git repository hosting service.
+and GitHub is a web-based Git repository hosting service.
 
-Git can be used locally without github. It allows one to keep track of a full history of a repository locally.
+Git can be used locally without GitHub. It allows one to keep track of a full history of a repository locally.
 
-Github allows one to host the repository in their website and link it to your local repository.
+GitHub allows one to host the repository in their website and link it to your local repository.
 
-There are many advantages of using git and github:
+There are many advantages of using git and GitHub:
 
- - If you are doing a project alone, you can use git and github to log your progress neatly and you can jump to any past history when needed.
+ - If you are doing a project alone, you can use git and GitHub to log your progress neatly and you can jump to any past history when needed.
 
- - For a team project, you can collaborate each other using github easily.  The team can incrementally add changes to a remote github repo without stepping on each other' toes. 
+ - For a team project, you can collaborate each other using GitHub easily.  The team can incrementally add changes to a remote GitHub repo without stepping on each other' toes. 
 
  - It allows you to access the remote repo in any computer and you can clone the full history in any computer. 
 
@@ -71,14 +71,14 @@ The recommended workflow for people working on his/her own branch
 set up necessary tools
 ------------------------
 
-If you use ubuntu, then add git by  
+If you use Ubuntu, then add git by  
 *sudo apt-get install git*
 
 if you use windows, then download git shell from https://windows.github.com/ and install it
 
 this tutorial will purely make use of command line, which gives users more controls.
 
-Note that all commands in this tutorial are done in a Git Shell or a Linux terminal. Some basic linux commands you may need to know include:
+Note that all commands in this tutorial are done in a Git Shell or a Linux terminal. Some basic Linux commands you may need to know include:
 
 go to a directory   
 *cd [path_to_a_folder/directory]*  
@@ -90,7 +90,7 @@ list the files and folders in a folder/directory:
 make a directory/folder:  
 mkdir [directory_name]
 
-for more linux commands, you can refer to: http://www.thegeekstuff.com/2010/11/50-linux-commands
+for more Linux commands, you can refer to: http://www.thegeekstuff.com/2010/11/50-linux-commands
 
 note that all the git commands are in *italic*.
 
@@ -156,7 +156,7 @@ commit
 
 After you edit files, add files or do other changes, you will save these changes to a particular branch. the tools you will use are "git add" and "git commit".
 
-For example, if you create a new file named "hello_world.txt" with some texts inside or edit the file if "hello_world.txt" has been commited to the repo before, then you can add it to the current branch by:  
+For example, if you create a new file named "hello_world.txt" with some texts inside or edit the file if "hello_world.txt" has been committed to the repo before, then you can add it to the current branch by:  
 *git add hello_world.txt*
 
 to check the current status of the repo, use:  

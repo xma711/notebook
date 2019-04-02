@@ -19,17 +19,17 @@ By using the same logic, a2 = 1/2 f''(0) and a3 = 1/(3!) f'''(0) and so on.
 The above explanation is easy in terms of mathematics, but how about the physical meaning?
 
 Let's take one example. f(x) = e^x. as de(x)/dx = e^x
-by applying taylor series, we have e^x = e^0 + e^0 x + 1/2 e^0 x^2 + 1/3! e^0 x^3 + ... (equation 1) 
+by applying Taylor series, we have e^x = e^0 + e^0 x + 1/2 e^0 x^2 + 1/3! e^0 x^3 + ... (equation 1) 
 which is  e^x = 1 + x + 1/2 x^2 + 1/3! x^3 + ... 
 Okay let's take the first 4 terms to make an approximation.  
 When x = 1, LHS = 2.718, RHS = 2.67 which is pretty close to the LHS already.
 When x = 0.1, LHS = 1.105170, RHS = 1.105167 which is even more closer to LHS.
 
-We can see that when x is smaller, the first 4 terms are better approxmators.  
+We can see that when x is smaller, the first 4 terms are better approximators.  
 Let's take a look at equation 1 again, what does it mean by the RHS?  
 It actually means that we take one point x = 0 and then use this point to calculate f(0), f'(0), f''(0) ...,  
 and then from these terms we try to multiply them with a term that has something to do a delta x (which happens to be x in this case).  
-If this delta x is smaller, the less terms in the taylor series are needed to approximate the true results.
+If this delta x is smaller, the less terms in the Taylor series are needed to approximate the true results.
 
 Can we take a "reference" from other value instead of x=0?
 The answer is yes.  
@@ -73,7 +73,7 @@ and then we calculate the value of f'() when the variable (whatever name it is a
 The confusion here is that we have used 'x' for the variable name for a function for so many times,
 then i can not easily imagine x is actually a convenient way to name a variable, but not a MUST!!!
 F() can be f(y), f(z), f(b) and f() is still f(). it represents a transformation from an input to an output.  
-Similarly, f'() doesnt mean df/dx if f is not represented in terms of x.
+Similarly, f'() doesn't mean df/dx if f is not represented in terms of x.
 F'() is just f'(), which is a function that represents a transformation from an input to an output.  
 And of course f'(x) doesn't mean df/dx!!! it means we sub variable = x into the function f'().  
 This is probably the most important point here: f'() is its logic representation itself. it doesn't have to do with variable name 'x'.
@@ -96,7 +96,7 @@ Let y = g(k) = x + k  (from k's point, x is a constant).
 So f(y) = f(x+k) = f( g(k) ) = m(k).  
 Dm(k)/dk = df(y)/dk = df(y)/dy * dy/dk = df(y)/dy * 1 = df(y)/dy = f'(y) !!!  
 This means that dm/dk is exactly the same as f'(y)!!!  
-Let's apply taylor series on m(k), so  
+Let's apply Taylor series on m(k), so  
 m(k) = a0 + a1 k + a2 k^2 + ...  
 So a0 = m(k) when (k = 0) = f( x + 0) = f(x)  
 a1 = dm/dk when (k = 0) = df(y)/dy when (k = 0) = f'(y) when (y = x + 0) = f'(x) !!!!  

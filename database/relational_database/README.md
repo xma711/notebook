@@ -43,7 +43,7 @@ We can start from a huge flat table (like spreadsheet) that contains everything 
 Then we can follow 3 rules to do the normalization.
 
 The first rule is called "first normal form (1NF)".
-A relation is in 1NF if and only if the domain (?) of each attribute (column) contains only atomic (indivisable) values,
+A relation is in 1NF if and only if the domain (?) of each attribute (column) contains only atomic (indivisible) values,
 the the value of each attribute contains only a single value from that domain.  
 1NF enforces:  
 	- it is to eliminate repeating groups in individual tables;  
@@ -53,10 +53,10 @@ the the value of each attribute contains only a single value from that domain.
 One example is here: https://en.wikipedia.org/wiki/First_normal_form  
 (not easy to understand what is the boundary for second normal form and third normal form.)
 
-A table is 2NF if it is in 1NF and every non-primary attriabute is dependent on the whole of every candidate key.
+A table is 2NF if it is in 1NF and every non-primary attribute is dependent on the whole of every candidate key.
 
 A table is 3NF if and only if the table is 2NF (thus 1NF too) and 
-every non-primary attribute of table is an attribute that doesn not belong to any candidate key of R..
+every non-primary attribute of table is an attribute that does not belong to any candidate key of R..
 
 From stackoverflow: http://stackoverflow.com/questions/723998/what-are-1nf-2nf-and-3nf-in-database-design,  
 1NF: each cell in a table must contain only one piece of information, and there can be no duplicate rows.

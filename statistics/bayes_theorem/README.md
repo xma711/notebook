@@ -48,7 +48,7 @@ intuition
 
 Ref: https://www.quora.com/What-is-an-intuitive-explanation-of-Bayes-Rule?redirected_qid=528835
 
-person A says, money can't buy happiness, becuase only 10% of happy people are rich.  
+person A says, money can't buy happiness, because only 10% of happy people are rich.  
 Wait, this is wrong. this is P(Rich | happy). 
 The correct info should P(happy | rich).
 
@@ -74,7 +74,7 @@ Bayes' rule
 Bayes' rule simply states that  
 posterior (after) odds equals prior (before) odds times Bayes factor.
 
-Byes's rule relates that odds of event A1 to the odds of event A2 before (prior to)
+Bayes's rule relates that odds of event A1 to the odds of event A2 before (prior to)
 and after (posterior to) conditioning on another event B.
 
 Bayes factor (or likelihood ratio) = conditional probabilities of event B given that

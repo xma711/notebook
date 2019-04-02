@@ -22,7 +22,7 @@ liskov substitution principle (LSP)
 Reference: http://stackoverflow.com/questions/56860/what-is-the-liskov-substitution-principle#comment13317449_584732
 
 in math, a square is a rectangle.
-So we may inclind to make a squre class by inheriting a rectangle class.
+So we may incline to make a square class by inheriting a rectangle class.
 
 However, one basic question to ask is that:
 in all the functions that uses a rectangle class reference,
@@ -35,8 +35,8 @@ E.g. in a function that requires to setWidth and setLen of a rectangle,
 and asserts the area = width set x length set,
 passing in a square to the argument of the function will cause the function to crash.
 
-Therefore, model the classes based on behaviours, not on poroperties.
-(model data based on properties, not on behaviours ---> don't understand this sentence.)
+Therefore, model the classes based on behaviors, not on properties.
+(model data based on properties, not on behaviors ---> don't understand this sentence.)
 
 Anyway, the LSP states that:
 functions that use pointers or references to base classes must be able to use 

@@ -15,7 +15,7 @@ In the same example, we have to find a curve that passes thru all the points.
 
 The easiest (not the best) method is to use a polynomial function, 
 such as y = a1 x^3 + a2 x^2 + a1 x + a0  if there are exactly 4 points.  
-Then we can sovle the unknowns exactly. 
+Then we can solve the unknowns exactly. 
 It is not hard to see the obtained model will pass thru all the points.
 
 What is the disadvantage of this method? 
@@ -33,7 +33,7 @@ In short, Li(x) = { (x-x2)(x-x3)...( x-x_{i-1} )( x-x_{i+1} )... } / { (xi-x2)(x
 
 above methods are global; applying one function to all points..  
 There are other methods that use piecewise interpolation.  
-E.g. for every neighbouring 2 points, i fit a line or curve to it. 
+E.g. for every neighboring 2 points, i fit a line or curve to it. 
 Then the whole model is connected by these small lines or curves.  
 For some easy methods, the curve may not be smooth enough because the dy/dx at xi may not equal from one small curve to another.
 
@@ -43,7 +43,7 @@ One method to allow the overall curve is smooth is called cubic spline (also a p
 Cubic spline
 ---------------------------
 
-One explanation from wikipedia (https://en.wikiversity.org/wiki/Cubic_Spline_Interpolation) seems easier to understand.  
+One explanation from Wikipedia (https://en.wikiversity.org/wiki/Cubic_Spline_Interpolation) seems easier to understand.  
 For each [x{i-1}, xi], we want to find a Ci(x) such that 
 Ci = ai + bi x + ci x^2 + di x^3, which is a cubic function.  
 It can be seen that it is like a piecewise polynomial fitting.  
@@ -58,14 +58,14 @@ But we have 4n unknowns.
 So as long as we have 2 more equations we can solve the unknowns precisely.  
 One example to have two more equations are C1'(x0) = known value and Cn'(xn) = known value.
 
-The method in wikipedia seems to combine xi and yi together, as we can see from condition 3 and 4.  
+The method in Wikipedia seems to combine xi and yi together, as we can see from condition 3 and 4.  
 Also, the method makes the 2nd derivative of Ci|x=xi equal to the 2nd derivative of Ci+1|x=xi,
 (the method in lecture notes also has this property... nvm..)
 
 The explanation from lecture notes is harder to understand, but they should carry the same meaning.  
 The method in lecture notes seems to separate xi and yi, each has its own cubic spline.
 
-For x, we take 2 neighbouring nodes xi and x{i+1}, or pi and p{i+1} following lecture notes.  
+For x, we take 2 neighboring nodes xi and x{i+1}, or pi and p{i+1} following lecture notes.  
 Then we introduce one new variable called u, such that 0 <= u <= 1, and we create a model
 x = phi(u) = a0 + a1 u + a2 u^2 + a3 u^3 for the line connecting pi and p{i+1}.  
 Now it has nothing to do with y. it is between u and x.  
@@ -101,7 +101,7 @@ Then we can solve for any input of x!
 For the y portion, do exactly the same thing.
 
 Question: any difference in the results between this method and the method described in wikipedia?  
-    -> it seems that the method in lecture notes allows any dimension in a data point, because the model for each dimension is calcuated separately.
+    -> it seems that the method in lecture notes allows any dimension in a data point, because the model for each dimension is calculated separately.
 
 Another question: after doing all these, we got 2 big sets of equations, one between x and u, the other between y and u,
 how to combine them together to have just x and y ?  
@@ -115,11 +115,11 @@ And then we solve a2 and a3 using similar way.
 Piecewise Lagrange Interpolation
 -------------------------------------
 
-We can choose a few points to construct one lagrange function.  
+We can choose a few points to construct one Lagrange function.  
 The simplest case is to pick two points: pi and p{i+1}.
 
 Like cubic spline, we need to introduce one more variable u.  
-The relation between x and u is like that between y and x in the global lagrange method.  
+The relation between x and u is like that between y and x in the global Lagrange method.  
 For xi and x{i+1}, we have a model x = x(u) = L0(u) xi + L1(u) x{i+1} such that 
 when u = 0, x = xi, and when u = 1, x = x{i+1} (same for y).  
 We already know the solution for L0 and L1 
@@ -127,7 +127,7 @@ We already know the solution for L0 and L1
 i.e. L1(u) = (u-1)/(0-1) = 1-u and L2(u) = (u-0)/(1-0) = u  
 so x = (1-u) xi + u x{i+1}  
 similarly, y = (1-u) yi + u y{i+1}.  
-These 2 equations simply mean that x and y are the linear interpolation between the neighbouring 2 points.  
+These 2 equations simply mean that x and y are the linear interpolation between the neighboring 2 points.  
 
 To make things more interesting, let's pick 3 points as a section.  
 For one section we will have x = L0(u) xi + L1(u) x{i+1} and L2(u) x{i+2}.  
@@ -139,4 +139,4 @@ So x = (2u^2 - 3u + 1) xi + (-4u^2 + 4u) x{i+1} + (2u^2 - u) x{i+2}
 same for y ..  
 For other section, just change xi x{i+1} x{i+2} accordingly.
 
-It can be seen that 2 neighbouring sections don't have the same 1st order derivatives..
+It can be seen that 2 neighboring sections don't have the same 1st order derivatives..

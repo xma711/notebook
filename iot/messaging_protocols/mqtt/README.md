@@ -19,14 +19,14 @@ MQTT-SN
 
 Reference: http://www.steves-internet-guide.com/mqtt-sn/
 
-MQTT-SN uses UDP instead of TCP ofr its transport.
+MQTT-SN uses UDP instead of TCP of its transport.
 
 "MQTT-SN is designed to work in the same way as MQTT".  
 "In that regard MQTT-SN usually requires a connection to the broker before it can send and receive messages."
 
 Like MQTT, MQTT-SN supports QoS of 0, 1 and 2.
 In addition, MQTT-SN supports publish QoS o 3 or -1,
-using which it doesnt require an initial connection to have been set up.
+using which it doesn't require an initial connection to have been set up.
 
 MQTT-SN can register with a broker a (long) topic and obtain a topic id in return (it can use the topic in the usual way too).
 This obviously is to reduce message overhead when publishing or subscribing using the topic id.  
