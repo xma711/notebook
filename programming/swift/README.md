@@ -1,22 +1,22 @@
 Swift
 ---------------------
 
-Previously Apple uses objective-c for app development for iphone and ipad.  
-In 2014 apple annouced a new language Swift that will be used for app development instead.
+Previously Apple uses objective-c for app development for iPhone and iPad.  
+In 2014 apple announced a new language Swift that will be used for app development instead.
 
 Overall reference: sams teach you swift in 24 hours (swift 1.0)
 
 
-install swift in linux
+install swift in Linux
 --------------------------
 
 Swift is for the Apple app development platform xcode6.
 
-However, the language itself can be installed in ubuntu linux.  
+However, the language itself can be installed in Ubuntu Linux.  
 Just follow: https://swift.org/download/#using-downloads  
 (anyway it is just to download a tar, and export it to somewhere that PATH knows.)
 
-To check how to write a program in swift in linux, refer to the example folder.  
+To check how to write a program in swift in Linux, refer to the example folder.  
 One reference: https://itsfoss.com/use-swift-linux/
 
 
@@ -57,7 +57,7 @@ if myString != nil {
 or  
 if let string1 = myString {  
 	// do something;  
-	// btw, string1 is already an unwraped version of myString, i.e. the variable inside. this method to unwrap the optional is recommended  
+	// btw, string1 is already an unwrapped version of myString, i.e. the variable inside. this method to unwrap the optional is recommended  
 }
 
 another way to safely unwrap the optional: var x = myString ?? alternativeValue;
@@ -89,7 +89,7 @@ Functions
 --------------------
 
 Functions are like c functions.  
-Each function's parments have their types, and return has its type too.
+Each function's parameters have their types, and return has its type too.
 
 But there are some extra features, like the parameter can have an external name (like a key in python function)
 and an internal name (just the normal variable names).
@@ -139,9 +139,9 @@ To define a closure expression, the complete way is
 however, this format can be greatly simplified.  
 Firstly, the (parameters: types) can be removed if the types are very obvious (the compiler can infer the types);  
 secondly, the parameter names inside the functions can be referred by $0 $1 .. just like shell script.  
-Also, the return statement can be omiited too if the function is very simple (maybe just one line of code). 
+Also, the return statement can be omitted too if the function is very simple (maybe just one line of code). 
 The compiler is smart enough to know that the result from the only line of code is the return value;  
-lastly, if it is a boolean result with something like "$0 > $1", it can be further simplifed to (>)..
+lastly, if it is a Boolean result with something like "$0 > $1", it can be further simplified to (>)..
 
 Also, the closure expression doesn't have to be inside the parameters list () of a function;  
 it can be placed after the (), because usually the function parameter is at the last parameter in the list.
@@ -192,7 +192,7 @@ In the header of a enum declaration, i can declare what type of internal values 
 When it is Int, it falls back to the c style enum. the raw values can be auto-complete too, just like c.  
 When it is other type, like Double or String, then the raw value has to be declared and fixed when creating the enum.
 
-Another alternative way is to create a (paramter list) for each single element in a enum, without having to declare the exact values yet.  
+Another alternative way is to create a (parameter list) for each single element in a enum, without having to declare the exact values yet.  
 When user declare an enum variable, he set set the corresponding values for parameters of an element, which looks like a constructor.  
 Later he can retrieve these values when needed.
 

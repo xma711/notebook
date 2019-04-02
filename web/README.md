@@ -15,7 +15,7 @@ html is the format of a document which allows a browser to display the content i
 An analogy is that word document has both content and formatting info.
 Html is the same. it stores both content and format info.
 
-Html can also have extra format info like background colour, font, size of text, which are considered as "appearance" of the page.  
+Html can also have extra format info like background color, font, size of text, which are considered as "appearance" of the page.  
 Or better, these info can be stored in an external file and can be reused; 
 also the same html can points to different appearance file for different appearances.  
 This special file is called css (cascading style sheets).
@@ -27,13 +27,13 @@ Programs written in js run in the web browser itself.
 
 However, even with html, css, js, the webpages cannot go very far.
 
-To make the website truely dynamic, which can respond to users' requests, we need database and 
+To make the website truly dynamic, which can respond to users' requests, we need database and 
 other programming languages that dynamically generate html pages at the server.
 The popular programming languages are php, perl and nowadays even python.
 
 At this stage, we need something that can bridge the user-server interactions (http server) and 
 the framework that parses each request and generates html pages as a response.  
-This something is the http server, such as apache, nginx, etc. 
+This something is the http server, such as Apache, nginx, etc. 
 
 
 How to create a website
@@ -78,12 +78,12 @@ This is handy if you have a big site and need to run many Node instances to hand
 This way, the single nginx server can split the work to be done among many Node.js "app servers". "
 
 
-Website vs web appliction
+Website vs web application
 ---------------------------
 
 Reference: http://stackoverflow.com/questions/8694922/whats-the-difference-between-a-web-site-and-a-web-application
 
-websites are primarily informatinal such as cnn and bbc,
+websites are primarily informational such as CNN and bbc,
 while web apps primarily allow the user to perform actions, such as gmail.
 
-Howevery, ususally this is totally personal and subjective..
+However, usually this is totally personal and subjective..

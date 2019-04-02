@@ -30,7 +30,7 @@ json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])
 (note that an integer key will become string in json. 
 Maybe all the keys will be string in json.)
 
-Exmaple for convert json to dict:  
+Example for convert json to dict:  
 json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
 
 

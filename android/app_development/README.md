@@ -28,7 +28,7 @@ It has a screen representation (coded by the layout file) and its own logic and 
 When we enter an app, one screen we see is one activity.
 When we click a button and a new screen appears, usually it is a new activity.
 
-In the same app, there are some ways to keep some global shared data. (SharedPreferences or sth..)
+In the same app, there are some ways to keep some global shared data. (SharedPreferences or something..)
  
 When one activity activates another activity (one screen to another screen), it needs to use Intent!
 
@@ -64,7 +64,7 @@ this is done by the default activity creating an intent to start the correspondi
 In fact, this is called explicit intent, in which an activity specifies precisely which activity to start in the intent.  
 Another type of intent is the implicit intent, in which an activity only has to specify the general action and let the android OS to list out the possible apps that can handle that intent.  
 One example is to open a url.  
-The activity can create an intent to open a url (sth like Intent i = new Intent(Intent.ACTION_VIEW, url));  
+The activity can create an intent to open a url (something like Intent i = new Intent(Intent.ACTION_VIEW, url));  
 and then start the activity : startActivity(i).
 
 If the activity want to start another activity and gets returning results, then use startActivityForResult()..

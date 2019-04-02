@@ -4,14 +4,14 @@ Shell
 A shell is the generic name for any program that gives you a text-interface to interact with the computer.  
 You type a command and the output is shown on screen.
 
-Multiple shells are availabe in linux system: bash, csh, ksh, sh, tcsh, zsh et.  
+Multiple shells are available in Linux system: bash, csh, ksh, sh, tcsh, zsh et.  
 They differ in the various options they give the user to manipulate the commands and  
 in the complexity and capabilities of the scripting language.
 
 Shell script
 ------------------
 
-Many shells have scripting abilities: put mulitple commands in a script and the shell executes them as if  
+Many shells have scripting abilities: put multiple commands in a script and the shell executes them as if  
 they were typed from the keyboard.  
 Most shells offer additional programming constructs that extend the scripting feature into a programming language.
 
@@ -42,7 +42,7 @@ Interactive login shell: when you log in on a text console, or through ssh or wi
 
 Login when computer first boots up: when you log in in a graphical mode, you don't get a login shell, instead you get a session manager or a window manager.
 
-Non-login interaceive shell: when you start a shell in a terminal in an existing session (screen, a shell inside another ..), you get an interactive, non-login shell.
+Non-login interactive shell: when you start a shell in a terminal in an existing session (screen, a shell inside another ..), you get an interactive, non-login shell.
 
 Reference: http://unix.stackexchange.com/questions/38175/difference-between-login-shell-and-non-login-shell
 

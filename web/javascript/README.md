@@ -18,7 +18,7 @@ listens to an event that may happen to an element (like click a button) and then
 The whole concept is pretty simple.
 
 The reason that javascript can access each element is that the whole html file is transformed to a DOM (Document Object Model) inside the browser.  
-It is a hierachical tree representation of a html file.  
+It is a hierarchical tree representation of a html file.  
 With this, javascript is able to get a 'pointer' to each element with a proper name.
 
 Each element in the html should set an 'id' if it wants to be accessed individually by javascript.  
@@ -51,7 +51,7 @@ It will be quite resource-consuming if we do a usual http req-rsp process.
 Ajax allows the client to sends a request to the server to get some data,
 and then use the data to update the current html file in browser (or more precisely, the DOM).  
 
-Note that ajax is mostly one way: client askes for server for something.  
+Note that Ajax is mostly one way: client asks for server for something.  
 This is unlike the socket.io in nodejs, which allows the server to send info to client too.
 
 With ajax, the html file is more responsive.  
@@ -67,7 +67,7 @@ Install the libv8-dev package,
 which will provide you Google's V8 engine. 
 It has, as one of its examples, 
 the file /usr/share/doc/libv8-dev/examples/shell.cc.gz 
-which you can uncompress and compile very simply 
+which you can decompress and compile very simply 
 (e.g., g++ -Os shell.cc -o shell -lv8).
 
 However, this only allows me to run pure javascript codes.

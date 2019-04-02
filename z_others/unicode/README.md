@@ -3,7 +3,7 @@ Unicode
 
 Reference: http://stackoverflow.com/questions/2241348/what-is-unicode-utf-8-utf-16
 
-previously, there was only ASCII, which is mostly for english language.  
+previously, there was only ASCII, which is mostly for English language.  
 However, today we need an encoding scheme to represent characters in all languages. 
 Thus came unicode.
 It assigns every character a unique number called a code point.
@@ -23,7 +23,7 @@ utf-16:
 	- 4 bytes: all unicode characters
 
 
-exmaple
+example
 ----------------------
 
 Using nodejs,  
@@ -41,6 +41,6 @@ Chinese character encoding
 
 Unicode is one way.
 
-But mainland chinese use GuoBiao as the encoding scheme and 
+But mainland Chinese use GuoBiao as the encoding scheme and 
 TW, HK and Macau use Big5.  
-For more details, check wikipedia page https://en.wikipedia.org/wiki/Chinese_character_encoding
+For more details, check Wikipedia page https://en.wikipedia.org/wiki/Chinese_character_encoding

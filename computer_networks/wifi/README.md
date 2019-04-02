@@ -6,18 +6,18 @@ Reference: https://askubuntu.com/questions/117065/how-do-i-find-out-the-name-of-
 in short: use 'iwgetid' to get the ssid. 
 
 
-Solve ubuntu wifi problem
+Solve Ubuntu WiFi problem
 ----------------------
 
-Just disable the power saving for wifi:
+Just disable the power saving for WiFi:
 
 /sbin/iwconfig wlan0 power off
 
 
-configure wifi using command line.
+configure WiFi using command line.
 ------------------------------
 
-In archlinux or debian or gentoo, using reference https://wiki.archlinux.org/index.php/Wireless_network_configuration
+In archlinux or Debian or Gentoo, using reference https://wiki.archlinux.org/index.php/Wireless_network_configuration
 
 command:
 
@@ -29,15 +29,15 @@ In my case, i used
 
     wpa_supplicant -B -D nl80211,wext -i wlp6s0 -c <(wpa_passphrase "SSID" "the_key")
 
-in debian, also need to get an ip address:
+in Debian, also need to get an ip address:
 
     dhclient wlan0
 
-in gentoo, get and ip address using:
+in Gentoo, get and ip address using:
 
     dhcpcd
 
-Note that NetworkManager is easier to manage wifi or ethernet.
+Note that NetworkManager is easier to manage wifi or Ethernet.
 
 
 Using wifi dongle Model Number: UWN200. Inside: MediaTek MT7601 (Ralink 7601) Controller
@@ -45,13 +45,13 @@ Using wifi dongle Model Number: UWN200. Inside: MediaTek MT7601 (Ralink 7601) Co
 
 Reference: http://www.logicsupply.com/uwn200/
 
-The guide to install the driver for linux can be found here: https://docs.google.com/document/d/1-CIGQYdk8ZhU3D3UCNn70jc7C9HdXvEZAsiNW71fGIE/edit
+The guide to install the driver for Linux can be found here: https://docs.google.com/document/d/1-CIGQYdk8ZhU3D3UCNn70jc7C9HdXvEZAsiNW71fGIE/edit
 
 For archlinux, use command "*pacman -S dkms-mt7601*". so far this command works on kernel 3.18.1-1-ARCH. 
 What i did actually is: install dkms-mt7601 first. reboot. not working. uninstall mt7601 and reinstall. copy the NetworkManager wifi conf file to the node. enable network manager. and then it works.
 So the point is that i need to use networkManager rather than the original whatever manager in the node.
 
-One possible solucion to make it work in kernel 3.8, is to upgrade the kernel from 3.8.13-31-ARCH to 3.8.13.39-ARCH. commands:
+One possible solution to make it work in kernel 3.8, is to upgrade the kernel from 3.8.13-31-ARCH to 3.8.13.39-ARCH. commands:
 
 *pacman -Syy* (update package list)
 
@@ -71,7 +71,7 @@ The problem with "pacman -S dkms-mt7601" is that the compilation of the kernel m
 /var/lib/dkms/mt7601/v3.0.0.4/build/os/linux/../../os/linux/rt_linux.c:1122:37: error: request for member 'val' in something not a structure or union
 
 
-to solve this problem, follow the guide for installing the driver in ubuntu (http://askubuntu.com/questions/457061/ralink-148f7601-wifi-adaptor-installation): 
+to solve this problem, follow the guide for installing the driver in Ubuntu (http://askubuntu.com/questions/457061/ralink-148f7601-wifi-adaptor-installation): 
 
 firstly, have to install headers: pacman -S linux-headers-am33x-legacy
 
@@ -115,7 +115,7 @@ cd PKGBUILDs/core/linux-am33x-legacy
 
 makepkg -Acs
 
-this command will download the linux source codes first. at some point, it will stop and ask for sth.  
+this command will download the linux source codes first. at some point, it will stop and ask for something.  
 At this point, download compiler-gcc5.h from linux repo (commit number: a6c5170d1edea97c538c81e377e56c7b5c5b7e63) in the path linux_repo/include/linux/compiler-gcc5.h.
 
 Copy compiler-gcc5.h to PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/linux/
@@ -123,9 +123,9 @@ Copy compiler-gcc5.h to PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/
 (i cloned the whole linux repo before. the original one is https://github.com/torvalds/linux/tree/master/include/linux . one can just go to this link, and then checkout the right commit number and then download the raw file of compiler-gcc5.h)  
 (reference: http://stackoverflow.com/questions/29925513/compile-a-linux-2-6-kernel-module-with-newer-compiler)
 
-back to the terminal of command "makepkg -Acs" and press y or sth to continue compiling. (this step is necessary. otherwise the autoconf.h wont be generated.)
+back to the terminal of command "makepkg -Acs" and press y or something to continue compiling. (this step is necessary. otherwise the autoconf.h wont be generated.)
 
-Bbb will try to compile the kernel and the header for somethime, until it will fail for some reasons. but it is okay.  
+Bbb will try to compile the kernel and the header for sometime, until it will fail for some reasons. but it is okay.  
 Check if directory PKGBUILDs/core/linux-am33x-legacy/src/linux-3.8/include/generated is created.   
 Inside there should be these files: asm-offsets.h  autoconf.h  bounds.h  compile.h	mach-types.h  uapi  utsrelease.h (without autoconf.h, later compiling the mt7601u kernel module will lead to some complaints) (reference: http://serverfault.com/questions/568395/what-is-creating-the-generated-autoconf-h)  
 
@@ -142,7 +142,7 @@ modprobe --force mt7601Usta
 to make it work.  
 (reference: https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=73005)
 
-finally, i may need to write a systemd service file to enable it everytime the board reboots. (/usr/bin/modprobe --force mt7601Usta)
+finally, i may need to write a systemd service file to enable it every time the board reboots. (/usr/bin/modprobe --force mt7601Usta)
 ```
 [Unit]
 Description=Enable mt7601u wifi
@@ -159,6 +159,6 @@ WantedBy=multi-user.target
 Router
 -----------------------
 
-Router can be configured as a normal ethernet router, or a repeater.
+Router can be configured as a normal Ethernet router, or a repeater.
 
 A repeater forwards all requests to the main router.

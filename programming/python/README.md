@@ -80,7 +80,7 @@ to add an element to the list:
 
 to extend the list with another list (merge to one list):
 
-*new_list.extend(list_b)* # where list_b is sth like ['Python', True]
+*new_list.extend(list_b)* # where list_b is something like ['Python', True]
 
 note that this is different from new_list.append(list_b). in this case, the whole list_b will be a single new element in the new_list
 
@@ -107,7 +107,7 @@ to add a key-value pair to the dictionary:
 
 update the dictionary with another dictionary:
 
-*person.update(another_dictionary)* # where another_dictionary can be sth like {'favorites':[7, 'movies'], 'gender':'male'}
+*person.update(another_dictionary)* # where another_dictionary can be something like {'favorites':[7, 'movies'], 'gender':'male'}
 
 note that the update command is like the extend command for list, which is to merge the last list/dictionary to the first list/dictionary 
 
@@ -115,18 +115,18 @@ any immutable objects can be dictionary keys:
 
 *person[7] = 'favorite number'* or *person[(44.47, -73.21)] = 'coordinates'* # where (44.47, -73.21) is a tuple
 
-to see all the keys: *person.keys()* # the output is in a list, sth like ['name', 'gender']
+to see all the keys: *person.keys()* # the output is in a list, something like ['name', 'gender']
 
-to see all the values: *person.values()* # the output is in a list, sth like ['xma', 'male']
+to see all the values: *person.values()* # the output is in a list, something like ['xma', 'male']
 
-to see all the key-value pairs in a list: *person.items()* # the output will be in a list, sth like [['name', 'xma'], ['gender', 'male']]
+to see all the key-value pairs in a list: *person.items()* # the output will be in a list, something like [['name', 'xma'], ['gender', 'male']]
 
 
 
 booleans
 -------------------
 
-A boolean is sth like this: *is_python = True*
+A boolean is something like this: *is_python = True*
 
 everything is python can be cast to boolean: *is_python = bool("any object")*
 
@@ -163,7 +163,7 @@ These are examples of strings:
 *str3* = """string also, in multiple lines.
 Hello world on 2nd line!"""
 
-To add two strings together: *anmial = "Cats "+ "Dogs "* # the animal variable is "Cats Dogs "
+To add two strings together: *animal = "Cats "+ "Dogs "* # the animal variable is "Cats Dogs "
 
 *animal += "Rabbits"* # the animal variable is updated to "Cats Dogs Rabbits"
 
@@ -335,7 +335,7 @@ class User (object):
 
 		self.name = name
 
-		super(User, self).__init__() # init its parenet class i guess
+		super(User, self).__init__() # init its parent class i guess
 
 
 	def is_authorized(self):
@@ -361,7 +361,7 @@ class SuperUser(User):
 
 	is_staff = True
 
-# end of clasls
+# end of class
 
 to use the SuperUser class:
 
@@ -369,7 +369,7 @@ to use the SuperUser class:
 
 *print xma.name* # xma
 
-*print xma.is_authorized()* # Ture
+*print xma.is_authorized()* # True
 
 there are no real private attributes and functions. private attributes start (but do not end) with "__". e.g. __privateNum, __privateName
 
@@ -379,7 +379,7 @@ Special class methods start and end with "__". e.g. __init__, __doc__, __cmp__, 
 imports
 --------------------
 
-Allow code isolatioin and re-use
+Allow code isolation and re-use
 
 add references to variables/classes/functions etc into the current namespace
 

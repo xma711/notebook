@@ -78,11 +78,11 @@ python codes for spi: https://github.com/raspberrypi-aa/raspberrypi-aa/
 and some explanation on these codes: http://raspberrypi-aa.github.io/session3/spi.html
 
 
-exmaple on github
+example on GitHub
 ----------------------
 
 Https://github.com/roice/gdm3d-uav
 
-seems that this one can be used to run the ads1256 in bbb.
+seems that this one can be used to run the ads1256 in BBB.
 
-There are other github repos that use ads1256. just search it in codes.
+There are other GitHub repos that use ads1256. just search it in codes.

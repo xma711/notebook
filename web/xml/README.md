@@ -8,7 +8,7 @@ Xml and html were designed with different goals:
 
 reference: http://www.w3schools.com/xml/xml_whatis.asp
 
-in many html applications, xml is ued to store or transport data,
+in many html applications, xml is used to store or transport data,
 while html is used to format and display the same data.
 
 

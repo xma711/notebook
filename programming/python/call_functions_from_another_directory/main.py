@@ -20,7 +20,7 @@ from hellocat import *
 # spam.py is one file in the hellokitty/ directory
 spam.spamfunc()
 
-# cannot do sth like this: hellocat.spam.spamfunc()
+# cannot do something like this: hellocat.spam.spamfunc()
 
 # ham.py is another file in hellokitty/ directory
 ham.hamfunc()

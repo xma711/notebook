@@ -5,10 +5,10 @@ Endianness refers to the order of the bytes in computer memory,
 or the order of byte transmission over a digital link.
 
 With big-endian, the most significant byte of a word is stored at a particular memory address 
-and the subsequent bytes are stored in the following higher memeory addresses, 
-the least significant byte thus being stored at the highese memory address.
+and the subsequent bytes are stored in the following higher memory addresses, 
+the least significant byte thus being stored at the highest memory address.
 
-Little-endian format reservers the order and stores the least significant byte at the lower memory address 
+Little-endian format reserves the order and stores the least significant byte at the lower memory address 
 with the most significant byte being stored at the highest memory address.
 
 Note that endianness is NOT about the order of bits inside a byte!!!

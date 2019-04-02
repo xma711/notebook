@@ -4,10 +4,10 @@ Notes
 To convert a pdf of images (each page is an image) to a pdf of texts, use this pdforc, 
 which internally uses tesseract-orc package.
 
-However, as of 20181220, there is no release for ubuntu >= 16.04.  
-The way i install it is to use docker image ubuntu:14.04.
+However, as of 20181220, there is no release for Ubuntu >= 16.04.  
+The way i install it is to use docker image Ubuntu:14.04.
 
-Inside the ubuntu container, just do:  
+Inside the Ubuntu container, just do:  
 ```
  add-apt-repository ppa:gezakovacs/pdfocr
  apt-get update

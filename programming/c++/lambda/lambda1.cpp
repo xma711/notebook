@@ -14,7 +14,7 @@ int main() {
 		v1.push_back(i);
 	}
 	
-	// use for_each and a lambda function to do sth on each element
+	// use for_each and a lambda function to do something on each element
 	std::for_each (v1.begin(), v1.end(), [](int ele) { std::cout << ele << std::endl; } );
 
 	return 0;

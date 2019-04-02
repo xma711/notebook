@@ -4,8 +4,8 @@ find files with certain pattern in filenames
 - example
 
 	find ./ -name "hello*"
-	# files with names lik "helloworld" "hello kitty" will be found.
+	# files with names like "helloworld" "hello kitty" will be found.
 
 To execute a command one each file found:  
-	find ./testin -name "*.csv" -exec COMMAND_AND_OPTIONS '{}' \;  
-	e.g. find ./testin -name "*.csv" -exec ls -lh '{}' \;
+	find ./testing -name "*.csv" -exec COMMAND_AND_OPTIONS '{}' \;  
+	e.g. find ./testing -name "*.csv" -exec ls -lh '{}' \;

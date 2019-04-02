@@ -12,7 +12,7 @@ yi = w1 x1 + w2 x2 + b * 1  (equation 1)
 it is not hard to see that this is actually linear regression.  
 In fact, from this, we can see that linear regression is the simplest form of a neural network.
 
-We can also view this as sth like: the input to the output node is (w1 x1 + w2 x2 + b * 1) while the output node applies an identity function on the input,
+We can also view this as something like: the input to the output node is (w1 x1 + w2 x2 + b * 1) while the output node applies an identity function on the input,
 and so the output from this node is the same as the input to this node.
 
 However, as we want to classify xi to either 1 or -1, it is better for us to have a function on the output such that the output is bounded by a range (such as [0,1] ) 
@@ -30,7 +30,7 @@ More nodes
 -----------------------
 
 Let's say we want 2 hidden nodes (h1 and h2) and one bias node in the 2nd layer, we just add them and shift the output node to 3rd layer.  
-H1 and the 2 input nodes and bias form sth similar to the basic architecture: h1 = sigmoid (w1 x1 + w2 x2 + b1).  
+H1 and the 2 input nodes and bias form something similar to the basic architecture: h1 = sigmoid (w1 x1 + w2 x2 + b1).  
 Similarly for h2: h2 = sigmoid (w3 x1 + w4 x2 + b1).  
 (we may need to name the weights in a more systematic way; but let's do it this way now for simplicity.)  
 From hidden nodes to the output node, the equation is yi = sigmoid( w5 h1 + w6 h2 + b2), which can be unrolled to be a much longer equation linking up yi and xi.  

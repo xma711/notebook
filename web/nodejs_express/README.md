@@ -31,7 +31,7 @@ To start the web app: DEBUG=myapp:* npm start (obviously this one includes the d
 
 Structure:  
 	- app.js: the Control in the MVC concept; it looks at the request path in the coming url and decide which route file (.js) to handle  
-	- routes/ : all the .js files insdie can be used by app.js to handle requests. each file will look at the url again and usually render the corresponding html with jade stuff from the views/ folder  
+	- routes/ : all the .js files inside can be used by app.js to handle requests. each file will look at the url again and usually render the corresponding html with jade stuff from the views/ folder  
 	- views/ : all the html files with jade stuff . they will be asked to execute and output a final version of html for the corresponding requests.
 
 To link to a javascript file, firstly place the javascript in the public/javascripts/ folder (or subfolder), 
@@ -80,7 +80,7 @@ and easier to translate a designer's html file to a dynamic one with ejs.
 Socket.io
 -------------
 
-Socket.io allows the html file in the client side and the server to have bidirectionaly communications without having to carry out the whole http req-rsp process.  
+Socket.io allows the html file in the client side and the server to have bidirectional communications without having to carry out the whole http req-rsp process.  
 It is built on top of websockets (if websockets are available in the browser; if not, they are able to use other underlying technology).  
 
 The whole socket.io thing is like the remove procedure calls (RPC).  

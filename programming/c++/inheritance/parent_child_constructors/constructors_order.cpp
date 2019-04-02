@@ -18,8 +18,8 @@ public:
 		std::cout << "Parent class: in destructor" << std::endl;
 	};
 
-	virtual void do_sth() {
-		std::cout << "Parent class: do sth " << std::endl;
+	virtual void do_something() {
+		std::cout << "Parent class: do something " << std::endl;
 	}
 };
 
@@ -34,15 +34,15 @@ public:
 		delete num;
 	};
 
-	void do_sth() {
-		std::cout << "Child class: do sth " << std::endl;
+	void do_something() {
+		std::cout << "Child class: do something " << std::endl;
 	}
 private:
 	int *num;
 };
 
 void play_obj_and_delete (Parent * ptr) {
-	ptr->do_sth();
+	ptr->do_something();
 	delete ptr; // if parent's destructor is not virtual, this will call parent's destructor only!
 }
 

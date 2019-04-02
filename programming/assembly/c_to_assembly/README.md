@@ -2,7 +2,7 @@ C and c++ can be translated to assembly using -S option in gcc or g++.
 
 E.g. gcc -S helloworld.c -o hello_world_asm.s
 
-Another exmaple (in linux 32bit) from generating assembly to compile the assembly code to link it and run it (segfault..)
+Another example (in Linux 32bit) from generating assembly to compile the assembly code to link it and run it (segfault..)
 
 Simple.c:
 ```
@@ -51,6 +51,6 @@ however, when run ./simple it gives a segfault.
 To do
 ------------
 
-Find a good way to compile assembly codes in linux and run it.
+Find a good way to compile assembly codes in Linux and run it.
 
 Nasm seems a promising tool.

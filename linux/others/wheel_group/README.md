@@ -13,4 +13,4 @@ that ordinary user accounts cannot access.
 Wheel group
 ------------------------
 
-The wheel group is a user group in some unix systems to control access to su or sudo command.
+The wheel group is a user group in some Unix systems to control access to su or sudo command.

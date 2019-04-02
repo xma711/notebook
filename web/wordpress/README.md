@@ -20,7 +20,7 @@ username: xma
 
 anyway, at the end, it can be access at http://localhost
 
-to edit the site, i just have to login and do my editting.
+to edit the site, i just have to login and do my editing.
 
 
 Nano wordpress (WP) vs Ruby on Rails (RoR)

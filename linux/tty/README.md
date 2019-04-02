@@ -24,13 +24,13 @@ So, irrespective of where you run it from(any virtual console), anything read fr
 The second column in 'ps ax' also gives the controlling terminal of the program. 
 For some programs, like daemons, you may see that the column is '?', which means they are not bound to a terminal.
 
-/dev/pts/0 etc are psuedo-terminal devices, which are not attached to the system display. 
+/dev/pts/0 etc are pseudo-terminal devices, which are not attached to the system display. 
 For e.g, terminal you get when you open a gnome-terminal or any other GUI terminal. 
 These are client-server based approach where client side will be exported to programs, like bash. 
 The data send by the program to the pseudo terminal is sent to the 'server' side (which is usually monitored by another program, like gnome-terminal). 
 The controlling process (server side) determines what needs to be sent to the terminal, which is eventually seen by the client. 
 These devices help you to open multiple 'GUI terminals' without any limit on your system, 
-still providing the same old terminal like controls(ioctl(), colour setting, Sending signals [Ctrl+C] etc. ).
+still providing the same old terminal like controls(ioctl(), color setting, Sending signals [Ctrl+C] etc. ).
 
 Find out the tty name
 ---------------------------

@@ -6,7 +6,7 @@ Platform = hardware + OS
 this is exactly what the saying "all computer problems can be solved by one more level of abstraction" shows.
 
 Platform-dependent languages like c ultimately is converted to the exact machine codes for a particular OS.  
-(question: with the same cpu but different os, the machine codes need to be diffrent right?  
+(question: with the same cpu but different os, the machine codes need to be different right?  
 The answer must be yes.  
 The reason is probably not because the same cpu needs different machine codes, it is because  
 any program needs to interact with the OS. thus the same action requires different system function calls in different os;  
@@ -15,7 +15,7 @@ and thus the final machine codes will be different.)
 On the other hand, java is compiled not for any physical cpu (os?), but for a virtual machine (called Java Virtual Machine, or JVM).  
 This means that the JVM is exactly the extra level that handles the platform compatibilities.  
 JVM will be different for different OS, but provides the same interface for java codes to run  
-(i.e. in java codes's perspective, the virtual machine offers the same instruction set)
+(i.e. in java codes' perspective, the virtual machine offers the same instruction set)
 
 
 inheritance
@@ -88,7 +88,7 @@ Every public class that you write must be in a separate .java file where the fir
 A JAR file is a single file that contains many .class files
 
 To run a jar file, before generating it, i need a Manifest.mf file to indicate what will be the main class in the jar file.  
-Manifest.mf looks sth like this:
+Manifest.mf looks something like this:
 ```
 Manifest-version: 1.0
 Main-Class: HelloWorld

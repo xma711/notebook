@@ -158,7 +158,7 @@ need to run in a privileged container.
 Need to add the cgroup file system to the container using "–v /sys/fs/cgroup:/sys/fs/cgroup:ro"  
 need to remove unit file links from the /lib/systemd/system/*wants/ and  /etc/systemd/system/*wants/ directories  
 
-a dockerfile sth like the follows will enable systemd:
+a dockerfile something like the follows will enable systemd:
 ```
 FROM armv7/armhf-archlinux
 
@@ -241,7 +241,7 @@ Ssh username@172.17.0.2
 	- (the ip address of the container can be contained by logging into the container and do a ifconfig)
 
 from another computer, the container has to be started with proper port mapping.  
-Assume the ssh port is 22 for the container, then the container should be started sth like:  
+Assume the ssh port is 22 for the container, then the container should be started something like:  
 docker run -p 2222:22 image_name  
 then the external computer can access the container by: ssh -p 2222 username@host_ip_addr
 

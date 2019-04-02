@@ -22,7 +22,7 @@ The operations available:
 	- for strings: find regular expression, find a set of characters in a string; in some versions: find substring, length of string
 	- for either: comparison (equal, not equal, less than, etc.)
 
-Backticks `` notation is older than $() so backticks are more portable in unix machine.  
+Backticks `` notation is older than $() so backticks are more portable in Unix machine.  
 But $() is easier to read.
 
 Reference: https://en.wikipedia.org/wiki/Expr

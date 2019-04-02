@@ -44,7 +44,7 @@ Operating modes:
 - user-mode emulation  
 - system emulation: qemu emulates a full computer system including peripherals.
 	it can be used to provide virtual hosting of several virtual computers on a single computer.
-	qumu can boot many guest OS, including linux, windows, bsd etc.  
+	qumu can boot many guest OS, including Linux, windows, bsd etc.  
 - kvm hosting: qemu deals with the setting up and migration of kvm images.
 	it is still involved in the emulation of hardware, but the execution of the guest is done by kvm as requested by qemu.  
 - xen hosting: qemu is involved only in the emulation of hardware;
@@ -57,13 +57,13 @@ Kvm
 Reference: https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine
 
 kvm stands for kernel-based virtual machine.  
-It is a virtualizatioin infrastructure for the linux kernel that turns it into a hypervisor
+It is a virtualization infrastructure for the Linux kernel that turns it into a hypervisor
 
 kvm requires a process with hardware virtualization extensions.  
 Kvm originally supported x86 processors and has been ported to s/390, powerpc and ia-64.
 
 A wide variety of guest operating systems work with kvm, 
-including many versions of linux, bsd, solaris, windows, os x, etc.
+including many versions of Linux, bsd, solaris, windows, os x, etc.
 
 By itself, kvm does not perform any emulation.
 It exposes the /dev/kvm interface, which userspace host (such as qemu) can then use to:  
@@ -71,7 +71,7 @@ It exposes the /dev/kvm interface, which userspace host (such as qemu) can then 
 - feed the guest simulated i/o  
 - map the guest's video display back onto the system host.
 
-On linux, qemu is one such userpsace host. 
+On Linux, qemu is one such userpsace host. 
 Qemu uses kvm when available to virtualize guests at near-native speeds,
 but otherwise falls back to software-only emulation.
 
@@ -89,5 +89,5 @@ It uses existing hypervisors such as kvm, VMware ESXi|VMware vcenter and XenServ
 In addition to its own API, cloudstack also supports the aws API and open cloud computing interface from the open grid forum.
 
 Deployment: the minimum production consists of one machine running the cloudstack management server,
-and another machine to act as the cloud insfrastructure.
+and another machine to act as the cloud infrastructure.
 In its smallest deployment, a single machine can act as both the management server and the hypervisor host (using the kvm hypervisor).

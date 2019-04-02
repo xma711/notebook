@@ -39,7 +39,7 @@ From book: Sams Teach Yourself C++ in One Hour a Day (7th Edition)
 	make destructor in private but create a customized destructor in public.
 
 - If a class allows a global method to access it's private attributes, use friend function header. 
-	If to allow another class to aceess, use friend class name.
+	If to allow another class to access, use friend class name.
 
 - Without virtual on a method, subclass can still overwrite the method. 
 	But once it (as a reference) is passed into a function that uses the base class as the argument type, 
@@ -61,11 +61,11 @@ From book: Sams Teach Yourself C++ in One Hour a Day (7th Edition)
 	if this really happen, it could be a design problem.
 	if there is no other way to do it but to have a special method in the derived class, then we have smartly cast the base class pointer to the derived class in a function. this is not very elegant of course.
 
-- To solve the diamond problem, use virtual keyword on the intermediate derived class definition, sth like class derivedClass : public virtual baseClass {}
+- To solve the diamond problem, use virtual keyword on the intermediate derived class definition, something like class derivedClass : public virtual baseClass {}
 
 - Operators, like methods, can be overwritten by classes.. this allows a customized class to use operators like ++..
 
-- The style of casting types i know is actually c-style. C++ has its own style, sth like castType <destinationType> object.
+- The style of casting types i know is actually c-style. C++ has its own style, something like castType <destinationType> object.
 
 - The map lib is like the python dictionary.
 
@@ -253,7 +253,7 @@ volatile is needed if you are reading from a spot in memory that
 a completely separate/device process may write to.
 
 This is to prevent the compiler optimizes the codes regarding the volatile variable away.  
-This kinda forces the compiler to make sure everytime we need to read/write the value, it will do it;
+This kinda forces the compiler to make sure every time we need to read/write the value, it will do it;
 instead of assuming the value is not changed since last read/write.
 
 Another explanation is that by declaring an object to be volatile, we are telling the compiler that

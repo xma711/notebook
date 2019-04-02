@@ -69,7 +69,7 @@ Class
 
 To declare an object: object1 = ClassName. new  ## note that there is a dot after the class name
 
-to access constants, instance methods and class methods, use objectName::Sth (when there is no objectName, it is a global variable).  
+to access constants, instance methods and class methods, use objectName::Something (when there is no objectName, it is a global variable).  
 In Ruby, classes and methods may be considered constants too.
  
 Seems that the result from the last statement in a method will be auto-returned.
@@ -98,9 +98,9 @@ do while: begin (codes..) end while ..
 New one: until (conditional) do (codes) end   
 this will execute codes while conditional is false.
 
-For loop: for i in sth (codes) end
+For loop: for i in something (codes) end
 
-new one: sth.each do |i| (codes) end  
+new one: something.each do |i| (codes) end  
 this is almost the same as a for loop
 
 new one: redo, which is to restart the iteration of the most internal loop without checking loop condition.. works inside a if..else too.
@@ -172,7 +172,7 @@ string * integer : string is repeated integer times and returned.
 Range
 ---------------
 
-Range is a bit like the microsoft excel auto-completion.
+Range is a bit like the Microsoft excel auto-completion.
 We specify a starting item and ending item, and ruby will auto generate a list.  
 Example: (1..10), ('a'..'d'), ('bar'..'bat')
 
@@ -184,10 +184,10 @@ File io
 ----------------
 
 File reading and writing are quite standard. just google..  
-But there are some methods to change file permissions, just like the "chmod" command in linux. (in fact, the method is also called chmod..)
+But there are some methods to change file permissions, just like the "chmod" command in Linux. (in fact, the method is also called chmod..)
 
 Besides the File class, there is also a Dir class to handle directories. 
-The methods look exactly like linux commands..
+The methods look exactly like Linux commands..
 
 Btw there is a built-in method to create a platform-independent temporary file.
 
@@ -208,5 +208,5 @@ database
 ------------------
 
 Ruby provides an abstraction layer.  
-But overall we are still forming sql commands and send them using ruby's api. this is a bit like php.  
+But overall we are still forming SQL commands and send them using ruby's API. this is a bit like php.  
 Syntax: dbh.do("sql command...")

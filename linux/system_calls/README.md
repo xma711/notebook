@@ -45,23 +45,23 @@ Fopen() vs open()
 Fopen() is a library function which provides buffered I/O services for opening a file.  
 Open() is a system call that provides non-buffered I/O services.
 
-If a library function corresponding to a systme call exists, then applications should use the library function because:
+If a library function corresponding to a system call exists, then applications should use the library function because:
 	- library functions are portable. system call may not be portable; it can vary from system to system.
 	- sometimes the library function reduces the frequency to use system call. e.g. not every fread() (with buffered I/O) requires system call read(). 
 
 
 Is malloc() a system call
 ----------------------
-No. it is a library function that further uses brk() or sbrk() systme call for memory allocation.
+No. it is a library function that further uses brk() or sbrk() system call for memory allocation.
 
 
 Switching execution modes (user and kernel)
 -------------------
 
-Today, the systenter/sysexit instructions are used for swithcing the execution mode.
+Today, the systenter/sysexit instructions are used for switching the execution mode.
 
 Traditionally, the mechanism of raising an interrupt of 'int $0x80' to kernel was used.  
-After trapping the interrupt, kernel processes it and changes the exectution mode from user to kernel mode.
+After trapping the interrupt, kernel processes it and changes the execution mode from user to kernel mode.
 
 
 Other differences

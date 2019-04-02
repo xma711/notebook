@@ -14,7 +14,7 @@ patterns
 
 Because node.js is async programming, one obvious pattern of a program is that every task is async.
 Then i can just anyhow arrange these tasks and let them run. 
-The mindset is very different from writting procedural programming.
+The mindset is very different from writing procedural programming.
 
 Another pattern is that if certain task can be executed after some other tasks, 
 then i can use async module to arrange them in certain order.
@@ -107,5 +107,5 @@ other notes:
 	resources of primary function at a later time.  
 	i don't have to think about how to pass something to a callback function at a later time.
 
-7. inside a function, if i want to set a timer to handle something later (need to pass in arguments to the callback for the setTimeout()), i can use a function wrapper with no argument to wrap around a callback function that can have aruguments from the primary function.  
+7. inside a function, if i want to set a timer to handle something later (need to pass in arguments to the callback for the setTimeout()), i can use a function wrapper with no argument to wrap around a callback function that can have arguments from the primary function.  
 	refer to my_own_codes/: create_sync_function.js 

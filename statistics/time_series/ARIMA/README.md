@@ -53,8 +53,8 @@ Ultimately d in ARIMA refers to 'differencing'.
 E.g. xt' = xt - xt-1
 
 ARIMA(0,1,0) is xt = xt-1 + et, or xt - xt-1 = et  
-ARIMA(0,2,2) is xt = xt-1 + xt-1 - xt-2 + (sth1) et-1 + (sth2)et-2 + et, or
-xt - xt-1 = xt-1 - xt-2 + (sth2)et-2 + et
+ARIMA(0,2,2) is xt = xt-1 + xt-1 - xt-2 + (something1) et-1 + (something2)et-2 + et, or
+xt - xt-1 = xt-1 - xt-2 + (something2)et-2 + et
 
 using ARIMA(0,1,0) or ARIMA(0,2,2), it is easy to see how data set is prepared 
 (dependent variable is xt - xt-1 which is directly observable/obtainable, while et has to be estimated in a first step like the MA model)

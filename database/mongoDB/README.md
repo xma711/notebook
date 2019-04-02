@@ -31,7 +31,7 @@ The "SELECT" keyword in mysql becomes "collectionObject.find ( options )" functi
 The return object from the find() function is a cursor, which is a pointer to the first item found in the database. 
 (however, it is not an array, because the data have not been transferred.)  
 The options argument in the find() function is a javascript object (like json);  
-inside the the options object there can be some keywords ($sth, like $in, $and) to handle some logic relations.  
+inside the the options object there can be some keywords ($something, like $in, $and) to handle some logic relations.  
 Ultimately, it is to return documents that make the requirements in the options argument TRUE..
 
 

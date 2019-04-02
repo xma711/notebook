@@ -85,7 +85,7 @@ which indirectly give us insights into the current stack in the memory.
 The register values are what they are right before we enter the main() function.
 
 Note down the current stack pointer (which is the top of the stack; the smallest number, coz stack grows from higher addr to smaller addr) 
-(its name is esp or rsp or sth else, depending on machine used),
+(its name is esp or rsp or something else, depending on machine used),
 base pointer and instruction pointer.
 In my own execution on a 64bit machine, the sp = 0x7fffffffdc30,
 bp = 0x7fffffffdc40 (base of the current stack frame i think), 
@@ -203,7 +203,7 @@ Now ends now speculation.
 
 By hijacking the ret_address, we tricked the foo() function to return control to the instruction at the ret_address.
 
-If the ret_address is a simple instruction (like mov sth), it will simply execute the instruction,
+If the ret_address is a simple instruction (like mov something), it will simply execute the instruction,
 and the next instruction in the memory, until it hits the instruction "ret".  
 When the 'ret' instruction is executed, like any function, it will return the control of the stack to the instruction right before the 
 current stack frame. 

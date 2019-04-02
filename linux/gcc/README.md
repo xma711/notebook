@@ -17,7 +17,7 @@ Toolchains have a loose name convention like arch[-vendor][-os]-abi.
 
     vendor is tool chain supplier: apple,
 
-    os is for operating system: linux, none (bare metal)
+    os is for operating system: Linux, none (bare metal)
 
     abi is for application binary interface convention: eabi, gnueabi, gnueabihf
 

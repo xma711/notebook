@@ -1,26 +1,26 @@
 Desktop or laptop
 -------------
 
-Install debian from another linux system: https://www.debian.org/releases/stable/amd64/apds03.html.en
+Install Debian from another Linux system: https://www.debian.org/releases/stable/amd64/apds03.html.en
 
 
-if ethernet not working, can try
+if Ethernet not working, can try
 
 ifconfig eth0 up
 
 dhclient eth0
 
 
-To get wifi works: http://www.linux.com/learn/answers/view/1628-how-do-i-get-debian-to-see-my-wifi
+To get WiFi works: http://www.linux.com/learn/answers/view/1628-how-do-i-get-debian-to-see-my-wifi
 
-Step 1: find out what wifi hardware you have. If an internal wificard, lspci will show you what internal pci devices are installed including the wifi card. The list is long. However this line appeared near the end.
+Step 1: find out what WiFi hardware you have. If an internal wificard, lspci will show you what internal pci devices are installed including the WiFi card. The list is long. However this line appeared near the end.
 
 # lspci
 
 02:00.0 Network controller: Intel Corporation WiFi Link 5100
 
 
-Step 2: Modify /etc/apt/sources.list to handle potential non-free drivers. Login a root, su, and use your prefered editor to change this line in /etc/apt/sources.list from (substitute wheezy for jessie as for your installation)
+Step 2: Modify /etc/apt/sources.list to handle potential non-free drivers. Login a root, su, and use your preferred editor to change this line in /etc/apt/sources.list from (substitute wheezy for jessie as for your installation)
 
 deb http://ftp.us.debian.org/debian/ jessie main
 
@@ -37,7 +37,7 @@ Step3: Since the above lsb command identified my usb wifi device as ralink, the 
 # apt-cache search Intel | grep wifi
 firmware-iwlwifi - Binary firmware for Intel PRO/Wireless 3945 and 802.11n cards
 
-Similarly intall the identified intel firmware:
+Similarly install the identified Intel firmware:
 
 # apt-get install firmware-iwlwifi
 
@@ -47,7 +47,7 @@ Then follow the wifi guide in ../wifi/README.md
 
 Desktop - gnome desktop : install it based on: https://wiki.debian.org/Gnome
 
-install debian for bbb
+install Debian for BBB
 -------------------------------
 
 Http://elinux.org/BeagleBoardDebian
@@ -58,10 +58,10 @@ and installed it to a sd card using dd (sudo dd if=./bone-debian-8.2-console-arm
 
 The MT7601U wifi dongle works automatically, but lcd is all white and no display. in addition, the uart1 is not working due to conflict with lcd (apparently).
 
-As a result, this debian image is not useful for me.
+As a result, this Debian image is not useful for me.
 
 
-Install debian-7.5 instead
+Install Debian-7.5 instead
 -------------------------------
 
 The kernel is probably v3.8

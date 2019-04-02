@@ -1,14 +1,14 @@
-public class PrintSth {
-	String sth = "print something";
+public class PrintSomething {
+	String Something = "print something";
 
 	void print() {
-		System.out.println(sth);
+		System.out.println(Something);
 	}
 
 	// a main function
 	public static void main(String[] args) {
-		// declare a new variable, based on the class PrintSth
-		PrintSth p = new PrintSth();
+		// declare a new variable, based on the class PrintSomething
+		PrintSomething p = new PrintSomething();
 
 		// execute a method
 		p.print();

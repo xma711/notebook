@@ -11,7 +11,7 @@ public:
 	virtual void draw() = 0;
 
 	// this is not a virtual method
-	void say_sth() {std::cout << "Shape: i am a shape..\n";}
+	void say_something() {std::cout << "Shape: i am a shape..\n";}
 
 	//virtual void draw2() = 0; // if derived class doesn't override this method, compiler will give error
 };
@@ -55,7 +55,7 @@ int main() {
 	Shape* s;
 	s = new Circle(1.0);
 	s->draw();
-	s->say_sth();
+	s->say_something();
 
 	return 0;
 }

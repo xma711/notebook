@@ -1,11 +1,11 @@
-Systemd is the software to auto start programs in some linux system, like archlinux.
+Systemd is the software to auto start programs in some Linux system, like archlinux.
 
 
 - commands:
 
 systemctl enable simple_example.service		# enable the service unit
 
-systemctl start simple_example.servie		# start the unit
+systemctl start simple_example.service		# start the unit
 
 systemctl status simple_example.service		# check the status
 
@@ -38,7 +38,7 @@ journalctl
 
 - read the print messages:
 
-journalctl -fu simple_example.service		# 'f'ollow the 'u'nit to see the messages
+journalctl -fu simple_example.service		# follow the unit to see the messages
 
 # see the messages since a date indicated
 

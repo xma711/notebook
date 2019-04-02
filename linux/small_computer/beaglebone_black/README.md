@@ -3,7 +3,7 @@ Some important things to consider
 
 1. how to upgrade the kernel to 4.1, coz it also supports device tree.
 
-2. need to read the bbb manual to understand it better.
+2. need to read the BBB manual to understand it better.
 
 
 Device tree
@@ -11,7 +11,7 @@ Device tree
 Reference: https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/exporting-and-unexporting-an-overlay
 reference: http://www.raspberry-pi-geek.com/Archive/2014/03/Capemgr-keeps-track-of-the-BeagleBone-Black-s-expansion-boards-known-as-capes
 
-from kernel 3.8, bbb use device tree to setup its pins maps, if my understand is correct.. 
+from kernel 3.8, BBB use device tree to setup its pins maps, if my understand is correct.. 
 There is also this device tree overlay. it is like adding things to the existing device tree.
 For example, those interface like ttyO2 I2C-1 enabled in uEnv.txt are overlays.
 
@@ -79,7 +79,7 @@ The part number associated with the overlay (not the full file name of the .dtbo
 For example, to load the overlay file MY_OVERLAY-00A0.dtbo, which is located in the firmware directory, use the following command:  
 user@beaglebone:~# sudo echo MY_OVERLAY > /sys/devices/bone_capemgr.*/slots
 
-btw, to export the device with a specific version number, use sth like: "BB-BONE-LCD4-01:00A1".
+btw, to export the device with a specific version number, use something like: "BB-BONE-LCD4-01:00A1".
 
 
 Capes
@@ -123,7 +123,7 @@ another reference: http://elinux.org/EBC_Exercise_11a_Device_Trees
 
 however, apparently, not all pins will be shown here. for example, after exporting the analog pins device tree overlay, the pins are not shown here.
 
-Also, when using LCD, exporting the analog pins device tree doesn't complain, but the pins cannot be used. there could be some confliction between the hidden LCD pins and analog pins.
+Also, when using LCD, exporting the analog pins device tree doesn't complain, but the pins cannot be used. there could be some conflicts between the hidden LCD pins and analog pins.
 
 HDMI
 ------------------------
@@ -217,7 +217,7 @@ set direction as output: echo out > /sys/class/gpio/gpio60/direction
 
 set value as 1/0: echo 1/0 > /sys/class/gpio/gpio60/value
 
-direction	Decides whether this is an input or output pin. Writing in or out to this file, changes the behaviour of the value-file accordingly.
+direction	Decides whether this is an input or output pin. Writing in or out to this file, changes the behavior of the value-file accordingly.
 
 Value	if direction is in, reading this file tells you if the external signal connected to the pin is 1 (3.3V) or 0 (0V)
 if direction is out, writing to this file sets the voltage we output on the pin to either 3.3V (1) or 0V (0)
@@ -269,7 +269,7 @@ pastebinit .config
 
 
 
-another way of compiling uboot and kernal
+Another way of compiling uboot and kernel
 ------------------------------------------
 Reference: https://eewiki.net/display/linuxonarm/BeagleBone+Black
 
@@ -292,7 +292,7 @@ After reboot and it works.
 
 One problem is that the xbee dongle is not detected and appear in the /dev/ttyUSB* list.
 
-The problem is solved by copy the firmware and modules folders to the respective positioins /usr/lib/firmware and /usr/lib/modules
+The problem is solved by copy the firmware and modules folders to the respective positions /usr/lib/firmware and /usr/lib/modules
 
 
 

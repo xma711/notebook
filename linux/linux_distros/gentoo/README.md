@@ -1,11 +1,11 @@
 Installation
 --------------
 
-Follow https://wiki.gentoo.org/wiki/Handbook:AMD64 to install gentoo for linux 64.
+Follow https://wiki.gentoo.org/wiki/Handbook:AMD64 to install Gentoo for Linux 64.
 
-It is actually very similar to create a sd card for single-board computers like bbb and raspberry pi.
+It is actually very similar to create a SD card for single-board computers like BBB and raspberry pi.
 
-Wifi
+WiFi
 --------
 need to configure the kernel as :
 enable the following option in the kernel config:
@@ -18,4 +18,4 @@ of course need to configure other kernel parameters and install the linux-firmwa
 
 Reference: http://wiki.gentoo.org/wiki/Wifi
 
-After the wifi is detected, then follow the guide in ../wifi/README.md to set up the wifi connection using wpa_supplicant
+After the WiFi is detected, then follow the guide in ../wifi/README.md to set up the WiFi connection using wpa_supplicant

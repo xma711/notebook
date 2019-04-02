@@ -7,20 +7,20 @@ Each host maintains 3 windows: congestion window, advertised window and transmis
 
 Congestion window is for sender to indicate the maximum number of segments (packets) a sender can transmit without congesting the network; 
 the number is based on the feedback (e.g. ACKs, lost packets..) from the network.  
-	- if sender cannot receive ACK with RTO, it immediately reduces its congestion window to one segment & expoentially backs off its RTO..
+	- if sender cannot receive ACK with RTO, it immediately reduces its congestion window to one segment & exponentially backs off its RTO..
 	
 Advertised window is for receiver to indicate to the sender in the ACK that the amount of data 
 the receiver is ready to receive in the future.  
 Normally it is equal to the available buffer size at the receiver to prevent buffer overflow.
 
-Transmission window: deterimine the maximum number of segments that the sender can transmit at one time 
-without receiving any acks from the receiver. 
+Transmission window: determine the maximum number of segments that the sender can transmit at one time 
+without receiving any ACKs from the receiver. 
 The size is determined as the minimum of the sender's congestion window and receiver's advertised window.
 
 TCP uses a cumulative ACK mechanism.  
 When a sender receives an ACK about the nth packet, it knows all packet < n have been received (not including n).
 
-When receiver receives an out-of-order segment, it will send a duplicated ack to the sender. 
+When receiver receives an out-of-order segment, it will send a duplicated ACK to the sender. 
 In wireline network, an out-of-order delivery usually implies a packet loss (the packet missing is the one lost).
 
 If 3 duplicate cumulative ACKs are received, the sender assumes the packet is lost.
@@ -28,7 +28,7 @@ If 3 duplicate cumulative ACKs are received, the sender assumes the packet is lo
 Another case that sender thinks that a packet is lost is when an ACK never comes within the RTO (retransmission timeout) interval. 
 RTO = RTT (round-trip time) + 4 * mean deviation.
 
-Upon detecing lost packet, the sender will retransmit the lost packet. (just the single packet? or the packet indicated in ack + all packets after?)
+Upon detecting lost packet, the sender will retransmit the lost packet. (just the single packet? or the packet indicated in ACK + all packets after?)
 
 
 TCP in cellular networks
