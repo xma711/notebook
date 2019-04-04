@@ -16,8 +16,8 @@ It has no direct effect on the operation of the code they annotate.
 
 The uses of annotations:  
 1. information for the compiler  
-2. compile-time and deployment-time processing (???)  
-3. runtime processing (???)
+2. compile-time and deployment-time processing  
+3. runtime processing
 
 E.g.  
 @Override

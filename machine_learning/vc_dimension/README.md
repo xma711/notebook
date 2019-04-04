@@ -58,7 +58,7 @@ Why? i don't understand it yet but one explanation is offered here: https://en.w
 try to think of an intuition but failed:  
 	at the best case, any d points from the m-points set can be shattered by H,
 	then we can partition the m points to m/d sets. 
-	each set has 2^d functions. then what??
+	each set has 2^d functions. then what?
 )
 
 In particular, if m > d+1 (which is usually the case), tH(m) <= (em/d)^d  (where e is the exponential constant).

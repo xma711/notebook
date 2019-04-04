@@ -3,11 +3,11 @@ LoRa
 
 Ref: https://www.link-labs.com/what-is-lora/
 
-LoRa itself is a physical layer protocol, \
+LoRa itself is a physical layer protocol,
 which does not describe any system functionalities above the physical layer.  
 
 LoRa defines a modulation format.
-It generates a stable chirp (??) using a fac-N phase lock loop (PLL) (??).
+It generates a stable chirp using a fac-N phase lock loop (PLL)
 
 
 LoRa alliance

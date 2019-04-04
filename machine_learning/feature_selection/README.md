@@ -25,7 +25,7 @@ and then eliminate one feature at a time.
 Using l1 norm as the regularizer is able to induce sparse solution.
 
 4. feature learning.  
-PCA!! or other autoencoders.  
+PCA! Or other autoencoders.  
 K-means can be used too. each example is map to a binary vector indicating which cluster it belongs to. (this is a bit naive..)  
 Both k-means and PCA approaches can be regarded as special cases of autoencoders.  
 These are similar to dictionary learning.

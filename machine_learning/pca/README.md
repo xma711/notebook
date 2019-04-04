@@ -31,7 +31,7 @@ The intuition is that each principle component is a combination of the original 
 One good reference: https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/
 
 
-how to get principle component -> they are the eigenvectors of the covariance matrix of xi!!!
+how to get principle component -> they are the eigenvectors of the covariance matrix of xi!
 ----------------------------
 
 Given a set of data xi, each xi is a vector with m variables 
@@ -46,14 +46,13 @@ Interestingly the covariance C of the data set pops out from this equation, whic
 and it is a n x n matrix.
 
 Note that the principle component is the principle component of the data set xi, 
-not the principle component of the covariance matrix!!!
+not the principle component of the covariance matrix!
 The covariance matrix is just an intermediate thing we need.
 However, these principle components are the eigenvectors of the covariance matrix,
-not the eigenvectors of the data set xi!!!!
-(must understand this one well!!!)
+not the eigenvectors of the data set xi.
 
 There, given a data set xi, the eigenvectors of its covariance matrix C are 
-the principle components of xi!!!!
+the principle components of xi.
 
 To obtain q, we need to maximize V subject to ||q|| = 1.
 (when q is a unit vector, the vector product between xi and q is the real distance of xi on q.)  
@@ -64,18 +63,15 @@ It is a bit confusing that xi disappears.
 But it doesn't matter. just remember eigenvectors of C are the principle components of dataset xi.
 
 Anyway after finding out the first principle component, we can try to find the 2nd one, 
-which as a constraint of being orthogonal to the first component.
+which has a constraint of being orthogonal to the first component.
 
-It turns out that (this part i don't understand much) Cq2 = lambda2 q2 ,
+It turns out that Cq2 = lambda2 q2 ,
 which is similar to the first eigenvector equation, but now replaced by q2 and lambda 2.
 
 Ultimately, with all eigenvectors and eigenvalues, we will have QT C = A QT,
 where Q is m x m matrix with each column = an eigenvector,
 and A is the diagonal matrix of lambda, with other elements = 0 except diagonal elements.
 
-(a bit out of flow in my understanding) or, we have, C = Q A QT, which is the matrix equation for eigendecomposition.
-(i don't know whether we can use equation for finding out the eigenvectors or 
-from eigenvectors to find out the original matrix C...)
 
 PCA algorithm
 ---------------------
@@ -93,17 +89,17 @@ because step 2 will result in a super big matrix m x m.
 
 Then what can we do? we follow algorithm 2:  
 	1. same as previous  
-	2. get matrix A = ((x1 - mu) (x2 - mu) ..), each column is a data point subtracted by mu. in fact, this is the data set in transpose!  
+	2. get matrix A = ((x1 - mu) (x2 - mu) ..), each column is a data point subtracted by mu. in fact, this is the data set in transpose.  
 	3. computer a matrix ATA, which is NOT the covariance of data set.  
 	4. obtain eigenvectors and eigenvalues of ATA (ATA qj = lambdaj qj). the eigenvectors obtained are NOT the principle components of xi, simply because ATA is not the covariance matrix of xi.  
 	5. because A AT A qj = A lambdaj qj and A AT = nC, then nC(Aqj) = lambdaj (A qj), and finally C (A qj) = lambdaj/n (A qj). so eigenvectors of C are A qj and eigenvalues are lambdaj/n.  
-	6. since we got the eigenvectors of the covariance matrix of xi, we got the principle components of xi!!!
+	6. since we got the eigenvectors of the covariance matrix of xi, we got the principle components of x.
 
 Therefore algorithm 1 is a general one, which works on any data set.
 But it will become very slow if each data point has too many variables (such as an image).
 
 To solve this problem, we calculate the eigenvectors for A AT instead (which is a nxn matrix).
-And then transform the eigenvectors of A AT to eigenvectors of C!!!
+And then transform the eigenvectors of A AT to eigenvectors of C.
 
 Anyway, if m is small, we choose algo 1; if n is small, we choose algo 2.
 
@@ -113,8 +109,8 @@ And yet, there is an algo 3:
 	4. transform U E V to eigenvectors and eigenvalues of C: qj of C = uj in U, and eigenvalues lambdaj of C = sj^2/n for sj in E.
 
 
-Btw eigenvectors of a random square matrix doesn't have to be orthogonal!  
-They are orthogonal because it is a covariance matrix, which has the property that cov = cov.T !!!
+Btw eigenvectors of a random square matrix doesn't have to be orthogonal.  
+They are orthogonal because it is a covariance matrix, which has the property that cov = cov.T 
 
 
 More on the principle components

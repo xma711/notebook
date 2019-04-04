@@ -14,7 +14,7 @@ Reference: https://www.digitalocean.com/community/tutorials/how-to-install-and-u
 postgreSQL or postgres is a relational database management system that provides an implementation of the SQL querying language.
 
 It has the advantage of being standards-compliant 
-and having many advanced features like reliable transactions and concurrency without read locks. (meaning?)
+and having many advanced features like reliable transactions and concurrency without read locks.
 
 To install postgres and a contrib package that adds some additional utilities:  
 sudo apt-get install postgresql postgresql-contrib
@@ -212,9 +212,6 @@ DATABASES = {
 }
 
 it seems the owner of database dtut2 must be tut2.
-
-
-So it turns out that yc’s commands are sufficient.
 
 
 Login as postgres: sudo su postgres

@@ -71,20 +71,21 @@ F'(x) only means the 1st order derivative of function f(),
 and then we calculate the value of f'() when the variable (whatever name it is assigned)  equals to x.
 
 The confusion here is that we have used 'x' for the variable name for a function for so many times,
-then i can not easily imagine x is actually a convenient way to name a variable, but not a MUST!!!
+then i can not easily imagine x is actually a convenient way to name a variable, but not a MUST!
 F() can be f(y), f(z), f(b) and f() is still f(). it represents a transformation from an input to an output.  
 Similarly, f'() doesn't mean df/dx if f is not represented in terms of x.
 F'() is just f'(), which is a function that represents a transformation from an input to an output.  
-And of course f'(x) doesn't mean df/dx!!! it means we sub variable = x into the function f'().  
+And of course f'(x) doesn't mean df/dx.
+It means we sub variable = x into the function f'().  
 This is probably the most important point here: f'() is its logic representation itself. it doesn't have to do with variable name 'x'.
 
 In fact, k is the change from x, and k is the delta x. so,  
 f(x + deltaX) = f(x) + f'(x) deltaX + 1/2 f''(x) deltaX^2.  
-This is exactly the formula in the lecture notes of the media module!!!  
+This is exactly the formula in the lecture notes of the media module.  
 This should be the most easy-to-understand way of deriving this formula.
 
 
-If i cannot get over the variable 'x', another way to derive it is from the follows 
+Another way to derive the formula is from the follows 
 (not recommended; better follow the above explanation):
 
 we know that f() is a function. so x+k is just the input to the variable.  
@@ -94,12 +95,12 @@ how to express f(x+k) in terms of a0 + a1 k + a2 k^2 + ...?
 
 Let y = g(k) = x + k  (from k's point, x is a constant). 
 So f(y) = f(x+k) = f( g(k) ) = m(k).  
-Dm(k)/dk = df(y)/dk = df(y)/dy * dy/dk = df(y)/dy * 1 = df(y)/dy = f'(y) !!!  
-This means that dm/dk is exactly the same as f'(y)!!!  
+Dm(k)/dk = df(y)/dk = df(y)/dy * dy/dk = df(y)/dy * 1 = df(y)/dy = f'(y)  
+This means that dm/dk is exactly the same as f'(y).  
 Let's apply Taylor series on m(k), so  
 m(k) = a0 + a1 k + a2 k^2 + ...  
 So a0 = m(k) when (k = 0) = f( x + 0) = f(x)  
-a1 = dm/dk when (k = 0) = df(y)/dy when (k = 0) = f'(y) when (y = x + 0) = f'(x) !!!!  
+a1 = dm/dk when (k = 0) = df(y)/dy when (k = 0) = f'(y) when (y = x + 0) = f'(x)  
 A2 = dm/dk when (k = 0) = 1/2 d^2f(y)/dy^2 when (k = 0) = 1/2 f''(y) when (y = x + 0) = 1/2 f''(0).
 
-Okay solved!!
+Okay solved!

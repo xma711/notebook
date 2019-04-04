@@ -18,7 +18,7 @@ which can be due either to
 1. the presence of a unit root or  
 2. of a deterministic trend (such a non-stationary process is called a trend stationary process)
 
-a trend stationary process can easily be transformed into a stationary process by removing the underlying trend (by the AR part in ARMA or ARIMA??),
+A trend stationary process can easily be transformed into a stationary process by removing the underlying trend (by the AR part in ARMA or ARIMA),
 which is solely a function of time.
 
 Processes with one or more unit roots can be made stationary through differencing (e.g. [the differencing in ARIMA](../ARIMA/README.md)).

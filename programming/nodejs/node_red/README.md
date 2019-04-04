@@ -193,7 +193,7 @@ Change node: allow you to change a message payload or add new properties.
 You can use this node to affect the properties in a message, 
 either by changing existing ones, deleting them or adding new properties.
 
-Rbe node: i.e. "report by exception", node which only passes on data if it has changed. (???)
+Rbe node: i.e. "report by exception", node which only passes on data if it has changed.
 You can set it to examine a message payload and either block until a message changes (rbe mode)
 or when a message changes by a specified amount (deadband mode).  
 E.g. the 1st msg's value is 6, and then the 2nd msg's value is 10. 
@@ -208,7 +208,7 @@ allowing servers to update web pages without the client making a new pull reques
 
 Websocket node: 2 flavours - input and output, allowing you to listen for incoming data (input) or to send (output) on a websocket.  
 The output version is designed to check to see if the output payload originated at a websocket in a node,
-in which case it responds to the original sender. (meaning???)  
+in which case it responds to the original sender.  
 Otherwise it will broadcast the payload to all connected websockets.  
 Both input and output websocket nodes can be configured as either server or client - 
 in server mode they 'listen on' a URL,

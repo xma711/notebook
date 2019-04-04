@@ -8,9 +8,9 @@ Functions
 ----------------
 Function should be very short.
 
-They should be just a few lines!!!
+They should be just a few lines!
 
-The number of argument to a function should not be more than 3!!
+The number of argument to a function should not be more than 3.
 
 
 Comments
@@ -92,7 +92,7 @@ Handle error
 
 Use exception.
 
-Don't return NULL!!!!!! (which i violated!)
+Don't return NULL!
 
 Better don't use checked exception (what does this mean?)
 

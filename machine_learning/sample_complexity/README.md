@@ -30,7 +30,7 @@ With different loss function, the risk will be calculated differently.
 However, whatever loss function is used, conceptually there is a risk for population given a h and an empirical risk for the sample given a h.  
 Therefore, we can still claim that sample complexity of an algo is about calculating a sample size such that the algo will be able to obtain a h that has risk not much more than the best possible risk on population, no matter what loss function is used.  
 (actually, this means that, when different loss function is used, 
-the sample size required to achieve a certain error bound can be different. correct??)
+the sample size required to achieve a certain error bound can be different.)
 
 
 No free lunch theorem (NFL)
@@ -56,7 +56,7 @@ pick a very general class --> this leads to a high requirement on the sample siz
 (both ways have some issues.)
  
 Overall, if we want to have a finite sample complexity, we can do either:  
-	- limit the hypothesis class without limiting the distribution of X and Y (discrimative methods???) OR
+	- limit the hypothesis class without limiting the distribution of X and Y OR
 	- limit the space of distribution for X and Y. (e.g. via a parametric approach)
 
 
@@ -95,7 +95,7 @@ Interesting, so far we have not talked about test data yet.
 
 This means that, when the vc dimension of the hypothesis class is finite
 and when the sample size is large enough,
-the ERM algorithm is able to find a solution that is not overfitting!!
+the ERM algorithm is able to find a solution that is not overfitting!
 
 I think the intuition is that, when there is enough sample,
 the sample starts to represent the population well. 
@@ -164,7 +164,7 @@ To ensure the ERM h from {H1, H2} is better than h1 or h2 in terms of population
 On the other hand, if we look at the test error and pick the h from {h1, h2} such that h has a smaller test error, 
 is h better than either h1 or h2?
 
-The answer seems yes but it is wrong when we do this on many Hi!!
+The answer seems yes but it is wrong when we do this on many Hi!
 
 This time, the h chosen is not necessarily the same as the ERM h from the full H.
 
@@ -179,11 +179,11 @@ Another thing is that if we know the sample size is not enough for the full H, c
 and at the end we choose the hi that results in a smallest test error?  
 This method should be nicknamed "Test risk minimization"..  
 
-The h that results in a smallest test error is no longer the best for the population, because this h could be overfitting the test data!!  
+The h that results in a smallest test error is no longer the best for the population, because this h could be overfitting the test data!  
 This means that the Test Risk Minimization algo has a limit itself.  
 When the number of hypothesis classes increases to a certain limit, the population error actually increases, because the overall estimation error increases.
 
-Therefore, it seems that with a test dataset, the bias-complexity tradeoff is still there!  
+Therefore, it seems that with a test dataset, the bias-complexity tradeoff is still there.  
 Because while we are pushing the approximation error to 0, the estimation error starts to increases when the number of hypothesis classes reaches certain number.
 
 To reduce the estimation error further, there is no way but to increase the sample size.

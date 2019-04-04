@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 random.seed(a=10) # make it deterministic so that it is repeatable
 
-# note that don't key in "," in the arguments!!
+# note that don't key in "," in the arguments!
 if ( len(sys.argv) < 5 ):
 	print ("please input number data points wanted, w1, w2 and b.")
 	exit(1)

@@ -154,9 +154,9 @@ further understanding of stack
 Question: there are assembly codes (instructions) in the memory, and there is stack in the memory,
 who is the boss?
 
-Answer: the instructions in the memory is the boss!!!!  
+Answer: the instructions in the memory is the boss!  
 A stack is created by the instructions.  
-The change of the stack is also controlled by the instructions!!!
+The change of the stack is also controlled by the instructions.
 
 For example,
 main() has some codes:  
@@ -185,7 +185,7 @@ All the variables to modify the stack are the registers!
 And the instructions themselves explicitly use these registers to control the stack.
 
 The way the stack grows and shrinks is not a myth!
-It is simply controlled by the instructions who use the registers explicitly!!
+It is simply controlled by the instructions who use the registers explicitly.
 
 Ok now here starts my speculation:
 

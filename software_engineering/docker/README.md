@@ -321,7 +321,7 @@ another way is "docker search 192.168.1.125:5000/library" which display the repo
 
 to list all tags under an image in a private docker hub: *curl http://192.168.1.174:5000/v1/repositories/library/armhf-archlinux/tags | python -m json.tool"
 
-Btw this is a tutorial recommended by yc: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
+Btw this is a useful tutorial: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
 
 To use a GUI to manage to repository, follow: https://github.com/atc-/docker-registry-ui  
 in short, just run docker run -d -p 8080:8080 atcol/docker-registry-ui  

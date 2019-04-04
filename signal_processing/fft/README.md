@@ -25,7 +25,7 @@ The we can plot it using: plot(freq_fftx, abs(fftx)**2)
 where abs(fftx)**2 is the power spectrum
 
 
-Wait!! is dt the sampling period? should be yes.
+Wait! is dt the sampling period? should be yes.
 
 Another question: do we need to divide fftx by n to normalize the vector?
 

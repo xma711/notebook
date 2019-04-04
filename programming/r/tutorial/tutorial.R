@@ -5,7 +5,7 @@
 # download R at http://cran.stat.nus.edu.sg/
 # launch in interactive mode by typing R on the command line or opening the standard GUI
 
-#!!! recommended, if you want a nice IDE for R
+# recommended, if you want a nice IDE for R
 # download RStudio at http://www.rstudio.com/ide/download/
 
 # check out http://www.revolutionanalytics.com/what-r to find out more about R and its features in data analytics
@@ -16,7 +16,7 @@
 #########
 
 # set working directory at where data files will be accessed/saved
-#!!! change backslashes '\' to forward slashes '/'
+# change backslashes '\' to forward slashes '/'
 
 setwd('C:/Users/matlabuser/Google Drive/Everything else/R Tutorial')
 
@@ -63,7 +63,7 @@ class(2+3)
 class('Hello')
 class(factor(3:7))
 f = factor(3:7); f
-as.numeric(f) # this is wrong!!!
+as.numeric(f) # this is wrong!
 as.numeric(as.character(f)) # this is the right way :)
 
 # 1. Vector as 1-dim array
@@ -147,7 +147,7 @@ class(weatherR$Date)
 plot(sin(1:10), type ='l')
 lines(cos(1:10))
 
-#!!! use ggplot2 for better flexibility and aesthetics
+# use ggplot2 for better flexibility and aesthetics
 
 # univariate
 

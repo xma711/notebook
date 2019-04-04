@@ -11,7 +11,7 @@ struct LINK_LIST {
 };
 
 // cannot do this: pass in a reference, and then reference = malloc()
-// why? because i need to pass in the pointer to the pointer!!! 
+// why? because i need to pass in the pointer to the pointer! 
 // otherwise the pointer itself cannot be changed, just like a value
 struct LINK_LIST* create_new_element() {
 	return (struct LINK_LIST*) malloc(sizeof(struct LINK_LIST));
@@ -121,7 +121,7 @@ void print_link_list(struct LINK_LIST *head) {
 int main () {
 	int i = 0;
 	struct LINK_LIST* head;
-	create_new_element_by_ref(&head); // this works!!
+	create_new_element_by_ref(&head); // this works!
 //	head = (struct LINK_LIST*) calloc(1, sizeof(struct LINK_LIST)); // of course this works
 //	head = create_new_element(); // this also works
 	assert(head);
@@ -148,7 +148,7 @@ int main () {
 	// need to be careful here. after removing one element, the element number is different
 	remove_nth_element(&head, 7);
         remove_nth_element(&head, 5);
-        remove_nth_element(&head, 0); // it doesn't change the head's value!!!
+        remove_nth_element(&head, 0); // it doesn't change the head's value!
 	print_link_list(head);
 
 	return 0;

@@ -52,7 +52,7 @@ delaying a large-scale deployment of WSN technologies to obtain a virtual wide s
 "the current trend is to use the internet protocol to achieve native connectivity between WSNs and the internet".
 (Personally i think this eases many problems.)
 
-"following trend of web mashups (??)", end users can create applications mixing 
+"following trend of web mashups", end users can create applications mixing 
 real-world devices such as home appliances with virtual services on the web.
 
 Non-ip solutions: Zigbee, Z-Wave, Insteon, Waveenis (the latter 2 may already die..)..  
