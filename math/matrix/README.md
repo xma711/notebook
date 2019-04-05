@@ -9,13 +9,16 @@ Using the same method will be extremely tedious and slow.
 So, another way is to organize the coefficients into a table, or a matrix, so it looks like:  
 M * x = y, where each row of M is the coefficients of one equation involving x1, x2 ... (i.e. the x vector).
 Of course y is the constants of each equation.  
-One example:  
+One example:
+
+```
 --    --   --  --   --  --
 | 1, 2 | * | x1 | = | 10 |
 | 3, 4 |   | x2 |   | 20 |
 --    --   --  --   --  --
 ```
-then what?
+
+Then what?
 
 As we look at this matrix M, we can start to think of extracting some properties of M to help us solve the equations.
 
@@ -28,7 +31,7 @@ We know that the n equations for n unknowns must be independent (different story
 An easy way to check: the determinant.
 As long as the determinant not equal to 0, then we know that there is a solution.
 
-Ok great. what else?
+Ok great. What else?
 
 Look at the matrix equation again M * x = y. 
 Can we cancel the M away from the left-hand side by canceling the stuff from the right-hand side, 
@@ -71,7 +74,7 @@ and form a new row.
 This means that question 1 and question 2 can be condensed to the same question:
 what is the meaning of a row in AT? (and note that it is the same as the meaning of a column in A)
 
-if there is only one variable, e.g. temperature, A is n x 1 matrix, AT is 1 x n matrix,
+If there is only one variable, e.g. temperature, A is n x 1 matrix, AT is 1 x n matrix,
 the result will be 1 x 1 matrix with a single number, that is temperature's variance without being divided by n.
 
 If there is 2 variables (e.g. temperature and humidity), A is n x 2 matrix, AT is 2 x n matrix, the resultant matrix will be 2 x 2.
