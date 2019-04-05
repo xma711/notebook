@@ -9,4 +9,4 @@ Otherwise, see the simple_plot.gnuplot as an example.
 Alternative
 ----------------
 
-Or i can use python matplotlib for plotting.
+Or we can use python matplotlib for plotting.

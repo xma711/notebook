@@ -13,7 +13,7 @@ so RSP should point to the top of the current stack (smallest addr in current st
 Stack frame is the section of the stack that is presently active (presently executing function).
 It is pointed to by RBP, the base pointer.  
 Question: where does the RBP point to? the top or the bottom of the stack frame?  
--- i think it should be the bottom of the stack frame, because the top is pointed to by the stack pointer,  RSP.
+-- It should be the bottom of the stack frame, because the top is pointed to by the stack pointer,  RSP.
 
 RIP is the instruction pointer.
 It holds the address of the instruction that the CPU just loaded and is presently executing.
@@ -49,106 +49,11 @@ Reference 2: https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Mips/stack.html
 ref2 explains what a stack is.
 
 
-Reference 3: http://www.thegeekstuff.com/2012/03/linux-processes-memory-layout
-
-this is given by the teacher.
+Reference 3: http://www.thegeekstuff.com/2012/03/linux-processes-memory-layout  
 It explains what a stack is too.
 
 
-Understand the stack from teacher's sample.c example
-----------------------------------------
-
-Firstly, need to disable the address-space randomization:  
-sudo sysctl -w kernel.randomize_va_space=0
-
-secondly, need to compile the sample.c with -fno-stack-protector and -g (-g for gdb)
-
-ok now run: gdb sample.elf
-
-break at main function: break main
-
-we can then see the main's codes in assembly language:  disassemble main  
-(at this point, we can actually see the the assembly for sample_function too. 
-This means all the instructions are placed inside the memory already)
-
-in the current stack, the sample_function instruction is loaded at 0x4005fd in my case.  
-The next instruction is at 0x400602. 
-The address for the next instruction is important, because this is the location of the memory 
-the sample_function should return to after it is done.  
-(this value will be stored in the return_address in the stack before the sample_function() is called.)
-
-
-Ok run the program: run
-
-ok now let's take a look at the registers (info registers), 
-which indirectly give us insights into the current stack in the memory.
-The register values are what they are right before we enter the main() function.
-
-Note down the current stack pointer (which is the top of the stack; the smallest number, coz stack grows from higher addr to smaller addr) 
-(its name is esp or rsp or something else, depending on machine used),
-base pointer and instruction pointer.
-In my own execution on a 64bit machine, the sp = 0x7fffffffdc30,
-bp = 0x7fffffffdc40 (base of the current stack frame i think), 
-ip = 0x4005e3
-
-ok proceed: next  
-the console should show "sample_function();",
-which means we are right before entering the sample_function.
-
-Now see the assembly codes for the sample function: disassemble sample_function,  
-and we will see the top few lines like these:  
-line1: addr_a push %rbp  
-line2: addr_b mov %rsp, %rbp  
-line3: addr_c sub $0x10,%rsp  
-....
-
-Line 1 means base pointer's current value is pushed to the stack.  
-Line 2 means the current stack pointer value will become the base pointer value for the new stack frame for the sample_function.  
-Line 3 subtracts current stack pointer by 10, which is to allocate some space for local variables.
-
-Before we run the sample_function(), let's think about what will happen and verify later.  
-
-Before line 1 is executed, 1 thing has happened: 
-a return addr (the value of a memory addr) is pushed to the stack. the return addr is a value indicating where the next instruction is when sample_function() is done.
-Of course it is the memory addr of the instruction after sample_function() in the main()'s assembly codes,
-which is 0x400602 in my case.  
-Because of this, the stack pointer has been minus away by 8 bytes (in 64bit machine; 4 bytes in 32bit machine).
-So before line1, the stack pointer = 0x7fffffffdc30 - 8 = 0x7fffffffdc28.
-This is also the memory addr of value of the return address (memory addr of a memory addr).
-
-Ok assume that we run line 1. 
-Then stack pointer will be decreased by 8 bytes again, because base pointer (rbp) is pushed to the stack.  
-So stack pointer becomes 0x7fffffffdc28 - 8 =  0x7fffffffdc20.  
- 
-Line 2 tells us that base pointer register now stores 0x7fffffffdc20, which is the base of the sample_function stack frame.
-
-Okay after line 3, the stack pointer will be decreased by 0x10.
-Sp will become 0x7fffffffdc20 - 0x10 = 0x7fffffffdc10
-
-in summary, we will check if sp becomes  0x7fffffffdc10,
-bp becomes 0x7fffffffdc20,
-and the value at the return addr (0x7fffffffdc28) is 0x400602.
-
-Okay run into sample_function(): step
-
-now print the registers' values again: info registers  
-and what i have are:  
-rsp: 0x7fffffffdc10  
-rbp: 0x7fffffffdc20
-
-and print value at 0x7fffffffdc28: x/xw 0x7fffffffdc28 (or x/xw $rbp+8).  
-The value is 0x400602! 
-
-These values are exactly what we expected.
-
-
-Override the value at the returned address at the sample_function's stack frame
----------------------------------------------
-
-Follow homework 1
-
-
-further understanding of stack
+Further understanding of stack
 -----------------------------------
 
 Question: there are assembly codes (instructions) in the memory, and there is stack in the memory,
@@ -222,7 +127,7 @@ is the bottom of the current stack frame.
 A 'ret' instruction will base on the ebp to deduce where ret_address is. 
 After the 'ret' instruction is executed, ebp should be automatically shifted down (value increases).
 
-Therefore, i think if the hijacked return address returns to a instruction that changes the value in the ebp register,
+Therefore, if the hijacked return address returns to a instruction that changes the value in the ebp register,
 then next return address may be messed up.
 
 One cleaner way is that after main() transfers control to foo(), the ebp is the stack bottom of foo(),

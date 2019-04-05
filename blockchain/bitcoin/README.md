@@ -11,7 +11,7 @@ and vice versa.
 However, given one of the keys, there is no way to get the other key back.
 
 When A wants to sends a BTC to B,
-A wrote a file with contents something like "my BTC is from XXX; i want to transfer this BTC to (public) address xxxxxxx".  
+A wrote a file with contents something like "my BTC is from XXX; I want to transfer this BTC to (public) address xxxxxxx".  
 Then A encrypts this file with A's private key (no one knows about this key except A).  
 A then sends this file to the connected nodes that will verify this file (these nodes are called miners.)
 

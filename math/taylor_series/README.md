@@ -71,7 +71,7 @@ F'(x) only means the 1st order derivative of function f(),
 and then we calculate the value of f'() when the variable (whatever name it is assigned)  equals to x.
 
 The confusion here is that we have used 'x' for the variable name for a function for so many times,
-then i can not easily imagine x is actually a convenient way to name a variable, but not a MUST!
+then we forget that x is nothing but a convenient way to name a variable (which is not a MUST).
 F() can be f(y), f(z), f(b) and f() is still f(). it represents a transformation from an input to an output.  
 Similarly, f'() doesn't mean df/dx if f is not represented in terms of x.
 F'() is just f'(), which is a function that represents a transformation from an input to an output.  

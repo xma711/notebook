@@ -131,7 +131,7 @@ In this case, each Xi may not be represented exactly by a linear combination of 
 but we can still have a projection of Xi in the Q space.  
 This can easily proven using an empirical example..  
 Give a 3x1 x1 and a 3x3 eigenvectors [q1 q2 q3] (generate this from a symmetric fake cov matrix), 
-then i can try to project x1 into the Q2 = [q1 q2] space and get it back,
+then we can try to project x1 into the Q2 = [q1 q2] space and get it back,
 i.e. y1 = Q2.T * x1; x1_back = Q2 * y1; 
 the result x1_back will not be the same as x1.
 

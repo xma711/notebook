@@ -53,7 +53,7 @@ TEST(CountHelloworldMethodTest, init) {
 
 	// "::testing::_" means anything matches
 	// because count_after_call_hello_world() will generate its own char*buf to be passed into return_hello_world(),
-	// i can't exactly know what the pointer to the buf is.
+	// we can't exactly know what the pointer to the buf is.
 	// so it is better to just check if the function is called
 	EXPECT_CALL(mock_hw, return_hello_world(::testing::_)).Times(AtLeast(1));             // #3
 

@@ -43,14 +43,14 @@ It relies on apache2.
 
 Steps: http://www.allaboutlinux.eu/how-to-run-php-on-ubuntu/
 
-anyway, they are:  
-install apache2
-got to /var/www/html/ and change index.html to index.php for the easiest case.
+Anyway, they are:  
+- Install apache2
+- Go to /var/www/html/ and change index.html to index.php for the easiest case.
 
-Then i can access it from localhost:80
+Then we can access it from localhost:80
 
 
-integrate with mysql
+Integrate with mysql
 -------------------------
 
 Very straightforward. 

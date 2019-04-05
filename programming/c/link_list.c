@@ -1,5 +1,4 @@
 /* practising on link list and pointers */
-/* some notes: need to pass in reference to a reference (x) if i want a function to modify the reference x */
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,7 +10,7 @@ struct LINK_LIST {
 };
 
 // cannot do this: pass in a reference, and then reference = malloc()
-// why? because i need to pass in the pointer to the pointer! 
+// why? because we need to pass in the pointer to the pointer! 
 // otherwise the pointer itself cannot be changed, just like a value
 struct LINK_LIST* create_new_element() {
 	return (struct LINK_LIST*) malloc(sizeof(struct LINK_LIST));

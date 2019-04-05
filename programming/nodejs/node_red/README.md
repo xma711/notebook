@@ -42,25 +42,25 @@ Install ndoe-red in ubuntu 16.04
 
 Reference: https://www.digitalocean.com/community/tutorials/how-to-connect-your-internet-of-things-with-node-red-on-ubuntu-16-04
 
-prerequirements:  
+Prerequirements:  
 	- install nodejs LTS release: sudo apt-get install nodejs-legacy  
 	- install npm: sudo apt-get install npm
 
-now install node-red:  
+Now install node-red:  
 	sudo npm install -g --unsafe-perm node-red node-red-admin  
 	(--unsafe-perm flag helps us avoid some errors that can pop up when npm tries to compile native modules) 
 
-then just run node-red locally:  
+Then just run node-red locally:  
 node-red
 
-from browser, we can accesss the node-red admin interface in localhost:1880.
+From browser, we can accesss the node-red admin interface in localhost:1880.
 
-If i want to start node-red automatically, then i can create a systemd service file to auto start the admin interface. (not needed for testing)
+If we want to start node-red automatically, then we can create a systemd service file to auto start the admin interface. (not needed for testing)
 
-there is another command called 'node-red-pi', which accepts some memory-saving option to node.js.  
+There is another command called 'node-red-pi', which accepts some memory-saving option to node.js.  
 E.g. node-red-pi --max-old-space-size=128 -v
 
-to enable some security, contine to follow the tutorial to setup nginx... (skip here).
+To enable some security, contine to follow the tutorial to setup nginx... (skip here).
 
 
 Building first flow
@@ -237,9 +237,9 @@ function node can uses something called context (e.g. local context or global co
 
 	
 There are some utility functions, such as node.log(), node.warn() and node.error()
-which allow us to log text to the console or debug pane (or others) -- this means node-red actually has a console (i think it is like javascript console) 
+which allow us to log text to the console or debug pane (or others) -- this means node-red actually has a console (It is like the javascript console) .
 
-there is also node.send() function that can be used to send messages to downstream nodes 
+There is also node.send() function that can be used to send messages to downstream nodes 
 in a callback function, rather than returning the message(s). 
 This can be used to control time of sending. e.g.
 ```

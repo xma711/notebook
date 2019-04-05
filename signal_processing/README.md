@@ -64,7 +64,7 @@ a sin function with a period of T/2 (i.e. frequency of 2/T) and phase change of 
 and so on.
 
 Like Taylor series, these An and phi_n are something we need to find out.
-It is like i write the shape of the function components first, and then find out the exact parameters for these sub functions.
+It is like we write down the shape of the function components first, and then find out the exact parameters for these sub functions.
 
 Ultimately, after some manipulation, f(x) can be expressed as 
 SUM_from_minusN_to_N( cn * e^(i 2pi n/P * x) )  

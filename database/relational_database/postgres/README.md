@@ -6,7 +6,7 @@ Connect_db_python: an example showing how to connect to postgres database using 
 postgres_in_aws: how to create a postgres database in aws and how to connect to it
 
 
-postgres
+Postgres
 ------------------
 
 Reference: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
@@ -20,7 +20,7 @@ To install postgres and a contrib package that adds some additional utilities:
 sudo apt-get install postgresql postgresql-contrib
 
 
-useful commands in psql
+Useful commands in psql
 ------------------------------
 
 \q : exit  
@@ -30,7 +30,7 @@ useful commands in psql
 \conninfo : display current connection info  
 \connect DBNAME : connect to a database  
 
-some concepts about "roles"
+Some concepts about "roles"
 --------------------
 
 By default, postgres uses a concept called "roles" to handle authentication and authorization.  
@@ -51,30 +51,30 @@ associated with the default Postgres role (i.e the "postgres" role).
 We can switch to the "postgres" account by typing:  
 sudo -i -u postgres # this is just to switch to a user in the linux terminal; at this step there is nothing to do with postgres database yet
 
-now access a postgres prompt by typing:  
+Now access a postgres prompt by typing:  
 psql  
 
-to exit the prompt:  
+To exit the prompt:  
 postgres=# \q 
 
-alternatively, to run command psql in "postgres" user at one go, use:  
+Alternatively, to run command psql in "postgres" user at one go, use:  
 sudo -u postgres psql
 
 
-create a new role
+Create a new role
 --------------------------
 
 Log in as the postgres account first (sudo -i -u postgres), then:  
 createuser --interactive
 
-subsequently, follow the prompt to enter the specifications.
+Subsequently, follow the prompt to enter the specifications.
 
 Note that "createuser" is nothing but an executable.
 It can be executed from any linux account but so far only "postgres" account will allow the command to proceed.
 
 After creating the new role (in postgres), we have to a user with the same name in the linux machine if it has not existed.  
-E.g. if i created "postgres1" using createuser, then i need to create the postgres1 user in the linux machine in the normal way (sudo adduser postgres1).  
-(btw in my test i did create this account with an easy password.)
+E.g. if we created "postgres1" using createuser, then we need to create the postgres1 user in the linux machine in the normal way (sudo adduser postgres1).  
+
 
 Create a database
 --------------------------
@@ -92,7 +92,8 @@ createdb database_name
 e.g. createdb xma  (for the account xma)
 
 
-example:  
+Example:
+
 ```
 postgres@vcdim:~$ psql 
 psql (9.5.8)
@@ -102,14 +103,14 @@ Postgres=# \conninfo
 You are connected to database "postgres" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
 ```
 
-grant database to a role
+Grant database to a role
 ------------------------------------
 
 Sudo -i -u postgres # linux terminal goes to this user
 
-then create the "new_user" if not created: createuser --interactive
+Then create the "new_user" if not created: createuser --interactive
 
-enter 'psql'.
+Enter 'psql'.
 
 Then set a password for new_user: 
 ALTER USER newuser password 'enter_password'
@@ -119,22 +120,26 @@ CREATE DATABASE "django_db";
 GRANT ALL PRIVILEGES ON DATABASE django_db TO new_user;
 
 
-create and delete table
+Create and delete table
 --------------------------
 
-The basic syntax for creating a table is:  
-CREATE TABLE table_name (  
-	column_name1 col_type (field_length) column_constraints,  
-	column_name2 col_type (field_length),  
-	column_name3 col_type (field_length)  
-);  
+The basic syntax for creating a table is:
 
-in this command, we give the table a name, and then define the columns we want, as well as the column type and the max length of the field data.
+```
+CREATE TABLE table_name (
+	column_name1 col_type (field_length) column_constraints,
+	column_name2 col_type (field_length),
+	column_name3 col_type (field_length)
+);
+```
+
+In this command, we give the table a name, and then define the columns we want, as well as the column type and the max length of the field data.
 We can optionally add table constraints for each column.
 
 In fact, this is exactly the same as the command in MySQL.
 
-One example:  
+One example:
+
 ```
 CREATE TABLE playground (
 	equip_id serial PRIMARY KEY,
@@ -144,6 +149,7 @@ CREATE TABLE playground (
 	install_date date
 );
 ```
+
 This table is to record inventories the equipment that we have.  
 Equipment id is of Serial type, which is an auto-incrementing integer.
 Being primary key means that the values must be unique and not null.  
@@ -156,7 +162,8 @@ There is a constraint for the "location" column that requires the value to be on
 To see the new table created:  
 postgres=# \d  
 
-example:  
+Example:
+
 ```
 postgres=# \d
                    List of relations
@@ -166,40 +173,47 @@ postgres=# \d
  public | playground_equip_id_seq | sequence | postgres
 (2 rows)
 ```
-our playground table is here, but we also have something called playground_equip_id_seq that is of the type 'sequence'.  
+
+Our playground table is here, but we also have something called playground_equip_id_seq that is of the type 'sequence'.  
 This is a representation of the 'serial' type we gave our equip_id column.
 
 If just to see the table without the sequence, can type:  
 postgres=# \dt  
 
 
-add, query and delete data in a table
+Add, query and delete data in a table
 -------------------------------------------
 
 Same as mysql..
 
-Example of insert:  
+Example of insert:
+
+```
 INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2014-04-28');
+```
 
 
-postgreSQL for django
+PostgreSQL for django
 -------------------
 
-Https://help.ubuntu.com/community/PostgreSQL
-to use postgreSQL commands, login as user postgres: sudo su postgres
+Reference: https://help.ubuntu.com/community/PostgreSQL
 
-
-login to postgres shell: psql
+To use postgreSQL commands, login as user postgres: sudo su postgres  
+Login to postgres shell: psql  
 Then can use commands similar to sql.
-E.g. CREATE USER, DROP USER,
-ALTER USER name PASSWORD “newpassword”
+
+E.g. CREATE USER, DROP USER,  
+ALTER USER name PASSWORD "newpassword"
 
 
-to switch database in shell: \connect DBNAME
-it seems psql is a bridge written for sql people to use postgres.
+To switch database in shell: \connect DBNAME
+
+It seems psql is a bridge written for sql people to use postgres.
 
 
 In setting.py, 
+
+```
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -210,10 +224,11 @@ DATABASES = {
             'PORT': '5432',
         }
 }
+```
 
-it seems the owner of database dtut2 must be tut2.
+It seems the owner of database dtut2 must be tut2.
 
 
-Login as postgres: sudo su postgres
-create user: createuser userName -P
+Login as postgres: sudo su postgres  
+create user: createuser userName -P  
 create database: createdb --owner userName databaseName

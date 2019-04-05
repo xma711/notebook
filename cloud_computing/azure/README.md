@@ -3,7 +3,8 @@ Use storage account
 
 In Dashboard, follow the steps to create a storage account.
 
-Apparently i can create multiple storage account. just imagine each is one Dropbox account.
+Apparently we can create multiple storage account.
+Just imagine each is one Dropbox account.
 
 Inside one storage account, there are different 'services': blobs, files, tables, queues..
 
@@ -17,14 +18,14 @@ Luckily azure does support Linux machine's access.
 To mount the folder in the local Linux computer, click the '...' beside the folder 'files1' in browser,
 then click 'connect'.
 In the 'connecting from Linux', there is a full command line to mount the file in the local computer.  
-Before that, note that i have to install this cifs-utils first, using: sudo apt-get install cifs-utils (ref: https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-linux)
+Before that, note that we have to install this cifs-utils first, using: sudo apt-get install cifs-utils (ref: https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-linux)
 
-also need to create the mount point first: sudo mkdir /mnt/azure_files1
+Also need to create the mount point first: sudo mkdir /mnt/azure_files1
 
-in my case, the command is: sudo mount -t cifs //xma1.file.core.windows.net/files1 /mnt/azure_files1 -o vers=3.0,username=xma1,password=longlonglongpasswordgivenbyazure,dir_mode=0777,file_mode=0777,sec=ntlmssp
+In my case, the command is: sudo mount -t cifs //xma1.file.core.windows.net/files1 /mnt/azure_files1 -o vers=3.0,username=xma1,password=longlonglongpasswordgivenbyazure,dir_mode=0777,file_mode=0777,sec=ntlmssp
 
-after this, i can access the folder as if it is a Dropbox folder.  
-E.g. if i 'touch hello.txt' in the folder, the file will be auto-synced to the remote folder.
+After this, we can access the folder as if it is a Dropbox folder.  
+E.g. if we do a 'touch hello.txt' in the folder, the file will be auto-synced to the remote folder.
 
 
 Access azure storage account using 'Microsoft Azure Storage Explorer'
@@ -100,11 +101,12 @@ except for data write and early deletion charges in the Cool tier.
 Recommended choice for the storage account
 -----------------------------
 
-After all the reading, the recommended choice for the storage account i think is:
+After all the reading, the recommended choice for the storage account should be:
 Standard, LRS, General purpose v2, HOT.
 
-Note that this is the account only. further, i need to choose the 'container', which can have multiple types to choose, such as blob, files... (ok.. this is confusing..)
-I think the pricing refers to the types of storages used inside the storage account.
+Note that this is the account only.
+Further, we need to choose the 'container', which can have multiple types to choose, such as blob, files..
+The pricing should refer to the types of storages used inside the storage account.
 
 
 Account key
@@ -114,7 +116,7 @@ In the storage account, click 'Access Keys', there will be 2 account keys.
 Any one of them can be used.
 
 Account key is like the root password to this account so it has to be protected safely.  
-I think there is no read/write access control when using the account key.
+There should be no read/write access control when using the account key.
 
 
 Shared access signatures (SAS)

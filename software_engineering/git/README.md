@@ -9,7 +9,7 @@ With git, one is committing changes to the local repo.
 
 But if the local repo has linked to a remote repo such as GitHub, then one can push the changes to the remote repo.
 
-What is doing i believe is always merging. 
+What is done internally should be always merging. 
 
 When one pull a branch from a remote repo to a local branch, there is a merge.
 

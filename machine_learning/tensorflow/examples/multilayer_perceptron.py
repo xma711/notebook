@@ -43,7 +43,7 @@ def neural_network_model(data):
 	return output
 
 # originally there is an input x.
-# but i have a question: do we really need to input x here? x is already global..
+# do we really need to input x here? x is already global.
 # it turns out that it really doesn't need the x here. this way it is easier to be understood
 def train_neural_network():
 # maybe better this way:
@@ -55,7 +55,7 @@ def train_neural_network():
 
 	hm_epochs = 10
 	with tf.Session() as sess:
-		sess.run(tf.global_variables_initializer()) # make the virtual variables real (i think)
+		sess.run(tf.global_variables_initializer()) # make the virtual variables real
 
 		for epoch in range(hm_epochs):
 			epoch_loss = 0

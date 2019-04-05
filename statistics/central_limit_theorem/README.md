@@ -6,7 +6,7 @@ E.g. height of a person could be normal distribution; the number from the dice c
 
 Now the question is: what is the distribution of the sum or average of N observations?
 
-One example is that, if i throw the die 100 times, and get the sum or average, then i ask one person:
+One example is that, if we throw the die 100 times, and get the sum or average, then we ask one person:
 what do you think is the distribution of this sum or average?
 
 If you look at the results, of course there is one single number for the sum or average.

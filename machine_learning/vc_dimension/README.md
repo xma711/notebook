@@ -52,10 +52,10 @@ Sauer's Lemma says that when the vc dimension of a function class H <= d (and d 
 then for any choice of number of input points (m), 
 the largest number of functions that can be obtained (tH(m)) is less than or equal to (mC0 + mC1 + mC2 + ... + mCd).
 
-Why? i don't understand it yet but one explanation is offered here: https://en.wikipedia.org/wiki/Sauer%E2%80%93Shelah_lemma
+Why? One explanation is offered here: https://en.wikipedia.org/wiki/Sauer%E2%80%93Shelah_lemma
 
 (
-try to think of an intuition but failed:  
+Try to think of an intuition but failed:  
 	at the best case, any d points from the m-points set can be shattered by H,
 	then we can partition the m points to m/d sets. 
 	each set has 2^d functions. then what?

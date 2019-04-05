@@ -75,7 +75,7 @@ In Ruby, classes and methods may be considered constants too.
 Seems that the result from the last statement in a method will be auto-returned.
 
 To pass arguments to a method, there is no need for () ..  
-(this can cause some confusion i think.)
+(this can cause some confusion.)
 
 To create a method, it is similar to python: define ... end (of course python doesn't need an end statement)
 

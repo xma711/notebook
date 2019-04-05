@@ -15,7 +15,7 @@ By repeating step 1 to 4, we will have xi = x_{i-1} - f(x_{i-1})/f'(x_{i-1}). Th
 
 If there is a converge, the answer will satisfy f(x) = 0;
 
-If there are multiple answers, i can try and error with a few different x0.
+If there are multiple answers, we can do trial and error with a few different x0.
 
 Example
 ------------------

@@ -6,7 +6,7 @@ will accelerate a building's damage.
 
 If you find yourself working on a project with quite a few broken windows,
 it is all too easy to slip into the mindset of
-"all the rest of this code is crap, i will just follow suit."
+"all the rest of this code is crap, I will just follow suit."
 
 Tip: don't leave broken windows (bad designs, wrong decisions, or poor code) unrepaired.
 Fix each one as soon as it is discovered.
@@ -45,7 +45,7 @@ that generate structure in different languages from a common metadata file.
 (actually, this is to add one more layer of abstraction, as taught in computer architecture module.)
 
 External document and code both contain representation of the same knowledge.   
-(now i understand why doxygen is a useful tool. it generates document from codes.)
+Doxygen is a useful tool because it generates documents from codes.
 
 Comments in header and implementation file ->
 there is no point duplicating a function or class header comment between the two files.
@@ -91,7 +91,7 @@ The larger the number, the less orthogonal the group.
 
 There is an easy test for orthogonal design. 
 Once you have your components mapped out,
-ask yourself: if i dramatically change the requirements behind a particular function,
+ask yourself: if the requirements behind a particular function are dramatically changed,
 how many modules are affected?
 In an orthogonal system, the answer should be one.
 E.g. moving a button on a GUI panel should not require a change in the database schema.

@@ -33,7 +33,7 @@ In short, Li(x) = { (x-x2)(x-x3)...( x-x_{i-1} )( x-x_{i+1} )... } / { (xi-x2)(x
 
 above methods are global; applying one function to all points..  
 There are other methods that use piecewise interpolation.  
-E.g. for every neighboring 2 points, i fit a line or curve to it. 
+E.g. for every neighboring 2 points, we fit a line or curve to it. 
 Then the whole model is connected by these small lines or curves.  
 For some easy methods, the curve may not be smooth enough because the dy/dx at xi may not equal from one small curve to another.
 
@@ -59,8 +59,7 @@ So as long as we have 2 more equations we can solve the unknowns precisely.
 One example to have two more equations are C1'(x0) = known value and Cn'(xn) = known value.
 
 The method in Wikipedia seems to combine xi and yi together, as we can see from condition 3 and 4.  
-Also, the method makes the 2nd derivative of Ci|x=xi equal to the 2nd derivative of Ci+1|x=xi,
-(the method in lecture notes also has this property... nvm..)
+Also, the method makes the 2nd derivative of Ci|x=xi equal to the 2nd derivative of Ci+1|x=xi.
 
 The explanation from lecture notes is harder to understand, but they should carry the same meaning.  
 The method in lecture notes seems to separate xi and yi, each has its own cubic spline.
@@ -70,7 +69,7 @@ Then we introduce one new variable called u, such that 0 <= u <= 1, and we creat
 x = phi(u) = a0 + a1 u + a2 u^2 + a3 u^3 for the line connecting pi and p{i+1}.  
 Now it has nothing to do with y. it is between u and x.  
 Following the method in wikipedia, we will be able to find out all the ai for each section of curve.  
-Now the question is, given a x, how do i translate it to a u for the curve between the 2 points in which x is located?  
+Now the question is, given a x, how do we translate it to a u for the curve between the 2 points in which x is located?  
 Maybe it is just u = (x - xi) / (x{i+1} - xi)..
 
 Ok, let me describe the method in lecture.  
@@ -105,9 +104,9 @@ Question: any difference in the results between this method and the method descr
 
 Another question: after doing all these, we got 2 big sets of equations, one between x and u, the other between y and u,
 how to combine them together to have just x and y ?  
-    -> one solution i can think of is that we have a y = mu(u) function and a x = phi(u) function, then we convert phi(u) to u(x), then sub u(x) to y =mu(u) to make it become y(x).
+    -> one possible solution is that we have a y = mu(u) function and a x = phi(u) function, then we convert phi(u) to u(x), then sub u(x) to y =mu(u) to make it become y(x).
 
-Btw i think another way to solve the problem using similar way in the lecture notes is 
+Btw another possible way to solve the problem is 
 to represent a0 and a1 in term of a2, a3, xi and x{i+1} .. 
 And then we solve a2 and a3 using similar way.
 

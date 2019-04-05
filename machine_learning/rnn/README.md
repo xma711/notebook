@@ -31,6 +31,6 @@ In total we just have to find out W, U  and V.
 In the network, each row of input and W will be mapped to a state (a vector), 
 this state will  be mapped to an output label (a vector) by V.
 
-In some sense, RNN is like hidden Markov model I think. Need to google more on this.
+In some sense, RNN is a bit similar to hidden Markov model.
 
 

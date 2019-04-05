@@ -9,7 +9,6 @@ var expect = chai.expect;
 
 var cartSummary = require('../cart_summary');
 
-// how come i can use function 'describe' directly
 describe('cartSummary', 
 	function () {
 		it ('getSubtotal() should return 0 if no items are passed in', 

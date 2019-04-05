@@ -201,7 +201,7 @@ One example:
 # note that this is list view
 # list view is the concept of displaying a list of objects
 class IndexView(generic.ListView):
-        # if i don't specify a template name, the default name will be polls/question_list.html
+        # if a template name is not specified, the default name will be polls/question_list.html
         template_name = 'polls/index.html'
         # by default the context_object_name in template is "question_list", but we can override it 
         context_object_name = 'latest_question_list'

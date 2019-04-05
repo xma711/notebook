@@ -110,7 +110,7 @@ anyway, it is to:
 
 
 Note that when using the sequenceiq/hadoop-docker image, the default ssh port is 2122.  
-Even when i use ssh xma@my_computer_ip_addr, there won't be connection because the default port in this command is also 2122.  
+Even when using ssh xma@my_computer_ip_addr, there won't be connection because the default port in this command is also 2122.  
 The correct way is: ssh -p 22 xma@192.168.1.132
 
 issue1: jps stuck... after starting the services using start-all.sh, and then type "jps", and then the terminal stops.   

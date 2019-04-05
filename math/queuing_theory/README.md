@@ -27,17 +27,17 @@ Memoryless!
 Whether it is discrete or continuous, the current state only depends on the previous state.  
 It is easier to understand the discrete state scenario.  
 
-For the continuous case, it means that if i pick a time (tp) in the past with state i, the future state at t depends only on state i at tp and the duration (t-tp), not any time before tp.
+For the continuous case, it means that if we pick a time (tp) in the past with state i, the future state at t depends only on state i at tp and the duration (t-tp), not any time before tp.
 One example is the the number of buses that have arrived. 
-If i know that since 10am there are 20 buses, what is the number of buses one hour later? 
+If we know that since 10am there are 20 buses, what is the number of buses one hour later? 
 The expected number of buses arrive in one hour can be calculated from the Poisson distribution, which doesn't need any information before 10am..  
 
 The inter-arrival intervals actually (have to) follow an exponential distribution.  
-As far as i know, exponential distribution is the only one with the memoryless property.
+Exponential distribution has the memoryless property.
 
-Limiting distribution (pi) of the system state exists when
-	- all states can be reached from any other state. 
-	- no state is transient. "transient" means that the state may happen in the past, but with certain probability that it will never happen again. 
+Limiting distribution (pi) of the system state exists when  
+	- all states can be reached from any other state.  
+	- no state is transient. "transient" means that the state may happen in the past, but with certain probability that it will never happen again.  
 	- the expected time to return to a state is finite.
 
 

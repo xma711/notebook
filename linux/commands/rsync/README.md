@@ -10,7 +10,7 @@ example rsync -avzrl -e ssh ./root root@192.168.1.1.201:/
 
 -l: keep symbolic link
 
--e ssh: via ssh i guess
+-e ssh: via ssh
 
 
 note that rsync also changes the mode and user of the directory that is rsynced to.

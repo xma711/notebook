@@ -67,29 +67,25 @@ Present means we want something to be installed in not present, absent means we 
 
 More ad hoc commands can be found in examples/02_multiple/README.md
 
-playbook usage
-----------------------
 
 
 Issues encountered
 --------------------------
 
-When i add 172.17.0.4, a docker ubuntu client, to the hosts file, 
-and then i do a 'ansible test_clients_docker -a "echo hello"',
-it failed.  
+After 172.17.0.4 (a docker ubuntu client) is added to the hosts file, 
+the command 'ansible test_clients_docker -a "echo hello"' failed.  
 The error msg is "MODULE FAILURE".  
 
 The reason is the the client needs to have python2. 
-The ubuntu docker container i used happens to not have python2.  
+The ubuntu docker container used happens to not have python2.  
 So the solution is to install python2 in client os.
 
 Another solution is to use the module "raw" instead of the default module "command".  
-So the full command is 'ansible test_clients_docker -a "echo hello" -u root -m raw' if i don't want to touch the client os.    
+So the full command is 'ansible test_clients_docker -a "echo hello" -u root -m raw' if we don't want to touch the client os.    
 
 Reference of this solution: https://groups.google.com/forum/#!topic/ansible-project/kzLsqoEfX4U
 
 
-the first time that a container is used, there could be this msg:  
+Another issue is that the first time that a container is used, there could be this msg:  
 " The authenticity of host '192.168.10.103 (192.168.10.103)' can't be established "  
-i have to key in "yes" to proceed.  
-How to solve this?
+"yes" has to be keyed in to proceed.  

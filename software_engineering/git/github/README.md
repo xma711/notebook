@@ -197,11 +197,10 @@ If you have a local branch and you want the remote repo to keep a copy of it, th
 *git push origin [the_new_branch]*  
 e.g. *git push origin xma_branch*
 
-but usually extra branches should be temporary and you should remove them when they have been merged to the master branch.
- 
-My personal habit is to create a new branch for a new feature i want to create. most of the time i will keep the branch to my local repo only. when i finished the feature, i will merger the branch to the master branch and delete the temporary branch. and i will repeat the cycle again for a new feature.
+But usually extra branches should be temporary and you should remove them when they have been merged to the master branch.
 
 After you do a git push, you can check the latest changes in github.com too.
+
 
 Resolve conflicts
 --------------------

@@ -15,7 +15,7 @@ from django.http import HttpResponse
 # note that this is list view
 # list view is the concept of displaying a list of objects
 class IndexView(generic.ListView):
-	# if i don't specify a template name, the default name will be polls/question_list.html
+	# if a template name is not specified, the default name will be polls/question_list.html
 	template_name = 'polls/index.html'
 	# by default the context_object_name in template is "question_list", but we can override it 
 	context_object_name = 'latest_question_list'
@@ -45,16 +45,14 @@ class IndexView(generic.ListView):
 # detail view is displaying a detail page for a particular type of object.
 # detail view expects the primary key value captured from the url to be called 'pk'.
 class DetailView(generic.DetailView):
-	# i think the model will tell this function which model to get the object from, based on pk
+	# the model will tell this function which model to get the object from, based on pk
 	model = Question
 	# and then by default, the object will be passed into the template.
 	# how the template will use this object is not this function's business
-	# if i don't specify the template name, the default template name will be "polls/question_detail.html"
+	# if the template name is not specified, the default template name will be "polls/question_detail.html"
 	template_name = 'polls/detail.html'
 
 	# because we only want to display questions have the timestamp <= now, we need to filter the question
-	# wait.. is this make django less efficient by calling the sql to get the queryset first, as what we really want is only 1 object..
-	# i think maybe later the whole sql command will be combined by django
 	def get_queryset(self):
 		"""
 		excludes any questions that aren't published yet

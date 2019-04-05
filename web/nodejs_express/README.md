@@ -23,7 +23,7 @@ The ultimate html file output will be created from the dynamic one,
 and the the output will be replied to the client.
 
 To make express able to generate an app, install "express-generator",
-and then i can use "express" as a command in terminal.  
+and then we can use "express" as a command in terminal.  
 To generate an app, using: express --view=jade myapp  
 after generation, there is a file named package.json listing all the required packages. just use "npm install" (no need other arguments) to install them.
 
@@ -66,8 +66,6 @@ E.g. to add an id to an element, one example:
 to add a link to another page, example:  
 	a(href="/test") To test page.
 
-Anyway after knowing the core ideas, if anything i don't know, i can just google.
-
 
 Ejs
 -------------------
@@ -92,7 +90,7 @@ The whole thing is just like the normal event-listening thing in nodejs, except 
 Socket.io can be used to pass information around.  
 One application is to update part of the html file in the client side without the client having to refresh the webpage.
 
-In that application, i think the process is that:  
+In that application, the process is likely that:  
 client html has listened to an event about the experiment.  
 When the server has new information about one experiment, it emits/fires the event with new data.  
 The client will get the data and update the local html inside the browser and update the view immediately.

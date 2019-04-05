@@ -18,4 +18,3 @@ Examples:
 question: what is the difference between LPWAN and the standards like Alljoyn and Google's weave?  
 	- my understanding: seems Alljoyn defines an overall network stack, including how to register a device, the message format etc,
 	but LPWAN technologies are lower-level communication technologies. 
-	However, i don't know if they can co-exist.

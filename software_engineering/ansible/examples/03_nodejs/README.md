@@ -2,10 +2,10 @@ Reference
 -------------------------
 
 Book "ansible for devops", page 55.  
-(in the book it uses centos. here i use ubuntu 16.04 docker container)
+(In the book it uses Centos. In my test Ubuntu 16.04 docker container is used.)
 
 
-start this app
+Start this app
 -------------------
 
 Ansible-playbook -i hosts playbook.yml --extra-vars="node_apps_location=/usr/local/opt/node" -u root

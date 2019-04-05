@@ -54,7 +54,7 @@ class TestHELLOWORLDclass (unittest.TestCase):
 	def testGetDataLen2(self):
 		print "\nin testGetDataLen2()"
 
-		# no need try_except if i want the unittest framework to capture the failed test
+		# no need try_except if we want the unittest framework to capture the failed test
 		helloworld_obj = HELLOWORLD()
 		self.assertEqual( 20, helloworld_obj.getDataLength() )	# this test will fail because it will use the original getData() function
 	

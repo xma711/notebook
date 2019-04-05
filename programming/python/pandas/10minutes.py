@@ -32,8 +32,6 @@ df__ = pd.DataFrame(np_data, columns = list('ABCD'))
 print "df__ = \n{}\n".format(df__)
 
 # we can also pass a dictionary into Dataframe()
-# however, i think this is a bad idea..
-# unless you understand exactly how dataframe will manipulate the dictionary, it can be hard to predict what dataframe will be created
 dict1 = {
 	'A': 1,
 	'B': pd.Timestamp('20170101'),

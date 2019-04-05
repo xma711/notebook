@@ -72,7 +72,8 @@ Array is like python list .. but unlike python list, an array in swift can only 
 
 Dictionary is like python dictionary .. the types for keys in swift are more limited.
 
-Tuple is like python tuple. tuple in swift can hold anything i think.
+Tuple is like python tuple.
+Tuple in swift should be able to hold anything.
 
 
 Control flow
@@ -188,7 +189,7 @@ It is a bit like defining a new type with a finite set of values.
 Enum in swift shares this property too, but has much more other properties.
 
 1stly, enum in swift doesn't have to be int. they can be many common types.  
-In the header of a enum declaration, i can declare what type of internal values (raw values) will the elements be.  
+In the header of a enum declaration, we can declare what type of internal values (raw values) will the elements be.  
 When it is Int, it falls back to the c style enum. the raw values can be auto-complete too, just like c.  
 When it is other type, like Double or String, then the raw value has to be declared and fixed when creating the enum.
 
@@ -200,4 +201,4 @@ Also, enum in swift can have methods.
 So it seems enum in swift is very  close to a class.  
 Anyway, the method declaration is similar to that in a class. there is "this" keyword too.  
 From the method's point of view, each element in the enum is like a private variable that it can access.  
-Ultimately, if i declare an enum variable, i can call the method using the common varableName.method().
+Ultimately, if we declare an enum variable, we can call the method using the common varableName.method().

@@ -12,11 +12,11 @@ public:
 	// but once the child is casted to a parent class in the polymophism scenario, the parent method will be called; 
 	// this is usually undesired.
 	void print_something() {
-		printf ("i am the parent.\n");
+		printf ("i'm the parent.\n");
 	}
 
 	virtual void print_again() {
-		printf("virtual function: i am the parent.\n");
+		printf("virtual function: i'm the parent.\n");
 	}
 };
 
@@ -24,12 +24,12 @@ class child: public parent {
 public:
 	// try to override the same function in parent that has not virtual keyword
 	void print_something () {
-		printf("i am the child.\n");
+		printf("i'm the child.\n");
 	}
 
 	// this method has virtual keyword in parent
 	virtual void print_again () {
-		printf("virtual function: i am the child\n");
+		printf("virtual function: i'm the child\n");
 	}
 
 	// the results show that the child class can still call the parent class's methods even if they are overridden.
@@ -38,7 +38,7 @@ public:
 		parent::print_something();
 	}
 
-	// the result shows that i can call the parent function even if it is a virtual function
+	// the result shows that we can call the parent function even if it is a virtual function
 	void print_again_from_parent() {
 		printf("child: try to call parent's virtual function:\n");
 		parent::print_again();

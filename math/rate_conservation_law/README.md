@@ -58,7 +58,9 @@ Y = R(t) - a is another different graph on the y-x plane.
 
 Given y =  R(t), if we shift this graph down by a units, then we will have a new graph y = R(t) - a (or y2 = R(t) - a). 
 
-It is not that R(t) becomes R(t) -a. they are two different lines, totally. just that their relationship is that if i take the R(t) line, and shift it down by a units (in the process, it is not R(t) any more), i will get the line for R(t) -a.
+It is not that R(t) becomes R(t) -a.
+They are two different lines, totally.
+Just that their relationship is that if we take the R(t) line, and shift it down by a units (in the process, it is not R(t) any more), we will get the line for R(t) -a.
 
 When y2 > 0, it means R(t) - a > 0 ==> R(t) > a ==> y > a (the y values in graph 1 > a).
 

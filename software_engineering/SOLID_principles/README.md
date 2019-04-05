@@ -16,7 +16,7 @@ DIP: the dependency inversion principle
 reference: http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
 
 
-liskov substitution principle (LSP)
+Liskov substitution principle (LSP)
 -------------------------------------
 
 Reference: http://stackoverflow.com/questions/56860/what-is-the-liskov-substitution-principle#comment13317449_584732
@@ -26,7 +26,7 @@ So we may incline to make a square class by inheriting a rectangle class.
 
 However, one basic question to ask is that:
 in all the functions that uses a rectangle class reference,
-can i substitute it with its derived class, such as the square class?
+can we substitute it with its derived class, such as the square class?
 
 If the answer is no, it means square should not inherit from rectangle.
 
@@ -45,6 +45,7 @@ objects of derived classes without knowing it.
 Practical tip:
 set an invariant function on the base class. 
 When rectangle is the base class, one invariant should be:
+
 ```
 void invariant(Rectangle* r) {
 	r->setHeight(200);
@@ -53,7 +54,7 @@ void invariant(Rectangle* r) {
 }
 ```
 
-i think another example is the ns2 simulator design.
+Another example is the ns2 simulator design.
 There is a base class that basically has a recv() method only,
 and all other classes simply inherit from this base class
 and have different implementations on the recv() function.

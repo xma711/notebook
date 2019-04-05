@@ -33,8 +33,6 @@ step 2: run until converged:
 	2.3 ok get pi' = sRpi + T;  
 outputs: s, R, T, pi'
 
-(seems quite straightforward..)
-
 
 Affine transformation: a non-rigid transformation 
 ---------------------------------------------------
@@ -48,8 +46,10 @@ but this time we can use linear fitting.
 Let qi = ui = (u v w).T, and pi = (x1, x2, x3).T, 
 from the equation we can have  
 u = sR11 x1 + sR12 x2 + sR13 x3 + T1, or
-u = a11 x1 + a12 x2 + a13 x3 + a14 , which is clearly a linear function.  
-Same for v and w.  
+u = a11 x1 + a12 x2 + a13 x3 + a14 , which is clearly a linear function.
+
+Same for v and w.
+
 In fact, we can solve u v and w at one go:  
 U = D A.T, where each row of U is one data point of qi (target), 
 each row od D is one data point of pi (reference), 
@@ -57,6 +57,7 @@ and each column of A.T is the coefficients for each dimension (e.g. first column
 The answer: A.T = (D.T D)^(-1) D.T U.
 
 This should be approximation when there are quite some points.
+
 
 Nonrigid ICP (Iterative Closest Point)
 ------------------------------------------
@@ -66,7 +67,7 @@ It is better to read the original paper if this technique is ever needed..
 This method is to locally apply Affine transformation..
 
 Pi: position of mesh vertex i on reference surface. 
-I think, to understand this, just imagine there is a 2d plane on the x-y space, and each pi is a point on the plane, like (1, 1), (1,2), (2,2), etc.
+To understand this, just imagine there is a 2d plane on the x-y space, and each pi is a point on the plane, like (1, 1), (1,2), (2,2), etc.
 
 What we are going to do is to get 3 error functions and somehow arrange them in a linear way so that it can be solved by linear fitting..
 
@@ -103,8 +104,8 @@ This means that (i,j) is something we already know. in fact we can know because 
 
 Finally, we have the overall error function E = Ed + alpha Es + beta El
 
-for the first error Ed, arrange it in a more compact way.  
-Let D = diag(pi.T), so it is a nx4n matrix. it is 4 because i need to add a 1 to each pi. 
+For the first error Ed, arrange it in a more compact way.  
+Let D = diag(pi.T), so it is a nx4n matrix. It is 4 because we need to add a 1 to each pi. 
 A = [A1 .. An].T, as Ai is 3x4 matrix, so A is (3x4n).T = 4nx3 matrix.  
 U = [u1 .. un].T, as ui is 3x1, U is nx3 matrix.  
 W = diag(w1, .., wn) so it is a nxn matrix
@@ -112,7 +113,7 @@ then Ed can be rearranged as Ed = || W(DA - U) ||^2 @F.
 Inside it is a nx3 matrix.
 
 For the 2nd error El, similarly we have El = ||Dl A - Q||^2 @F, 
-where Dl = diag(p1.T .. pn.T) where pi contains only the pi that have exact correspondences (i guess other rows are just 0), a nx4n matrix;  
+where Dl = diag(p1.T .. pn.T) where pi contains only the pi that have exact correspondences (other rows should be just 0), a nx4n matrix;  
 A should be the same, 4nx3 matrix,  
 Q = [q1 .. qn].T (contains only corresponding qi) is a nx3 matrix..   
 Inside El it is a nx3 matrix.
@@ -187,4 +188,3 @@ This is a constraint least square problem.
 One familiar way to solve this is the lagrange multiplier method, but it only gives approximated answer.
 
 Another way is QR factorization, which gives exact answer.
-Here i won't go to details. just refer to notes.

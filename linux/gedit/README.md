@@ -1,4 +1,5 @@
-Surprisingly, gedit has something i don't know but useful.
+Plugins
+-------------------
 
 Get the terminal work: http://mylinuxbook.com/embedded-terminal-a-gedit-plugin/
 
@@ -10,9 +11,9 @@ change background color: http://askubuntu.com/questions/67593/make-gedit-embedde
 
 get the python console work: https://help.gnome.org/users/gedit/stable/gedit-plugins-pyconsole.html.en
 
-To enable the Python console, select gedit ▸ Preferences ▸ Plugins ▸ Python Console.
+To enable the Python console, select gedit -> Preferences -> Plugins -> Python Console.
 
-Once the Python console is enabled, you can open it by selecting View ▸ Bottom Pane, 
+Once the Python console is enabled, you can open it by selecting View -> Bottom Pane, 
 or just press Shift+F9.
 
 

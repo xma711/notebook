@@ -16,7 +16,7 @@ then P(Xt <= x)
     = 1 - exp(-lambda * x)
 ```
 
-therefore, the CDF of Xt is that P(Xt < x) = 1 - exp(-lambda * x).  
+Therefore, the CDF of Xt is that P(Xt < x) = 1 - exp(-lambda * x).  
 
 And this is the exponential distribution, in which the random variable Xt is the time taken for one additional event to occur.
 
@@ -26,7 +26,7 @@ After knowing this, then we know that the probability that the additional arriva
 In fact, this is equivalent to saying that there is at least one event happens within the duration x.  
 If understanding this, it is easy to understand exponential distribution.
 
-The usual confusion i have is that the additional arrival that arrives within the period x means only one arrival happens in period x. 
+One usual confusion is that the additional arrival that arrives within the period x means only one arrival happens in period x. 
 This is WRONG!  
 We are concerning about the time taken for the next arrival to happen, 
 but the probability of the time taken being less than x automatically includes the cases that more than one arrival occurs during period x.
@@ -55,7 +55,7 @@ Memoryless or Markovian property
 P{X > s+t | X > s} = P{X > t}  meaning whatever has happened doesn't matter to calculating the future probability
 
 
-other info
+Other info
 -----------------
 
 Reference: https://www.probabilitycourse.com/chapter4/4_2_2_exponential.php

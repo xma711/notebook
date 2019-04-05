@@ -22,7 +22,7 @@ In fact in this case they are not linear by nature.
 
 There are 2 approaches.  
 First one is that we don't mind not separating them cleanly. we just want to find the best line that allow us the chop them to 2 classes even if there could be some points that lie on the wrong side.  
-This is the soft svm i think.  
+This is the soft svm.  
 (hard svm is that we need to cleanly classify each point on the training set to its label correctly based on the labels.)
 
 Another approach may be better. it is to map each point to a higher dimensional space.
@@ -140,10 +140,6 @@ If the data points are separable, one way to solve this is to use soft svm.
 The cost of soft svm has 2 components.
 
 One is that it still wants to minimize the ||w|| (cost 1), which is to maximize the margin.
-
-Wait.. margin of what? it is not separable in this case..
-
-I think it is the distance between 2 hyperplanes beyond which there are supposedly no classification errors (but there are classification errors between the hyperplanes).
 
 If this margin is widen, in this case more points will lie on the wrong size.
 

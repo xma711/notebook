@@ -25,24 +25,24 @@ the steps are roughly:
 8. reboot and choose Archlinux. if the network is not on, start the network by "ip link set eth0/enp8s0[interfaceName] up" and then "dhcpcd". reference: https://wiki.archlinux.org/index.php/Network_configuration. to use ifconfig, pacman -S net-tools
 
 
-pacman
+Pacman
 -----------
 
 To see pacman manual: man pacman
 
-pacman has operations and options. operations are just like options with capitals, like -S means sync, -R means remove etc. 
+Pacman has operations and options. operations are just like options with capitals, like -S means sync, -R means remove etc. 
 Options are used to affect operations, so the same option can mean different things with different operations.
 
 To refresh the package list: *pacman -Syy* (-S: synchronize; -Sy: refresh)
 
-to update the whole system: *pacman -Syu* (-Su: sysupgrade)
+To update the whole system: *pacman -Syu* (-Su: sysupgrade)
 
-to install a package: *pacman -S package_name*
+To install a package: *pacman -S package_name*
 
-to search a package: *pacman -Ss package_name*
+To search a package: *pacman -Ss package_name*
 
 
-system upgrade issues
+System upgrade issues
 -------------------------
 
 1. error package-query: requires pacman"<"4.2  
@@ -52,18 +52,23 @@ system upgrade issues
 2. if sg's mirror address not working, can try this: Server = http://sg.mirror.archlinuxarm.org/$arch/$repo 
 (change it in /etc/pacman.d/mirrorlist)
 
-3. ca-certificates-utils error...
+3. ca-certificates-utils error.
+
 ```
 (211/211) checking for file conflicts                        [#################################] 100%
 error: failed to commit transaction (conflicting files)
 ca-certificates-utils: /etc/ssl/certs/ca-certificates.crt exists in filesystem
 ```
-solution: https://www.archlinux.org/news/ca-certificates-utils-20170307-1-upgrade-requires-manual-intervention/  
-pacman -Syuw                           # download packages  
-rm /etc/ssl/certs/ca-certificates.crt  # remove conflicting file  
-pacman -Su                             # perform upgrade  
 
-network issue
+Solution: https://www.archlinux.org/news/ca-certificates-utils-20170307-1-upgrade-requires-manual-intervention/
+
+```
+pacman -Syuw                           # download packages
+rm /etc/ssl/certs/ca-certificates.crt  # remove conflicting file
+pacman -Su                             # perform upgrade
+```
+
+Network issue
 ------------------
 
 Eth0 disappears after upgrade. using ifconfig eth0 up shows "libphy: PHY 4a101000.mdio:01 not found".
@@ -76,16 +81,21 @@ Downgrade a package
 
 Objective: download the linux-headers-am33x-legacy-3.8.13-31-armv7h.pkg.tar.xz when the current repo holds only the latest packages
 
-if i do a pacman -Ss header | grep 3.8 , i cannot find the linux-headers-am33x-legacy header package i want.
+From 'pacman -Ss header | grep 3.8' , there does not exist this linux-headers-am33x-legacy header package wanted in my test.
 
 The easiest way is to get a arch arm rollback machine and download the package. one candidate is http://rollback.adminempire.com/alarm-rollback-machine/ but it appears to be down.
 
-Https://wiki.archlinux.org/index.php/Arch_Linux_Archive tells me that there is this agetpkg program (that can be installed by pacman) and it can be used to look for old package, but i cannot find any.  
-The mirror link suggested looks like for x86 and i686 only (Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch) (in fact, the ARM mentioned stands for Archlinux rollback machine, not for arm7)
+Reference https://wiki.archlinux.org/index.php/Arch_Linux_Archive tells that there is this agetpkg program (that can be installed by pacman)
+and it can be used to look for old package,
+but somehow it cannot be found.
 
-one more way is to use the downgrade script, downloadable from https://aur.archlinux.org/packages/downgrade/ . it seems to use http://repo-arm.archlinuxcn.org/ by default, but is arm doesn't mean arm7 but Arch Rollback Machine... damn!
+The mirror link suggested looks like for x86 and i686 only (Server=https://archive.archlinux.org/repos/2014/03/30/$repo/os/$arch)
+(In fact, the ARM one mentioned stands for Archlinux rollback machine, not for arm7)
 
-Another way is to rebuild the package based on https://wiki.archlinux.org/index.php/Downgrading_packages. but i need to find the right source to build.
+One more way is to use the downgrade script, downloadable from https://aur.archlinux.org/packages/downgrade/ . it seems to use http://repo-arm.archlinuxcn.org/ by default, but is arm doesn't mean arm7 but Arch Rollback Machine... damn!
+
+Another way is to rebuild the package based on https://wiki.archlinux.org/index.php/Downgrading_packages.
+But we need to find the right source to build.
 
 One active rollback machine for arm can be found at http://tardis.tiny-vps.com/aarm/repos/ but it started from 2015 Dec only.
 
@@ -96,13 +106,16 @@ Reference: https://wiki.archlinux.org/index.php/Fonts  (section: Console fonts)
 
 previewing: from terminal, setfont lat2-16 -m 8859-2 (It means that second part of ISO/IEC 8859 characters are used with size 16)  
 (all the available fonts can be found at /usr/share/kbd/consolefonts/)   
-(to make it smaller, i can change lat2-16 to lat2-14, lat2-10 etc)
+(to make it smaller, we can change lat2-16 to lat2-14, lat2-10 etc)
 
-To make the change permanent, i can add something to /etc/vconsole.conf (create this file if it is not there):
+To make the change permanent, we can add something to /etc/vconsole.conf (create this file if it is not there):
+
 ```
 FONT=lat2-16 
 ```
-FONT_MAP=8859-2 (don't add this line, coz the tab, ctrl etc wont work..)
+
+Btw don't add the following line:  
+FONT_MAP=8859-2 (because after adding it, the tab, ctrl etc wont work..)
 
 
 Change console rotation
@@ -111,10 +124,10 @@ Change console rotation
 Echo 1 > /sys/class/graphics/fbcon/rotate for a rotation of 90% (or echo 2/3 for 180 and 270)
 
 
-wake up screen at console
+Wake up screen at console
 -------------------------
 Possible solution: echo 0 > /sys/class/graphics/fb0/blank  
 reference: https://groups.google.com/forum/#!topic/beagleboard/MdOBsXNXzEI
 
-other ways: http://superuser.com/questions/152347/change-linux-console-screen-blanking-behavior  
-like: put "consoleblank=0" in uEnv.txt
+Other ways: http://superuser.com/questions/152347/change-linux-console-screen-blanking-behavior  
+Like: put "consoleblank=0" in uEnv.txt

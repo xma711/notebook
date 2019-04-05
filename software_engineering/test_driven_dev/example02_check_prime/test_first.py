@@ -8,8 +8,8 @@ import check_prime # going to have a check_primenacci module
 # the length of the list is n
 
 # things to test:
-# 1. when i input number less than 1, it will complain
-# 2. when i input number n (1 or more), it will return a list of check_primenacci number with length n
+# 1. when input number is less than 1, it will complain
+# 2. when input number is n (1 or more), it will return a list of check_primenacci number with length n
 
 # Run this test: python -m unittest test_first (cannot have ./ or .py)
 

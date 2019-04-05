@@ -20,7 +20,7 @@ print g1
 # this ends when there is no more value generated from the generator;
 for i in g1:
 	print i
-	# print g1 # interestingly, g1's address does not change.. i don't know how the system keeps track of this. anyway not so important to know this.
+	# print g1 # interestingly, g1's address does not change.
 
 # when we iterate thru a generator a second time, there won't be anything inside!!
 print "\t2nd time:"
@@ -31,8 +31,8 @@ for j in g1:
 # a generator generates the values on the fly!!
 # the x*2 is a bit like "yield x*2" in the create_generator() function below..
 #
-# imagine that i write it in this way: for i in (x for x in range(10)), then obviously nothing is stored in the memory...
-# with this way of imagination, then just assume that the code can only be pasted once; the next time it will be nothing..
+# imagine that we write it in this way: for i in (x for x in range(10)), then obviously nothing is stored in the memory.
+# with this way of imagination, then just assume that the code can only be pasted once; the next time it will be nothing.
 # not sure if this is the right way of thinking...
 
 # also note that the keyword "yield" is a bit like "return" but it returns a generator!

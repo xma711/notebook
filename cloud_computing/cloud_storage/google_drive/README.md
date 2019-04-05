@@ -14,7 +14,7 @@ usage
 Create a folder, e.g. drive, and cd to the folder and do a 'drive init'.  
 The instruction will tell me how to set the credentials in this folder to point to one particular google drive account.
 
-Subsequently in this folder, i can do 'drive pull -hidden folder_name' to pull exactly one particular folder.
+Subsequently in this folder, we can do 'drive pull -hidden folder_name' to pull exactly one particular folder.
 
 To see the listing: drive list
 
@@ -34,14 +34,14 @@ Notes
 -----------------------
 
 For shared folder, you have to add the folder to your own drive before you can use 'drive pull folder_name'.  
-(i cannot find a way to pull a shared folder directly.)
+(Not sure if there is a way to pull a shared folder directly.)
 
 The folder will still be 'shared' mode.
 I.e. whatever changes done in your drive will be reflected in the shared folder.
 
-E.g. i create a subfolder in a shared folder,
-then i right click this subfolder and add to my drive.
+E.g. create a subfolder in a shared folder first,
+then right click this subfolder and choose to add to `my drive'.
 
-Then in my local machine in the appropriate folder, i can do a 'drive pull -hidden subfolder'.  
+Then in the local machine in the appropriate folder, we can do a 'drive pull -hidden subfolder'.  
 Note that the option -hidden allows me to pull the files and folders with names starting with '.'.
 

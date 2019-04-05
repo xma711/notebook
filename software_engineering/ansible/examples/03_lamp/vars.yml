@@ -1,9 +1,0 @@
----
-# the core version you want to use
-drupal_core_version: "8.0.x"
-
-# the path where drupal will be downloaded and installed
-drupal_core_path: "/var/www/drupal-{{ drupal_core_version }}-dev"
-
-# the resulting domain will be [domain].dev (with .dev appended)
-domain: "drupaltest"

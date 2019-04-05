@@ -43,7 +43,7 @@ A ruby symbol is a thing that has both a number (integer) representation and a s
 Integer representation:  :mysymbol.to_i ; string representation:  :mysymbol.to_s  ;   
 by default in ruby, a symbol yields the string representation even without the .to_s conversion.
 
-A symbol is more light-weight than a string class in ruby.. (that is what i understand)  
+A symbol should be more light-weight than a string class in ruby.  
 
 a symbol is not a raw string like what is in c.  
 It is still a class and it has its methods.

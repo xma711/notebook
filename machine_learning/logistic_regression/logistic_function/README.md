@@ -39,7 +39,7 @@ Reference: http://machinelearningmastery.com/logistic-regression-tutorial-for-ma
 
 If Y = 1 or 0, then it is easier because we can use Yi as the observed probability to compare with the estimated probability from the model (from 0 to 1).  
 
-If Y is something like 1 and -1, i guess we have to represent -1 by 0, meaning it is not 1.
+If Y is something like 1 and -1, we may have to represent -1 by 0, meaning it is not 1.
 Then we can use the same way to estimate the unknown parameters inside the model.
 
 What exactly is the cost function?  

@@ -20,7 +20,7 @@ Different modes of a shell
 ------------------------
 Interactive: means that the commands are run with user-interaction from keyboard.
 
-Non-interactive: the shell is probably run from an automated process so i can't assume if it can request input  
+Non-interactive: the shell is probably run from an automated process so we can't assume if it can request input  
 or that someone will see the output.
 
 Login: means that the shell is run as part of the login of the user to the system.  

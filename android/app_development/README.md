@@ -57,14 +57,14 @@ Intent
 Intent is a request to start an activity.  
 This can be done within an app, or from an app's activity to another app's activity.
 
-E.g. when i start a game, the default activity will be activated (usually the "welcome" page).  
-Then when i click something on the menu, it will jump to another view on the screen; 
+E.g. when we start a game, the default activity will be activated (usually the "welcome" page).  
+Then when we click something on the menu, it will jump to another view on the screen; 
 this is done by the default activity creating an intent to start the corresponding activity based on my input.
 
 In fact, this is called explicit intent, in which an activity specifies precisely which activity to start in the intent.  
 Another type of intent is the implicit intent, in which an activity only has to specify the general action and let the android OS to list out the possible apps that can handle that intent.  
 One example is to open a url.  
-The activity can create an intent to open a url (something like Intent i = new Intent(Intent.ACTION_VIEW, url));  
+The activity can create an intent to open a url (something like Intent i1 = new Intent(Intent.ACTION_VIEW, url));  
 and then start the activity : startActivity(i).
 
 If the activity want to start another activity and gets returning results, then use startActivityForResult()..
@@ -91,7 +91,7 @@ and add another one for landscape, then the app magically is able to switch to l
 app/java/com.example.xma.myfirstapplication/
 ----------------------------------------
 
-This folder stores all the java files i think.  
+This folder should store all the java files.  
 The main one is MainActivity.java.
 
 In the class MainActivity (extends AppCompatActivity), 
@@ -118,7 +118,7 @@ while the xml files in app/res/layout/ are the views of the app!
 App/res/activity_main.xml
 ---------------------------------
 
-I guess for every activity there must be a corresponding xml file to state the layout.
+For every activity there should be a corresponding xml file to state the layout.
 
 Anyway, for the MainActivity, the layout file is app/res/activity_main.xml.
 

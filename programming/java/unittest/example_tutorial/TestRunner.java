@@ -1,6 +1,3 @@
-/* i think this class is needed to run the unit-testing class (TestJunit.java in this case) \;
- * because there is no main function in hte unit-testing class
- */
 
 // need to pay attention to the package names; capital letters cannot be written as small letters
 

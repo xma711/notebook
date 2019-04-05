@@ -4,7 +4,7 @@
 
 class HELLOWORLD : public HELLOWORLD_INTERFACE {
 
-// this class has to be made inheritable so that i can be mocked by google mock
+// this class has to be made inheritable so that it can be mocked by google mock
 //class HELLOWORLD  : public HELLOWORLD_INTERFACE {
 public:
 	// constructor

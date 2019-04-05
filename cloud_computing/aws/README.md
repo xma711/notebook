@@ -15,7 +15,6 @@ These block devices can then be used like any raw block device.
 In a typical use case, this includes formatting the device with a filesystem (e.g. ext4) and mounting the said filesystem.
 EBS also supports a number a advanced features, like snapshotting and cloning.
 
-Ref(S3): https://en.wikipedia.org/wiki/Amazon_S3  
 S3 provides highly salable object storage and is suited to both small and large repositories of objects.  
 S3 provides storages through web services interfaces (REST, SOAP and BitTorrent).
 
@@ -39,7 +38,7 @@ Testing
 
 Follow: http://www.brianlinkletter.com/create-a-free-virtual-private-server-on-amazon-web-services/
 
-anyway i created an ec2 instance (a vm) using t2.micro type;
-also i added a new key, which can be generated from the amazon web interface (i have to download the pem private-key file).  
-Later i can access it using ssh -i ~/.ssh/aws-test1.pem  ubuntu@54.218.142.214  
-not sure if this will incur a cost to my account since my account is not new.
+Firstly create an ec2 instance (a vm) using t2.micro type;
+Also add a new key, which can be generated from the amazon web interface (The pem private-key file has to be downloaded).  
+Later it can be accessed using ssh -i ~/.ssh/aws-test1.pem  ubuntu@IP_ADDRESS  
+

@@ -4,7 +4,7 @@ Tensorflow
 Tensorflow is somewhat similar to numpy.
 But numpy is executed immediately, while tensorflow 'variables' need to be explicitly evaluated in a session.
 
-I think i have to think of any tensor as a function.
+It seems that any tensor can be seen as a function.  
 Even tf.constant(1.0) is a function, not a constant by its type.  
 Only after we run/eval the function, we can get the returned value.
 
@@ -92,7 +92,6 @@ thinking about it, one naive implementation of tensorflow is just to define many
 Each tensor is one function.
 Function will not be executed until they are called.
 The so-called state in each tensor is just the returned value of each function.  
-If i imagine in this way, things will be much easier to understand.
 
 To convert numpy array to tensor:  
 ```

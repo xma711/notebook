@@ -55,7 +55,7 @@ when using p value, we also need a 'threshold'.
 E.g. if we set our threshold to be 0.025,
 then if p < 0.025, we have to reject the null hypothesis because the observed value is too 'far' away from the hypothesized mean.
 
-As long as i understand the concept of p value, the whole process is exactly equivalent to the method when using z value.
+The whole process is exactly equivalent to the method when using z value.
 
 In conclusion, a large p value favor the null hypothesis while a small p value may lead to rejection of the null hypothesis.
 
@@ -77,7 +77,7 @@ We can use similar way to decide if we want to reject or not reject the null hyp
 More general case
 -----------------------------------
 
-I think as long as we have a null and an alternative hypothesis and has a way to reject or not reject the null hypothesis (assume the null hypothesis is correct in the first place),
+As long as we have a null and an alternative hypothesis and has a way to reject or not reject the null hypothesis (assume the null hypothesis is correct in the first place),
 it will be considered a hypothesis test.
 
 One example is the test of goodness of fit.

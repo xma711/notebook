@@ -61,9 +61,9 @@ $:~/github/notebook/linux/commands/chmod$ touch test/newfile
 touch: cannot touch ‘test/newfile’: Permission denied
 ```
 
-the read bit allows the affected user to list the files within the directory.  
+The read bit allows the affected user to list the files within the directory.  
 Note that this is a totally different thing from the execute bit.  
-If i know there is a file and its name in a folder and its name and then i can still execute on it!
+If we know there is a file and its name in a folder and its name and then we can still execute on it!
 
 E.g.  
 ```

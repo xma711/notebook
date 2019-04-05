@@ -7,13 +7,13 @@ Link: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstance:id=pos
 after a few minutes, the endpoint (domain name) and port will appear.
 
 The security group will be automatically created based on my current ip address.  
-E.g. i access aws from nus, my public ip address is 137.132.190.150, and then the security group will be:  
+E.g. when accessing aws from nus, my public ip address is 137.132.190.150, and then the security group will be:  
 ```
 Security group		Type		Rule
 rds-launch-wizard	CIDR/IP		137.132.190.150/32
 ```
 
-connect to the instance from local ubuntu
+Connect to the instance from local ubuntu
 ----------------------------------------------
 
 Reference: https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/
@@ -28,7 +28,7 @@ driver is postgressql (this step will prompt me to select the driver just downlo
 url is jdbc:postgresql://postgres-aws-test.cvbfx5rmnyq6.us-east-1.rds.amazonaws.com:5432/playground
 
 
-issues
+Issues
 ----------------
 
 Fail to connect with an error msg:  

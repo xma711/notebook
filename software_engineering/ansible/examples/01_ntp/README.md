@@ -13,8 +13,8 @@ btw the dockernet is created using docker. refer to the README.md in devops/exam
 
 of course have to setup the public key in the container so that the host machine (and thus ansible) can access the container.
 
-In the book "Ansible for DevOps", the author uses centos in chapter 2, 
-but in china it is quite inconvenient to download centos virtualbox image, so i use ubuntu docker image instead.
+In the book "Ansible for DevOps", the author uses centos in chapter 2.
+In my test ubuntu docker image is used instead.
 
 
 Use command line to ping
@@ -24,14 +24,14 @@ Ansible -i ./hosts ubuntu_test -m ping -u root
 (use the local inventotry file "hosts" instead. -m refers to the module)
 
 
-use playbook
+Use playbook
 ------------------------------
 
 Ansible-playbook -i ./hosts ./playbook.yml -u root  
 (don't forget about the "-u root" to use the right ssh keys)
 
 
-results
+Results
 --------------------
 
 ```
@@ -48,7 +48,7 @@ PLAY RECAP *********************************************************************
 192.168.10.102             : ok=3    changed=2    unreachable=0    failed=0 
 ```
 
-interpretation:  
+Interpretation:  
 ntp has been installed and running in 192.168.10.101, so there is nothing changed.  
 But ntp is not installed in 102. ultimately there are 2 changes. one is to install ntp and the other is start ntp.  
 If we run again, then both changes will be 0.

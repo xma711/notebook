@@ -22,7 +22,7 @@ The configuration files for the app have to be maintained in this way too.
 
 More over, configuration files should be tested too.
 
-I think one way to make sure the production or testing environment can be produced from configuration files is to use docker.  
+One way to make sure the production or testing environment can be produced from configuration files could be to use docker.  
 By writing the Dockerfile for different env, it is easy to produce the OS.  
 However, for network-wide environment, we may still need to use some scripts to auto deploy the docker images to multiple machines.
 
@@ -58,29 +58,9 @@ there are a few tools: Cucumber, JBehave, Condordion and Twist.
 Usually they follow a "given-when-then" model for tests.  
 There is a cucumber plugin for Jenkins.
 
-How the question is: how to write an automated acceptance test? 
-(i need other materials to pick this skill up. in fact, the chapter 8 of this book will elaborate more on automated acceptance testing.)
-
 User acceptance tests are slightly higher level.  
 The lowest level is unit tests.  however, they may miss the bugs resultant from the interactions of different components.   
 Then it should be component tests, which are to test larger clusters of functionality. this may involve database, filesystem, setup..  
 There also another one, called deployment tests, which are used for check if the application is correctly installed, configured, able to contact any services it requires and that it is responding.  
 
 
-Thinking
---------------------
-
-Can i apply continuous delivery to my personal life?  
-What does this even mean?  
-
-I should have some goals in life.  
-Whatever i do, i should contribute to these goals.  
-I should see the feedbacks of an action as early as possible; and if an action leads to no contribution, then i should stop it.  
-
-How can i build a pipeline from actions to goals?  
-Is it a mental pipeline or a physical pipeline?  
-One way i can think of is that i can have some programs running somewhere, and if i take an action, i should record it down in the system.
-Then the system will immediately give me feedbacks!  
-This sounds like a good idea!  
-For obvious ones i should know the answer easily.  
-For complicated actions, if possible the system should do some machine learning to extract basic actions/features from it and then go through the system to decide whether it is good or not.

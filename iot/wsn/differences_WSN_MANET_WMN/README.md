@@ -7,23 +7,24 @@ The concepts of WSN, MANET and wireless mesh networks can be confusing.
 To make things clear, the concepts are summarized as below:  
 
 	- WSN: fixed wireless sensor network. must have sensors. 
-		boards can be both powerful (like BBB, raspberry pi) or not powerful (like Arduino). 
-		they can be solar powered or mains-powered.
-		the routing protocols needed are less required to handle mobility.  
+		Boards can be both powerful (like BBB, raspberry pi) or not powerful (like Arduino). 
+		They can be solar powered or mains-powered.
+		The routing protocols needed are less required to handle mobility.  
 
 	- MANET: mobile ad hoc network. topology is changing. routing is the main issue. 
-		there can be a mobile ad hoc wireless sensor network, 
+		There can be a mobile ad hoc wireless sensor network, 
 		and then it will be considered as a combination of MANET and WSN. 
-		the routing protocols need to handle mobility, like AODV, DSR, DSDV etc. 
+		The routing protocols need to handle mobility, like AODV, DSR, DSDV etc. 
 
 	- Wireless mesh network: simply an extension of internet; 
-		like WiFi APs without the cables (WMN Routers). it is relatively high-speed network, and is close to human daily usages. 
-		there can be WMN clients (an end terminal itself that provides applications) that cannot provide network to others 
-		but they can mesh among themselves as well as the WMN Routers. 
-		the routing protocols need to handle mobility, e.g. 802.11s-draft, AODV..  
-		there could be new MAC protocols to allows WMN routers to have higher bandwidth (CSMA based have some limits)
+		Like WiFi APs without the cables (WMN Routers). it is relatively high-speed network, and is close to human daily usages. 
+		There can be WMN clients (an end terminal itself that provides applications) that cannot provide network to others 
+		But they can mesh among themselves as well as the WMN Routers. 
+		The routing protocols need to handle mobility, e.g. 802.11s-draft, AODV..  
+		There could be new MAC protocols to allows WMN routers to have higher bandwidth (CSMA based have some limits)
 
-see below for more detailed comparisons.
+See below for more detailed comparisons.
+
 
 Differences among WSN, MANET and wireless sensor networks
 ----------------------------------------------------------
@@ -32,9 +33,9 @@ Interestingly, the differences are not on the literal meaning of the names.
 Otherwise wireless mesh networks must be the superset of WSN and MANET because all them use mesh routing. 
 And MANET must be a superset of WSN because MANET can deal with both mobile and fixed nodes.
 
-I think the differences lie on the real-world applications of the networks and the names are not detailed enough.
+The differences lie on the real-world applications of the networks and the names are not detailed enough.
 
-I think to make things less confusing, wireless sensor network should be called: wireless mesh sensor (power-constrained) fixed network;  
+To make things less confusing, wireless sensor network should be called: wireless mesh sensor (power-constrained) fixed network;  
 MANET should be called: mobile ad hoc wireless mesh network;  
 wireless mesh network: wireless mesh more-powerful not-power-constrained network; (can be mobile or not mobile or hybrid)
 
@@ -70,13 +71,12 @@ Application of MANET:
 	- personal area networks (PAN) using laptops, smartphones, smartwears etc  
 
 
-differences between WSN and "mobile ad-hoc network MANET
+Differences between WSN and "mobile ad-hoc network MANET
 -------------------------------------------------------------------------------------------
 
 Based on https://www.quora.com/What-is-the-difference-between-wireless-sensor-networks-and-ad-hoc ,
 WSN's topology is more stable (nodes are fixed), so routes are fixed most of the time. 
-Of course, nodes in WSN are to sense something..
-(the decision of what routes to send can be determined by gateway only based on the link. though i don't agree..)
+Of course, nodes in WSN are to sense something.
 
 On the other hand, ad-hoc usually means mobile or changing topology. 
 The network must repeatedly reconfigure its routes. 

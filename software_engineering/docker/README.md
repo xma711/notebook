@@ -3,33 +3,33 @@ Commands
 
 Useful tutorial: https://www.docker.com/tryit/
 
-check version: *docker version*
+Check version: *docker version*
 
-search images relating to tutorial: *docker search tutorial*
+Search images relating to tutorial: *docker search tutorial*
 
-download the tutorial image: *docker pull learn/tutorial*
+Download the tutorial image: *docker pull learn/tutorial*
 
-start a container and run a command in it: *docker run learn/tutorial echo "hello world"*
+Start a container and run a command in it: *docker run learn/tutorial echo "hello world"*
 
-install an app ping (not saving yet): *docker run learn/tutorial apt-get install -y ping*
+Install an app ping (not saving yet): *docker run learn/tutorial apt-get install -y ping*
 
-to find the id of the container when running the process of installing the ping: *docker ps -l*
+To find the id of the container when running the process of installing the ping: *docker ps -l*
 
-to save the container as a new image: *docker commit 6982a99 learn/ping*  (ie docker commit container_id repo_name)
+To save the container as a new image: *docker commit 6982a99 learn/ping*  (ie docker commit container_id repo_name)
 
-run the new image: *docker run learn/ping ping www.google.com* (docker run takes a minimum of 2 arguments: 1 an image name and 2 the command you want to execute within that image)
+Run the new image: *docker run learn/ping ping www.google.com* (docker run takes a minimum of 2 arguments: 1 an image name and 2 the command you want to execute within that image)
 
-to check a list of running containers: *docker ps* (if the container is not running, then it can not be found here)
+To check a list of running containers: *docker ps* (if the container is not running, then it can not be found here)
 
-inspect the running container: *docker inspect efefdc* (ie docker inspect running_container_id)
+Inspect the running container: *docker inspect efefdc* (ie docker inspect running_container_id)
 
-to show images in the local machine: *docker images* (the list of images is useful for obtaining the names of images)
+To show images in the local machine: *docker images* (the list of images is useful for obtaining the names of images)
 
-to push a newly created image: *docker push learn/ping*  (ie docker push image_name)
+To push a newly created image: *docker push learn/ping*  (ie docker push image_name)
 
-to check docker info in the machine: *docker info*
+To check docker info in the machine: *docker info*
 
-container is like a box where a process runs inside it. the box contains everything the process might need, so it has the filesystem, system libraries, shell ans such. one starts a container by running a process in it.
+Container is like a box where a process runs inside it. the box contains everything the process might need, so it has the filesystem, system libraries, shell ans such. one starts a container by running a process in it.
 
 Difference between a container id and image id: image is read-only template. its id should not change. container is like a box that a process has been running inside. so its id may change. isn't it?
 
@@ -37,7 +37,7 @@ Start an image with a process, there will be a container. to save the container 
 
 To run a docker interactively, then it is *docker run -t -i image_name bash*
 
-btw the option "--rm" allow the container to be deleted right after the temporary use
+Btw the option "--rm" allow the container to be deleted right after the temporary use
 
 *docker ps -q* gets the container ids only. useful when killing all containers.
 
@@ -176,18 +176,18 @@ VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]
 ```
 
-to run this container, use command:  
+To run this container, use command:  
 docker run --privileged -ti -v /sys/fs/cgroup:/sys/fs/cgroup:ro image_name
 
-if encountered issue "Failed to get D-Bus connection: Operation not permitted",  
+If encountered issue "Failed to get D-Bus connection: Operation not permitted",  
 most likely it is because the image's default command is overridden.  
-The default command is /usr/sbin/init, and if i run it as /bin/bash, this command won't be executed.  
+The default command is /usr/sbin/init, and it is changed to /bin/bash, the command won't be executed.  
 The correct way is to generate a new image with the loaded systemd files with the same default command.
 
 Another way to test is to docker run the image first, and log in to the container using "docker exec -ti container_id /bin/bash"  
 and then add the service file and start it.
 
-(cannot do it the other way, i.e. start the image with /bin/bash and then run "/usr/sbin/init". 
+(Cannot do it the other way, i.e. start the image with /bin/bash and then run "/usr/sbin/init". 
 Otherwise there will be an error: "Trying to run as user instance, but the system has not been booted with systemd.")
 
 
@@ -252,15 +252,16 @@ ssh -p 2222 username@host_ip_addr
 from one container to another.  
 Host_ip_addr is the ip address of the host where a container runs.
 
+
 Dockerfile
 ---------------------
 
 
-When building the dockerfile, i can add "-t repo_name" to indicate which repo the newly created image belong to.
+When building the dockerfile, "-t repo_name" can be added to indicate which repo the newly created image belong to.
 
 E.g. *sudo docker build -t xma711/ubuntu:extra_tag .*
 
-and then i can do a "sudo docker push xma711/ubuntu" to push the image to my repo.
+And then "sudo docker push xma711/ubuntu" will push the image to my repo.
 
 Sometimes need to do a "sudo docker login" first
 
@@ -279,7 +280,7 @@ a default fixed command (+ arguments) for the image.
 Docker repo in docker hub
 ----------------------------
 
-Like GitHub, i can create a repo in docker hub.
+Like GitHub, we can create a repo in docker hub.
 
 A repo will store a history of commits. 
 
@@ -290,41 +291,41 @@ Private docker hub
 
 Reference: https://registry.hub.docker.com/_/registry/
 
-simply docker pull the official registry and run it in the local computer.
+Simply docker pull the official registry and run it in the local computer.
 
 Pull and run the registry: *docker run -p 5000:5000 registry*
 
-to commit to the local registry, i need to re-tag an image and push it.
+To commit to the local registry, we need to re-tag an image and push it.
 
-For example, i have this archlinux_x86 in my computer. Then:
+For example, there is this archlinux_x86 in my computer. Then:
 
 *sudo docker tag archlinux_x86:latest localhost:5000/archlinux_x86*
 
 *sudo docker push localhost:5000/archlinux_x86*
 
-from a remote machine, the image has to be tagged as ip_local_hub:port/image_name.
+From a remote machine, the image has to be tagged as ip_local_hub:port/image_name.
 
 E.g. *sudo docker tag archlinux_x86:latest 192.168.1.132:5000/archlinux_x86*
 
-before the image can be pushed to the local docker hub, one needs to stop the docker daemon and restart it with "--insecure-registry ip:port"
+Before the image can be pushed to the local docker hub, one needs to stop the docker daemon and restart it with "--insecure-registry ip:port"
 
 *sudo docker -d --insecure-registry 192.168.1.132:5000*
 
-and finally, the image can be pushed to the local hub with *sudo docker push 192.168.1.132:5000/archlinux_x86*  
-reference: http://stackoverflow.com/questions/26710153/remote-access-to-a-private-docker-registry
+And finally, the image can be pushed to the local hub with *sudo docker push 192.168.1.132:5000/archlinux_x86*  
+Reference: http://stackoverflow.com/questions/26710153/remote-access-to-a-private-docker-registry
 
-to get info from private registry: https://docs.docker.com/v1.6/reference/api/registry_api/
+To get info from private registry: https://docs.docker.com/v1.6/reference/api/registry_api/
 
-to list all images in a private docker hub: *curl 192.168.1.125:5000/v1/search* (ie curl [host:port]/v1/search)  
-another way is "docker search 192.168.1.125:5000/library" which display the repositories in a neater way.
-(ref: http://stackoverflow.com/questions/23733678/how-to-search-images-from-private-1-0-registry-in-docker)
+To list all images in a private docker hub: *curl 192.168.1.125:5000/v1/search* (ie curl [host:port]/v1/search)  
+Another way is "docker search 192.168.1.125:5000/library" which display the repositories in a neater way.
+(Ref: http://stackoverflow.com/questions/23733678/how-to-search-images-from-private-1-0-registry-in-docker)
 
-to list all tags under an image in a private docker hub: *curl http://192.168.1.174:5000/v1/repositories/library/armhf-archlinux/tags | python -m json.tool"
+To list all tags under an image in a private docker hub: *curl http://192.168.1.174:5000/v1/repositories/library/armhf-archlinux/tags | python -m json.tool"
 
 Btw this is a useful tutorial: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
 
 To use a GUI to manage to repository, follow: https://github.com/atc-/docker-registry-ui  
-in short, just run docker run -d -p 8080:8080 atcol/docker-registry-ui  
+In short, just run docker run -d -p 8080:8080 atcol/docker-registry-ui  
 and then add a registry using the native ip address (cannot use 'localhost' because the ip address is used inside the container)
 
 change docker daemon options
@@ -335,10 +336,10 @@ In ubuntu 14.04, docker is managed by upstart.
 The configuration file is at /etc/default/docker;   
 therefore docker options can be modified by this file, and then restart docker
 
-btw upstart seems to use the /etc/init/docker.conf to start the docker daemon,
+Btw upstart seems to use the /etc/init/docker.conf to start the docker daemon,
 which in turn use the options specified in /etc/default/docker
 
-to allow a computer to push/ pull images from a private registry, 
+To allow a computer to push/ pull images from a private registry, 
 add "-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock --insecure-registry <REGISTRY_HOSTNAME>:5000" to /etc/default/docker.
 
 In ubuntu 15.04 onward, docker is managed by systemd.  
@@ -347,7 +348,7 @@ Use "systemctl status docker" to find out where the service file is,
 then simply add "-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock --insecure-registry <REGISTRY_HOSTNAME>:5000" to the starting line
 
 
-docker as a vm
+Docker as a vm
 --------------------------
 
 Just realize docker can be used as if it is a vm, when running it in the interactive mode.

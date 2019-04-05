@@ -3,7 +3,7 @@ Arduino
 
 Reference: book "Sams Teach Yourself Arduino Programming in 24 hours", 2015
 
-to download popular libraries: https://www.arduino.cc/en/Reference/Libraries
+To download popular libraries: https://www.arduino.cc/en/Reference/Libraries
 
 Arduino is an open source microcontroller platform.  
 It is a microcontroller, which internally has a CPU, memory and I/O ports all on the same chip.
@@ -209,19 +209,23 @@ The disadvantage is that our code needs to decode which interface generated the 
 Luckily, the PinChangeInt Library comes to our rescue.  
 Once we include this library (we need to download and install this library manually), 
 using pin change interrupt is as easy as using the external interrupts.  
-The usage is (an example):  
- \#include <PinChangeInt.h>  
+The usage is (an example):
+
+```
+\#include <PinChangeInt.h>  
 pinMode(7, INPUT);  
 PCintPort::attachInterrupt(7, callbackFunction, FALLING);
+```
 
 that is it! almost exactly the same as the external interrupt case.
 
 Regarding the timer interrupts, there is (at least) one built-in timer that comes with Arduino.  
 We can set the repeating duration and then attach a routine to it.  
 We need to download and install the TimerOne library manually.  
-The usage:  
+The usage:
+
 ```
- \#include <TimerOne.h>  
+\#include <TimerOne.h>  
 Timer1.initialize(1000000); // the unit is microseconds; so here it is 1 second  
 Timer1.attachInterrupt(callbackFunction); // just put these codes in setup{}
 ```
@@ -243,7 +247,7 @@ For uno, the serial port is at pin 0 and 1 (it uses 2 interfaces), and one is RX
 
 In fact, arduino comes with a built-in serial-to-USB adapter so that we can plug the arduino to workstation directly.
 
-Question: when i use the serial port to communicate with a device like XBEE, can i still connect it to a workstation?
+Question: when we use the serial port to communicate with a device like XBEE, can we still connect it to a workstation?
 
 We can use the Serial library to send and receive data. 
 Some notable functions (need to add "Serial." in front of the functions when using):  
@@ -416,7 +420,8 @@ Normally it runs TCP, but there is a library for it to use UDP.
 
 Ethernet shield use SPI for communication with arduino.
 
-One example:  
+One example:
+
 ```
  \#include <Ethernet.h>  
  \#include <SPI.h>  
@@ -438,7 +443,8 @@ The EthernetUDP classprovides methods for interacting on the network as a UDP de
 
 With the network capability, we can let the arduino device behave as a web server,
 which is able to reply to HTTP request.  
-One example:  
+One example:
+
 ```
 EthernetServer server(80); // use port 80  
 // in loop():  

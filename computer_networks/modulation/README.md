@@ -21,7 +21,7 @@ Why stop at 180 degree shift? QPSK extends the idea by modulating the carrier wa
 Of course there is a limit due to noise in the signal. otherwise it can just go to infinity.
 
 Another limitation is that the value added by each newly added pattern decreases exponentially, as the total pattern number can be used only in 2 to power of something.  
-To represent 1 bit i need 1 pattern, to represent 2 bits i need 4 patterns (4 = 2^2), to represent 4 bits i need 16 patterns, to represent 6 bits i need 64 patterns and so on.   
+To represent 1 bit we need 1 pattern, to represent 2 bits we need 4 patterns (4 = 2^2), to represent 4 bits we need 16 patterns, to represent 6 bits we need 64 patterns and so on.   
 
 QAM
 ---------------------

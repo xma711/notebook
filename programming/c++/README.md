@@ -28,14 +28,14 @@ From book: Sams Teach Yourself C++ in One Hour a Day (7th Edition)
 
 - To disallow an object being copied, just define the copy constructor header and operator= constructor header under private..
 
-- If I want only one exact same object no matter how many times they are instantiated, use Singleton. 
+- If we want only one exact same object no matter how many times they are instantiated, use Singleton. 
 	To achieve this, follow the lastpoint first (disallow an object being copied). Also put normal constructor under private. 
 	Then use static keyword on a normal method like getInstance(), which makes it a class method instead of an instance method. 
 	Inside the method, create a static object of the class itself and return.
 
 - Btw static makes a variable or function a class level, which is shared across objects..
 
-- If I want a class to be in heap (i.e. only allow keyword 'new' to create this object) but cannot be in stack (i.e. disallow normal instantiation), 
+- If we want a class to be in heap (i.e. only allow keyword 'new' to create this object) but cannot be in stack (i.e. disallow normal instantiation), 
 	make destructor in private but create a customized destructor in public.
 
 - If a class allows a global method to access it's private attributes, use friend function header. 
@@ -65,7 +65,7 @@ From book: Sams Teach Yourself C++ in One Hour a Day (7th Edition)
 
 - Operators, like methods, can be overwritten by classes.. this allows a customized class to use operators like ++..
 
-- The style of casting types i know is actually c-style. C++ has its own style, something like castType <destinationType> object.
+- Compared to C, C++ has its own style for casting, something like castType <destinationType> object.
 
 - The map lib is like the python dictionary.
 
@@ -160,11 +160,11 @@ To prevent copy and assignment (i.e. =) operation
 -----------------------------------------------
 
 Just place the copy constructor and operator= method in "private".  
-Example (inside the BH1750 class):  
+Example (inside the TestClass class):  
 ```
     private:
-        BH1750(const BH1750&);
-        BH1750& operator=(const BH1750&);
+        TestClass(const TestClass&);
+        TestClass& operator=(const TestClass&);
 ```
 
 another way is declare a macro that any class can use. e.g.  
@@ -173,10 +173,10 @@ another way is declare a macro that any class can use. e.g.
   TypeName(const TypeName&);               \
   void operator=(const TypeName&)
 ```
-Then in the BH1750 class, i just have to do:  
+Then in the TestClass class, we just have to do:  
 ```
 private:
-DISALLOW_COPY_AND_ASSIGN(BH1750);
+DISALLOW_COPY_AND_ASSIGN(TestClass);
 ```
 
 
@@ -201,7 +201,7 @@ class Base {
 Everything that is aware of Base is also aware that Base contains publicMember.  
 Only the children (and their children) are aware that Base contains protectedMember.  
 No one but Base is aware of privateMember.  
-By "is aware of", I mean "acknowledge the existence of, and thus be able to access".
+By "is aware of", it means "acknowledge the existence of, and thus be able to access".
 
 Next:
 

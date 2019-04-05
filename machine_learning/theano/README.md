@@ -7,12 +7,7 @@ Tensorflow has channels at the end while theano has it in 2nd position for image
 Theano: [batch, channels, width, height]  
 tensorflow: [batch, width, height, channels]
 
-after 1.0 release at the end of 2017, major development would cease..
+After 1.0 release at the end of 2017, major development would cease.
 
-Google's tensorflow and Microsoft cognitive toolkit 2 largely superseded theano...
+Google's tensorflow and Microsoft cognitive toolkit 2 largely superseded theano.
 
-
-Notes
-----------------------------
-
-Btw the autoencoder i implemented during my masters is implemented using theano..

@@ -1,8 +1,6 @@
 Original data
 ----------------
 
-The original data is from a machine learning module I took.
-
 The data is images pictures of alphabets.  
 It is just 1 and 0 to represent black and white.
 

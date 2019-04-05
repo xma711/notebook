@@ -31,7 +31,7 @@ MySQL has a BOOLEAN type. but others may not.
 
 A user-defined type can be created too, using "CREATE TYPE"..
 
-In a field defined as char field, i can still enter numeric values because it can be implicitly converted.
+In a field defined as char field, we can still enter numeric values because it can be implicitly converted.
 
 
 Chapter 3 managing database objects
@@ -48,13 +48,13 @@ Much time and effort should be put into planning table structures before the act
 
 ALTER can be used to modify a table. just google when needed.
 
-In MySQL, there is a SERIAL type for creating an auto-incrementing column. for other RDBMS, need to google the right name.
+In MySQL, there is a SERIAL type for creating an auto-incrementing column.
 
 Altering or dropping tables can be dangerous. it is better to copy an existing table and do modification in the copied table.  
 Command: CREATE TABLE products\_copy\_tbl as SELECT * FROM products\_tbl.
 
 Be specific when dropping a table - specify the owner name of the table!  
-(however, i cannot refer body\_info\_copy table as xma.body\_info\_copy. but sgh.body\_info\_copy is okay. this kinda conflicts with the definition of 'schema'...)
+(However, we cannot refer body\_info\_copy table as xma.body\_info\_copy. But sgh.body\_info\_copy is okay.)
 
 You can put a UNIQUE constraint for a column when creating the table, so if you accidentally enter the same number for two different rows, the server will complain.
 

@@ -1,14 +1,14 @@
 Waspmote factory default program
 ------------------------------------
 
-After i uploaded this program to waspmote, it will output "H#" when xbee pro s1 or s2 are plugged in.  
+After uploading this program to waspmote, it will output "H#" when xbee pro s1 or s2 are plugged in.  
 	- it seems the setup function is repeatedly called.  
 It turns out that it is because the usb power cannot provide enough current for bbb+xbee.  
 Have to plug in the battery to make it work.
 
 When LoRa is plugged in, no communication module is detected.
 
-When i used LoRaWAN, it can detect the module and tries to send a frame.
+When using LoRaWAN, it can detect the module and tries to send a frame.
 
 
 Smart cities board

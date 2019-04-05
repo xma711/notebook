@@ -61,12 +61,12 @@ sqrt(2) * img{ ( Vm/sqrt(2) * e^(phi j) ) * e^(wt j) } = sqrt(2) * img{ Vrms * e
 Then with a 'leap of faith', V(t) can be transformed to Vrms = Vm/sqrt(2) * e^(phi j) = Vm/sqrt(2) /_phi ( where e^(phi j) = /_phi )    
 e.g. V(t) = 20 sin(wt + 30) ==> Vrms = 20/sqrt(2) /_30 = 14.14 /_30 
 
-note that in this  case, 'wt' is hidden (which is the time domain i guess).
+note that in this  case, 'wt' is hidden (which should be the time domain).
 
 Why hide wt?  
 Reference: http://www.dummies.com/how-to/content/how-to-use-phasors-for-circuit-analysis.html 
 
-because the radian frequency w remains the same in a linear circuit, a phasor just needs the amplitude Vm and the phase phi to get into the polar form.
+Because the radian frequency w remains the same in a linear circuit, a phasor just needs the amplitude Vm and the phase phi to get into the polar form.
 
 
 Circuit analysis (AC circuit)
